@@ -1,0 +1,47 @@
+\begin{tikzpicture}
+	\begin{pgfonlayer}{nodelayer}
+		\node [style=gbox] (0) at (-1.5, -0.25) {$-1$};
+		\node [style=gn] (1) at (-1.25, 2.5) {};
+		\node [style=gbox] (2) at (-2.25, 1.5) {$2$};
+		\node [style=gbox] (4) at (0.75, -0.25) {$3$};
+		\node [style=dw] (6) at (-0.25, -0.5) {};
+		\node [style=gn] (7) at (2.25, 2.5) {};
+		\node [style=uw] (8) at (3, 1.25) {};
+		\node [style=gbox] (9) at (1, 2) {$2$};
+		\node [style=gbox] (10) at (2.25, 0.25) {$1$};
+		\node [style=gn] (11) at (3.75, 0.25) {};
+		\node [style=gbox] (12) at (4.5, -0.75) {$-1$};
+		\node [style=none] (13) at (3, -0.75) {};
+		\node [style=none] (14) at (-0.25, -1.75) {};
+		\node [style=uw] (15) at (0.25, 3.75) {};
+		\node [style=gbox] (16) at (-2.25, 2.5) {$0$};
+		\node [style=none] (17) at (0.25, 4.75) {};
+		\node [style=dw] (18) at (-1.5, 0.75) {};
+		\node [style=dw] (19) at (0.75, 0.75) {};
+		\node [style=gn] (22) at (0.25, 2.5) {};
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\draw [bend right=15] (1) to (2);
+		\draw [bend left=15] (8) to (11);
+		\draw [in=90, out=-30, looseness=0.75] (7) to (8);
+		\draw [bend left=15] (9) to (7);
+		\draw [bend left=15] (10) to (8);
+		\draw [in=90, out=-135] (11) to (13.center);
+		\draw [bend right=15] (12) to (11);
+		\draw (14.center) to (6);
+		\draw [bend right=15] (1) to (6);
+		\draw (17.center) to (15);
+		\draw [bend right=15] (15) to (16);
+		\draw (18) to (0);
+		\draw [bend right=15] (1) to (18);
+		\draw [bend left=15] (1) to (15);
+		\draw (19) to (4);
+		\draw (22) to (6);
+		\draw [bend right=15] (22) to (19);
+		\draw (22) to (15);
+		\draw [bend left=15] (7) to (19);
+		\draw [bend right=15] (7) to (15);
+		\draw [bend right=15] (18) to (22);
+		\draw [bend right=15] (18) to (7);
+	\end{pgfonlayer}
+\end{tikzpicture}

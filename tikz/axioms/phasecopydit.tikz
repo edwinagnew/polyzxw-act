@@ -1,0 +1,29 @@
+\begin{tikzpicture}
+	\begin{pgfonlayer}{nodelayer}
+		\node [style=none] (0) at (-1.75, 1.5) {};
+		\node [style=none] (14) at (0, 0) {$=$};
+		\node [style=gbox] (17) at (-1.75, 0.75) {$a$};
+		\node [style=uw] (18) at (-1.75, -0.5) {};
+		\node [style=none] (19) at (-2.5, -1.5) {};
+		\node [style=none] (20) at (-1, -1.5) {};
+		\node [style=none] (21) at (2, 1.5) {};
+		\node [style=uw] (23) at (2, 0.25) {};
+		\node [style=none] (24) at (1.25, -0.75) {};
+		\node [style=none] (25) at (2.75, -0.75) {};
+		\node [style=gbox] (26) at (1.25, -0.75) {$a$};
+		\node [style=gbox] (27) at (2.75, -0.75) {$a$};
+		\node [style=none] (28) at (1.25, -1.5) {};
+		\node [style=none] (29) at (2.75, -1.5) {};
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\draw (17) to (18);
+		\draw (17) to (0.center);
+		\draw [in=-45, out=90, looseness=0.75] (20.center) to (18);
+		\draw [in=90, out=-135, looseness=0.75] (18) to (19.center);
+		\draw [in=-45, out=90, looseness=0.75] (25.center) to (23);
+		\draw [in=90, out=-135, looseness=0.75] (23) to (24.center);
+		\draw (21.center) to (23);
+		\draw (29.center) to (27);
+		\draw (26) to (28.center);
+	\end{pgfonlayer}
+\end{tikzpicture}

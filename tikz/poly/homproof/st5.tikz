@@ -1,0 +1,60 @@
+\begin{tikzpicture}
+	\begin{pgfonlayer}{nodelayer}
+		\node [style=none] (0) at (-0.25, 3.75) {};
+		\node [style=uw] (1) at (-0.25, 3) {};
+		\node [style=dw] (2) at (2, 0.5) {};
+		\node [style=gbox] (3) at (-2.75, 1.75) {$p_0q_0$};
+		\node [style=gn] (4) at (0.5, 1.75) {};
+		\node [style=gn] (5) at (-1, 1.75) {};
+		\node [style=gn] (6) at (2, 1.75) {};
+		\node [style=dw] (7) at (2, -2.25) {};
+		\node [style=none] (8) at (2, -3.75) {};
+		\node [style=gbox] (9) at (2, -0.5) {$q_1$};
+		\node [style=gbox] (10) at (-0.5, -1.5) {$p_1$};
+		\node [style=dw] (11) at (-2.75, -3.25) {};
+		\node [style=dw] (12) at (-1.25, -3.25) {};
+		\node [style=none] (13) at (-2.75, -4) {};
+		\node [style=none] (14) at (-1.25, -4) {};
+		\node [style=label] (15) at (-2, -3.75) {$\ldots$};
+		\node [style=gbox] (16) at (-1, -0.5) {$p_0$};
+		\node [style=gbox] (17) at (-1.75, 0.5) {$q_0$};
+		\node [style=gn] (18) at (1, 0.5) {};
+		\node [style=gn] (19) at (0, 0.5) {};
+		\node [style=dw] (20) at (0, -0.5) {};
+		\node [style=dw] (21) at (1, -0.5) {};
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\draw (1) to (0.center);
+		\draw (4) to (2);
+		\draw (6) to (2);
+		\draw [style=blue line, bend right=15] (1) to (3);
+		\draw (1) to (4);
+		\draw (1) to (5);
+		\draw [bend left=15] (1) to (6);
+		\draw (7) to (8.center);
+		\draw [style=blue line] (11) to (13.center);
+		\draw [style=blue line] (12) to (14.center);
+		\draw [style=blue line] (11) to (10);
+		\draw [style=blue line, bend right=15] (11) to (9);
+		\draw [style=blue line] (12) to (10);
+		\draw [style=blue line, bend right=15] (12) to (9);
+		\draw [style=blue line, bend left=15] (16) to (4);
+		\draw [style=blue line] (16) to (11);
+		\draw [style=blue line] (16) to (12);
+		\draw [style=blue line] (17) to (5);
+		\draw [style=blue line] (17) to (11);
+		\draw [style=blue line] (17) to (12);
+		\draw [style=blue line] (3) to (11);
+		\draw [style=blue line] (3) to (12);
+		\draw (19) to (5);
+		\draw (18) to (6);
+		\draw [in=135, out=-90] (21) to (7);
+		\draw [style=blue line, in=45, out=-90] (20) to (10);
+		\draw (20) to (19);
+		\draw (20) to (18);
+		\draw (18) to (21);
+		\draw (21) to (19);
+		\draw (9) to (2);
+		\draw (9) to (7);
+	\end{pgfonlayer}
+\end{tikzpicture}

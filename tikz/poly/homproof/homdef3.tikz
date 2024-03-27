@@ -1,0 +1,43 @@
+\begin{tikzpicture}
+	\begin{pgfonlayer}{nodelayer}
+		\node [style=none] (0) at (-1.25, 0) {$\phi_n(p) = $};
+		\node [style=uw] (1) at (4.5, 1.75) {};
+		\node [style=none] (9) at (4.5, 2.75) {};
+		\node [style=gbox] (10) at (1.25, 0.5) {$a_0$};
+		\node [style=gbox] (11) at (2.25, 0.5) {$a_1$};
+		\node [style=gbox] (12) at (8.25, 0.5) {$a_{2^n-1}$};
+		\node [style=label] (15) at (4.5, 0.5) {$\ldots$};
+		\node [style=gbox] (16) at (3.5, 0.5) {$a_2$};
+		\node [style=gbox] (18) at (6, 0.5) {$a_{2^n-2}$};
+		\node [style=dw] (19) at (2, -1.75) {};
+		\node [style=dw] (20) at (3, -1.75) {};
+		\node [style=none] (21) at (2, -2.5) {};
+		\node [style=none] (22) at (3, -2.5) {};
+		\node [style=label] (23) at (4.5, -2) {$\ldots$};
+		\node [style=dw] (24) at (5.75, -1.75) {};
+		\node [style=dw] (25) at (6.75, -1.75) {};
+		\node [style=none] (26) at (5.75, -2.5) {};
+		\node [style=none] (27) at (6.75, -2.5) {};
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\draw (1) to (9.center);
+		\draw [bend left=15] (10) to (1);
+		\draw [bend right=15] (1) to (11);
+		\draw [bend left=15] (1) to (12);
+		\draw [bend right=15] (1) to (16);
+		\draw (19) to (21.center);
+		\draw (20) to (22.center);
+		\draw (24) to (26.center);
+		\draw (25) to (27.center);
+		\draw [in=150, out=-90, looseness=0.75] (11) to (25);
+		\draw [in=120, out=-90, looseness=0.75] (16) to (24);
+		\draw [in=-90, out=30, looseness=0.75] (19) to (18);
+		\draw [bend right=15] (18) to (1);
+		\draw [in=-90, out=45] (20) to (18);
+		\draw [in=270, out=90] (24) to (18);
+		\draw [in=-90, out=30, looseness=0.75] (19) to (12);
+		\draw [in=-90, out=30] (20) to (12);
+		\draw [in=-90, out=60] (24) to (12);
+		\draw [in=-90, out=75] (25) to (12);
+	\end{pgfonlayer}
+\end{tikzpicture}

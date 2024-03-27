@@ -1,0 +1,27 @@
+\begin{tikzpicture}
+	\begin{pgfonlayer}{nodelayer}
+		\node [style=none] (0) at (-0.25, 1) {};
+		\node [style=uw] (1) at (-0.25, 0) {};
+		\node [style=gbox] (2) at (-1, -1) {$0$};
+		\node [style=gn] (3) at (0.5, -1) {};
+		\node [style=none] (4) at (-0.25, -2) {};
+		\node [style=none] (5) at (1.25, -2) {};
+		\node [style=label] (6) at (0.5, -1.75) {$\ldots$};
+		\node [style=gn] (7) at (-4, 0) {};
+		\node [style=none] (8) at (-4.75, -1) {};
+		\node [style=none] (9) at (-3.25, -1) {};
+		\node [style=label] (10) at (-4, -0.75) {$\ldots$};
+		\node [style=none] (11) at (-4, 1) {};
+		\node [style=none] (12) at (-2.25, -0.5) {$\eqq{\ref{eq:wid}}$};
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\draw (2) to (1);
+		\draw (0.center) to (1);
+		\draw (1) to (3);
+		\draw (3) to (4.center);
+		\draw (3) to (5.center);
+		\draw (7) to (8.center);
+		\draw (7) to (9.center);
+		\draw (11.center) to (7);
+	\end{pgfonlayer}
+\end{tikzpicture}

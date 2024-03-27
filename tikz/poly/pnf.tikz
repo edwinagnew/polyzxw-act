@@ -1,0 +1,30 @@
+\begin{tikzpicture}
+	\begin{pgfonlayer}{nodelayer}
+		\node [style=uw] (0) at (0, 1.25) {};
+		\node [style=none] (1) at (0, 2.25) {};
+		\node [style=gbox] (2) at (-3.25, -0.75) {$a_0$};
+		\node [style=gn] (3) at (-1, 0) {};
+		\node [style=gn] (4) at (2, 0) {};
+		\node [style=dw] (5) at (-0.75, -1.5) {};
+		\node [style=dw] (6) at (0.75, -1.5) {};
+		\node [style=none] (7) at (-0.75, -2.25) {};
+		\node [style=none] (8) at (0.75, -2.25) {};
+		\node [style=label] (9) at (0.5, 0) {$\ldots$};
+		\node [style=label] (10) at (0, -1.75) {$\ldots$};
+		\node [style=gbox] (11) at (-2, -0.75) {$a_1$};
+		\node [style=gbox] (12) at (3, -0.75) {$a_{2^n-1}$};
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\draw (0) to (3);
+		\draw [bend right=15] (0) to (2);
+		\draw (0) to (1.center);
+		\draw [bend left=15] (0) to (4);
+		\draw (5) to (7.center);
+		\draw (6) to (8.center);
+		\draw [in=225, out=30] (5) to (4);
+		\draw [in=-90, out=150] (6) to (3);
+		\draw [bend right=15] (6) to (4);
+		\draw [bend right=15] (3) to (11);
+		\draw [bend left=15] (4) to (12);
+	\end{pgfonlayer}
+\end{tikzpicture}

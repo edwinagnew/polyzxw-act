@@ -1,0 +1,30 @@
+\begin{tikzpicture}
+	\begin{pgfonlayer}{nodelayer}
+		\node [style=uw] (34) at (0, 2.25) {};
+		\node [style=gbox] (35) at (-2.5, 1) {$a_0$};
+		\node [style=gbox] (36) at (2.5, 1) {$a_{2^n-1}$};
+		\node [style=gbox] (37) at (-1.25, 1) {$a_1$};
+		\node [style=dw] (38) at (-2, -1.25) {};
+		\node [style=dw] (39) at (-0.75, -1.25) {};
+		\node [style=none] (40) at (-2, -2) {};
+		\node [style=none] (41) at (-0.75, -2) {};
+		\node [style=dw] (42) at (1.75, -1.25) {};
+		\node [style=none] (43) at (1.75, -2) {};
+		\node [style=label] (44) at (0.5, 1) {$\ldots$};
+		\node [style=label] (45) at (0, -1.5) {$\ldots$};
+		\node [style=none] (46) at (0, 3.25) {};
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\draw [bend left=15] (35) to (34);
+		\draw [bend left=15] (34) to (36);
+		\draw (38) to (40.center);
+		\draw (39) to (41.center);
+		\draw (42) to (43.center);
+		\draw (37) to (34);
+		\draw [in=-90, out=30, looseness=0.75] (38) to (36);
+		\draw [in=-90, out=30] (39) to (36);
+		\draw [in=-90, out=75] (42) to (36);
+		\draw [in=-90, out=135, looseness=0.75] (42) to (37);
+		\draw (46.center) to (34);
+	\end{pgfonlayer}
+\end{tikzpicture}

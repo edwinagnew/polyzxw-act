@@ -1,0 +1,60 @@
+\begin{tikzpicture}
+	\begin{pgfonlayer}{nodelayer}
+		\node [style={rn_phase}] (1) at (0, 1.75) {$\pi$};
+		\node [style=none] (2) at (0, 1) {};
+		\node [style=none] (3) at (-1, 0) {};
+		\node [style=none] (4) at (1, 0) {};
+		\node [style=none] (5) at (-0.5, 0) {};
+		\node [style=none] (6) at (0.5, 0) {};
+		\node [style=label] (7) at (0, 0.25) {$\tilde{\psi}$};
+		\node [style=none] (8) at (-0.5, -0.75) {};
+		\node [style=none] (9) at (0.5, -0.75) {};
+		\node [style=none] (10) at (2, 0) {$=$};
+		\node [style=none] (12) at (4, 1) {};
+		\node [style=none] (13) at (3, 0) {};
+		\node [style=none] (14) at (5, 0) {};
+		\node [style=none] (15) at (3.5, 0) {};
+		\node [style=none] (16) at (4.5, 0) {};
+		\node [style=label] (17) at (4, 0.25) {$\psi$};
+		\node [style=none] (18) at (3.5, -0.75) {};
+		\node [style=none] (19) at (4.5, -0.75) {};
+		\node [style=none] (20) at (6, 0) {$=$};
+		\node [style=uw] (39) at (9.75, 2) {};
+		\node [style=gbox] (41) at (7.25, 0.75) {$a_0$};
+		\node [style=gbox] (42) at (12.25, 0.75) {$a_{2^n-1}$};
+		\node [style=gbox] (44) at (8.5, 0.75) {$a_1$};
+		\node [style=rn] (45) at (7.75, -0.75) {};
+		\node [style=rn] (46) at (9, -0.75) {};
+		\node [style=none] (47) at (7.75, -1.5) {};
+		\node [style=none] (48) at (9, -1.5) {};
+		\node [style=rn] (50) at (11.5, -0.75) {};
+		\node [style=none] (51) at (11.5, -1.5) {};
+		\node [style=label] (52) at (10.25, 0.75) {$\ldots$};
+		\node [style=label] (53) at (9.75, -1) {$\ldots$};
+		\node [style={rn_phase}] (54) at (9.75, 3) {$\pi$};
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\draw (3.center) to (2.center);
+		\draw (3.center) to (4.center);
+		\draw (4.center) to (2.center);
+		\draw (1) to (2.center);
+		\draw (5.center) to (8.center);
+		\draw (6.center) to (9.center);
+		\draw (13.center) to (12.center);
+		\draw (13.center) to (14.center);
+		\draw (14.center) to (12.center);
+		\draw (15.center) to (18.center);
+		\draw (16.center) to (19.center);
+		\draw [bend left=15] (41) to (39);
+		\draw [bend left=15] (39) to (42);
+		\draw (45) to (47.center);
+		\draw (46) to (48.center);
+		\draw (50) to (51.center);
+		\draw (44) to (39);
+		\draw [in=-90, out=30, looseness=0.75] (45) to (42);
+		\draw [in=-90, out=30] (46) to (42);
+		\draw [in=-90, out=75] (50) to (42);
+		\draw [in=-90, out=135, looseness=0.75] (50) to (44);
+		\draw (54) to (39);
+	\end{pgfonlayer}
+\end{tikzpicture}

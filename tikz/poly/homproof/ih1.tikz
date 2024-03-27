@@ -1,0 +1,37 @@
+\begin{tikzpicture}
+	\begin{pgfonlayer}{nodelayer}
+		\node [style=uw] (0) at (-0.25, 0.5) {};
+		\node [style=gbox] (1) at (-1, -0.25) {$a$};
+		\node [style=gbox] (2) at (0.5, -0.25) {$b$};
+		\node [style=dw] (8) at (-0.75, -1.5) {};
+		\node [style=dw] (9) at (0.25, -1.5) {};
+		\node [style=none] (10) at (-0.75, -2.5) {};
+		\node [style=none] (11) at (0.25, -2.5) {};
+		\node [style=label] (12) at (-0.25, -2) {$\ldots$};
+		\node [style=none] (13) at (-0.25, 1.25) {};
+		\node [style=none] (14) at (1.5, -0.75) {$=$};
+		\node [style=gbox] (24) at (3, -1) {$a+b$};
+		\node [style=none] (25) at (3, 0) {};
+		\node [style=none] (26) at (2.5, -2.5) {};
+		\node [style=none] (27) at (3.5, -2.5) {};
+		\node [style=label] (28) at (3, -1.75) {$\ldots$};
+		\node [style=left label] (29) at (-1, -2.25) {$x_1$};
+		\node [style=right label] (30) at (0.5, -2.25) {$x_n$};
+		\node [style=left label] (31) at (2.5, -2.25) {$x_1$};
+		\node [style=right label] (32) at (3.5, -2.25) {$x_n$};
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\draw [style=blue line] (0) to (1);
+		\draw [style=blue line] (0) to (2);
+		\draw [style=blue line] (8) to (10.center);
+		\draw [style=blue line] (9) to (11.center);
+		\draw [style=blue line] (8) to (1);
+		\draw [style=blue line] (8) to (2);
+		\draw [style=blue line] (9) to (1);
+		\draw [style=blue line] (9) to (2);
+		\draw (13.center) to (0);
+		\draw [style=blue line] (25.center) to (24);
+		\draw [style=blue line, bend left=15] (26.center) to (24);
+		\draw [style=blue line, bend left=15] (24) to (27.center);
+	\end{pgfonlayer}
+\end{tikzpicture}

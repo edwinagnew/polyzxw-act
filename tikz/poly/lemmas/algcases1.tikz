@@ -1,0 +1,50 @@
+\begin{tikzpicture}
+	\begin{pgfonlayer}{nodelayer}
+		\node [style=uw] (0) at (-0.5, 0) {};
+		\node [style=none] (1) at (-0.5, 1) {};
+		\node [style=label] (2) at (-1.5, -1) {$...$};
+		\node [style=dw] (3) at (-0.5, -1) {};
+		\node [style=label] (5) at (0.5, -1) {$...$};
+		\node [style=none] (6) at (-0.5, -2) {};
+		\node [style=none] (8) at (2.25, -0.75) {$\eqq{\ref{eq:x+x=2x}}$};
+		\node [style=none] (16) at (-2.25, -1) {};
+		\node [style=none] (17) at (1.25, -1) {};
+		\node [style=uw] (18) at (5, 0) {};
+		\node [style=none] (19) at (5, 1) {};
+		\node [style=label] (20) at (4, -1) {$...$};
+		\node [style=gbox] (21) at (5, -1) {$2$};
+		\node [style=label] (22) at (6, -1) {$...$};
+		\node [style=none] (23) at (5, -2) {};
+		\node [style=none] (25) at (3.25, -1) {};
+		\node [style=none] (26) at (6.75, -1) {};
+		\node [style=uw] (27) at (10, 0) {};
+		\node [style=none] (28) at (10, 1) {};
+		\node [style=label] (29) at (9, -1) {$...$};
+		\node [style=gn] (30) at (10, -1) {};
+		\node [style=label] (31) at (11, -1) {$...$};
+		\node [style=none] (32) at (10, -2) {};
+		\node [style=none] (33) at (8.25, -1) {};
+		\node [style=none] (34) at (11.75, -1) {};
+		\node [style=none] (35) at (7.5, -1) {$=$};
+		\node [style=gbox] (36) at (9, -2) {$2$};
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\draw (1.center) to (0);
+		\draw [bend left] (0) to (3);
+		\draw [bend right] (0) to (3);
+		\draw (3) to (6.center);
+		\draw [bend left=15] (16.center) to (0);
+		\draw [bend right=15] (17.center) to (0);
+		\draw (19.center) to (18);
+		\draw (21) to (23.center);
+		\draw [bend left=15] (25.center) to (18);
+		\draw [bend right=15] (26.center) to (18);
+		\draw (18) to (21);
+		\draw (28.center) to (27);
+		\draw (30) to (32.center);
+		\draw [bend left=15] (33.center) to (27);
+		\draw [bend right=15] (34.center) to (27);
+		\draw (27) to (30);
+		\draw [bend left=15] (36) to (30);
+	\end{pgfonlayer}
+\end{tikzpicture}

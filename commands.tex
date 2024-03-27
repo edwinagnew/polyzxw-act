@@ -1,0 +1,712 @@
+
+\usepackage{tikzit}
+\input{tikz/zxw_styles.tikzstyles}
+
+\newtheorem{lemma}{Lemma}[section]
+\newtheorem{thm}{Theorem}[section]
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}[section]
+\newtheorem{prop}{Proposition}
+\newtheorem*{prop*}{Proposition}
+
+
+%custom zx commands
+\newcommand{\redzero}{\begin{tikzpicture}
+	\begin{pgfonlayer}{nodelayer}
+		\node [style=rn] (0) at (0, 0) {};
+		\node [style=none] (1) at (0, -0.5) {};
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\draw (0) to (1.center);
+	\end{pgfonlayer}
+\end{tikzpicture}
+}
+
+\newcommand{\redpi}{\begin{tikzpicture}
+	\begin{pgfonlayer}{nodelayer}
+		\node [style={rn_phase}] (0) at (0, 0) {$\pi$};
+		\node [style=none] (1) at (0, -0.5) {};
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\draw (0) to (1.center);
+	\end{pgfonlayer}
+\end{tikzpicture}
+}
+
+\newcommand{\redzeroup}{\begin{tikzpicture}
+	\begin{pgfonlayer}{nodelayer}
+		\node [style={rn}] (0) at (0, 0) {};
+		\node [style=none] (1) at (0, 0.5) {};
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\draw (0) to (1.center);
+	\end{pgfonlayer}
+\end{tikzpicture}
+}
+
+\newcommand{\redpiup}{\begin{tikzpicture}
+	\begin{pgfonlayer}{nodelayer}
+		\node [style={rn_phase}] (0) at (0, 0) {$\pi$};
+		\node [style=none] (1) at (0, 0.5) {};
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\draw (0) to (1.center);
+	\end{pgfonlayer}
+\end{tikzpicture}
+}
+
+\newcommand{\greenzero}{\begin{tikzpicture}
+	\begin{pgfonlayer}{nodelayer}
+		\node [style=gn] (0) at (0, 0) {};
+		\node [style=none] (1) at (0, -0.5) {};
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\draw (0) to (1.center);
+	\end{pgfonlayer}
+\end{tikzpicture}
+}
+
+\newcommand{\greenpi}{\begin{tikzpicture}
+	\begin{pgfonlayer}{nodelayer}
+		\node [style={gn_phase}] (0) at (0, 0) {$\pi$};
+		\node [style=none] (1) at (0, -0.5) {};
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\draw (0) to (1.center);
+	\end{pgfonlayer}
+\end{tikzpicture}
+}
+
+\newcommand{\greenzeroup}{\begin{tikzpicture}
+	\begin{pgfonlayer}{nodelayer}
+		\node [style={gn}] (0) at (0, 0) {};
+		\node [style=none] (1) at (0, 0.5) {};
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\draw (0) to (1.center);
+	\end{pgfonlayer}
+\end{tikzpicture}
+}
+
+\newcommand{\ghzstate}[1][0.5]{\begin{tikzpicture}[scale=#1]
+	\begin{pgfonlayer}{nodelayer}
+		\node [style=gn] (0) at (0, 0) {};
+		\node [style=none] (1) at (-1, -1) {};
+		\node [style=none] (2) at (1, -1) {};
+		\node [style=none] (3) at (0, -1) {};
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\draw [bend right] (0) to (1.center);
+		\draw [bend left] (0) to (2.center);
+		\draw (0) to (3.center);
+	\end{pgfonlayer}
+\end{tikzpicture}}
+
+\newcommand{\wstate}[1][0.5]{\begin{tikzpicture}[scale=#1]
+	\begin{pgfonlayer}{nodelayer}
+		\node [style=uw] (0) at (0, 0) {};
+		\node [style=none] (1) at (-1, -1) {};
+		\node [style=none] (2) at (1, -1) {};
+		\node [style=none] (3) at (0, -1) {};
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\draw [bend right] (0) to (1.center);
+		\draw [bend left] (0) to (2.center);
+		\draw (0) to (3.center);
+	\end{pgfonlayer}
+\end{tikzpicture}}
+
+\newcommand{\zspid}[1][0.5]{\begin{tikzpicture}[scale=#1]
+	\begin{pgfonlayer}{nodelayer}
+		\node [style=gn] (0) at (0, 0) {};
+		\node [style=none] (1) at (0.5, -0.5) {};
+		\node [style=none] (2) at (-0.5, -0.5) {};
+		\node [style=none] (3) at (0, 0.75) {};
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\draw (0) to (1.center);
+		\draw (2.center) to (0);
+		\draw (3.center) to (0);
+	\end{pgfonlayer}
+\end{tikzpicture}
+}
+
+\newcommand{\xspid}[1][0.5]{\begin{tikzpicture}[scale=#1]
+	\begin{pgfonlayer}{nodelayer}
+		\node [style=rn] (0) at (0, 0) {};
+		\node [style=none] (1) at (0.5, -0.5) {};
+		\node [style=none] (2) at (-0.5, -0.5) {};
+		\node [style=none] (3) at (0, 0.75) {};
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\draw (0) to (1.center);
+		\draw (2.center) to (0);
+		\draw (3.center) to (0);
+	\end{pgfonlayer}
+\end{tikzpicture}
+}
+
+
+\newcommand{\coZ}[1][0.5]{\begin{tikzpicture}[scale=#1]
+	\begin{pgfonlayer}{nodelayer}
+		\node [style=gn] (0) at (0, 0) {};
+		\node [style=none] (1) at (0.5, 0.5) {};
+		\node [style=none] (2) at (-0.5, 0.5) {};
+		\node [style=none] (3) at (0, -0.75) {};
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\draw (0) to (1.center);
+		\draw (2.center) to (0);
+		\draw (3.center) to (0);
+	\end{pgfonlayer}
+\end{tikzpicture}
+}
+
+
+\newcommand{\coX}[1][0.5]{\begin{tikzpicture}[scale=#1]
+	\begin{pgfonlayer}{nodelayer}
+		\node [style=rn] (0) at (0, 0) {};
+		\node [style=none] (1) at (0.5, 0.5) {};
+		\node [style=none] (2) at (-0.5, 0.5) {};
+		\node [style=none] (3) at (0, -0.75) {};
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\draw (0) to (1.center);
+		\draw (2.center) to (0);
+		\draw (3.center) to (0);
+	\end{pgfonlayer}
+\end{tikzpicture}
+}
+
+
+\newcommand{\wspid}[1][0.5]{\begin{tikzpicture}[scale=#1]
+	\begin{pgfonlayer}{nodelayer}
+		\node [style=uw] (0) at (0, 0) {};
+		\node [style=none] (1) at (0.5, -0.5) {};
+		\node [style=none] (2) at (-0.5, -0.5) {};
+		\node [style=none] (3) at (0, 0.75) {};
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\draw (0) to (1.center);
+		\draw (2.center) to (0);
+		\draw (3.center) to (0);
+	\end{pgfonlayer}
+\end{tikzpicture}
+}
+
+\newcommand{\coW}[1][0.4]{\begin{tikzpicture}[scale=#1]
+	\begin{pgfonlayer}{nodelayer}
+		\node [style=dw] (0) at (0, 0) {};
+		\node [style=none] (1) at (0.5, 0.5) {};
+		\node [style=none] (2) at (-0.5, 0.5) {};
+		\node [style=none] (3) at (0, -0.75) {};
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\draw (0) to (1.center);
+		\draw (2.center) to (0);
+		\draw (3.center) to (0);
+	\end{pgfonlayer}
+\end{tikzpicture}
+}
+
+
+%
+% same but with dots
+%
+
+\newcommand{\zspids}[1][0.5]{\begin{tikzpicture}[scale=#1]
+	\begin{pgfonlayer}{nodelayer}
+		\node [style=gn] (0) at (0, 0) {};
+		\node [style=none] (1) at (0.5, -0.5) {};
+		\node [style=none] (2) at (-0.5, -0.5) {};
+		\node [style=none] (3) at (0, 0.75) {};
+            \node [style=label] (4) at (0, -0.5) {$\ldots$};
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\draw (0) to (1.center);
+		\draw (2.center) to (0);
+		\draw (3.center) to (0);
+	\end{pgfonlayer}
+\end{tikzpicture}
+}
+
+
+\newcommand{\xspids}[1][0.5]{\begin{tikzpicture}[scale=#1]
+	\begin{pgfonlayer}{nodelayer}
+		\node [style=rn] (0) at (0, 0) {};
+		\node [style=none] (1) at (0.5, -0.5) {};
+		\node [style=none] (2) at (-0.5, -0.5) {};
+		\node [style=none] (3) at (0, 0.75) {};
+            \node [style=label] (4) at (0, -0.5) {$\ldots$};
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\draw (0) to (1.center);
+		\draw (2.center) to (0);
+		\draw (3.center) to (0);
+	\end{pgfonlayer}
+\end{tikzpicture}
+}
+
+\newcommand{\wspids}[1][0.5]{\begin{tikzpicture}[scale=#1]
+	\begin{pgfonlayer}{nodelayer}
+		\node [style=uw] (0) at (0, 0) {};
+		\node [style=none] (1) at (0.5, -0.5) {};
+		\node [style=none] (2) at (-0.5, -0.5) {};
+		\node [style=none] (3) at (0, 0.75) {};
+            \node [style=label] (4) at (0, -0.5) {$\ldots$};
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\draw (0) to (1.center);
+		\draw (2.center) to (0);
+		\draw (3.center) to (0);
+	\end{pgfonlayer}
+\end{tikzpicture}
+}
+
+\newcommand{\coZs}[1][0.5]{\begin{tikzpicture}[scale=#1]
+	\begin{pgfonlayer}{nodelayer}
+		\node [style=gn] (0) at (0, 0) {};
+		\node [style=none] (1) at (0.5, 0.5) {};
+		\node [style=none] (2) at (-0.5, 0.5) {};
+		\node [style=none] (3) at (0, -0.75) {};
+            \node [style=label] (4) at (0, 0.6) {$\ldots$};
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\draw (0) to (1.center);
+		\draw (2.center) to (0);
+		\draw (3.center) to (0);
+	\end{pgfonlayer}
+\end{tikzpicture}
+}
+
+\newcommand{\coXs}[1][0.5]{\begin{tikzpicture}[scale=#1]
+	\begin{pgfonlayer}{nodelayer}
+		\node [style=rn] (0) at (0, 0) {};
+		\node [style=none] (1) at (0.5, 0.5) {};
+		\node [style=none] (2) at (-0.5, 0.5) {};
+		\node [style=none] (3) at (0, -0.75) {};
+            \node [style=label] (4) at (0, 0.6) {$\ldots$};
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\draw (0) to (1.center);
+		\draw (2.center) to (0);
+		\draw (3.center) to (0);
+	\end{pgfonlayer}
+\end{tikzpicture}
+}
+
+\newcommand{\coWs}[1][0.5]{\begin{tikzpicture}[scale=#1]
+	\begin{pgfonlayer}{nodelayer}
+		\node [style=dw] (0) at (0, 0) {};
+		\node [style=none] (1) at (0.5, 0.5) {};
+		\node [style=none] (2) at (-0.5, 0.5) {};
+		\node [style=none] (3) at (0, -0.75) {};
+		\node [style=label] (4) at (0, 0.6) {$\ldots$};
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\draw (0) to (1.center);
+		\draw (2.center) to (0);
+		\draw (3.center) to (0);
+	\end{pgfonlayer}
+\end{tikzpicture}}
+
+
+
+
+
+
+\newcommand{\zgate}[2][0.5]{\begin{tikzpicture}[scale=#1]
+	\begin{pgfonlayer}{nodelayer}
+		\node [style={gn_phase}] (0) at (0, 0) {$#2$};
+		\node [style=none] (3) at (0, 0.75) {};
+		\node [style=none] (4) at (0, -0.75) {};
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\draw (3.center) to (0);
+		\draw (0) to (4.center);
+	\end{pgfonlayer}
+\end{tikzpicture}
+}
+
+\newcommand{\xgate}[1][0.5]{\begin{tikzpicture}[scale=#1]
+	\begin{pgfonlayer}{nodelayer}
+		\node [style={rn_phase}] (0) at (0, 0) {$\pi$};
+		\node [style=none] (3) at (0, 0.75) {};
+		\node [style=none] (4) at (0, -0.75) {};
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\draw (3.center) to (0);
+		\draw (0) to (4.center);
+	\end{pgfonlayer}
+\end{tikzpicture}
+}
+
+
+\newcommand{\hgate}[1][0.5]{\begin{tikzpicture}[scale=#1]
+	\begin{pgfonlayer}{nodelayer}
+		\node [style=hbox] (0) at (0, 0) {};
+		\node [style=none] (1) at (0, 0.75) {};
+		\node [style=none] (2) at (0, -0.75) {};
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\draw (2.center) to (0);
+		\draw (0) to (1.center);
+	\end{pgfonlayer}
+\end{tikzpicture}
+}
+
+\newcommand{\numbergate}[1][a]{\begin{tikzpicture}[scale=0.5]
+	\begin{pgfonlayer}{nodelayer}
+		\node [style=gbox] (0) at (0, 0) {$#1$};
+		\node [style=none] (3) at (0, 0.75) {};
+		\node [style=none] (4) at (0, -0.75) {};
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\draw (3.center) to (0);
+		\draw (0) to (4.center);
+	\end{pgfonlayer}
+\end{tikzpicture}}
+
+\newcommand{\zeroproj}[1][0.5]{\begin{tikzpicture}[scale=#1]
+	\begin{pgfonlayer}{nodelayer}
+		\node [style=rn] (0) at (0, 0) {};
+		\node [style=none] (3) at (0, 0.75) {};
+		\node [style=rn] (4) at (0.75, -0.75) {};
+		\node [style=none] (5) at (0.75, -1.5) {};
+		\node [style=label] (6) at (0, -1) {$\ldots$};
+		\node [style=rn] (7) at (-0.75, -0.75) {};
+		\node [style=none] (8) at (-0.75, -1.5) {};
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\draw (3.center) to (0);
+		\draw (5.center) to (4);
+		\draw (8.center) to (7);
+	\end{pgfonlayer}
+\end{tikzpicture}
+}
+
+\newcommand{\zeroprojplus}[1][0.5]{\begin{tikzpicture}[scale=#1]
+	\begin{pgfonlayer}{nodelayer}
+		\node [style=gn] (0) at (0, 0) {};
+		\node [style=none] (3) at (0, 0.75) {};
+		\node [style=rn] (4) at (0.75, -0.75) {};
+		\node [style=none] (5) at (0.75, -1.5) {};
+		\node [style=label] (6) at (0, -1) {$\ldots$};
+		\node [style=rn] (7) at (-0.75, -0.75) {};
+		\node [style=none] (8) at (-0.75, -1.5) {};
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\draw (3.center) to (0);
+		\draw (5.center) to (4);
+		\draw (8.center) to (7);
+	\end{pgfonlayer}
+\end{tikzpicture}
+}
+
+\newcommand{\cpsi}[1][0.5]{\begin{tikzpicture}[scale=#1]
+	\begin{pgfonlayer}{nodelayer}
+		\node [style=none] (0) at (0, 1.5) {};
+		\node [style=none] (1) at (0, 0.75) {};
+		\node [style=none] (2) at (-1, -0.25) {};
+		\node [style=none] (3) at (1, -0.25) {};
+		\node [style=none] (4) at (-0.5, -0.25) {};
+		\node [style=none] (5) at (0.5, -0.25) {};
+		\node [style=label] (6) at (0, 0) {$\tilde{\psi}$};
+		\node [style=none] (7) at (-0.5, -1) {};
+		\node [style=none] (8) at (0.5, -1) {};
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\draw (2.center) to (1.center);
+		\draw (2.center) to (3.center);
+		\draw (3.center) to (1.center);
+		\draw (0.center) to (1.center);
+		\draw (4.center) to (7.center);
+		\draw (5.center) to (8.center);
+	\end{pgfonlayer}
+\end{tikzpicture}
+}
+
+\newcommand{\numberstate}[1][a]{\begin{tikzpicture}[scale=0.5]
+	\begin{pgfonlayer}{nodelayer}
+		\node [style=gbox] (0) at (0, 0) {$#1$};
+		\node [style=none] (1) at (0, 1) {};
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\draw (1.center) to (0);
+	\end{pgfonlayer}
+\end{tikzpicture}
+}
+
+\newcommand{\emptydiag}[1][0.4]{\begin{tikzpicture}[scale=#1]
+	\begin{pgfonlayer}{nodelayer}
+		\node [style=none] (0) at (0.75, -1.5) {$\cdot$};
+		\node [style=none] (1) at (-0.25, 0) {$\cdot$};
+		\node [style=none] (2) at (0.75, 0) {$\cdot$};
+		\node [style=none] (3) at (-0.75, 0) {$\cdot$};
+		\node [style=none] (4) at (0.75, -0.5) {$\cdot$};
+		\node [style=none] (5) at (0.25, 0) {$\cdot$};
+		\node [style=none] (6) at (-0.75, -0.5) {$\cdot$};
+		\node [style=none] (7) at (-0.25, -1.5) {$\cdot$};
+		\node [style=none] (8) at (0.75, -1) {$\cdot$};
+		\node [style=none] (9) at (-0.75, -1.5) {$\cdot$};
+		\node [style=none] (10) at (-0.75, -1) {$\cdot$};
+		\node [style=none] (11) at (0.25, -1.5) {$\cdot$};
+	\end{pgfonlayer}
+\end{tikzpicture}}
+
+\newcommand{\idwire}[1][0.5]{\begin{tikzpicture}[scale=#1]
+	\begin{pgfonlayer}{nodelayer}
+		\node [style=none] (0) at (0, 0) {};
+		\node [style=none] (1) at (0, -1) {};
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\draw (0.center) to (1.center);
+	\end{pgfonlayer}
+\end{tikzpicture}
+}
+
+\newcommand{\swap}[1][0.25]{\begin{tikzpicture}[scale=#1]
+	\begin{pgfonlayer}{nodelayer}
+		\node [style=none] (0) at (-1, -1) {};
+		\node [style=none] (1) at (1, 1) {};
+		\node [style=none] (2) at (1, -1) {};
+		\node [style=none] (3) at (-1, 1) {};
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\draw [in=90, out=-90, looseness=0.75] (3.center) to (2.center);
+		\draw [in=-90, out=90, looseness=0.75] (0.center) to (1.center);
+	\end{pgfonlayer}
+\end{tikzpicture}}
+
+\newcommand{\ccap}[1][0.5]{\begin{tikzpicture}[scale=#1]
+	\begin{pgfonlayer}{nodelayer}
+		\node [style=none] (0) at (0, 0) {};
+		\node [style=none] (1) at (1, 0) {};
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\draw [bend left=90, looseness=1.75] (0.center) to (1.center);
+	\end{pgfonlayer}
+\end{tikzpicture}}
+
+\newcommand{\ccup}[1][0.5]{\begin{tikzpicture}[scale=#1]
+	\begin{pgfonlayer}{nodelayer}
+		\node [style=none] (0) at (0, 0) {};
+		\node [style=none] (1) at (1, 0) {};
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\draw [bend right=90, looseness=1.75] (0.center) to (1.center);
+	\end{pgfonlayer}
+\end{tikzpicture}}
+
+\newcommand{\redcup}[1][0.4]{\begin{tikzpicture}[scale=#1]
+	\begin{pgfonlayer}{nodelayer}
+		\node [style=none] (0) at (-1, 1) {};
+		\node [style={rn_phase}] (1) at (0, 0) {$\pi$};
+		\node [style=none] (2) at (1, 1) {};
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\draw [bend right] (0.center) to (1);
+		\draw [bend right] (1) to (2.center);
+	\end{pgfonlayer}
+\end{tikzpicture}
+}
+
+\newcommand{\ddiag}[1][0.5]{\begin{tikzpicture}[scale=#1]
+	\begin{pgfonlayer}{nodelayer}
+		\node [style=none] (0) at (-1, 0.5) {};
+		\node [style=none] (1) at (1, 0.5) {};
+		\node [style=none] (2) at (-1, -0.5) {};
+		\node [style=none] (3) at (1, -0.5) {};
+		\node [style=none] (4) at (0, 0.5) {};
+		\node [style=none] (5) at (-0.5, -0.5) {};
+		\node [style=none] (6) at (0.5, -0.5) {};
+		\node [style=none] (7) at (0, 0) {$D$};
+		\node [style=none] (8) at (-0.5, -1.5) {};
+		\node [style=none] (9) at (0, 1.5) {};
+		\node [style=none] (10) at (0.5, -1.5) {};
+		\node [style=label] (11) at (0, -1.25) {$\ldots$};
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\draw (0.center) to (1.center);
+		\draw (1.center) to (3.center);
+		\draw (3.center) to (2.center);
+		\draw (2.center) to (0.center);
+		\draw (5.center) to (8.center);
+		\draw (6.center) to (10.center);
+		\draw (4.center) to (9.center);
+	\end{pgfonlayer}
+\end{tikzpicture}}
+
+\newcommand{\xsq}[1][0.4]{\begin{tikzpicture}[scale=#1]
+	\begin{pgfonlayer}{nodelayer}
+		\node [style=none] (0) at (0, -1.5) {};
+		\node [style=dw] (1) at (0, -0.75) {};
+		\node [style=gn] (2) at (0, 0.5) {};
+		\node [style=none] (3) at (0, 1.25) {};
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\draw (3.center) to (2);
+		\draw [bend left] (2) to (1);
+		\draw [bend right] (2) to (1);
+		\draw (1) to (0.center);
+	\end{pgfonlayer}
+\end{tikzpicture}
+}
+
+\newcommand{\hopf}[1][0.4]{\begin{tikzpicture}[scale=#1]
+	\begin{pgfonlayer}{nodelayer}
+		\node [style=gn] (0) at (0, 0.5) {};
+		\node [style=rn] (1) at (0, -0.5) {};
+		\node [style=none] (2) at (0, -1.25) {};
+		\node [style=none] (3) at (0, 1.25) {};
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\draw [bend right=45] (0) to (1);
+		\draw [bend left=45] (0) to (1);
+		\draw (3.center) to (0);
+		\draw (1) to (2.center);
+	\end{pgfonlayer}
+\end{tikzpicture}
+}
+
+\newcommand{\arithgate}[1]{\begin{tikzpicture}[scale=0.4]
+	\begin{pgfonlayer}{nodelayer}
+		\node [style=wn] (3) at (0, 0) {$#1$};
+		\node [style=none] (4) at (0, 0.75) {};
+		\node [style=none] (5) at (-0.5, -0.75) {};
+		\node [style=none] (6) at (0.5, -0.75) {};
+		\node [style=label] (7) at (0, -0.75) {$\ldots$};
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\draw (3) to (4.center);
+		\draw (3) to (5.center);
+		\draw (6.center) to (3);
+	\end{pgfonlayer}
+\end{tikzpicture}
+}
+
+\newcommand{\fanout}{\begin{tikzpicture}[scale=0.4]
+	\begin{pgfonlayer}{nodelayer}
+		\node [style=wn] (3) at (0, 0) {$x_i$};
+		\node [style=none] (5) at (-0.5, 1) {};
+		\node [style=none] (6) at (0.5, 1) {};
+		\node [style=label] (7) at (0, 1.25) {$\ldots$};
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\draw (3) to (5.center);
+		\draw (6.center) to (3);
+	\end{pgfonlayer}
+\end{tikzpicture}
+}
+
+\newcommand{\arithnum}{\begin{tikzpicture}[scale=0.4]
+	\begin{pgfonlayer}{nodelayer}
+		\node [style=wn] (0) at (0, 0) {$a$};
+		\node [style=none] (1) at (0, 1) {};
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\draw (1.center) to (0);
+	\end{pgfonlayer}
+\end{tikzpicture}
+}
+
+\newcommand{\discard}[1][0.5]{\begin{tikzpicture}[scale=#1]
+	\begin{pgfonlayer}{nodelayer}
+		\node [style=none] (0) at (0, 2) {};
+		\node [style=none] (1) at (-0.75, 1) {};
+		\node [style=none] (2) at (0.75, 1) {};
+		\node [style=none] (3) at (-0.5, 0.75) {};
+		\node [style=none] (4) at (0.5, 0.75) {};
+		\node [style=none] (5) at (-0.25, 0.5) {};
+		\node [style=none] (6) at (0.25, 0.5) {};
+		\node [style=none] (7) at (0, 1) {};
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\draw [style=thick line] (7.center) to (0.center);
+		\draw [style=thick line] (1.center) to (2.center);
+		\draw [style=thick line] (3.center) to (4.center);
+		\draw [style=thick line] (5.center) to (6.center);
+	\end{pgfonlayer}
+\end{tikzpicture}
+}
+
+% general stuff
+
+\newcommand{\eqq}[1]{~\overset{\left(#1\right)}{=}~}
+\newcommand{\linesep}{10pt}
+\newcommand{\neweqline}{\displaybreak[0] \\[\linesep]}
+
+\newcommand{\ketz}{|0\rangle}
+\newcommand{\keto}{|1\rangle}
+\newcommand{\braz}{\langle0|}
+\newcommand{\brao}{\langle1|}
+
+\newcommand{\ketp}{|+\rangle}
+\newcommand{\ketm}{|-\rangle}
+\newcommand{\brap}{\langle+|}
+\newcommand{\bram}{\langle-|}
+
+\newcommand{\kpsi}{|\psi\rangle}
+\newcommand{\bpsi}{\langle \psi |}
+
+
+\newcommand{\CC}{\mathcal{C}}
+\newcommand{\mone}{\mathbf{1}}
+
+
+\newcommand{\Csq}{\mathbb{C}^2}
+\newcommand{\polyring}[1][n]{\mathcal{P}_{#1}}
+\newcommand{\csring}[1][n]{\tilde{S}_{#1}}
+\newcommand{\pp}[1][]{p_{\psi_{#1}}}
+
+\newcommand{\sharpp}{\#\mathsf{P}}
+
+% Stuff I added
+\usepackage{multicol, amsthm, amsfonts}
+
+
+%\newtcbtheorem[auto counter, number within=section]{tcthm}{Theorem}%
+%{colback=blue!5,colframe=blue!35!white,fonttitle=\bfseries}{thm}
+
+%\newtcbtheorem[number within=section,
+%                  use counter from=tcthm]{tclem}{Lemma}%
+%{colback=blue!5,colframe=blue!35!white,fonttitle=\bfseries}{lem}
+
+%\newtcbtheorem[number within=section,
+%                  use counter from=tcthm]{tcprop}{Proposition}%
+%{colback=blue!5,colframe=blue!35!white,fonttitle=\bfseries}{prop}
+
+
+%\newtcbtheorem[number within=section,
+%                  use counter from=tcthm]{tcdef}{Definition}%
+%{colback=green!5,colframe=green!45!black,fonttitle=\bfseries}{def}
+
+
+%\tcolorboxenvironment{proof}{
+%  fonttitle=\bfseries,
+%  breakable,
+%  enhanced,
+%  top=0mm,
+%  boxrule=0pt,frame empty,
+%  borderline west={1pt}{0pt}{blue!35!white},
+%  coltitle=blue,
+%  colback=blue!1,
+%  rounded corners
+%}
+
+% copy for lemma and prop and def (but different colour) once done
+
+
+\definecolor{zx_grey}{RGB}{211,211,211}
+\definecolor{zx_pink}{RGB}{255,200,240}
+\definecolor{zx_green}{RGB}{216,248,216}
+\definecolor{zx_green2}{RGB}{180,248,180}
+\definecolor{zx_red}{RGB}{232,165,165}
+
+
+%\newcolumntype{g}{>{\columncolor{zx_green}}c}
+%\newcolumntype{r}{>{\columncolor{zx_red}}c}
+
+\newcommand*\Eval[2]{\left.#1\right\rvert_{#2}}
+
+\newcommand{\lowerbox}[2][5]{\raisebox{-#1pt}{#2}}

@@ -1,0 +1,35 @@
+\begin{tikzpicture}
+	\begin{pgfonlayer}{nodelayer}
+		\node [style=rn] (0) at (0, 0) {};
+		\node [style=gbox] (1) at (0, 1) {$a$};
+		\node [style=none] (2) at (0, 2) {};
+		\node [style=none] (3) at (1, 1) {$=$};
+		\node [style=gn] (4) at (2.75, 1) {};
+		\node [style=none] (5) at (2.75, 2) {};
+		\node [style=gbox] (6) at (2, 0) {$a$};
+		\node [style=rn] (7) at (3.5, 0) {};
+		\node [style=none] (8) at (4.5, 1.25) {$\eqq{\ref{rule:Zer}}$};
+		\node [style=gn] (9) at (6.25, 1) {};
+		\node [style=none] (10) at (6.25, 2) {};
+		\node [style=gbox] (11) at (5.5, 0) {$a$};
+		\node [style=gbox] (12) at (7, 0) {$0$};
+		\node [style=none] (13) at (8, 1.25) {$\eqq{MUL}$};
+		\node [style=none] (14) at (9.5, 2) {};
+		\node [style=gbox] (15) at (9.5, 0.5) {$0$};
+		\node [style=none] (16) at (10.5, 1.25) {$\eqq{\ref{rule:Zer}}$};
+		\node [style=none] (17) at (11.5, 2) {};
+		\node [style=rn] (18) at (11.5, 0.5) {};
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\draw (1) to (0);
+		\draw (1) to (2.center);
+		\draw (5.center) to (4);
+		\draw (4) to (6);
+		\draw (4) to (7);
+		\draw (10.center) to (9);
+		\draw (9) to (11);
+		\draw (9) to (12);
+		\draw (14.center) to (15);
+		\draw (17.center) to (18);
+	\end{pgfonlayer}
+\end{tikzpicture}

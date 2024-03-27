@@ -1,0 +1,22 @@
+\begin{tikzpicture}
+	\begin{pgfonlayer}{nodelayer}
+		\node [style=rn] (0) at (-1.75, 0) {};
+		\node [style={gn_phase}] (1) at (-1.75, 1) {$k\pi$};
+		\node [style=none] (2) at (-2.75, -1) {};
+		\node [style=none] (3) at (-0.75, -1) {};
+		\node [style=label] (4) at (-1.75, -0.75) {$\ldots$};
+		\node [style={gn_phase}] (32) at (1, 0.5) {$k\pi$};
+		\node [style=none] (33) at (1, -1) {};
+		\node [style=none] (34) at (3, -1) {};
+		\node [style=label] (35) at (2, -0.75) {$\ldots$};
+		\node [style={gn_phase}] (36) at (3, 0.5) {$k\pi$};
+		\node [style=none] (37) at (0, 0) {$=$};
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\draw (1) to (0);
+		\draw [bend right=15] (0) to (2.center);
+		\draw [bend left=15] (0) to (3.center);
+		\draw (32) to (33.center);
+		\draw (36) to (34.center);
+	\end{pgfonlayer}
+\end{tikzpicture}
