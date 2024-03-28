@@ -1,6 +1,29 @@
 \section{ZXW Calculus}
 
 
+\subsection{Generators}
+
+The (qubit) ZXW calculus is build from the following generators:
+
+\begin{itemize}
+  \item \textbf{Identity wire}: \begin{equation*}
+    \lowerbox{\idwire[0.8]} ~:=~ \begin{bmatrix}
+      1 & 0 & \\ 0 & 1
+    \end{bmatrix}
+  \end{equation*}
+  \item \textbf{Swap}:\begin{equation*}
+    \lowerbox[10]{\swap[0.4]} ~:=~ \begin{bmatrix}
+      1 & 0 & 0 & 0 \\ 0 & 0 & 1 & 0 \\ 0 & 1 & 0 & 0 \\ 0 & 0 & 0 & 1
+    \end{bmatrix}
+  \end{equation*}
+  \item \textbf{Z box}: \begin{equation*}
+    \tikzfig{tikz/lemmas/zspid} ~:=~ |0^m\rangle\langle0^n| + e^{i\alpha}|1^m\rangle\langle1^n|, \alpha \in \mathbb{C}
+  \end{equation*}
+  \item \textbf{W node}: \begin{equation*}
+    \raisebox{-7pt}{\wspid[0.7]} ~:=~ |00\rangle \braz + |01\rangle \brao + |10\rangle \brao
+  \end{equation*}
+  \item \textbf{H box}: \begin{equation*}\raisebox{-8pt}{\hgate} := \frac{1}{\sqrt{2}}\begin{bmatrix}1 & 1 \\ 1 & -1\end{bmatrix}\end{equation*}
+\end{itemize}
 
 
 \subsection{Rules}
@@ -89,15 +112,21 @@ Where $k \in \{0, 1\}$.
 \end{multicols}
 
 
-Lemmas:
+\subsection{Lemmas}
 
-\begin{gather}\label{eq:w0}
-    \tikzfig{tikz/defs/wcpy} ~=~ \raisebox{-7pt}{\redzero \redpi} + \raisebox{-7pt}{\redpi \redzero}
-\end{gather}
+Move to appendix
 
-\begin{equation}\label{eq:wid}
-    \tikzfig{tikz/defs/wid}
-\end{equation}
+\begin{lemma}
+  \begin{equation}\label{eq:xcpy}
+      \tikzfig{tikz/lemmas/xcpy_statement}
+  \end{equation}
+  \end{lemma}
+  \begin{proof}
+      \begin{equation*}
+      \tikzfig{tikz/lemmas/xcpy}
+  \end{equation*}
+  \end{proof}
+
 
 
 \begin{lemma}
@@ -122,10 +151,28 @@ Lemmas:
 \end{equation*}
 \end{proof}
 
-\begin{equation}\label{eq:x-x=0}
-    \tikzfig{tikz/lemmas/cp_add2}
-\end{equation}
+\begin{lemma}
+  \begin{equation}\label{eq:x-x=0}
+    \tikzfig{tikz/lemmas/cp_add2_statement}
+  \end{equation}
+\end{lemma}
+\begin{proof}
+  \begin{equation*}
+      \tikzfig{tikz/lemmas/cp_add2}
+  \end{equation*}
+\end{proof}
 
+
+\begin{lemma}
+  \begin{equation}\label{eq:cpk_add}
+    \tikzfig{tikz/lemmas/cpk_add_statement}
+  \end{equation}
+\end{lemma}
+\begin{proof}
+  \begin{equation*}
+    \tikzfig{tikz/lemmas/cpk_add}
+  \end{equation*}
+\end{proof}
 
 
 \begin{lemma}{}{}
@@ -140,7 +187,7 @@ Lemmas:
 \end{proof}
 
 
-\begin{lemma}{}{}
+\begin{lemma}
   \begin{equation}\label{eq:dbl_dist}
   \tikzfig{tikz/lemmas/dbl-dist-statement}
 \end{equation}
@@ -151,6 +198,40 @@ Lemmas:
 \end{equation*}
 \end{proof}
 
-\begin{equation}\label{eq:dist_circ}
-  \tikzfig{tikz//lemmas/dist}
-\end{equation}
+\begin{lemma}
+  \begin{equation}\label{eq:dist_circ}
+    \tikzfig{tikz/lemmas/dist_statement}
+  \end{equation}
+\end{lemma}
+\begin{proof}
+  \begin{equation*}
+    \tikzfig{tikz/lemmas/dist}
+  \end{equation*}
+\end{proof}
+
+
+%TODO: find proofs!
+
+%\begin{equation}\label{eq:wid}
+%    \tikzfig{tikz/lemmas/wid}
+%\end{equation}
+
+
+%\begin{equation}\label{eq:wont}
+%  \tikzfig{tikz/lemmas/wont}
+%\end{equation}
+
+
+
+
+
+\begin{lemma}
+  \begin{equation}\label{eq:0times}
+      \tikzfig{tikz/lemmas/0times_statement}
+  \end{equation}
+\end{lemma}
+\begin{proof}
+  \begin{equation*}
+      \tikzfig{tikz/lemmas/0times}
+  \end{equation*}
+\end{proof}

@@ -134,7 +134,7 @@
 		\node [style=none] (140) at (8.25, -11.5) {};
 		\node [style=none] (141) at (9.75, -11.5) {};
 		\node [style=label] (142) at (9, -11) {$\ldots$};
-		\node [style=none] (143) at (5.25, -8.25) {$\eqq{\ref{lem:arith_cs}}$};
+		\node [style=none] (143) at (5.25, -8.25) {$\eqq{\ref{eq:arith_cs}}$};
 		\node [style={rn_phase}] (144) at (10.5, -7.25) {$\pi$};
 		\node [style={rn_phase}] (145) at (9, -6.25) {$\pi$};
 		\node [style=none] (151) at (14, -8) {};

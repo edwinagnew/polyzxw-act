@@ -102,7 +102,7 @@
 		\node [style=none] (109) at (3.5, -9.75) {};
 		\node [style=none] (110) at (5, -9.75) {};
 		\node [style=label] (111) at (4.25, -9.25) {$\ldots$};
-		\node [style=none] (112) at (1, -7) {$\eqq{\ref{lem:arith_cs}}$};
+		\node [style=none] (112) at (1, -7) {$\eqq{\ref{eq:arith_cs}}$};
 		\node [style=none] (113) at (7.75, -6.5) {};
 		\node [style=none] (114) at (9.75, -6.5) {};
 		\node [style=none] (115) at (7.75, -7.5) {};

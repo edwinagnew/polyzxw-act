@@ -43,7 +43,7 @@
 		\node [style=rn] (49) at (3.5, -4.75) {};
 		\node [style=dw] (50) at (3.75, -3.25) {};
 		\node [style=rn] (51) at (3.75, -4.25) {};
-		\node [style=none] (52) at (5.25, -3.75) {$\eqq{\ref{eq:w0}}$};
+		\node [style=none] (52) at (5.25, -3.75) {$\eqq{\ref{rule:Bs0}}$};
 		\node [style=none] (53) at (6.75, -5.5) {};
 		\node [style=none] (54) at (6.75, -2.5) {};
 		\node [style=gn] (55) at (7.75, -2.5) {};

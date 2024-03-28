@@ -50,7 +50,7 @@
 		\node [style=gbox] (64) at (23, -1) {$2$};
 		\node [style=dw] (65) at (22, -2) {};
 		\node [style=none] (66) at (22, -3) {};
-		\node [style=none] (69) at (18.5, -0.5) {$\eqq{\ref{eq:cd_copy}}$};
+		\node [style=none] (69) at (18.5, -0.5) {$\eqq{\ref{eq:dist_circ}}$};
 		\node [style=gbox] (70) at (19.75, 0.5) {$-1$};
 		\node [style=gbox] (71) at (23.75, 0) {$3$};
 		\node [style=none] (72) at (0.75, -4.5) {};
