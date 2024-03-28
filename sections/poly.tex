@@ -2,54 +2,31 @@
 
 \subsection{Rings}
 
-\textbf{Most of this will be moved to the appendix}
 
-Let $\tilde{E_n}$ be the set of controlled square matrices on $n$ qubits. The goal of this section is to prove that the addition and multiplication operations introduced above induce a ring on $\tilde{E_n}$. Before doing so, we prove a few important lemmas. The first lemma enables us to copy controlled matrices. 
+Let $\tilde{E_n}$ be the set of controlled square matrices on $n$ qubits. The goal of this section is to prove that the addition and multiplication operations introduced above induce a ring on $\tilde{E_n}$. Before doing so, we prove a few important lemmas. The first lemma enables us to copy controlled matrices. Note that all proofs can be found in the appendix.
 
-\begin{lemma}
+\begin{lemma}\label{lem:csq_copy}
     For any square matrix $D$, 
-    \begin{equation}\label{eq:cm_copy}
-    \tikzfig{tikz/con/c_dcopy}
+    \begin{equation}\label{eq:csq_copy}
+    \tikzfig{tikz/con/csq_copy}
 \end{equation}
 \end{lemma}
 
-\begin{proof}
-    First of all, using (\ref{rule:BZW}) we can rewrite the LHS to
-    \begin{equation*}
-        \tikzfig{tikz/con/c_dcopy2}
-    \end{equation*}
 
-    Then clearly 
-    \begin{equation*}
-        \tikzfig{tikz/con/c_dcopy3}
-    \end{equation*}
-
-    Meanwhile, 
-    \begin{equation*}
-        \tikzfig{tikz/con/c_dcopy4}
-    \end{equation*}
-
-    Thus the two sides are equal over the Z basis and so are equal as diagrams.
-\end{proof}
 
 Now we show that controlled matrix addition and multiplication satisfy the ring axioms. Associativity of $+, \times$ follow immediately from (\ref{rule:Aso}, \ref{rule:S1}), respectively. Commutativity of addition follows from the commutativity of matrix addition.
 
-\begin{lemma}
+\begin{lemma}\label{lem:csq_add_comm}
     Let $M_1, M_2$ be $n \times n$ matrices. 
-    \begin{equation}\label{eq:cm_add_comm}
-        \tikzfig{tikz/con/cm_add_comm_statement}
+    \begin{equation}\label{eq:csq_add_comm}
+        \tikzfig{tikz/con/csq_add_comm_statement}
     \end{equation}
 \end{lemma}
-\begin{proof}
-     We prove by plugging red and commutativity of matrix addition. By definition of controlled matrices, plugging $\lowerbox{\redzero}$ gives $I_n$ on both sides. Meanwhile, plugging $\lowerbox{\redpi}$ gives:
-     \begin{equation*}
-        \tikzfig{tikz/con/cm_add_comm}
-    \end{equation*}
-\end{proof}
+
 
 The additive identity is defined as $\redzeroup \otimes I_n$:
 \begin{equation*}
-    \tikzfig{tikz/con/cm_add_id}
+    \tikzfig{tikz/con/csq_add_id}
 \end{equation*}
 
 
@@ -60,102 +37,56 @@ The multiplicative identity is defined very similarly as $\greenzeroup \otimes I
 \end{lemma}
 \begin{proof}
     \begin{equation*}
-        \tikzfig{tikz/con/cm_add_inv}
+        \tikzfig{tikz/con/csq_add_inv}
     \end{equation*}
 \end{proof}
 
 Finally, we prove distributivity.
 
-\begin{lemma}
+\begin{lemma}\label{lem:cm_dist}
     \begin{equation*}
-        \tikzfig{tikz/con/cm_dist_statement}
+        \tikzfig{tikz/con/csq_dist_statement}
     \end{equation*}
 \end{lemma}
-\begin{proof}
-    \begin{equation*}
-        \tikzfig{tikz/con/cm_dist}
-    \end{equation*}
-\end{proof}
 
 
 Combining the lemmas of this section shows that controlled matrices form a ring. A similar result can be shown for controlled states. Once again, we start with the ability to copy controlled states. 
-\begin{lemma}
+\begin{lemma}\label{lem:cs_copy}
     For any state $\psi$,
     \begin{equation}\label{eq:cs_copy}
         \tikzfig{tikz/con/cs_copy}
     \end{equation}
 \end{lemma}
-\begin{proof}
-    As before, plugging $|0\rangle$ gives
-    \begin{equation*}
-        \tikzfig{tikz/con/cs_copy1}
-    \end{equation*}
-
-    Meanwhile, plugging $|1\rangle$ gives
-        \begin{equation*}
-        \tikzfig{tikz/con/cs_copy2}
-    \end{equation*}
-
-    Completing the proof
-\end{proof}
 
 Many of the ring axioms follow directly from basic ZXW rules. For example we can show commutativity of addition as follows:
 
-\begin{lemma}
+\begin{lemma}\label{lem:cs_add_comm}
     For $n$-partite states $\psi_1, \psi_2$, $\tilde{\psi_1} \boxplus \tilde{\psi_2} = \tilde{\psi_2} \boxplus \tilde{\psi_1}  $
 \end{lemma}
 
-\begin{proof}
-    \tikzfig{tikz/con/cs_add_comm}
-\end{proof}
-
 Associativity of $\boxplus$ follows similarly, using (\ref{rule:Aso}). Next we have the additive identity.
 
-\begin{lemma}
+\begin{lemma}\label{lem:cs_add_id}
     $\tilde{\psi} \boxplus\mathbf{\tilde{0}} = \tilde{\psi}$
 \end{lemma}
-\begin{proof}
-    It is clear that $\lowerbox[10]{\zeroproj}$ is the controlled state $\tilde{\mathbf{0}}$. 
-    
-    Then we have:
-    \begin{equation*}
-        \tikzfig{tikz/con/cs_add_id}
-    \end{equation*}
 
-\end{proof}
 
 The additive inverse is defined similarly to the case of controlled matrices. 
 
 
-\begin{lemma}
+\begin{lemma}\label{lem:cs_add_inv}
     For a controlled state $\tilde{\psi}$, its additive inverse is $\tilde{\psi} \circ \raisebox{-5pt}{\numbergate[-1]}$
 \end{lemma}
-\begin{proof}
-    $\tilde{\psi} \circ \raisebox{-5pt}{\numbergate[-1]}$ is still a controlled state since $\raisebox{-5pt}{\numbergate[-1]}$ does nothing to $\raisebox{-5pt}{\redzero}$. Then $\tilde{\psi} \circ \raisebox{-5pt}{\numbergate[-1]}$ inverts $\tilde{\psi}$ since:
-    \begin{equation*}
-        \tikzfig{tikz/con/cs_add_inv}
-    \end{equation*}
-\end{proof}
+
 
 Associativity and commutativity of $\boxtimes$ follow as before, using (\ref{rule:S1}) for $\lowerbox{\zspid}$. Finally, we must prove distributivity.
 
 
-\begin{lemma}
+\begin{lemma}\label{lem:cs_dist}
     $\tilde{\psi_1} \boxtimes (\tilde{\psi_2} \boxplus \tilde{\psi_3}) = (\tilde{\psi_1} \boxtimes \tilde{\psi_2}) \boxplus (\tilde{\psi_1} \boxtimes \tilde{\psi_3})$
 \end{lemma}
 
 
-\begin{proof}
-
-
-    \begin{gather*} %\label{eq:cs_dist}
-        \tilde{\psi_1} \boxtimes (\tilde{\psi_2} \boxplus \tilde{\psi_3}) ~=~ \tikzfig{tikz/distproof/d1} ~
-        \eqq{\ref{rule:BZW}} ~ \tikzfig{tikz/distproof/d2} \neweqline ~=~ \tikzfig{tikz/distproof/d3} ~
-        \eqq{\ref{eq:cs_copy}} ~ \tikzfig{tikz/distproof/d4} \neweqline ~=~ \tikzfig{tikz/distproof/d5}
-        ~=~ \tikzfig{tikz/distproof/d6} \neweqline ~=~ (\tilde{\psi_1} \boxtimes \tilde{\psi_2}) \boxplus (\tilde{\psi_1} \boxtimes \tilde{\psi_3})
-    \end{gather*} 
-
-\end{proof}
 
 
 \subsection{Arithmetic}
@@ -228,38 +159,7 @@ Thus, every controlled state can be represented as at least one arithmetic diagr
 \end{prop}
 
 \begin{proof}
-    Let $A$ be an arithmetic diagram. If $A = \numberstate$, we are done. 
-    
-    Otherwise, $A$ has at least one output. First, we shall rewrite $A$ into three layers, consisting of: (1) a single W at the top, (2) a layer of $\raisebox{-5pt}{\zspids}$ and (3) a layer of $\numberstate$'s and $\raisebox{-5pt}{\coWs}$'s. Then we shall collect terms and order the boxes to produce a PNF. 
-
-    If the top of $A$ is not already $\raisebox{-5pt}{\wspids}$, it must be $\raisebox{-5pt}{\zspids}$. It cannot be $\numberstate$ since the remaining arithmetic diagram would then have no inputs which is impossible. It cannot be $\raisebox{-5pt}{\coWs}$ since there is only one input and arithmetic diagrams cannot contain $\ccap$. Thus we can rewrite:
-    \begin{enumerate}[label={(\arabic*)}]
-    \item $\tikzfig{tikz/poly/lemmas/algtop1}$
-    \end{enumerate}
-
-    (1) guarantees there is a W at the top. We shall now repeatedly apply rewrites underneath the W until there are exactly three layers. Assume that fusion is applied as much as possible between each stage and (\ref{eq:kill_quad}) is applied and simplified with (\ref{rule:K0}) to remove $\raisebox{-8pt}{\xsq}$ whenever possible. Then for as long as there are at least 4 layers, we can apply one of the following rewrites:
-        \begin{enumerate}[resume, label={(\arabic*)}]
-            \item $\tikzfig{tikz/poly/lemmas/algcases1}$
-            \item $\tikzfig{tikz/poly/lemmas/algcases2}$
-            \item $\tikzfig{tikz/poly/lemmas/algcases3}$
-            \item $\tikzfig{tikz/poly/lemmas/algcases4}$
-            \item $\tikzfig{tikz/poly/lemmas/algcases5}$
-        \end{enumerate}
-
-    \medskip
-    
-    Clearly, we can only stop applying these rules once $A$ is a sum of products of copies. Steps (2) and (3) ensure the top of $A$ has such a structure and steps (4) - (6) ensure that there is nothing beneath the $\lowerbox{\coWs}$'s . To see that this will always terminate, observe that (2) and (3) preserve the depth of $A$ while (4), (5), (6) all decrease it. (2) and (3) can only be applied a finite number of times before another simplification must be used. So repeatedly applying these rewrites must eventually shrink the depth down to $3$, as desired. Finally, to put $A$ in PNF we must:
-    \begin{enumerate}[resume, label={(\arabic*)}]
-        \item Collect terms: whenever there are two boxes connected to exactly the same set of $\raisebox{-5pt}{\coWs}$'s, use (\ref{eq:cpk_add}) to fuse them together. 
-        \item Pad: use (\ref{eq:zerobox}) to insert $\raisebox{-5pt}{\numbergate[0]}$ for any connectivities that do not exist in $A$.
-        \item Reorder: use (\ref{rule:Sym}) to reorder coefficients into the canonical order.
-    \end{enumerate}
-
-    Step (7) ensures that every $\raisebox{-5pt}{\zspids}$ has unique connectivity. Step (8) ensures there are exactly $2^n$ coefficients so that step (9) can order them in the appropriate way. 
-
-    Thus $A$ has been written in PNF, completing the proof.
-    
-
+    See appendix \ref*{sec:appiso}
 \end{proof}
 
 \subsection{Isomorphism}

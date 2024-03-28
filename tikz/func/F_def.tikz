@@ -28,8 +28,8 @@
 		\node [style=none] (38) at (4.25, 0) {$\mapsto$};
 		\node [style=wire label] (39) at (5.75, 2) {$\mathbb{C}^2$};
 		\node [style=wire label] (40) at (0.25, 0.25) {$V$};
-		\node [style=wire label] (41) at (3.25, 0.25) {$V$};
-		\node [style=wire label] (42) at (8.25, 0.25) {$V$};
+		\node [style=wire label] (41) at (3.25, 0.25) {$W$};
+		\node [style=wire label] (42) at (8.25, 0.25) {$W$};
 		\node [style=wire label] (43) at (5.25, 0.25) {$V$};
 		\node [style=wire label] (44) at (7.75, 2) {$\mathbb{C}^2$};
 	\end{pgfonlayer}
