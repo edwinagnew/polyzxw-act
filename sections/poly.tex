@@ -207,7 +207,7 @@ Just as it is typical to represent a polynomial in normal form as a sum of produ
 This normal form is very closely related to the completeness normal form (see \cite{poor2023completeness}). Simply applying (\ref{rule:TA}) to the $\lowerbox{\coW}$s at the bottom of a PNF and fusing the number boxes gives a CoNF diagram. The reason we introduce the definition of a PNF is that it is an arithmetic diagram and therefore has a more immediate arithmetic interpretation. The reason for the specific connectivity condition is that it enables a PNF to directly represent its own matrix.
 
 
-\begin{prop}
+\begin{prop}\label{prop:vec_pnf}
     \begin{gather}\label{eq:pnf_vec}
         \tikzfig{tikz/poly/pnf} ~=~ 
         \begin{bmatrix}
@@ -217,58 +217,7 @@ This normal form is very closely related to the completeness normal form (see \c
 \end{prop} 
 
 \begin{proof}
-    We prove by induction on $n$.
-    
-    For the base case, $n=0$. The only PNF with no outputs is a number so we have: $$\numberstate[a_0] = \begin{bmatrix}
-        1 & a_0
-    \end{bmatrix}$$ as desired.
-    
-    For inductive hypothesis, we assume that (\ref{eq:pnf_vec}) holds for every PNF on $n$ outputs. We use this hypothesis to extend it to PNFs with $n+1$ outputs. 
-    
-    Let $D$ be an arbitrary PNF with $n+1$ outputs. Firstly, observe that $x_{n+1}$ is connected to only the odd coefficients $\{a_{2k+1}\}$ since these are exactly the indices with $1$ in the least significant bit. Thus we can rewrite:
-    \begin{gather*}
-        \raisebox{-20pt}{\ddiag} ~=~ \tikzfig{tikz/poly/lemmas/uni10} \neweqline ~=~ \tikzfig{tikz/poly/lemmas/uni11} \neweqline ~\eqq{\ref{rule:BZW}}~ \tikzfig{tikz/poly/lemmas/uni12} \neweqline 
-        ~=~ \tikzfig{tikz/poly/lemmas/uni13}
-    \end{gather*}
-    Where $D_{even}, D_{odd}$ are PNF diagrams. Since they are over $n$ variables, we can apply the inductive hypothesis and obtain:
-    \begin{equation}\tag{*}
-        D_{even} = \begin{bmatrix}
-            1 & a_0 \\ 0 & a_2 \\ ... & ... \\ 0 & a_{2^{n+1}-2}
-        \end{bmatrix}, 
-        D_{odd} = \begin{bmatrix}
-            1 & a_1 \\ 0 & a_3 \\ ... & ... \\ 0 & a_{2^{n+1}-1}
-        \end{bmatrix}
-    \end{equation}
-
-
-    Next, plugging red we observe:
-    \begin{equation*}
-        \tikzfig{tikz/poly/lemmas/uni2}
-    \end{equation*}
-    Meanwhile,
-    \begin{equation*}
-        \tikzfig{tikz/poly/lemmas/uni3}
-    \end{equation*}
-
-    Summing these together,
-    \begin{gather*}
-        \tikzfig{tikz/poly/lemmas/uni4}
-        \neweqline ~=~ (D_{even} \otimes \ketz) + (D_{odd}\keto \brao \otimes  \keto) \neweqline \eqq{*}~ \begin{bmatrix}
-            1 & a_0 \\ 0 & a_2 \\ ... & ... \\ 0 & a_{2^{n+1}-2}
-        \end{bmatrix} \otimes \ketz + \begin{bmatrix}
-            0 & a_1 \\ 0 & a_3 \\ ... & ... \\ 0 & a_{2^{n+1}-1}
-        \end{bmatrix} \otimes \keto  \neweqline
-        ~=~ \begin{bmatrix}
-            1 & a_0 \\ 0 & 0 \\ 0 & a_2 \\ 0 & 0 \\ ... & ... \\ 0 & a_{2^{n+1}-2} \\ 0 & 0
-        \end{bmatrix} + \begin{bmatrix}
-            0 & 0 \\ 0 & a_1 \\ 0 & 0 \\ 0 & a_3 \\ ... & ... \\ 0 & 0 \\ 0 & a_{2^{n+1}-1}
-        \end{bmatrix} 
-        ~=~ \begin{bmatrix}
-            1 & a_0 \\ 0 & a_1 \\ 0 & a_2 \\ 0 & a_3 \\ ... & ... \\ 0 & a_{2^{n+1}-2} \\ 0 & a_{2^{n+1} -1}
-        \end{bmatrix}
-    \end{gather*}
-
-    Completing the inductive step.
+    See appendix \ref*{sec:appiso}
 \end{proof}
 
 Thus, every controlled state can be represented as at least one arithmetic diagram (namely, its PNF). Moreover, we now show that any other arithmetic diagram can always be rewritten to its PNF.
@@ -318,7 +267,7 @@ Thus, every controlled state can be represented as at least one arithmetic diagr
 At last we can prove the isomorphism. Throughout we shall let $\polyring$ denote the ring $\mathbb{C}[x_1, ..., x_{n}]/(x_1^2, ..., x_{n}^2)$.
 
 
-\begin{thm}
+\begin{thm}\label{thm:iso}
     There is an isomorphism $\polyring \simeq \tilde{S_n}$
 \end{thm}
 
@@ -337,85 +286,4 @@ And mapping indeterminates $x_i$:
         \tikzfig{tikz/poly/homproof/homdef2}
     \end{equation*}
 
-We can now prove this yields an isomorphism. 
-
-\begin{proof}
-    
-    First, we show $\phi_n$ is a homomorphism, i.e. \begin{multline*}
-        \forall p, q \in \polyring, \phi_n(p + q) = \phi_n(p) \boxplus \phi_n(q) ,\quad \phi_n(p \times q) = \phi_n(p) \boxtimes \phi_n(q)
-    \end{multline*} The strategy for the proof will be an induction on $n$. 
-
-    \medskip
-    
-    \textbf{Base case:}
-    We have not defined controlled states for $n=0$, so the base case begins with $n=1$.
-    Let $p, q \in \polyring[1]$. Write as $p(x_1) = a_0 + a_1x_1, q(x_1) = b_0 + b_1x_1$, where $a_0, a_1, b_0, b_1 \in \mathbb{C}$. Then since $p + q = a_0 + b_0 + (a_1 + b_1)x_1$,
-    \begin{equation*}
-        \tikzfig{tikz/poly/homproof/hombaseadd}
-    \end{equation*}
-
-    Meanwhile, since $p \times q = a_0a_1 + (a_0b_1 + a_1b_0)x_1$, 
-    \begin{gather*}
-        \phi_1(p) \boxtimes \phi_1(q) ~=~ \tikzfig{tikz/poly/homproof/bt1} ~\eqq{\ref{eq:dbl_dist}}~ \tikzfig{tikz/poly/homproof/bt2} \neweqline 
-        ~\eqq{\ref{eq:dist_circ}}~ \tikzfig{tikz/poly/homproof/bt3} ~\eqq{\ref{rule:Pcy}}~ \tikzfig{tikz/poly/homproof/bt4} \neweqline
-        ~\eqq{\ref{eq:kill_quad}}~ \tikzfig{tikz/poly/homproof/bt5} ~\eqq{\ref{eq:0times}}~ \tikzfig{tikz/poly/homproof/bt6} ~\eqq{\ref{eq:cp_add}}~ \tikzfig{tikz/poly/homproof/bt7} \neweqline ~= \phi_1(p \times q)
-    \end{gather*}
-
-
-    Completing the base case.
-
-    \medskip
-
-
-    \textbf{Inductive step:}
-
-    Let $Hom(n)$ assert than $\phi_n$ is a homomorphism.  Then for the inductive step we wish to prove that $\forall n, Hom(n) \implies Hom(n+1)$.
-
-    The proof relies on the recursive definition of $R[x_1, x_2] = R[x_1][x_2]$, for any ring $R$, to rewrite an arbitrary polynomial $p(x_1, ..., x_{n+1}) = a_0 + a_1x_{n+1} + ... + a_{2^{n+1}-1}x_1x_2...x_{n+1} \in \polyring[n+1]$ as $p(x_{n+1}) = p_0 + p_1x_{n+1}$, where $p_0, p_1 \in \polyring$. This allows the $p_i$ to be treated similarly to the scalars in the base case. To emphasise this, they will be drawn in green boxes. To help distinguish when an operation is covered by the inductive hypothesis, the wires for variables $x_1, ..., x_n$ will be drawn in light blue, while the $x_{n+1}$ wires will be drawn in black. Thus the inductive hypothesis states that:
-    \begin{equation}\label{eq:ih1}\tag{IH1}
-        \tikzfig{tikz/poly/homproof/ih1}
-    \end{equation}
-    \begin{equation}\label{eq:ih2}\tag{IH2}
-        \tikzfig{tikz/poly/homproof/ih2}
-    \end{equation}
-
-    Let $p(x_{n+1}) = p_0 + p_1x_{n+1}, q(x_{n+1}) = q_0 + q_1x_{n+1}$, where $p_0, p_1, q_0, q_1 \in \polyring$. Then for addition:
-    \begin{gather*}
-        \phi_{n+1}(p) \boxplus \phi_{n+1}(q) ~=~ \tikzfig{tikz/poly/homproof/sa1} ~\eqq{\ref{rule:Aso}}~ \tikzfig{tikz/poly/homproof/sa2} \neweqline
-        ~ \eqq{IH1} ~ \tikzfig{tikz/poly/homproof/sa3} ~\eqq{\ref{rule:BZW}}~ \tikzfig{tikz/poly/homproof/sa4} ~\eqq{IH1}~ \tikzfig{tikz/poly/homproof/sa5} \neweqline
-        ~=~ \phi_{n+1}(p_0 + q_0 + (p_1 + q_1)x_{n+1}) ~=~ \phi_{n+1}(p + q)
-    \end{gather*}
-
-
-    Similarly, for multiplication:
-    \begin{gather*}
-    \phi_{n+1}(p) \boxtimes \phi_{n+1}(q) ~=~ \tikzfig{tikz/poly/homproof/st1} \eqq{\ref{eq:dbl_dist}}  ~ \tikzfig{tikz/poly/homproof/st2} \neweqline
-    \eqq{\ref{eq:cs_copy}} ~ \tikzfig{tikz/poly/homproof/st3} \eqq{\ref{eq:ih2}} ~ \tikzfig{tikz/poly/homproof/st4} \neweqline
-    \eqq{\ref{rule:BZW}} ~ \tikzfig{tikz/poly/homproof/st5} ~ = ~ \tikzfig{tikz/poly/homproof/st6} \neweqline
-     \eqq{\ref{eq:cs_copy}} ~ \tikzfig{tikz/poly/homproof/st7} ~ \eqq{\ref{eq:ih2}} ~ \tikzfig{tikz/poly/homproof/st8} \neweqline
-    \eqq{\ref{rule:BZW}} ~ \tikzfig{tikz/poly/homproof/st9} ~ = ~ \tikzfig{tikz/poly/homproof/st10} \neweqline
-    \eqq{\ref{eq:kill_quad}} ~ \tikzfig{tikz/poly/homproof/st11} ~ \eqq{\ref{eq:arith_cs}, \ref{eq:wid}} ~ \tikzfig{tikz/poly/homproof/st12} \neweqline ~ \eqq{\ref{eq:ih2}} ~ \tikzfig{tikz/poly/homproof/st13}
-      ~ \eqq{\ref{rule:BZW}} ~ \tikzfig{tikz/poly/homproof/st14} ~ \eqq{\ref{eq:ih1}} ~ \tikzfig{tikz/poly/homproof/st15} \neweqline
-     ~=~ \phi_{n+1}(p_0q_0 + (p_0q_1 + p_1q_0)x_{n+1} )
-     ~=~ \phi_{n+1}(p \times q)
-    \end{gather*}
-
-    \medskip
-
-    This completes the inductive step, proving that $\forall n > 1$, $\phi_n$ is a homomorphism.
-
-    \bigskip
-
-    Finally, to see $\phi_n$ is an isomorphism, we use proposition \ref{prop:uni_pnf} to write an arbitrary controlled state in PNF:
-    \begin{gather*}
-        \begin{bmatrix}
-            1 & a_0 \\ 0 & a_1 \\ ... & .. \\ 0 & a_{2^{n}-1}
-        \end{bmatrix}
-        = \tikzfig{tikz/poly/pnf}
-    \end{gather*}
-
-    Then all we have to do is interpret it as the image of a polynomial:
-    \begin{gather*}
-        \tikzfig{tikz/poly/pnf} ~=~ \tikzfig{tikz/poly/homproof/iso4} \neweqline ~=~ \phi_{n}(a_0) + \phi_{n}(a_1x_{n}) + ... + \phi_{n}(a_{2^{n}-1x_1x_2...x_{n}}) \neweqline ~=~ \phi_{n}(a_0 + a_1x_{n} + ... + a_{2^{n}-1}x_1x_2...x_{n}) 
-    \end{gather*}
-\end{proof}
+The full proof is found in appendix \ref*{sec:appiso}.
