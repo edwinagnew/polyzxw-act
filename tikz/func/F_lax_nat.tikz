@@ -7,13 +7,6 @@
 		\node [style=none] (5) at (-3.5, 1.75) {};
 		\node [style=none] (6) at (-1.75, 1.75) {};
 		\node [style=gn] (7) at (-2.75, 1.75) {};
-		\node [style=wire label] (8) at (-6.5, 2) {$\mathbb{C}^2$};
-		\node [style=wire label] (9) at (-1.75, 2) {$\mathbb{C}^2$};
-		\node [style=wire label] (10) at (-6.5, -1) {$\mathbb{C}^2$};
-		\node [style=wire label] (11) at (-6.5, -2.5) {$V$};
-		\node [style=wire label] (12) at (-1.75, -2.5) {$V$};
-		\node [style=wire label] (13) at (-6.5, 0.5) {$W$};
-		\node [style=wire label] (14) at (-1.75, 0.5) {$W$};
 		\node [style=none] (15) at (-5.75, -2) {};
 		\node [style=none] (16) at (-4.25, -2) {};
 		\node [style=none] (17) at (-4.25, -3.5) {};

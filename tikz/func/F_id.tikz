@@ -32,10 +32,6 @@
 		\node [style=none] (76) at (-7.25, 2.25) {};
 		\node [style=none] (77) at (-3, 1.75) {};
 		\node [style=none] (78) at (-7.75, -1.25) {};
-		\node [style=wire label] (86) at (-2, 0.75) {$V$};
-		\node [style=wire label] (87) at (-9, 0.75) {$V$};
-		\node [style=wire label] (88) at (-2.25, 2.25) {$\mathbb{C}^2$};
-		\node [style=wire label] (89) at (-9, 2.25) {$\mathbb{C}^2$};
 	\end{pgfonlayer}
 	\begin{pgfonlayer}{edgelayer}
 		\draw (4) to (5);

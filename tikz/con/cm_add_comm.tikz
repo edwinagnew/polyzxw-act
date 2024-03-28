@@ -56,8 +56,6 @@
 		\node [style=none] (128) at (8.5, -1) {};
 		\node [style=none] (129) at (7.5, 0) {};
 		\node [style=none] (130) at (7.5, -1) {};
-		\node [style=none] (132) at (8.5, 0) {};
-		\node [style=none] (133) at (8.5, -1) {};
 		\node [style=none] (141) at (10.5, 0) {};
 		\node [style=none] (142) at (10, 0) {};
 		\node [style=none] (143) at (10, -1) {};
@@ -198,8 +196,6 @@
 		\draw (114.center) to (117.center);
 		\draw (127.center) to (128.center);
 		\draw (126.center) to (125.center);
-		\draw (130.center) to (133.center);
-		\draw (129.center) to (132.center);
 		\draw (143.center) to (144.center);
 		\draw (142.center) to (141.center);
 		\draw (147.center) to (150.center);

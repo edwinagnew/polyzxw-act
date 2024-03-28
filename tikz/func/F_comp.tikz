@@ -115,8 +115,6 @@
 		\node [style=none] (265) at (-6.5, 0) {$D_1$};
 		\node [style=none] (266) at (-7.25, 0) {};
 		\node [style=none] (267) at (-5.75, 0) {};
-		\node [style=left label] (269) at (-10.25, 0.25) {$V$};
-		\node [style=left label] (271) at (-10.25, 1.5) {$\mathbb{C}^2$};
 		\node [style=none] (273) at (2.75, 0) {};
 		\node [style=none] (274) at (-3, 1.25) {};
 		\node [style=none] (275) at (1.25, -1.75) {};
@@ -138,8 +136,6 @@
 		\node [style=none] (291) at (-0.5, 0) {$D_2$};
 		\node [style=none] (292) at (-1.25, 0) {};
 		\node [style=none] (293) at (0.25, 0) {};
-		\node [style=right label] (294) at (2.75, 0.25) {$V$};
-		\node [style=right label] (296) at (2.75, 1.5) {$\mathbb{C}^2$};
 		\node [style=none] (297) at (8.25, 0) {};
 	\end{pgfonlayer}
 	\begin{pgfonlayer}{edgelayer}

@@ -69,7 +69,7 @@
 		\node [style=none] (84) at (13.25, -2.75) {};
 		\node [style=none] (85) at (14.25, -2.75) {};
 		\node [style=none] (86) at (13.75, 2) {};
-		\node [style=none] (87) at (15.75, -0.25) {$= id_+$};
+		\node [style=none] (87) at (15.75, -0.25) {$= \mathbf{\tilde{0}}$};
 	\end{pgfonlayer}
 	\begin{pgfonlayer}{edgelayer}
 		\draw (2.center) to (1.center);

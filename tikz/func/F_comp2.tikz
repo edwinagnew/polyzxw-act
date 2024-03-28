@@ -39,7 +39,7 @@
 		\node [style=none] (62) at (8.75, -0.5) {};
 		\node [style=none] (65) at (9.5, -0.5) {};
 		\node [style=none] (67) at (9, 1.5) {};
-		\node [style=none] (68) at (3.25, -0.5) {$=$};
+		\node [style=none] (68) at (3.25, -0.25) {$\eqq{\ref{rule:K0}}$};
 		\node [style=rn] (69) at (7.25, 1) {};
 		\node [style=rn] (70) at (6.25, 1) {};
 		\node [style=none] (71) at (-2.25, -3.5) {};
@@ -82,7 +82,7 @@
 		\node [style=none] (133) at (8.75, -4.25) {};
 		\node [style=none] (136) at (9.5, -4.25) {};
 		\node [style=none] (137) at (9, -2.25) {};
-		\node [style=none] (138) at (3.25, -4.25) {$=$};
+		\node [style=none] (138) at (3.25, -4) {$\eqq{\ref{rule:K0}}$};
 		\node [style={rn_phase}] (141) at (6.75, -2.25) {$\pi$};
 		\node [style={rn_phase}] (142) at (6.25, -2.75) {$\pi$};
 		\node [style={rn_phase}] (143) at (7.25, -2.75) {$\pi$};
