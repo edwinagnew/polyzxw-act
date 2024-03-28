@@ -8,11 +8,11 @@ As defined in \cite{shaikh2022sum},
     For an arbitrary square matrix $D$, the controlled matrix of $D$ is the diagram $\tilde{D}$ such that:
 
     \begin{equation}
-        \tikzfig{tikz/con/c_mat1}
+        \tikzfig{tikz/con/c_sq1}
     \end{equation} 
 
     \begin{equation}
-        \tikzfig{tikz/con/c_mat2}
+        \tikzfig{tikz/con/c_sq2}
     \end{equation} 
 \end{definition}
 
@@ -21,12 +21,12 @@ It is possible to perform matrix arithmetic with controlled diagrams.
 \begin{prop}
     Given controlled matrices $\tilde{M_1}, ..., \tilde{M_k}$, the controlled matrix $\widetilde{\Pi_i M_i}$ is given by
     \begin{equation*}
-        \tikzfig{tikz/con/cm_prod}
+        \tikzfig{tikz/con/csq_prod}
     \end{equation*}
 
     Given controlled matrices $\tilde{M_1}, ..., \tilde{M_k}$ and complex numbers $c_1, ..., c_k$, the controlled matrix $\widetilde{\Sigma_i c_i M_i}$ is given by
     \begin{equation*}
-        \tikzfig{tikz/con/cm_sum}
+        \tikzfig{tikz/con/csq_sum}
     \end{equation*}
 \end{prop}
 
@@ -50,11 +50,25 @@ The addition and multiplication of controlled states are defined similarly to co
     \tikzfig{tikz/con/cs_add_def} \qquad         \tikzfig{tikz/con/cs_times_def}
 \end{equation*}
 
-The role of $\lowerbox{\coW}$ is to \textit{copy} inputs, as shown in the next subsection.
+The role of $\lowerbox{\coW}$ is to \textit{copy} inputs, as shown in section \ref{sec:ring}.
+
+Combining the notions of controlled square matrices and controlled states, we can a more general notion of controlled matrices. 
+
+\begin{definition}
+    For all $m \leq n$, the controlled matrix of an arbitrary matrix $M \in \mathbb{C}^{m \times n}$ is defined as the diagram $\tilde{M}$ such that:
+    \begin{equation*}
+        \tikzfig{tikz/con/c_mat1} \qquad \tikzfig{tikz/con/c_mat2}
+    \end{equation*}
+\end{definition}
+
+We focus on matrices with non-decreasing dimension to avoid cases like the following which fail to satisfy funtoriality:
+\begin{equation*}
+    \tikzfig{tikz/con/cm_fail}
+\end{equation*} 
 
 \subsection{Functor}
 
-The operation of turning a square matrix to its controlled diagram can be made into a lax monoidal functor $F: \mathbf{EndVect} \to \mathbf{Vect}$, where $\mathbf{EndVect}$ is the category of vector space endomorphisms (i.e. square matrices). An additional horizontal wire is required to facilitate composition. Let $D \in Hom_{EndVect}(V, V)$.
+The operation of turning a non-dimension-decreasing matrix to its controlled diagram can be made into a lax monoidal functor. Let $\mathbf{Hilb_{\leq}}$ be the subcategory of Hilbert spaces and non-dimension-descreasing linear transformations. Adding an additional horizontal wire to facilitate composition, $F: \mathbf{Hilb_{\leq}} \to \mathbf{Hilb}$ is defined as follows for arbitrary  $D \in Hom_{Hilb_{\leq}}(V, W)$.
 
 \begin{equation}\label{eq:F_def}
     F:: \tikzfig{tikz/func/F_def}
@@ -75,7 +89,7 @@ In the functorial box notation of \cite{mellies2006functorial}, this would be:
         \tikzfig{tikz/func/F_id}
     \end{equation*}
 
-    Composing $F(D_2) \circ F(D_1)$:
+    Let $D_1: U \to V$, $D_2: V \to W$, where $U, V, W$ have dimensions $l, m, n$ respectively. Then composing $F(D_2) \circ F(D_1)$:
     \begin{equation*}
         \tikzfig{tikz/func/F_comp}
     \end{equation*}
@@ -84,8 +98,11 @@ In the functorial box notation of \cite{mellies2006functorial}, this would be:
     \begin{equation*}
         \tikzfig{tikz/func/F_comp2}
     \end{equation*}
+    \begin{equation*}
+        \tikzfig{tikz/func/F_comp3}
+    \end{equation*}
 
-    $F$ preserves the monoidal unit since $\mone_{\mathbf{EndVect}} = \mone_{\mathbf{Vect}} = \lowerbox{\emptydiag}$
+    $F$ preserves the monoidal unit since $\mone_{\mathbf{Hilb_{\leq}}} = \mone_{\mathbf{Hilb}} = \lowerbox{\emptydiag}$
 
     $F$ is lax thanks to the following structure morphism: $\phi_{V, W}: F(V) \otimes F(W) \to F(V \otimes W)$:
     \begin{equation*}

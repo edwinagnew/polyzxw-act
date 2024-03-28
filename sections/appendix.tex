@@ -121,10 +121,97 @@
     \end{equation*}
   \end{proof}
 
+
+
 \section{Proofs}\label{sec:appiso}
 
-Proof of proposition \ref*{prop:vec_pnf}
+Proof of lemma \ref*{lem:csq_copy}
+\begin{proof}
+    First of all, using (\ref{rule:BZW}) we can rewrite the LHS to
+    \begin{equation*}
+        \tikzfig{tikz/con/csq_dcopy2}
+    \end{equation*}
 
+    Then clearly 
+    \begin{equation*}
+        \tikzfig{tikz/con/csq_dcopy3}
+    \end{equation*}
+
+    Meanwhile, 
+    \begin{equation*}
+        \tikzfig{tikz/con/csq_dcopy4}
+    \end{equation*}
+
+    Thus the two sides are equal over the Z basis and so are equal as diagrams.
+\end{proof}
+
+Proof of lemma \ref*{lem:csq_add_comm}
+\begin{proof}
+    We prove by plugging red and commutativity of matrix addition. By definition of controlled matrices, plugging $\lowerbox{\redzero}$ gives $I_n$ on both sides. Meanwhile, plugging $\lowerbox{\redpi}$ gives:
+    \begin{equation*}
+       \tikzfig{tikz/con/csq_add_comm}
+   \end{equation*}
+\end{proof}
+
+Proof of lemma \ref*{lem:csq_dist}
+\begin{proof}
+    \begin{equation*}
+        \tikzfig{tikz/con/csq_dist}
+    \end{equation*}
+\end{proof}
+
+Proof of proposition \ref*{lem:cs_copy}
+\begin{proof}
+    As before, plugging $|0\rangle$ gives
+    \begin{equation*}
+        \tikzfig{tikz/con/cs_copy1}
+    \end{equation*}
+
+    Meanwhile, plugging $|1\rangle$ gives
+        \begin{equation*}
+        \tikzfig{tikz/con/cs_copy2}
+    \end{equation*}
+
+    Completing the proof
+\end{proof}
+
+Proof of lemma \ref*{lem:cs_add_comm}
+\begin{proof}
+    \tikzfig{tikz/con/cs_add_comm}
+\end{proof}
+
+Proof of lemma \ref*{lem:cs_add_id}
+\begin{proof}
+    It is clear that $\lowerbox[10]{\zeroproj}$ is the controlled state $\tilde{\mathbf{0}}$. 
+    
+    Then we have:
+    \begin{equation*}
+        \tikzfig{tikz/con/cs_add_id}
+    \end{equation*}
+
+\end{proof}
+
+Proof of lemma \ref*{lem:cs_add_inv}
+\begin{proof}
+    $\tilde{\psi} \circ \raisebox{-5pt}{\numbergate[-1]}$ is still a controlled state since $\raisebox{-5pt}{\numbergate[-1]}$ does nothing to $\raisebox{-5pt}{\redzero}$. Then $\tilde{\psi} \circ \raisebox{-5pt}{\numbergate[-1]}$ inverts $\tilde{\psi}$ since:
+    \begin{equation*}
+        \tikzfig{tikz/con/cs_add_inv}
+    \end{equation*}
+\end{proof}
+
+Proof of lemma \ref*{lem:cs_add_inv}
+\begin{proof}
+    \begin{gather*} %\label{eq:cs_dist}
+        \tilde{\psi_1} \boxtimes (\tilde{\psi_2} \boxplus \tilde{\psi_3}) ~=~ \tikzfig{tikz/distproof/d1} ~
+        \eqq{\ref{rule:BZW}} ~ \tikzfig{tikz/distproof/d2} \neweqline ~=~ \tikzfig{tikz/distproof/d3} ~
+        \eqq{\ref{eq:cs_copy}} ~ \tikzfig{tikz/distproof/d4} \neweqline ~=~ \tikzfig{tikz/distproof/d5}
+        ~=~ \tikzfig{tikz/distproof/d6} \neweqline ~=~ (\tilde{\psi_1} \boxtimes \tilde{\psi_2}) \boxplus (\tilde{\psi_1} \boxtimes \tilde{\psi_3})
+    \end{gather*} 
+
+\end{proof}
+
+
+Proof of proposition \ref*{prop:vec_pnf}
 \begin{proof}
     We prove by induction on $n$.
     
@@ -178,6 +265,43 @@ Proof of proposition \ref*{prop:vec_pnf}
     \end{gather*}
 
     Completing the inductive step.
+\end{proof}
+
+Proof of propsotion \ref*{prop:uni_pnf}
+
+\begin{proof}
+    Let $A$ be an arithmetic diagram. If $A = \numberstate$, we are done. 
+    
+    Otherwise, $A$ has at least one output. First, we shall rewrite $A$ into three layers, consisting of: (1) a single W at the top, (2) a layer of $\raisebox{-5pt}{\zspids}$ and (3) a layer of $\numberstate$'s and $\raisebox{-5pt}{\coWs}$'s. Then we shall collect terms and order the boxes to produce a PNF. 
+
+    If the top of $A$ is not already $\raisebox{-5pt}{\wspids}$, it must be $\raisebox{-5pt}{\zspids}$. It cannot be $\numberstate$ since the remaining arithmetic diagram would then have no inputs which is impossible. It cannot be $\raisebox{-5pt}{\coWs}$ since there is only one input and arithmetic diagrams cannot contain $\ccap$. Thus we can rewrite:
+    \begin{enumerate}[label={(\arabic*)}]
+    \item $\tikzfig{tikz/poly/lemmas/algtop1}$
+    \end{enumerate}
+
+    (1) guarantees there is a W at the top. We shall now repeatedly apply rewrites underneath the W until there are exactly three layers. Assume that fusion is applied as much as possible between each stage and (\ref{eq:kill_quad}) is applied and simplified with (\ref{rule:K0}) to remove $\raisebox{-8pt}{\xsq}$ whenever possible. Then for as long as there are at least 4 layers, we can apply one of the following rewrites:
+        \begin{enumerate}[resume, label={(\arabic*)}]
+            \item $\tikzfig{tikz/poly/lemmas/algcases1}$
+            \item $\tikzfig{tikz/poly/lemmas/algcases2}$
+            \item $\tikzfig{tikz/poly/lemmas/algcases3}$
+            \item $\tikzfig{tikz/poly/lemmas/algcases4}$
+            \item $\tikzfig{tikz/poly/lemmas/algcases5}$
+        \end{enumerate}
+
+    \medskip
+    
+    Clearly, we can only stop applying these rules once $A$ is a sum of products of copies. Steps (2) and (3) ensure the top of $A$ has such a structure and steps (4) - (6) ensure that there is nothing beneath the $\lowerbox{\coWs}$'s . To see that this will always terminate, observe that (2) and (3) preserve the depth of $A$ while (4), (5), (6) all decrease it. (2) and (3) can only be applied a finite number of times before another simplification must be used. So repeatedly applying these rewrites must eventually shrink the depth down to $3$, as desired. Finally, to put $A$ in PNF we must:
+    \begin{enumerate}[resume, label={(\arabic*)}]
+        \item Collect terms: whenever there are two boxes connected to exactly the same set of $\raisebox{-5pt}{\coWs}$'s, use (\ref{eq:cpk_add}) to fuse them together. 
+        \item Pad: use (\ref{eq:zerobox}) to insert $\raisebox{-5pt}{\numbergate[0]}$ for any connectivities that do not exist in $A$.
+        \item Reorder: use (\ref{rule:Sym}) to reorder coefficients into the canonical order.
+    \end{enumerate}
+
+    Step (7) ensures that every $\raisebox{-5pt}{\zspids}$ has unique connectivity. Step (8) ensures there are exactly $2^n$ coefficients so that step (9) can order them in the appropriate way. 
+
+    Thus $A$ has been written in PNF, completing the proof.
+    
+
 \end{proof}
 
 \subsection{Isomorphism}
