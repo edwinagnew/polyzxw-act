@@ -8,7 +8,7 @@
 		\node [style=none] (5) at (5.75, -0.5) {};
 		\node [style=none] (6) at (5.75, -1.5) {};
 		\node [style=none] (7) at (4.75, -0.5) {};
-		\node [style=none] (8) at (5.25, -1) {$F$};
+		\node [style=none] (8) at (5.25, -1) {\tiny$\Control$};
 		\node [style=none] (9) at (9.5, -1) {};
 		\node [style=none] (10) at (2.25, 1.5) {};
 		\node [style=none] (11) at (12.25, 1.5) {};
@@ -19,7 +19,7 @@
 		\node [style=none] (16) at (8, 1) {};
 		\node [style=none] (17) at (8, -0.5) {};
 		\node [style=none] (18) at (6.5, -0.5) {};
-		\node [style=none] (19) at (7.25, 0.25) {$D$};
+		\node [style=none] (19) at (7.25, 0.25) {$M$};
 		\node [style=none] (20) at (6.5, 0.25) {};
 		\node [style=none] (21) at (8, 0.25) {};
 		\node [style=wire label] (22) at (12.5, 0.5) {$W$};
@@ -36,7 +36,7 @@
 		\node [style=none] (33) at (10.25, 3) {};
 		\node [style=none] (34) at (3.75, 3) {};
 		\node [style=none] (35) at (3.25, 2.5) {};
-		\node [style=none] (36) at (3.75, -1.75) {$F$};
+		\node [style=none] (36) at (3.75, -1.75) {\tiny$\Control$};
 		\node [style=none] (37) at (2.25, 2.5) {};
 		\node [style=wire label] (38) at (2.25, 3) {$\mathbb{C}^2$};
 		\node [style=none] (39) at (12, 2.5) {};
@@ -49,7 +49,7 @@
 		\node [style=none] (58) at (-4, -0.25) {};
 		\node [style=none] (59) at (-4, -1.75) {};
 		\node [style=none] (60) at (-5.5, -1.75) {};
-		\node [style=none] (61) at (-4.75, -1) {$\tilde{D}$};
+		\node [style=none] (61) at (-4.75, -1) {$\tilde{M}$};
 		\node [style=none] (62) at (-5.5, -1) {};
 		\node [style=none] (63) at (-4, -1) {};
 		\node [style=wire label] (64) at (-2.25, -0.75) {$W$};
@@ -79,14 +79,10 @@
 			 to [bend right=45] cycle;
 		\draw [style=new edge style 0] (14.center) to (6.center);
 		\draw [style=new edge style 0] (14.center) to (7.center);
-		\draw [style=new edge style 0] (10.center) to (2.center);
-		\draw [style=new edge style 0] (13.center) to (11.center);
 		\draw (18.center) to (17.center);
 		\draw (17.center) to (16.center);
 		\draw (16.center) to (15.center);
 		\draw (15.center) to (18.center);
-		\draw (21.center) to (1.center);
-		\draw (20.center) to (0.center);
 		\draw [style=new edge style 0] (35.center)
 			 to (27.center)
 			 to (28.center)
@@ -107,12 +103,16 @@
 		\draw (57.center) to (60.center);
 		\draw (63.center) to (43.center);
 		\draw (62.center) to (42.center);
-		\draw [style=new edge style 0, in=90, out=0] (87) to (83.center);
 		\draw [style=new edge style 0, bend left=15] (85) to (87);
 		\draw [style=new edge style 0, bend right=15] (86) to (87);
 		\draw [style=new edge style 0] (79.center) to (85);
 		\draw [style=new edge style 0] (52.center) to (86);
 		\draw [style=new edge style 0] (85) to (81.center);
 		\draw [style=new edge style 0] (86) to (53.center);
+		\draw [in=90, out=0, looseness=1.25] (87) to (83.center);
+		\draw (10.center) to (2.center);
+		\draw (0.center) to (20.center);
+		\draw (21.center) to (1.center);
+		\draw (13.center) to (11.center);
 	\end{pgfonlayer}
 \end{tikzpicture}

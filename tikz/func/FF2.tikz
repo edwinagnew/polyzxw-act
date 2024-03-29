@@ -8,7 +8,7 @@
 		\node [style=none] (5) at (-10.25, -6.75) {};
 		\node [style=none] (6) at (-10.25, -7.75) {};
 		\node [style=none] (7) at (-11.25, -6.75) {};
-		\node [style=none] (8) at (-10.75, -7.25) {$F$};
+		\node [style=none] (8) at (-10.75, -7.25) {\tiny$\Control$};
 		\node [style=none] (9) at (-6.5, -7.25) {};
 		\node [style=none] (10) at (-13.75, -4.75) {};
 		\node [style=none] (11) at (-4, -4.75) {};
@@ -19,7 +19,7 @@
 		\node [style=none] (16) at (-8, -5.25) {};
 		\node [style=none] (17) at (-8, -6.75) {};
 		\node [style=none] (18) at (-9.5, -6.75) {};
-		\node [style=none] (19) at (-8.75, -6) {$D$};
+		\node [style=none] (19) at (-8.75, -6) {$M$};
 		\node [style=none] (20) at (-9.5, -6) {};
 		\node [style=none] (21) at (-8, -6) {};
 		\node [style=none] (26) at (-12.75, -8.5) {};
@@ -32,7 +32,7 @@
 		\node [style=none] (33) at (-5.75, -3.25) {};
 		\node [style=none] (34) at (-12.25, -3.25) {};
 		\node [style=none] (35) at (-12.75, -3.75) {};
-		\node [style=none] (36) at (-12.25, -8) {$F$};
+		\node [style=none] (36) at (-12.25, -8) {\tiny$\Control$};
 		\node [style={rn_phase}] (37) at (-13.75, -3.75) {$\pi$};
 		\node [style=none] (39) at (-4, -3.75) {};
 		\node [style=none] (89) at (1.5, -0.75) {};
@@ -43,7 +43,7 @@
 		\node [style=none] (94) at (5.25, 0) {};
 		\node [style=none] (95) at (5.25, -1.5) {};
 		\node [style=none] (96) at (3.75, -1.5) {};
-		\node [style=none] (97) at (4.5, -0.75) {$\tilde{D}$};
+		\node [style=none] (97) at (4.5, -0.75) {$\tilde{M}$};
 		\node [style=none] (98) at (3.75, -0.75) {};
 		\node [style=none] (99) at (5.25, -0.75) {};
 		\node [style=none] (101) at (7, 1.5) {};
@@ -57,7 +57,7 @@
 		\node [style=none] (113) at (-2.5, -0.25) {};
 		\node [style=none] (114) at (-2.5, -1.75) {};
 		\node [style=none] (115) at (-4, -1.75) {};
-		\node [style=none] (116) at (-3.25, -1) {$\tilde{D}$};
+		\node [style=none] (116) at (-3.25, -1) {$\tilde{M}$};
 		\node [style=none] (117) at (-4, -1) {};
 		\node [style=none] (118) at (-2.5, -1) {};
 		\node [style=none] (120) at (-0.75, 1.25) {};
@@ -73,7 +73,7 @@
 		\node [style=none] (132) at (-11.25, -0.25) {};
 		\node [style=none] (133) at (-11.25, -1.75) {};
 		\node [style=none] (134) at (-12.75, -1.75) {};
-		\node [style=none] (135) at (-12, -1) {$\tilde{D}$};
+		\node [style=none] (135) at (-12, -1) {$\tilde{M}$};
 		\node [style=none] (136) at (-12.75, -1) {};
 		\node [style=none] (137) at (-11.25, -1) {};
 		\node [style=none] (139) at (-9.5, 1.25) {};

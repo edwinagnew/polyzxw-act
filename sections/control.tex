@@ -5,7 +5,7 @@
 We recall the definition of a controlled diagram from \cite{shaikh2022sum}, 
 
 \begin{definition}
-    For an arbitrary square matrix $D$, the controlled matrix of $D$ is the diagram $\tilde{D}$ such that:
+    For an arbitrary square matrix $M$, the controlled matrix of $M$ is the diagram $\tilde{M}$ such that:
 
     \begin{equation}
         \tikzfig{tikz/con/c_sq1}
@@ -69,7 +69,7 @@ The role of $\lowerbox{\coW}$ is to \textit{copy} inputs, as shown in section \r
 \subsection{Control Functor}
 
 %The operation of turning a non-dimension-decreasing matrix to its controlled diagram can be made into a lax monoidal functor. Let $\mathbf{Hilb_{\leq}}$ be the subcategory of Hilbert spaces and non-dimension-descreasing linear transformations. Adding an additional horizontal wire to facilitate composition, $F: \mathbf{Hilb_{\leq}} \to \mathbf{Hilb}$ is defined as follows for arbitrary  $D \in Hom_{Hilb_{\leq}}(V, W)$.
-The operation of turning a square matrix to its controlled diagram can be made into a lax monoidal functor. Let $\mathbf{Hilb_{sq}}$ be the subcategory of Hilbert spaces and square matrices. Adding an additional horizontal wire to facilitate composition, $F: \mathbf{Hilb_{sq}} \to \mathbf{Hilb}$ is defined as follows for arbitrary  $D \in Hom_{Hilb_{sq}}(V, V)$.
+The operation of turning a square matrix to its controlled diagram can be made into a lax monoidal functor. Let $\mathbf{Hilb_{sq}}$ be the subcategory of Hilbert spaces and square matrices. Adding an additional horizontal wire to facilitate composition, $\Control: \mathbf{Hilb_{sq}} \to \mathbf{Hilb}$ is defined as follows for arbitrary  $M \in Hom_{Hilb_{sq}}(V, V)$.
 
 \begin{equation}\label{eq:F_def}
     \Control :: \tikzfig{tikz/func/F_def}
@@ -90,7 +90,7 @@ In the functorial box notation of \cite{mellies2006functorial}, this would be:
         \tikzfig{tikz/func/F_id}
     \end{equation*}
 
-    Let $D_1: U \to V$, $D_2: V \to W$. Then composing $\Control(D_2) \circ \Control(D_1)$:
+    Let $M_1: U \to V$, $M_2: V \to W$. Then composing $\Control(M_2) \circ \Control(M_1)$:
     \begin{equation*}
         \tikzfig{tikz/func/F_comp}
     \end{equation*}
@@ -110,7 +110,7 @@ In the functorial box notation of \cite{mellies2006functorial}, this would be:
         \phi_{V, W} = \tikzfig{tikz/func/F_lax_def}
     \end{equation*}
 
-    $\phi$ is natural since for any $D_1: V \to V, D_2: W \to W$, we have:
+    $\phi$ is natural since for any $M_1: V \to V, M_2: W \to W$, we have:
     \begin{equation*}
         \tikzfig{tikz/func/F_lax_nat}
     \end{equation*}
@@ -128,17 +128,11 @@ In the functorial box notation of \cite{mellies2006functorial}, this would be:
 \subsection{Multiple Control}
 
 This section proves that controlling a controlled diagram gives the AND of the control wires. First we show how to represent the binary AND gate in the ZXW calculus.
-\begin{equation*}
-    \tikzfig{tikz/func/and_def}
-\end{equation*}
-We can verify this computes the AND gate by computing on basis states.
-\begin{equation}\label{eq:and1}
-    \tikzfig{tikz/func/and1}
-\end{equation}
-Thus $AND(1, x) = x$. Since the diagram is clearly commutative, it remains to check $AND(0, x) = 0$.
-\begin{equation}\label{eq:and0}
-    \tikzfig{tikz/func/and0}
-\end{equation}
+\begin{prop}\label{prop:and}
+    \begin{equation*}
+        \tikzfig{tikz/func/and_def}
+    \end{equation*}
+\end{prop}
 
 
 \begin{prop}

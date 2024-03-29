@@ -25,7 +25,7 @@
 		\node [style=none] (69) at (-6.75, -0.25) {};
 		\node [style=none] (70) at (-6.75, -1.25) {};
 		\node [style=none] (71) at (-7.75, -0.25) {};
-		\node [style=none] (72) at (-7.25, -0.75) {$F$};
+		\node [style=none] (72) at (-7.25, -0.75) {\tiny$\Control$};
 		\node [style=none] (73) at (-3, -0.75) {};
 		\node [style=none] (74) at (-9, 1.75) {};
 		\node [style=none] (75) at (-2.25, 1.75) {};

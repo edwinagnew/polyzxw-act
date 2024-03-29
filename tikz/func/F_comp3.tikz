@@ -6,7 +6,7 @@
 		\node [style=none] (3) at (-8.75, -1) {};
 		\node [style=none] (4) at (-8, 0.5) {};
 		\node [style=gn] (5) at (-6.75, 1.5) {};
-		\node [style=none] (6) at (-8, -0.25) {$\tilde{D_1}$};
+		\node [style=none] (6) at (-8, -0.25) {$\tilde{M_1}$};
 		\node [style=none] (7) at (-9.5, -0.25) {};
 		\node [style=none] (8) at (-8.75, -0.25) {};
 		\node [style=none] (9) at (-7.25, -0.25) {};
@@ -17,7 +17,7 @@
 		\node [style=none] (14) at (-4.75, -1) {};
 		\node [style=none] (15) at (-6.25, -1) {};
 		\node [style=none] (16) at (-5.5, 0.5) {};
-		\node [style=none] (17) at (-5.5, -0.25) {$\tilde{D_2}$};
+		\node [style=none] (17) at (-5.5, -0.25) {$\tilde{M_2}$};
 		\node [style=none] (18) at (-4.75, -0.25) {};
 		\node [style=none] (19) at (-4, -0.25) {};
 		\node [style=none] (20) at (-4.5, 1.5) {};
@@ -26,7 +26,7 @@
 		\node [style=none] (23) at (-0.25, -1) {};
 		\node [style=none] (24) at (-1.75, -1) {};
 		\node [style=none] (25) at (-1, 0.5) {};
-		\node [style=none] (26) at (-1, -0.25) {$\tilde{D_1}$};
+		\node [style=none] (26) at (-1, -0.25) {$\tilde{M_1}$};
 		\node [style=none] (27) at (-1.75, -0.25) {};
 		\node [style=none] (28) at (-2.5, -0.25) {};
 		\node [style=none] (29) at (-0.25, -0.25) {};
@@ -36,7 +36,7 @@
 		\node [style=none] (33) at (2.25, -1) {};
 		\node [style=none] (34) at (0.75, -1) {};
 		\node [style=none] (35) at (1.5, 0.5) {};
-		\node [style=none] (36) at (1.5, -0.25) {$\tilde{D_2}$};
+		\node [style=none] (36) at (1.5, -0.25) {$\tilde{M_2}$};
 		\node [style=none] (37) at (2.25, -0.25) {};
 		\node [style=none] (38) at (3, -0.25) {};
 		\node [style=none] (39) at (2.5, 1.75) {};
@@ -50,7 +50,7 @@
 		\node [style=none] (59) at (15, -1) {};
 		\node [style=none] (60) at (13, -1) {};
 		\node [style=none] (61) at (14, 0.5) {};
-		\node [style=none] (62) at (14, -0.25) {\tiny$D_2 \circ D_1$};
+		\node [style=none] (62) at (14, -0.25) {\tiny$M_2 \circ M_1$};
 		\node [style=none] (63) at (12.25, -0.25) {};
 		\node [style=none] (64) at (13, -0.25) {};
 		\node [style=none] (65) at (15, -0.25) {};
@@ -62,7 +62,7 @@
 		\node [style=none] (72) at (7, -1) {};
 		\node [style=none] (73) at (5.5, -1) {};
 		\node [style=none] (74) at (6.25, 0.5) {};
-		\node [style=none] (75) at (6.25, -0.25) {$D_1$};
+		\node [style=none] (75) at (6.25, -0.25) {$M_1$};
 		\node [style=none] (76) at (5.5, -0.25) {};
 		\node [style=none] (77) at (4.75, -0.25) {};
 		\node [style=none] (78) at (7, -0.25) {};
@@ -72,7 +72,7 @@
 		\node [style=none] (82) at (9.5, -1) {};
 		\node [style=none] (83) at (8, -1) {};
 		\node [style=none] (84) at (8.75, 0.5) {};
-		\node [style=none] (85) at (8.75, -0.25) {$D_2$};
+		\node [style=none] (85) at (8.75, -0.25) {$M_2$};
 		\node [style=none] (86) at (9.5, -0.25) {};
 		\node [style=none] (87) at (10.25, -0.25) {};
 		\node [style=none] (88) at (9.75, 1.75) {};

@@ -6,7 +6,7 @@
 		\node [style=none] (37) at (-3.5, -0.75) {};
 		\node [style=none] (38) at (-2.75, 0.75) {};
 		\node [style=rn] (39) at (-2.75, 1.75) {};
-		\node [style=none] (40) at (-2.75, 0) {$\tilde{D}$};
+		\node [style=none] (40) at (-2.75, 0) {$\tilde{M}$};
 		\node [style=none] (41) at (-3.5, 0.5) {};
 		\node [style=none] (42) at (-4.25, 0.5) {};
 		\node [style=none] (43) at (-4.25, -0.5) {};

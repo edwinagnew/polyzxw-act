@@ -149,7 +149,7 @@
 		\node [style=none] (160) at (15.5, -9.5) {};
 		\node [style=label] (161) at (15, -9.5) {$\ldots$};
 		\node [style=none] (162) at (15, -4.75) {};
-		\node [style=none] (168) at (12.75, -8.5) {$=$};
+		\node [style=none] (168) at (12.75, -8.25) {$\eqq{\ref{eq:wid}}$};
 		\node [style={rn_phase}] (169) at (15, -7.25) {$\pi$};
 		\node [style={rn_phase}] (170) at (15, -6) {$\pi$};
 	\end{pgfonlayer}

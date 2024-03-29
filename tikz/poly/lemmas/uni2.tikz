@@ -115,7 +115,7 @@
 		\node [style=none] (122) at (9.25, -8) {};
 		\node [style=label] (123) at (8.75, -8) {$\ldots$};
 		\node [style=none] (124) at (8.75, -5.75) {};
-		\node [style=none] (125) at (6.75, -7) {$=$};
+		\node [style=none] (125) at (6.75, -7) {$\eqq{\ref{eq:wid}}$};
 		\node [style=label] (127) at (0.25, -1.5) {$\ldots$};
 	\end{pgfonlayer}
 	\begin{pgfonlayer}{edgelayer}

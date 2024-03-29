@@ -221,6 +221,19 @@ The following two lemmas follow immediately from the bra-ket definition of $\low
 
 \section{Main Proofs}\label{sec:appiso}
 
+\textbf{Proof of Proposition \ref*{prop:and}}
+
+\begin{proof}
+    We can verify this computes the AND gate by computing on basis states.
+    \begin{equation}\label{eq:and1}
+        \tikzfig{tikz/func/and1}
+    \end{equation}
+    Thus $AND(1, x) = x$. Since the diagram is clearly commutative, it remains to check $AND(0, x) = 0$.
+    \begin{equation}\label{eq:and0}
+        \tikzfig{tikz/func/and0}
+    \end{equation}
+\end{proof}
+
 \textbf{Proof of Lemma \ref*{lem:csq_copy}}
 \begin{proof}
     First of all, using (\ref{rule:BZW}) we can rewrite the LHS to
