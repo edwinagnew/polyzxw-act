@@ -6,7 +6,7 @@
 		\node [style=dw] (3) at (-0.5, -1) {};
 		\node [style=label] (5) at (0.5, -1) {$...$};
 		\node [style=none] (6) at (-0.5, -2) {};
-		\node [style=none] (8) at (2.25, -0.75) {$\eqq{\ref{eq:x+x=2x}}$};
+		\node [style=none] (8) at (2.25, -0.75) {$\eqq{\ref{eq:cp_add}}$};
 		\node [style=none] (16) at (-2.25, -1) {};
 		\node [style=none] (17) at (1.25, -1) {};
 		\node [style=uw] (18) at (5, 0) {};
