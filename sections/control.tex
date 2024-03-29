@@ -127,7 +127,7 @@ In the functorial box notation of \cite{mellies2006functorial}, this would be:
 
 \subsection{Multiple Control}
 
-This section proves that controlling a controlled diagram gives the AND of the control wires. First we show how to represent the binary AND gate in the ZXW calculus.
+This section proves that controlling a controlled diagram gives the AND of the control wires. First we show how to represent the binary AND gate in the ZXW calculus, and check it in \Cref{sec:appiso}. This construction is by deMorgan's law of a diagram for binary OR from \Cref{prop:vec_pnf}.
 \begin{prop}\label{prop:and}
     \begin{equation*}
         \tikzfig{tikz/func/and_def}
@@ -151,7 +151,7 @@ This section proves that controlling a controlled diagram gives the AND of the c
     \end{equation*}
 \end{proof}
 
-Since AND is a monoid, it is reasonable to expect that multiple control induces a monad. Unfortunately, this does not appear to go through. Although AND does define a natural transformation (in the relevant category), defining the unit of the monad necessitates defining the controlled diagram of an arbitrary matrix, which breaks functoriality. Nevertheless we prove that AND is a natural transformation.
+Since AND is a monoid, it is reasonable to expect that multiple control induces a monad. Unfortunately, this does not appear to go through. Although AND does define a natural transformation (in the relevant category), defining the unit of the monad necessitates defining $\Control$ of non-square matrices, which breaks functoriality. Nevertheless we prove that AND is a natural transformation.
 
 \begin{prop}
     $\mu: \Control ^2 \to \Control$ is a natural transformation with components $\mu_V: \Control^2 V \to \Control V$ defined as follows:
@@ -162,11 +162,14 @@ Since AND is a monoid, it is reasonable to expect that multiple control induces 
 \end{prop}
 
 \begin{proof}
-    \begin{equation*}
+    \begin{equation}\label{eq:munat}
         \tikzfig{tikz/func/mu_nat}
-    \end{equation*}
-    Due to the $Z-H$ bialgebra in the ZH calculus. 
+    \end{equation}
+    due to the $Z-H$ bialgebra rule in the ZH calculus, as the multiply box is an H gate after an H-box.
 \end{proof}
+\begin{corollary}
+    By the $Z-X$ and $Z-W$ bialgebra rules as well as the Z spider fusion rule, in addition to the multiply box, \Cref{eq:munat} holds for all other 2-input, 1-output generators: Z, X, and W.
+\end{corollary}
 
 %\begin{prop}
 %    $(F, \mu, \eta)$ defined a monad on $\mathbf{Hilb_j}$
