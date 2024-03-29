@@ -1,13 +1,12 @@
 \section{Conclusion}
-In summary, we first proved an isomorphism between controlled states in the ZXW calculus, and multilinear polynomials $\mathbb{C}[x_1,...,x_n]/({x_1}^2,...,{x_n}^2)$.
-We then showed that the higher-order map $\Control$ is a lax monoidal functor on all linear maps $n \rightarrow m$ such that $n \leq m$, letting us add functorial boxes to such ZXW diagrams. We moreover find that multiple-control is monadic.
+To conclude, we first introduced the higher-order map $\Control$ and showed it is a lax monoidal functor on all same-size square matrices. This enabled us to add functorial boxes to such ZXW diagrams. Moreover, we find useful rewrite rules for interactions between controlled diagrams and all generators Z, X, W, and H.
 
-We further showed that all controlled $n$-partite states form a commutative ring, and all controlled $n$-qubit square matrices form a non-commutative ring. Plugging the former into the control wires of the latter, gives multivariate polynomials over same-size square matrices, such as Hamiltonians. When the controls target mutually exclusive sectors, a rewrite rule can be applied to copy any controlled diagram, and thus factor any Hamiltonian.
+We further showed that all controlled $n$-partite states form a commutative ring isomorphic to multilinear polynomials, and all controlled $n$-qubit square matrices form a non-commutative ring. Plugging the former into the control wires of the latter, gives multivariate polynomials over same-size square matrices, such as Hamiltonians. When the controls target mutually exclusive sectors, a rewrite rule can be applied to copy any controlled diagram, and thereby factor any Hamiltonian.
 
 The natural next step is to derive extensions of our results for controlled qubit diagrams to qudits.
 While the diagrams being controlled are over qudits, we can consider control in the qubit subspace, as done in the ZXW calculus completeness proof for any qudit dimension~\cite{poor2023completeness}.
-A starting guess would be that qudit controlled states are isomorphic to polynomials $\mathbb{C}[x_1,...,x_n]/({x_1}^d,...,{x_n}^d)$ due to the Hopf law between Z and W.
-Qudit multiple-control would likely have more complex structure than the monadic case here for qubits, considering the ingredients of all prime-dimensional $d$-ary classical reversible gates built in Ref.~\cite{Roy2023quditzh}.
+A starting guess would be that qudit controlled states are isomorphic to polynomials $\mathbb{C}^{d-1}[x_1,...,x_n]/({x_1}^d,...,{x_n}^d)$ due to the Hopf law between Z and W.
+Qudit multiple-control would likely have more complex structure than the qubit case here, considering the constructions for all prime-dimensional $d$-ary classical reversible gates built in Ref.~\cite{Roy2023quditzh}.
 
 We would like to try sector-preserving channels~\cite{Vanrietvelde2021ctrlsector} and scoped effects~\cite{lindley2024scoped} as approaches to better formulate the monadic nature of multiple-control.
 We are also curious about reconciling the interpretation of diagrammatic differentiation of our arithmetic polynomial circuits by the approach in Ref.~\cite{wilson2023diffpolycirc}, with that of quantum circuits and ZX diagrams in Refs.~\cite{toumi2021diagdiff, wang2022diffintzx, jeandel2024adddiffzx}.
