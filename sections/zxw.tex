@@ -3,17 +3,16 @@
 This section introduces the generators of the ZXW calculus. Diagrams are to be read top to bottom or, in later sections, left to right.
 \subsection{Generators}
 
-The (qubit) ZXW calculus is built from the following generators:
-
+The qubit ZXW calculus is built from the following generators:
 
 \begin{gather*}
-  \lowerbox{\idwire[0.8]} ~:=~ \begin{bmatrix}1 & 0 & \\ 0 & 1\end{bmatrix} \quad
-  \lowerbox[10]{\swap[0.4]} ~:=~ \begin{bmatrix} 1 & 0 & 0 & 0 \\ 0 & 0 & 1 & 0 \\ 0 & 1 & 0 & 0 \\ 0 & 0 & 0 & 1\end{bmatrix} \quad
-  \lowerbox[5]{\ccap} ~:=~ \begin{bmatrix} 1 \\ 0 \\ 0 \\ 1\end{bmatrix} \quad
-  \lowerbox[5]{\ccup} ~:=~ \begin{bmatrix} 1 & 0 & 0 & 1 \end{bmatrix} \\
-  \tikzfig{tikz/defs/zspid} ~:=~ |0^m\rangle\langle0^n| + e^{i\alpha}|1^m\rangle\langle1^n|, \alpha \in \mathbb{C} \qquad
-  \raisebox{-7pt}{\wspid[0.7]} ~:=~ |00\rangle \braz + |01\rangle \brao + |10\rangle \brao \\
-  \raisebox{-8pt}{\hgate} := \frac{1}{\sqrt{2}}\begin{bmatrix}1 & 1 \\ 1 & -1\end{bmatrix}
+  \left\llbracket \quad \lowerbox{\idwire[0.5]} \;\;\; \right\rrbracket ~=~ \begin{bmatrix}1 & 0 \\ 0 & 1\end{bmatrix} \quad
+  \left\llbracket \; \lowerbox[10]{\swap[0.4]} \; \right\rrbracket ~=~ \begin{bmatrix} 1 & 0 & 0 & 0 \\ 0 & 0 & 1 & 0 \\ 0 & 1 & 0 & 0 \\ 0 & 0 & 0 & 1\end{bmatrix} \quad
+  \Big\llbracket \; \lowerbox[3]{\ccap} \; \Big\rrbracket ~=~ \begin{bmatrix} 1 \\ 0 \\ 0 \\ 1\end{bmatrix} \quad
+  \left\llbracket \; \lowerbox[5]{\ccup} \; \right\rrbracket ~=~ \begin{bmatrix} 1 & 0 & 0 & 1 \end{bmatrix} \\
+  \left\llbracket \;\; \tikzfig{tikz/defs/zspid} \;\; \right\rrbracket ~=~ |0^m\rangle\langle0^n| + c|1^m\rangle\langle1^n|, c \in \mathbb{C} \qquad
+  \left\llbracket \;\; \raisebox{-10pt}{\wspid[0.7]} \;\; \right\rrbracket ~=~ |00\rangle \braz + |01\rangle \brao + |10\rangle \brao \\
+  \left\llbracket \;\;\; \raisebox{-8pt}{\hgate} \;\; \right\rrbracket = \frac{1}{\sqrt{2}}\begin{bmatrix}1 & 1 \\ 1 & -1\end{bmatrix}
 \end{gather*}
 
 For simplicity, we introduce the following additional notation:

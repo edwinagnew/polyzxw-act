@@ -5,7 +5,7 @@
 As defined in \cite{shaikh2022sum}, 
 
 \begin{definition}
-    For an arbitrary square matrix $D$, the controlled matrix of $D$ is the diagram $\tilde{D}$ such that:
+    For an arbitrary square matrix $M$, the controlled matrix of $M$ is the diagram $\tilde{M}$ such that:
 
     \begin{equation}
         \tikzfig{tikz/con/c_sq1}
@@ -18,7 +18,7 @@ As defined in \cite{shaikh2022sum},
 
 It is possible to perform matrix arithmetic with controlled diagrams. 
 
-\begin{prop}
+\begin{prop}[\cite{shaikh2022sum}]
     Given controlled matrices $\tilde{M_1}, ..., \tilde{M_k}$, the controlled matrix $\widetilde{\Pi_i M_i}$ is given by
     \begin{equation*}
         \tikzfig{tikz/con/csq_prod}
@@ -31,7 +31,7 @@ It is possible to perform matrix arithmetic with controlled diagrams.
 \end{prop}
 
 \begin{proof}
-    See propositions 3.3 and 3.4 in \cite{shaikh2022sum} 
+    See propositions 3.3 and 3.4 in~\cite{shaikh2022sum}.
 \end{proof}
 
 We can also defined the analogue for states
@@ -50,7 +50,7 @@ The addition and multiplication of controlled states are defined similarly to co
     \tikzfig{tikz/con/cs_add_def} \qquad         \tikzfig{tikz/con/cs_times_def}
 \end{equation*}
 
-The role of $\lowerbox{\coW}$ is to \textit{copy} inputs, as shown in section \ref{sec:ring}.
+The role of $\lowerbox{\coW}$ is to \textit{copy} outputs, as shown in section \ref{sec:ring}.
 
 %Combining the notions of controlled square matrices and controlled states, we can a more general notion of controlled matrices. 
 
@@ -90,7 +90,7 @@ In the functorial box notation of \cite{mellies2006functorial}, this would be:
         \tikzfig{tikz/func/F_id}
     \end{equation*}
 
-    Let $D_1: U \to V$, $D_2: V \to W$, where $U, V, W$ have dimensions $l, m, n$ respectively. Then composing $F(D_2) \circ F(D_1)$:
+    Let $D_1: U \to V$, $D_2: V \to W$, where $U, V, W$ are of the same dimensionality. Then composing $F(D_2) \circ F(D_1) = F(D_2 \circ D_1)$:
     \begin{equation*}
         \tikzfig{tikz/func/F_comp}
     \end{equation*}
@@ -110,7 +110,7 @@ In the functorial box notation of \cite{mellies2006functorial}, this would be:
         \phi_{V, W} = \tikzfig{tikz/func/F_lax_def}
     \end{equation*}
 
-    $\phi$ is natural since for any $D_1: V \to V, D_2: W \to W$, we have:
+    $\phi$ is natural since for any $D_1: V \to V,\; D_2: W \to W$, we have:
     \begin{equation*}
         \tikzfig{tikz/func/F_lax_nat}
     \end{equation*}

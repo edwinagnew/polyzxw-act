@@ -1,6 +1,6 @@
 \begin{tikzpicture}
 	\begin{pgfonlayer}{nodelayer}
-		\node [style={gn_phase}] (0) at (0, 0) {$\alpha$};
+		\node [style=gbox] (0) at (0, 0) {$c$};
 		\node [style=none] (1) at (-1, 1) {};
 		\node [style=none] (2) at (1, 1) {};
 		\node [style=none] (3) at (-1, -1) {};
