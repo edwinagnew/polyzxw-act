@@ -13,7 +13,7 @@
 		\node [style=none] (18) at (-5.75, -3.5) {};
 		\node [style=none] (19) at (-5, -2) {};
 		\node [style=gn] (20) at (-5, 1.75) {};
-		\node [style=none] (21) at (-5, -2.75) {$\tilde{D_1}$};
+		\node [style=none] (21) at (-5, -2.75) {$\tilde{M_1}$};
 		\node [style=none] (22) at (-6.5, -2.75) {};
 		\node [style=none] (23) at (-5.75, -2.75) {};
 		\node [style=none] (24) at (-4.25, -2.75) {};
@@ -24,7 +24,7 @@
 		\node [style=none] (29) at (-4.25, -0.5) {};
 		\node [style=none] (30) at (-5.75, -0.5) {};
 		\node [style=none] (31) at (-5, 1) {};
-		\node [style=none] (32) at (-5, 0.25) {$\tilde{D_2}$};
+		\node [style=none] (32) at (-5, 0.25) {$\tilde{M_2}$};
 		\node [style=none] (33) at (-4.25, 0.25) {};
 		\node [style=none] (35) at (-3.5, 1.75) {};
 		\node [style=none] (36) at (-6.5, 0.25) {};
@@ -42,7 +42,7 @@
 		\node [style=none] (95) at (4.5, -3.5) {};
 		\node [style=none] (96) at (3, -3.5) {};
 		\node [style=none] (97) at (3.75, -2) {};
-		\node [style=none] (99) at (3.75, -2.75) {$\tilde{D_1}$};
+		\node [style=none] (99) at (3.75, -2.75) {$\tilde{M_1}$};
 		\node [style=none] (100) at (1.5, -2.75) {};
 		\node [style=none] (101) at (3, -2.75) {};
 		\node [style=none] (102) at (4.5, -2.75) {};
@@ -52,7 +52,7 @@
 		\node [style=none] (107) at (5.75, -0.5) {};
 		\node [style=none] (108) at (4.25, -0.5) {};
 		\node [style=none] (109) at (5, 1) {};
-		\node [style=none] (110) at (5, 0.25) {$\tilde{D_2}$};
+		\node [style=none] (110) at (5, 0.25) {$\tilde{M_2}$};
 		\node [style=none] (111) at (5.75, 0.25) {};
 		\node [style=none] (112) at (4.5, 1.75) {};
 		\node [style=none] (113) at (1.5, 0.25) {};

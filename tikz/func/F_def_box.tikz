@@ -9,7 +9,7 @@
 		\node [style=none] (40) at (-4.75, -0.75) {};
 		\node [style=none] (41) at (-4.75, -1.75) {};
 		\node [style=none] (42) at (-5.75, -0.75) {};
-		\node [style=none] (43) at (-5.25, -1.25) {$F$};
+		\node [style=none] (43) at (-5.25, -1.25) {\tiny$\Control$};
 		\node [style=none] (44) at (-1, -1.25) {};
 		\node [style=none] (47) at (-7, 1.25) {};
 		\node [style=none] (48) at (-0.25, 1.25) {};
@@ -20,7 +20,7 @@
 		\node [style=none] (53) at (-2.5, 0.75) {};
 		\node [style=none] (54) at (-2.5, -0.75) {};
 		\node [style=none] (55) at (-4, -0.75) {};
-		\node [style=none] (57) at (-3.25, 0) {$D$};
+		\node [style=none] (57) at (-3.25, 0) {$M$};
 		\node [style=none] (59) at (-4, 0) {};
 		\node [style=none] (61) at (-2.5, 0) {};
 		\node [style=wire label] (62) at (0, 0.25) {$V$};
@@ -33,7 +33,7 @@
 		\node [style=none] (69) at (2.5, -1) {};
 		\node [style=none] (70) at (3.25, 0.5) {};
 		\node [style=gn] (71) at (3.25, 1.5) {};
-		\node [style=none] (72) at (3.25, -0.25) {$\tilde{D}$};
+		\node [style=none] (72) at (3.25, -0.25) {$\tilde{M}$};
 		\node [style=none] (73) at (2.5, -0.25) {};
 		\node [style=none] (74) at (1.75, -0.25) {};
 		\node [style=none] (75) at (4, -0.25) {};
