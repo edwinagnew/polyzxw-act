@@ -151,8 +151,6 @@
 		\draw (112.center) to (115.center);
 		\draw (118.center) to (109.center);
 		\draw (117.center) to (108.center);
-		\draw [style=new edge style 0, in=90, out=0] (123) to (121.center);
-		\draw [style=new edge style 0, bend right=15] (122) to (123);
 		\draw [style=new edge style 0] (110.center) to (122);
 		\draw [style=new edge style 0] (122) to (111.center);
 		\draw [bend left=15] (119) to (123);
@@ -165,13 +163,15 @@
 		\draw (131.center) to (134.center);
 		\draw (137.center) to (128.center);
 		\draw (136.center) to (127.center);
-		\draw [style=new edge style 0, in=90, out=0] (142) to (140.center);
-		\draw [style=new edge style 0, bend right=15] (141) to (142);
 		\draw [style=new edge style 0] (129.center) to (141);
 		\draw [style=new edge style 0] (141) to (130.center);
 		\draw (143.center) to (139.center);
 		\draw (144) to (143.center);
 		\draw [bend left=15] (144) to (142);
 		\draw (145) to (144);
+		\draw [in=120, out=0, looseness=1.25] (142) to (140.center);
+		\draw [in=105, out=0, looseness=1.50] (123) to (121.center);
+		\draw [bend right=15] (141) to (142);
+		\draw [bend right=15] (122) to (123);
 	\end{pgfonlayer}
 \end{tikzpicture}

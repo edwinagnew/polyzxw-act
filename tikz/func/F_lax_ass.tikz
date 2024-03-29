@@ -66,7 +66,7 @@
 		\draw (39.center) to (40.center);
 		\draw (45.center) to (41.center);
 		\draw [in=255, out=30] (38.center) to (30);
-		\draw [in=255, out=45] (41.center) to (48);
+		\draw [in=255, out=15] (41.center) to (48);
 		\draw (49.center) to (38.center);
 	\end{pgfonlayer}
 \end{tikzpicture}

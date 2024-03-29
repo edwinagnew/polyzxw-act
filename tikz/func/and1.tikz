@@ -1,8 +1,8 @@
 \begin{tikzpicture}
 	\begin{pgfonlayer}{nodelayer}
-		\node [style={rn_phase}] (1) at (-2.25, 0.75) {$\pi$};
+		\node [style={rn_phase}] (1) at (-2, 0.75) {$\pi$};
 		\node [style=none] (2) at (-2.75, -0.75) {};
-		\node [style={rn_phase}] (3) at (-2.25, -0.75) {$\pi$};
+		\node [style={rn_phase}] (3) at (-2, -0.75) {$\pi$};
 		\node [style=lw] (4) at (-1.25, 0.75) {};
 		\node [style=lw] (5) at (-1.25, -0.75) {};
 		\node [style=rw] (6) at (1, 0) {};
@@ -12,7 +12,7 @@
 		\node [style={rn_phase}] (10) at (-2.75, 0.75) {$\pi$};
 		\node [style=none] (21) at (3.25, 0) {$=$};
 		\node [style=none] (23) at (5.25, -0.5) {};
-		\node [style={rn_phase}] (24) at (5.75, -0.5) {$\pi$};
+		\node [style={rn_phase}] (24) at (6, -0.5) {$\pi$};
 		\node [style=lw] (26) at (6.75, -0.5) {};
 		\node [style=rw] (27) at (9, 0.25) {};
 		\node [style={rn_phase}] (28) at (10, 0.25) {$\pi$};

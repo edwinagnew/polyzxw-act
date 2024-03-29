@@ -135,8 +135,8 @@ We can verify this computes the AND gate by computing on basis states.
     \tikzfig{tikz/func/and1}
 \end{equation}
 Thus $AND(1, x) = x$. Since the diagram is clearly commutative, it remains to check $AND(0, 0) = 0$.
-\begin{equation}\label{eq:and00}
-    \tikzfig{tikz/func/and00}
+\begin{equation}\label{eq:and0}
+    \tikzfig{tikz/func/and0}
 \end{equation}
 
 
@@ -160,7 +160,7 @@ In order to make multiple-control a monad, we first need to make $F$ an endofunc
 
 Still functor
 
-Now define $F_V: F^2 V \to FV$ and $\eta_V: id_V \to FV$ as follws:
+Now define $F_V: F^2 V \to FV$ and $\eta_V: V \to FV$ as follws:
 \begin{equation*}
     \tikzfig{tikz/func/mu_def} \qquad \tikzfig{tikz/func/eta_def}
 \end{equation*}
