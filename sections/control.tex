@@ -109,7 +109,7 @@ In the functorial box notation of \cite{mellies2006functorial}, this would be:
         \phi_{V, W} = \tikzfig{tikz/func/F_lax_def}
     \end{equation*}
 
-    $\phi$ is natural since for any $D_1: V \to V, D_2: W \to W$, we have:
+    $\phi$ is natural since for any $D_1: V \to V', D_2: W \to W'$, we have:
     \begin{equation*}
         \tikzfig{tikz/func/F_lax_nat}
     \end{equation*}
@@ -124,5 +124,36 @@ In the functorial box notation of \cite{mellies2006functorial}, this would be:
     
 \end{proof}
 
-\subsection{Monad?}
+\subsection{Monad}
 
+This section proves that controlling a controlled diagram gives the AND of the control wires, thus yielding a monad. First show how to represent the binary AND gate in the ZXW calculus.
+\begin{equation*}
+    \tikzfig{tikz/func/and_def}
+\end{equation*}
+We can verify this computes the AND gate by computing on basis states.
+\begin{equation}\label{eq:and1}
+    \tikzfig{tikz/func/and1}
+\end{equation}
+Thus $AND(1, x) = x$. Since the diagram is clearly commutative, it remains to check $AND(0, 0) = 0$.
+\begin{equation}\label{eq:and00}
+    \tikzfig{tikz/func/and00}
+\end{equation}
+
+
+\begin{prop}
+    \begin{equation*}
+        \tikzfig{tikz/func/FF_statement}
+    \end{equation*}
+\end{prop}
+
+\begin{proof}
+    Plugging basis states:
+    \begin{equation*}
+        \tikzfig{tikz/func/FF1}
+    \end{equation*}
+    \begin{equation*}
+        \tikzfig{tikz/func/FF2}
+    \end{equation*}
+\end{proof}
+
+In order to make multiple-control a monad, we first need to make $F$ an endofunctor. Although $F$ does take DND matrices to DND matrices, the definition of a monad requires that the components of the multiplication $\mu_V: F^2 V \to FV$ live in the codomain. However, AND is a dimension decreasing matrix so does not live in $\mathbf{Hilb_{\leq}}$. To get around this,  we define a new category 

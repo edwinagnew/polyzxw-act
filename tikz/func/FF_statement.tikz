@@ -1,0 +1,118 @@
+\begin{tikzpicture}
+	\begin{pgfonlayer}{nodelayer}
+		\node [style=none] (0) at (2.25, 0.25) {};
+		\node [style=none] (1) at (12.5, 0.25) {};
+		\node [style=none] (2) at (4.75, 1.5) {};
+		\node [style=none] (3) at (9, -1.5) {};
+		\node [style=none] (4) at (9, 2) {};
+		\node [style=none] (5) at (5.75, -0.5) {};
+		\node [style=none] (6) at (5.75, -1.5) {};
+		\node [style=none] (7) at (4.75, -0.5) {};
+		\node [style=none] (8) at (5.25, -1) {$F$};
+		\node [style=none] (9) at (9.5, -1) {};
+		\node [style=none] (10) at (2.25, 1.5) {};
+		\node [style=none] (11) at (12.25, 1.5) {};
+		\node [style=none] (12) at (5.25, 2) {};
+		\node [style=none] (13) at (9.5, 1.5) {};
+		\node [style=none] (14) at (4.75, -1.5) {};
+		\node [style=none] (15) at (6.5, 1) {};
+		\node [style=none] (16) at (8, 1) {};
+		\node [style=none] (17) at (8, -0.5) {};
+		\node [style=none] (18) at (6.5, -0.5) {};
+		\node [style=none] (19) at (7.25, 0.25) {$D$};
+		\node [style=none] (20) at (6.5, 0.25) {};
+		\node [style=none] (21) at (8, 0.25) {};
+		\node [style=wire label] (22) at (12.5, 0.5) {$W$};
+		\node [style=wire label] (23) at (2.25, 0.5) {$V$};
+		\node [style=wire label] (24) at (12.25, 2) {$\mathbb{C}^2$};
+		\node [style=wire label] (25) at (2.25, 2) {$\mathbb{C}^2$};
+		\node [style=none] (26) at (3.25, -2.25) {};
+		\node [style=none] (27) at (3.25, -1.25) {};
+		\node [style=none] (28) at (4.25, -1.25) {};
+		\node [style=none] (29) at (4.25, -2.25) {};
+		\node [style=none] (30) at (10.25, -2.25) {};
+		\node [style=none] (31) at (10.75, -1.75) {};
+		\node [style=none] (32) at (10.75, 2.5) {};
+		\node [style=none] (33) at (10.25, 3) {};
+		\node [style=none] (34) at (3.75, 3) {};
+		\node [style=none] (35) at (3.25, 2.5) {};
+		\node [style=none] (36) at (3.75, -1.75) {$F$};
+		\node [style=none] (37) at (2.25, 2.5) {};
+		\node [style=wire label] (38) at (2.25, 3) {$\mathbb{C}^2$};
+		\node [style=none] (39) at (12, 2.5) {};
+		\node [style=wire label] (40) at (12, 3) {$\mathbb{C}^2$};
+		\node [style=none] (42) at (-7.75, -1) {};
+		\node [style=none] (43) at (-2.25, -1) {};
+		\node [style=none] (52) at (-7.75, 0.25) {};
+		\node [style=none] (53) at (-2.25, 0.25) {};
+		\node [style=none] (57) at (-5.5, -0.25) {};
+		\node [style=none] (58) at (-4, -0.25) {};
+		\node [style=none] (59) at (-4, -1.75) {};
+		\node [style=none] (60) at (-5.5, -1.75) {};
+		\node [style=none] (61) at (-4.75, -1) {$\tilde{D}$};
+		\node [style=none] (62) at (-5.5, -1) {};
+		\node [style=none] (63) at (-4, -1) {};
+		\node [style=wire label] (64) at (-2.25, -0.75) {$W$};
+		\node [style=wire label] (65) at (-7.75, -0.75) {$V$};
+		\node [style=wire label] (66) at (-2.25, 0.75) {$\mathbb{C}^2$};
+		\node [style=wire label] (67) at (-7.75, 0.75) {$\mathbb{C}^2$};
+		\node [style=none] (79) at (-7.75, 1.25) {};
+		\node [style=wire label] (80) at (-7.75, 1.75) {$\mathbb{C}^2$};
+		\node [style=none] (81) at (-2.25, 1.25) {};
+		\node [style=wire label] (82) at (-2.25, 1.75) {$\mathbb{C}^2$};
+		\node [style=none] (83) at (-4.75, -0.25) {};
+		\node [style=gn] (85) at (-6.25, 1.25) {};
+		\node [style=gn] (86) at (-6.25, 0.25) {};
+		\node [style=wn] (87) at (-5.25, 0.75) {$\land$};
+		\node [style=none] (88) at (0, 0) {$=$};
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\draw [style=new edge style 0] (4.center)
+			 to (12.center)
+			 to [bend right=60, looseness=0.75] (2.center)
+			 to (7.center)
+			 to (5.center)
+			 to (6.center)
+			 to (3.center)
+			 to [bend right=45] (9.center)
+			 to (13.center)
+			 to [bend right=45] cycle;
+		\draw [style=new edge style 0] (14.center) to (6.center);
+		\draw [style=new edge style 0] (14.center) to (7.center);
+		\draw [style=new edge style 0] (10.center) to (2.center);
+		\draw [style=new edge style 0] (13.center) to (11.center);
+		\draw (18.center) to (17.center);
+		\draw (17.center) to (16.center);
+		\draw (16.center) to (15.center);
+		\draw (15.center) to (18.center);
+		\draw (21.center) to (1.center);
+		\draw (20.center) to (0.center);
+		\draw [style=new edge style 0] (35.center)
+			 to (27.center)
+			 to (28.center)
+			 to (29.center)
+			 to (30.center)
+			 to [bend right=15] (31.center)
+			 to (32.center)
+			 to [bend right=15] (33.center)
+			 to (34.center)
+			 to [bend right=15] cycle;
+		\draw [style=new edge style 0] (27.center) to (26.center);
+		\draw [style=new edge style 0] (26.center) to (29.center);
+		\draw [style=new edge style 0] (37.center) to (35.center);
+		\draw [style=new edge style 0] (39.center) to (32.center);
+		\draw (60.center) to (59.center);
+		\draw (59.center) to (58.center);
+		\draw (58.center) to (57.center);
+		\draw (57.center) to (60.center);
+		\draw (63.center) to (43.center);
+		\draw (62.center) to (42.center);
+		\draw [style=new edge style 0, in=90, out=0] (87) to (83.center);
+		\draw [style=new edge style 0, bend left=15] (85) to (87);
+		\draw [style=new edge style 0, bend right=15] (86) to (87);
+		\draw [style=new edge style 0] (79.center) to (85);
+		\draw [style=new edge style 0] (52.center) to (86);
+		\draw [style=new edge style 0] (85) to (81.center);
+		\draw [style=new edge style 0] (86) to (53.center);
+	\end{pgfonlayer}
+\end{tikzpicture}
