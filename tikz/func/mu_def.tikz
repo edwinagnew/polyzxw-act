@@ -1,0 +1,20 @@
+\begin{tikzpicture}
+	\begin{pgfonlayer}{nodelayer}
+		\node [style=none] (0) at (2.75, 0) {};
+		\node [style=none] (1) at (0, 0) {};
+		\node [style=none] (2) at (0, 2) {};
+		\node [style=none] (3) at (0, 1) {};
+		\node [style=wn] (4) at (1.25, 1.5) {$\land$};
+		\node [style=none] (5) at (2.75, 1.5) {};
+		\node [style=wire label] (7) at (0, 1.25) {$\mathbb{C}^2$};
+		\node [style=wire label] (9) at (0, 2.25) {$\mathbb{C}^2$};
+		\node [style=wire label] (10) at (0, 0.25) {$V$};
+		\node [style=right label] (11) at (2.75, 1.75) {$\mathbb{C}^2$};
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\draw (1.center) to (0.center);
+		\draw [bend left=15] (2.center) to (4);
+		\draw [bend right=15] (3.center) to (4);
+		\draw (4) to (5.center);
+	\end{pgfonlayer}
+\end{tikzpicture}

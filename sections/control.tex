@@ -156,4 +156,36 @@ Thus $AND(1, x) = x$. Since the diagram is clearly commutative, it remains to ch
     \end{equation*}
 \end{proof}
 
-In order to make multiple-control a monad, we first need to make $F$ an endofunctor. Although $F$ does take DND matrices to DND matrices, the definition of a monad requires that the components of the multiplication $\mu_V: F^2 V \to FV$ live in the codomain. However, AND is a dimension decreasing matrix so does not live in $\mathbf{Hilb_{\leq}}$. To get around this,  we define a new category 
+In order to make multiple-control a monad, we first need to make $F$ an endofunctor. Although $F$ does take DND matrices to DND matrices, the definition of a monad requires that the components of the multiplication $\mu_V: F^2 V \to FV$ live in the codomain. However, AND is a dimension decreasing matrix so does not live in $\mathbf{Hilb_{\leq}}$. To get around this, we define a new category $\mathbf{Hilb_j}$ consisting of square matrices on the bottom $j$ wires and control logic on the remaining wires.  
+
+Still functor
+
+Now define $F_V: F^2 V \to FV$ and $\eta_V: id_V \to FV$ as follws:
+\begin{equation*}
+    \tikzfig{tikz/func/mu_def} \qquad \tikzfig{tikz/func/eta_def}
+\end{equation*}
+
+\begin{prop}
+    $(F, \mu, \eta)$ defined a monad on $\mathbf{Hilb_j}$
+\end{prop}
+\begin{proof}
+    Firstly, $\mu$ is a natural transformation since for any $M: V \to V$:
+    \begin{equation*}
+        \tikzfig{tikz/func/mu_nat}
+    \end{equation*}
+
+
+    Similary, $\eta$ is a natural transformation since for any $M: V \to V$:
+    \begin{equation*}
+        \tikzfig{tikz/func/eta_nat}
+    \end{equation*}
+
+    For the unitality coherence condition:
+    \begin{equation*}
+        \tikzfig{tikz/func/coh1}
+    \end{equation*}
+
+
+
+
+\end{proof}
