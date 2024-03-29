@@ -1,33 +1,32 @@
 \section{ZXW Calculus}
 
-
+This section introduces the generators of the ZXW calculus. Diagrams are to be read top to bottom or, in later sections, left to right.
 \subsection{Generators}
 
-The (qubit) ZXW calculus is build from the following generators:
-
-\begin{itemize}
-  \item \textbf{Identity wire}: \begin{equation*}
-    \lowerbox{\idwire[0.8]} ~:=~ \begin{bmatrix}
-      1 & 0 & \\ 0 & 1
-    \end{bmatrix}
-  \end{equation*}
-  \item \textbf{Swap}:\begin{equation*}
-    \lowerbox[10]{\swap[0.4]} ~:=~ \begin{bmatrix}
-      1 & 0 & 0 & 0 \\ 0 & 0 & 1 & 0 \\ 0 & 1 & 0 & 0 \\ 0 & 0 & 0 & 1
-    \end{bmatrix}
-  \end{equation*}
-  \item \textbf{Z box}: \begin{equation*}
-    \tikzfig{tikz/lemmas/zspid} ~:=~ |0^m\rangle\langle0^n| + e^{i\alpha}|1^m\rangle\langle1^n|, \alpha \in \mathbb{C}
-  \end{equation*}
-  \item \textbf{W node}: \begin{equation*}
-    \raisebox{-7pt}{\wspid[0.7]} ~:=~ |00\rangle \braz + |01\rangle \brao + |10\rangle \brao
-  \end{equation*}
-  \item \textbf{H box}: \begin{equation*}\raisebox{-8pt}{\hgate} := \frac{1}{\sqrt{2}}\begin{bmatrix}1 & 1 \\ 1 & -1\end{bmatrix}\end{equation*}
-\end{itemize}
-
-Additional notation
-
-Rules in appendix \ref*{sec:apprules}
+The (qubit) ZXW calculus is built from the following generators:
 
 
-A number of basic lemmas are found in appendix \ref*{sec:applem}.
+\begin{gather*}
+  \lowerbox{\idwire[0.8]} ~:=~ \begin{bmatrix}1 & 0 & \\ 0 & 1\end{bmatrix} \quad
+  \lowerbox[10]{\swap[0.4]} ~:=~ \begin{bmatrix} 1 & 0 & 0 & 0 \\ 0 & 0 & 1 & 0 \\ 0 & 1 & 0 & 0 \\ 0 & 0 & 0 & 1\end{bmatrix} \quad
+  \lowerbox[5]{\ccap} ~:=~ \begin{bmatrix} 1 \\ 0 \\ 0 \\ 1\end{bmatrix} \quad
+  \lowerbox[5]{\ccup} ~:=~ \begin{bmatrix} 1 & 0 & 0 & 1 \end{bmatrix} \\
+  \tikzfig{tikz/defs/zspid} ~:=~ |0^m\rangle\langle0^n| + e^{i\alpha}|1^m\rangle\langle1^n|, \alpha \in \mathbb{C} \qquad
+  \raisebox{-7pt}{\wspid[0.7]} ~:=~ |00\rangle \braz + |01\rangle \brao + |10\rangle \brao \\
+  \raisebox{-8pt}{\hgate} := \frac{1}{\sqrt{2}}\begin{bmatrix}1 & 1 \\ 1 & -1\end{bmatrix}
+\end{gather*}
+
+For simplicity, we introduce the following additional notation:
+
+\begin{equation*}
+  \tikzfig{tikz/defs/zcirc}
+\end{equation*}
+\begin{equation*}
+  \tikzfig{tikz/defs/xcirc}
+\end{equation*}
+\begin{gather*}
+  \raisebox{-10pt}{\coWs[0.7]} ~:=~ \tikzfig{tikz/defs/w_trans}
+\end{gather*}
+
+
+The complete rule set is given in appendix \ref*{sec:apprules}. Several important lemmas are found in appendix \ref*{sec:applem}.

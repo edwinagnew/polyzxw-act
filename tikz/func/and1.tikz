@@ -10,7 +10,6 @@
 		\node [style=none] (8) at (2.5, 0) {};
 		\node [style=gn] (9) at (0, 0) {};
 		\node [style={rn_phase}] (10) at (-2.75, 0.75) {$\pi$};
-		\node [style=none] (21) at (3.25, 0) {$=$};
 		\node [style=none] (23) at (5.25, -0.5) {};
 		\node [style={rn_phase}] (24) at (6, -0.5) {$\pi$};
 		\node [style=lw] (26) at (6.75, -0.5) {};
