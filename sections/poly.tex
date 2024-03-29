@@ -4,7 +4,7 @@ In this section, we reverse-engineer the underlying algebraic properties of cont
 \subsection{Rings}\label{sec:ring}
 
 
-Let $\tilde{E_n}$ be the set of controlled square matrices on $n$ qubits. The goal of this section is to prove that the addition and multiplication operations introduced above induce a ring on $\tilde{E_n}$. Before doing so, we prove a few important lemmas. The first lemma enables us to copy controlled matrices. Note that all proofs can be found in the appendix.
+Let $\tilde{E_n}$ be the set of controlled square matrices on $n$ qubits. The goal of this section is to prove that the addition and multiplication operations introduced above induce a ring on $\tilde{E_n}$. Likewise, we show that the set of controlled $n$-qubit states $\tilde{S_n}$ also forms a ring. Before doing so, we prove a few important lemmas. The first lemma enables us to copy controlled matrices. Note that all proofs can be found in the appendix.
 
 \begin{lemma}\label{lem:csq_copy}
     For any square matrix $M$, 
@@ -92,7 +92,7 @@ Associativity and commutativity of $\boxtimes$ follow as before, using (\ref{rul
 
 \subsection{Arithmetic}
 
-Its been known since 2011 that $\lowerbox{\wspid}, \lowerbox{\zspid}$ can be used to add and multiply numberstates $\numberstate$, respectively \cite{coecke2011ghz}. In the previous section we saw that $\lowerbox{\wspid}, \lowerbox{\zspid}$ can moreover be used to copy controlled diagrams. In this section, we explain this connection by demonstrating that controlled states are in fact isomorphic to multilinear polynomials. This being a bijection is a well-known folklore result in the study of entangled states, but to the best of our inquiries we are not aware of a proof. More generally, Ref.~\cite{wilson2023diffpolycirc} presented Cartesian Distributive Categories exemplified by polynomial circuits, which are isomorphic to polynomials over arbitrary commutative semirings or rings; their proof is non-constructive, giving explicit proof only for the case of Boolean circuits~\cite{wilson2021revderbool}.
+Its been known since 2011 that $\lowerbox{\wspid}, \lowerbox{\zspid}$ can be used to add and multiply number states $\numberstate$, respectively \cite{coecke2011ghz}. In the previous section we saw that $\lowerbox{\wspid}, \lowerbox{\zspid}$ can moreover be used to copy controlled diagrams. In this section, we explain this connection by demonstrating that controlled states are in fact isomorphic to multilinear polynomials. This being a bijection is a well-known folklore result in the study of entangled states, but to the best of our inquiries we are not aware of a proof. More generally, Ref.~\cite{wilson2023diffpolycirc} presented Cartesian Distributive Categories exemplified by polynomial circuits, which are isomorphic to polynomials over arbitrary commutative semirings or rings; their proof is non-constructive, giving explicit proof only for the case of Boolean circuits~\cite{wilson2021revderbool}.
 
 Firstly, we describe how to interpret certain ZXW diagrams as polynomials. Consider the following diagrams:
 
@@ -138,7 +138,7 @@ Just as it is typical to represent a polynomial in normal form as a sum of produ
     The $i$th coefficient $a_i$ is connected to the $k$th $\lowerbox{\coWs}$ iff the $k$th bit in the binary expansion of $i$ is 1. 
 \end{definition}
 
-This normal form is very closely related to the completeness normal form (see \cite{poor2023completeness}). Simply applying (\ref{rule:TA}) to the $\lowerbox{\coW}$s at the bottom of a PNF and fusing the number boxes gives a CoNF diagram. The reason we introduce the definition of a PNF is that it is an arithmetic diagram and therefore has a more immediate arithmetic interpretation. The reason for the specific connectivity condition is that it enables a PNF to directly represent its own matrix.
+This normal form is very closely related to the completeness normal form (see \cite{poor2023completeness}). The reason we introduce the definition of a PNF is that it is an arithmetic diagram and therefore has a more immediate arithmetic interpretation. The reason for the specific connectivity condition is that it enables a PNF to directly represent its own matrix.
 
 
 \begin{prop}\label{prop:vec_pnf}
