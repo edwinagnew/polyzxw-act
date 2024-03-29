@@ -2,7 +2,7 @@
 
 \subsection{Definitions}
 
-As defined in \cite{shaikh2022sum}, 
+We recall the definition of a controlled diagram from \cite{shaikh2022sum}, 
 
 \begin{definition}
     For an arbitrary square matrix $D$, the controlled matrix of $D$ is the diagram $\tilde{D}$ such that:
@@ -34,7 +34,7 @@ It is possible to perform matrix arithmetic with controlled diagrams.
     See propositions 3.3 and 3.4 in \cite{shaikh2022sum} 
 \end{proof}
 
-We can also defined the analogue for states
+We can also defined the analogue for states.
 
 \begin{definition}
     For an arbitrary state $\psi$, the controlled state of $\psi$ is the diagram $\tilde{\psi}$ such that:
@@ -66,13 +66,13 @@ The role of $\lowerbox{\coW}$ is to \textit{copy} inputs, as shown in section \r
 %    \tikzfig{tikz/con/cm_fail}
 %\end{equation*} 
 
-\subsection{Functor}
+\subsection{Control Functor}
 
 %The operation of turning a non-dimension-decreasing matrix to its controlled diagram can be made into a lax monoidal functor. Let $\mathbf{Hilb_{\leq}}$ be the subcategory of Hilbert spaces and non-dimension-descreasing linear transformations. Adding an additional horizontal wire to facilitate composition, $F: \mathbf{Hilb_{\leq}} \to \mathbf{Hilb}$ is defined as follows for arbitrary  $D \in Hom_{Hilb_{\leq}}(V, W)$.
 The operation of turning a square matrix to its controlled diagram can be made into a lax monoidal functor. Let $\mathbf{Hilb_{sq}}$ be the subcategory of Hilbert spaces and square matrices. Adding an additional horizontal wire to facilitate composition, $F: \mathbf{Hilb_{sq}} \to \mathbf{Hilb}$ is defined as follows for arbitrary  $D \in Hom_{Hilb_{sq}}(V, V)$.
 
 \begin{equation}\label{eq:F_def}
-    F:: \tikzfig{tikz/func/F_def}
+    \Control :: \tikzfig{tikz/func/F_def}
 \end{equation}
 
 In the functorial box notation of \cite{mellies2006functorial}, this would be:
@@ -82,7 +82,7 @@ In the functorial box notation of \cite{mellies2006functorial}, this would be:
 
 
 \begin{prop}
-    The map $F$ defined in (\ref{eq:F_def}) is a lax monoidal funtor.
+    The map $\Control$ defined in (\ref{eq:F_def}) is a lax monoidal funtor.
 \end{prop}
 \begin{proof}
     On $id_V: V \to V$:
@@ -90,12 +90,12 @@ In the functorial box notation of \cite{mellies2006functorial}, this would be:
         \tikzfig{tikz/func/F_id}
     \end{equation*}
 
-    Let $D_1: U \to V$, $D_2: V \to W$, where $U, V, W$ have dimensions $l, m, n$ respectively. Then composing $F(D_2) \circ F(D_1)$:
+    Let $D_1: U \to V$, $D_2: V \to W$. Then composing $\Control(D_2) \circ \Control(D_1)$:
     \begin{equation*}
         \tikzfig{tikz/func/F_comp}
     \end{equation*}
 
-    Where $(*)$ follows from
+    Where $(*)$ follows from:
     \begin{equation*}
         \tikzfig{tikz/func/F_comp2}
     \end{equation*}
@@ -103,9 +103,9 @@ In the functorial box notation of \cite{mellies2006functorial}, this would be:
         \tikzfig{tikz/func/F_comp3}
     \end{equation*}
 
-    $F$ preserves the monoidal unit since $\mone_{\mathbf{Hilb_{sq}}} = \mone_{\mathbf{Hilb}} = \lowerbox{\emptydiag}$
+    Which implies that controlled diagrams can fuse under $\lowerbox{\zspid}$.
 
-    $F$ is lax thanks to the following structure morphism: $\phi_{V, W}: F(V) \otimes F(W) \to F(V \otimes W)$:
+    $\Control$ preserves the monoidal unit since $\mone_{\mathbf{Hilb_{sq}}} = \mone_{\mathbf{Hilb}} = \lowerbox{\emptydiag}$. $\Control$ is lax thanks to the following morphism: $\phi_{V, W}: \Control(V) \otimes \Control(W) \to \Control(V \otimes W)$:
     \begin{equation*}
         \phi_{V, W} = \tikzfig{tikz/func/F_lax_def}
     \end{equation*}
@@ -125,8 +125,7 @@ In the functorial box notation of \cite{mellies2006functorial}, this would be:
     
 \end{proof}
 
-Problem: cannt define $\mu$ without retaining functorality (squareness). Making states funcy violates OCM. 
-\subsection{Monad}
+\subsection{Multiple Control}
 
 This section proves that controlling a controlled diagram gives the AND of the control wires. First we show how to represent the binary AND gate in the ZXW calculus.
 \begin{equation*}
@@ -158,36 +157,34 @@ Thus $AND(1, x) = x$. Since the diagram is clearly commutative, it remains to ch
     \end{equation*}
 \end{proof}
 
-In order to make multiple-control a monad, we first need to make $F$ an endofunctor. Although $F$ does take DND matrices to DND matrices, the definition of a monad requires that the components of the multiplication $\mu_V: F^2 V \to FV$ live in the codomain. However, AND is a dimension decreasing matrix so does not live in $\mathbf{Hilb_{\leq}}$. To get around this, we define a new category $\mathbf{Hilb_j}$ consisting of square matrices on the bottom $j$ wires and control logic on the remaining wires.  
-
-Still functor
-
-Now define $F_V: F^2 V \to FV$ and $\eta_V: V \to FV$ as follws:
-\begin{equation*}
-    \tikzfig{tikz/func/mu_def} \qquad \tikzfig{tikz/func/eta_def}
-\end{equation*}
+Since AND is a monoid, it is reasonable to expect that multiple control induces a monad. Unfortunately, this does not appear to go through. Although AND does define a natural transformation (in the relevant category), defining the unit of the monad necessitates defining the controlled diagram of an arbitrary matrix, which breaks functoriality. Nevertheless we prove that AND is a natural transformation.
 
 \begin{prop}
-    $(F, \mu, \eta)$ defined a monad on $\mathbf{Hilb_j}$
+    $\mu: \Control ^2 \to \Control$ is a natural transformation with components $\mu_V: \Control^2 V \to \Control V$ defined as follows:
+
+    \begin{equation*}
+        \tikzfig{tikz/func/mu_def}
+    \end{equation*}
 \end{prop}
+
 \begin{proof}
-    Firstly, $\mu$ is a natural transformation since for any $M: V \to V$:
     \begin{equation*}
         \tikzfig{tikz/func/mu_nat}
     \end{equation*}
-
-
-    Similary, $\eta$ is a natural transformation since for any $M: V \to V$:
-    \begin{equation*}
-        \tikzfig{tikz/func/eta_nat}
-    \end{equation*}
-
-    For the unitality coherence condition:
-    \begin{equation*}
-        \tikzfig{tikz/func/coh1}
-    \end{equation*}
-
-
-
-
+    Due to the $Z-H$ bialgebra in the ZH calculus. 
 \end{proof}
+
+%\begin{prop}
+%    $(F, \mu, \eta)$ defined a monad on $\mathbf{Hilb_j}$
+%\end{prop}
+%\begin{proof}
+%    Firstly, $\mu$ is a natural transformation since for any $M: V \to V$:
+%Similary, $\eta$ is a natural transformation since for any $M: V \to V$:
+%    \begin{equation*}
+%        \tikzfig{tikz/func/eta_nat}
+%    \end{equation*}
+% For the unitality coherence condition:
+%    \begin{equation*}
+%        \tikzfig{tikz/func/coh1}
+%    \end{equation*}
+%\end{proof}

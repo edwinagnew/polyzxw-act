@@ -85,7 +85,7 @@ Where $k \in \{0, 1\}$.
 
 \section{Basic Lemmas}\label{sec:applem}
 
-The following lemmas follow immediately from the bra-ket definition of $\lowerbox{\wspid}$:
+The following two lemmas follow immediately from the bra-ket definition of $\lowerbox{\wspid}$:
 \begin{lemma}
     \begin{equation}\label{eq:wid}
         \tikzfig{tikz/lemmas/wid}
@@ -219,11 +219,9 @@ The following lemmas follow immediately from the bra-ket definition of $\lowerbo
     \end{equation*}
   \end{proof}
 
+\section{Main Proofs}\label{sec:appiso}
 
-
-\section{Proofs}\label{sec:appiso}
-
-Proof of lemma \ref*{lem:csq_copy}
+\textbf{Proof of Lemma \ref*{lem:csq_copy}}
 \begin{proof}
     First of all, using (\ref{rule:BZW}) we can rewrite the LHS to
     \begin{equation*}
@@ -243,7 +241,7 @@ Proof of lemma \ref*{lem:csq_copy}
     Thus the two sides are equal over the Z basis and so are equal as diagrams.
 \end{proof}
 
-Proof of lemma \ref*{lem:csq_add_comm}
+\textbf{Proof of Lemma \ref*{lem:csq_add_comm}}
 \begin{proof}
     We prove by plugging red and commutativity of matrix addition. By definition of controlled matrices, plugging $\lowerbox{\redzero}$ gives $I_n$ on both sides. Meanwhile, plugging $\lowerbox{\redpi}$ gives:
     \begin{equation*}
@@ -251,14 +249,14 @@ Proof of lemma \ref*{lem:csq_add_comm}
    \end{equation*}
 \end{proof}
 
-Proof of lemma \ref*{lem:csq_dist}
+\textbf{Proof of Lemma \ref*{lem:csq_dist}}
 \begin{proof}
     \begin{equation*}
         \tikzfig{tikz/con/csq_dist}
     \end{equation*}
 \end{proof}
 
-Proof of proposition \ref*{lem:cs_copy}
+\textbf{Proof of Lemma \ref*{lem:cs_copy}}
 \begin{proof}
     As before, plugging $|0\rangle$ gives
     \begin{equation*}
@@ -273,12 +271,12 @@ Proof of proposition \ref*{lem:cs_copy}
     Completing the proof
 \end{proof}
 
-Proof of lemma \ref*{lem:cs_add_comm}
+\textbf{Proof of Lemma \ref*{lem:cs_add_comm}}
 \begin{proof}
     \tikzfig{tikz/con/cs_add_comm}
 \end{proof}
 
-Proof of lemma \ref*{lem:cs_add_id}
+\textbf{Proof of Lemma \ref*{lem:cs_add_id}}
 \begin{proof}
     It is clear that $\lowerbox[10]{\zeroproj}$ is the controlled state $\tilde{\mathbf{0}}$. 
     
@@ -289,7 +287,7 @@ Proof of lemma \ref*{lem:cs_add_id}
 
 \end{proof}
 
-Proof of lemma \ref*{lem:cs_add_inv}
+\textbf{Proof of Lemma \ref*{lem:cs_add_inv}}
 \begin{proof}
     $\tilde{\psi} \circ \raisebox{-5pt}{\numbergate[-1]}$ is still a controlled state since $\raisebox{-5pt}{\numbergate[-1]}$ does nothing to $\raisebox{-5pt}{\redzero}$. Then $\tilde{\psi} \circ \raisebox{-5pt}{\numbergate[-1]}$ inverts $\tilde{\psi}$ since:
     \begin{equation*}
@@ -297,7 +295,7 @@ Proof of lemma \ref*{lem:cs_add_inv}
     \end{equation*}
 \end{proof}
 
-Proof of lemma \ref*{lem:cs_add_inv}
+\textbf{Proof of Lemma \ref*{lem:cs_add_inv}}
 \begin{proof}
     \begin{gather*} %\label{eq:cs_dist}
         \tilde{\psi_1} \boxtimes (\tilde{\psi_2} \boxplus \tilde{\psi_3}) ~=~ \tikzfig{tikz/distproof/d1} ~
@@ -309,7 +307,7 @@ Proof of lemma \ref*{lem:cs_add_inv}
 \end{proof}
 
 
-Proof of proposition \ref*{prop:vec_pnf}
+\textbf{Proof of Proposition \ref*{prop:vec_pnf}}
 \begin{proof}
     We prove by induction on $n$.
     
@@ -365,7 +363,7 @@ Proof of proposition \ref*{prop:vec_pnf}
     Completing the inductive step.
 \end{proof}
 
-Proof of propsotion \ref*{prop:uni_pnf}
+\textbf{Proof of Propsotion \ref*{prop:uni_pnf}}
 
 \begin{proof}
     Let $A$ be an arithmetic diagram. If $A = \numberstate$, we are done. 
@@ -402,9 +400,8 @@ Proof of propsotion \ref*{prop:uni_pnf}
 
 \end{proof}
 
-\subsection{Isomorphism}
 
-Proof of Theorem \ref*{thm:iso}
+\textbf{Proof of Theorem \ref*{thm:iso}}
 \begin{proof}
     
     First, we show $\phi_n$ is a homomorphism, i.e. \begin{equation*}
