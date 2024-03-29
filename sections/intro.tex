@@ -1,34 +1,16 @@
 \section{Introduction}
+Considering broadly, controlling or branching to different possible linear maps, relations, or channels has been studied through many different approaches. In quantum algorithms common techniques are block encodings~\cite{gilyen2019qsvt, rall2020qalgsblockenc} and linear combination of unitaries~\cite{childs2012hamsimlcu}, while a number of categorical formalisations have included routed quantum circuits~\cite{vanrietvelde2021routed}, the many-worlds calculus~\cite{chardonnet2023manyworlds}, categorifying signal flow diagrams~\cite{baez2015categoriesctrl}, and classical and quantum control in quantum modal logic~\cite{sati2023quantummonadology}.
 
+The question we are interested in, is how quantum graphical calculi such as the ZX, ZW, and ZH calculus and their combinations can be augmented to support properties of quantum control.
+An early use of controlled state diagrams was for proving constructive and rational angle ZX calculus completeness~\cite{jeandel2018zxconstructive}. More recently, controlled state and controlled matrix diagrams have been applied to addition and differentiation of ZX diagrams~\cite{jeandel2024adddiffzx}, differentiating and integrating ZX diagrams for quantum machine learning~\cite{wang2022diffintzx}, Hamiltonian exponentiation and simulation~\cite{shaikh2022sum}, and non-linear optical quantum computing~\cite{de2023light}. To sum ZX diagrams, these works have used controlled states along with the W generator from the ZW calculus~\cite{coecke2010zw}.
 
-Examples of applications of category theory to quantum programs include to embed into a host functional programming language~\cite{rennela2020clctrllinlogic}, to do equational reasoning from algebraic theory~\cite{staton2015algqpl},
+Given how useful controlled diagrams have been, a natural question to ask is why they work: What their underlying mathematical structures are, and which equational rewrites they satisfy.
+We began exploring this starting from the unique normal form for states used for the first proofs of complete axiomatisation for qubit graphical calculi~\cite{hadzihasanovic2017thesis, Hadzihasanovic2018zwzxcomplete}.
+We first give a simple proof showing an isomorphism between controlled states and multilinear polynomials. This being a bijection is a well-known folklore result in the study of entangled states, but to the best of our inquiries we are not aware of a proof. More generally, Ref.~\cite{wilson2022diffpolycirc} presented Cartesian Distributive Categories exemplified by polynomial circuits, which are isomorphic to polynomials over arbitrary commutative semirings or rings; their proof is non-constructive, giving explicit proof only for the case of Boolean circuits~\cite{wilson2021revderbool}.
 
-
-ZW calculus~\cite{coecke2011ghz}
-completeness for arbitrary finite dimension~\cite{poor2023completeness}
-applicatios to photonic quantum computing~\cite{de2023light}, quantum machine learning~\cite{koch2022quantum}, and Hamiltonian simulation~\cite{shaikh2022sum}.
-
-Ref.~\cite{wilson2022diffpolycircml} presented Cartesian Distributive Categories exemplified by polynomial circuits, which are isomorphic to polynomials over arbitrary commutative semirings or rings.
-They proved this isomorphism explicitly in Ref. for the case of Boolean circuit.
-
-% We can add section references
 In this paper, we first define a fragment of the qubit ZW calculus corresponding to controlled states. This defines a subcategory we prove is isomorphic to multilinear polynomials $\mathbb{C}[x_1,...,x_n]/({x_1}^2,...,{x_n}^2)$.
 
-We then introduce a higher-order map $\Control$ which maps states to controlled states, and square matrices to controlled square matrices. We prove that $\Control$ is a lax monoidal functor on the subcategory $\Hilb_{\leq}$ of linear maps $n \rightarrow m$ such that $n \leq m$. We then apply the ZH calculus to show that multiple applications of $\Control$ i.e. multiple-controlling is monadic.
+We then introduce a higher-order map $\Control$ which sends states to controlled states, and square matrices to controlled square matrices. We prove that $\Control$ is a lax monoidal functor on the subcategory $\Hilb_{\leq}$ of linear maps $n \rightarrow m$ such that $n \leq m$. This allows us to use the functorial boxes of Ref.~\cite{mellies2006functorial} to control ZX diagrams with at least as many output wires as input wires. Furthermore, we apply the ZH calculus to show that under the appropriate circumstances, multiple applications of $\Control$ i.e. multiple-controlling is monadic.
 
-We show that the set of all controlled $n$-partite states defines a commutative ring $(\tilde{S^n},\boxplus,\boxtimes)$. We introduce $\boxplus$ which defines an Abelian group and $\boxtimes$ which defines a commutative monoid, and show that $\boxtimes$ distributes over $\boxplus$.
-
-Analogously, we show that the set of all controlled square matrices on $n$ qubits defines a non-commutative ring $(\tilde{M^n},\scalebox{0.7}{\tikzfig{tikz/inline/W}},\scalebox{0.7}{\tikzfig{tikz/inline/Z}})$. Commutativity holds in the special case that the control conditions are mutually exclusive, allowing copying of arbitrary controlled diagrams. As a result, we can factor multivariate polynomials over same-size square matrices; this enables templated equational rewrites for factoring any Hamiltonians of the form in Ref.~\cite{shaikh2022sum}.
-
-
-
-% functorial boxes in string diagrams~\cite{mellies2006functorial}
-% polynomial factorisation~\cite{forbes2015complexity}
-
-
-\section{Conclusion}
-
-% Future work % qudits
-We would like to try the very recently introduced mechanism of \emph{scoped effects}~\cite{lindley2024scoped} as an approach to better formulate the monadic nature of multiple-control.
-
-We are also curious about reconciling the interpretation of diagrammatic differentiation of our arithmetic polynomial circuits by the approach in Ref.~\cite{wilson2023diffpolycirc}, with that of quantum circuits and ZX diagrams in Refs.~\cite{toumi2021diagdiff, wang2022diffintzx, jeandel2024adddiffzx}.
+Next, we show that the set of all controlled $n$-partite states defines a commutative ring $(\tilde{S^n},\boxplus,\boxtimes)$. We introduce $\boxplus$ which defines an Abelian group and $\boxtimes$ which defines a commutative monoid, and show that $\boxtimes$ distributes over $\boxplus$.
+Analogously, we show that the set of all controlled square matrices on $n$ qubits defines a non-commutative ring $(\tilde{M^n}, \lowerbox[7]{\wspids}, \lowerbox[7]{\zspids})$. We compose controlled states into each control wire of controlled square matrices to recover multivariate polynomials over same-size square matrices. Commutativity of controlled square matrices holds in the special case that the controls target mutually exclusive sectors, allowing copying of arbitrary controlled diagrams. As a result, we can factor multivariate polynomials over same-size square matrices; this means we can now factor arbitrary qubit Hamiltonians in the ZXW calculus~\cite{shaikh2022sum}, even with all the terms black-boxed.
