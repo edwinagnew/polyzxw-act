@@ -7,13 +7,10 @@ We recall the definition of a controlled diagram from \cite{shaikh2022sum},
 \begin{definition}\label{def:ctrlsqmat}
     For an arbitrary square matrix $M$, the controlled matrix of $M$ is the diagram $\tilde{M}$ such that:
 
-    \begin{equation}
-        \tikzfig{tikz/con/c_sq1}
-    \end{equation} 
-
-    \begin{equation}
+    \begin{gather}
+        \tikzfig{tikz/con/c_sq1}\qquad\qquad\qquad\qquad
         \tikzfig{tikz/con/c_sq2}
-    \end{equation} 
+    \end{gather} 
 \end{definition}
 
 It is possible to perform matrix arithmetic with controlled diagrams. 
@@ -24,7 +21,7 @@ It is possible to perform matrix arithmetic with controlled diagrams.
         \tikzfig{tikz/con/csq_prod}
     \end{equation*}
 
-    Given controlled matrices $\tilde{M_1}, ..., \tilde{M_k}$ and complex numbers $c_1, ..., c_k$, the controlled matrix $\widetilde{\Sigma_i c_i M_i}$ is given by
+    Given controlled matrices $\tilde{M_1}, ..., \tilde{M_k}$ and $c_1, ..., c_k \in \mathbb{C}$, the controlled matrix $\widetilde{\Sigma_i c_i M_i}$ is given by
     \begin{equation*}
         \tikzfig{tikz/con/csq_sum}
     \end{equation*}
@@ -34,7 +31,7 @@ It is possible to perform matrix arithmetic with controlled diagrams.
     See propositions 3.3 and 3.4 in~\cite{shaikh2022sum}.
 \end{proof}
 
-We can also defined the analogue for states.
+We can also define the analogue for states.
 
 \begin{definition}
     For an arbitrary state $\psi$, the controlled state of $\psi$ is the diagram $\tilde{\psi}$ such that:
@@ -47,7 +44,7 @@ We can also defined the analogue for states.
 The addition and multiplication of controlled states are defined similarly to controlled matrix arithmetic, except that a layer of $\lowerbox{\coW}$s are appended at the bottom to preserve the number of outputs.
 
 \begin{equation*}
-    \tikzfig{tikz/con/cs_add_def} \qquad         \tikzfig{tikz/con/cs_times_def}
+    \tikzfig{tikz/con/cs_add_def} \qquad \qquad\qquad\qquad        \tikzfig{tikz/con/cs_times_def}
 \end{equation*}
 
 The role of $\lowerbox{\coW}$ is to \textit{copy} controlled diagrams, as shown in section \ref{sec:ring}.
@@ -128,34 +125,23 @@ In the functorial box notation of \cite{mellies2006functorial}, this would be:
 \subsection{Multiple Control}
 
 This section proves that controlling a controlled diagram gives the AND of the control wires. First we show how to represent the binary AND gate in the ZXW calculus, and check it in Appendix~\ref*{sec:appiso}. This construction is by deMorgan's law of a diagram for binary OR from \Cref{prop:vec_pnf}.
-\begin{prop}\label{prop:and}
+\begin{lemma}\label{lemma:and}
     \begin{equation*}
         \tikzfig{tikz/func/and_def}
     \end{equation*}
-\end{prop}
+\end{lemma}
 
-
-\begin{prop}
+Multiple applications of $\Control$ ANDs the controls, proved in Appendix~\ref*{sec:appiso}.
+\begin{prop}\label{prop:FF}
     \begin{equation*}
         \tikzfig{tikz/func/FF_statement}
     \end{equation*}
 \end{prop}
 
-\begin{proof}
-    Plugging basis states:
-    \begin{equation*}
-        \tikzfig{tikz/func/FF1}
-    \end{equation*}
-    \begin{equation*}
-        \tikzfig{tikz/func/FF2}
-    \end{equation*}
-\end{proof}
-
 Since AND is a monoid, it is reasonable to expect that multiple control induces a monad. Unfortunately, this does not appear to go through. Although AND does define a natural transformation (in the relevant category), defining the unit of the monad necessitates defining $\Control$ of non-square matrices, which breaks functoriality. Nevertheless we prove that AND is a natural transformation.
 
 \begin{prop}
     $\mu: \Control ^2 \to \Control$ is a natural transformation with components $\mu_V: \Control^2 V \to \Control V$ defined as follows:
-
     \begin{equation*}
         \tikzfig{tikz/func/mu_def}
     \end{equation*}
