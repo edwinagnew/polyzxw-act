@@ -1,0 +1,28 @@
+\section{Algebraic Complexity}
+
+While boolean complexity theory studies the number of AND/OR gates required to comput some specified function, algebraic circuit complexity studies the number of addition/multiplication operations required to compute some specifed polynomial. More formally, we have the following definitions from~\cite{shpilka2010arithmetic}.
+
+\begin{definition}
+	An algebraic circuit $C$ over $n$ variables and some field $\mathbb{F}$ is a directed acyclic graph where the leaves are labelled with constants $c \in \mathbb{F}$ or variables $x_i$ and internal nodes labelled with $+$ or $\times$ gates. The root of $C$ is identified with the polynomial $p \in \mathbb{F}[x_1, ..., x_n]$ that is computed by $C$.
+\end{definition}
+
+
+\begin{definition}
+    A family of polynomials $(f_n)_{n=1}^\infty$ is in $\mathsf{VP}$ iff for every $n$, $f_n$ has at most $poly(n)$ variables and degree and there exists an arithmetic circuit computing $f_n$ of size $poly(n)$.
+\end{definition}
+
+
+\begin{definition}
+    A family of polynomials $(g_n)_{n=1}^\infty$ is in $\mathsf{VNP}$ iff for every $n$, $g_n$ has at most $poly(n)$ variables and degree and there exists some family $(f_n)_{n=1}^\infty \in \mathsf{VP}$ such that $$g_n(x_1, ..., x_{poly(n)}) = \sum_{\Vec{e} \in \{0, 1\}^{poly(n)}} f_{poly(n)}(x_1, ..., x_{poly(n)}, e_1, ..., e_{poly(n)})$$
+\end{definition}
+
+It is clear that $\mathsf{VP} \subseteq \mathsf{VNP}$. As with the $\mathsf{P}$ vs. $\mathsf{NP}$ question, it is believed that $\mathsf{VP} \neq \mathsf{VNP}$, but this remains open. 
+
+By theorem \ref{thm:iso}, we can now interpret (controlled) states as algebraic circuits. Therefore, we can propose a novel algebraic complexity class, based on the polynomials computed by polynomially sized quantum circuits.
+
+\begin{definition}
+    A family of polynomials $(f_n)_{n=1}^\infty$ is in $\mathsf{VQP}$ iff for every $n$ there exists a polynomially sized quantum circuit $Q_n$ on $n$ qubits such that $$f_n = p_{Q_n|0...0\rangle}$$
+\end{definition}
+
+
+Multilinear. Comparison to VP VNP. But mutli VP equal multi VNP!
