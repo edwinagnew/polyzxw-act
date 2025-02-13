@@ -119,7 +119,7 @@ The reason for the missing $2x^2$ term is that (\ref{eq:kill_quad}) implies $x^2
     A ZXW diagram with a single input on top is \textbf{arithmetic} if it contains only  $\lowerbox{\idwire}$, $\lowerbox{\swap}$ wires, $\lowerbox[7]{\wspids}$, $\lowerbox[7]{\zspids}$, $\lowerbox{\coWs}$ nodes and $\numberstate$ boxes.
 \end{definition}
 \begin{remark}
-    This fragment of the ZXW calculus defines a subcategory; adding $\lowerbox{\redzero}$, this is a Cartesian Distributive Category as defined in Ref.~\cite{wilson2023diffpolycirc}.
+    This fragment of the ZXW-calculus defines a subcategory; adding $\lowerbox{\redzero}$, this is an instance of a Cartesian Distributive Category as defined in Ref.~\cite{wilson2023diffpolycirc}.
 \end{remark}
 
 To interpret an arithmetic ZXW diagram as an arithmetic expression, read $\wspid$ as $+$, $\zspid$ as $\times$, $\numberstate$ as the number $a$, $\coW$ as fanout and output/bottom wires as variables $x_1, ..., x_n$ numbered from left to right. The following lemma establishes that all arithmetic diagrams are controlled states:
@@ -162,7 +162,7 @@ Thus, every controlled state can be represented as at least one arithmetic diagr
 
 
 \begin{thm}\label{thm:uni_pnf}
-    All arithmetic diagrams can be rewritten into PNF through application of ZXW rules. Therefore, those ZXW calculus rules applied suffice for completeness for the arithmetic fragment of the ZXW calculus.
+    All arithmetic diagrams can be rewritten into PNF through application of ZXW rules. Therefore, those ZXW-calculus rules applied suffice for completeness for the arithmetic fragment of the ZXW-calculus.
 \end{thm}
 
 \begin{proof}
@@ -200,7 +200,7 @@ Instead of the indeterminates being complex numbers represented by $\numberstate
 We then have that:
 \begin{thm}
     ZXW diagrams where the outputs of an arithmetic ZXW diagram are each plugged into controls of same-size controlled matrices, are isomorphic to multivariate polynomials over same-size square matrices with complex number coefficients.
-    The rules for their completeness are the same subset of ZXW rules used for completeness for arithmetic diagrams in the ZXW calculus in \Cref{thm:uni_pnf}, plus the controlled square matrix as a generator along with the four rewrite rules for it in \Cref{def:ctrlsqmat}, \Cref{lem:csq_copy}, and \Cref{lem:csq_add_comm}.
+    The rules for their completeness are the same subset of ZXW rules used for completeness for arithmetic diagrams in the ZXW-calculus in \Cref{thm:uni_pnf}, plus the controlled square matrix as a generator along with the four rewrite rules for it in \Cref{def:ctrlsqmat}, \Cref{lem:csq_copy}, and \Cref{lem:csq_add_comm}.
 \end{thm}
 \begin{proof}
     The proof is by the same algorithm for rewriting to PNF as \Cref{thm:uni_pnf}, modifying step (6) to copy controlled square matrices using \Cref{lem:csq_copy}, using \Cref{lem:csq_add_comm} to commute controlled square matrices whose controls act on mutually exclusive sectors.

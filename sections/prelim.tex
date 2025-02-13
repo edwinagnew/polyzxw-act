@@ -1,0 +1,72 @@
+\section{Preliminaries}
+
+This section introduces the ZXW-calculus, and how controlled diagrams are defined in it. The ZXW-calculus is a diagrammatic formalism for qudit computation, unifying the ZX and ZW calculi and synthesising their relative strenghts. The ZXW-calculus consists of diagrams built from a small number of generators and equipped with a complete set of rewrite rules which enables all equalities between linear maps to be proven diagramatically.  Diagrams are to be read top to bottom or, in later sections, left to right.
+
+\subsection{The ZXW-Calculus}
+%%% some intro about the zxw-calculus, specifically some applications/citations and the explaining the completeness results, should go here.
+The qubit ZXW-calculus is built from the following generators:
+
+\begin{gather*}
+  \left\llbracket \quad \lowerbox{\idwire[0.5]} \;\;\; \right\rrbracket ~=~ \begin{bmatrix}1 & 0 \\ 0 & 1\end{bmatrix} \quad
+  \left\llbracket \; \lowerbox[10]{\swap[0.4]} \; \right\rrbracket ~=~ \begin{bmatrix} 1 & 0 & 0 & 0 \\ 0 & 0 & 1 & 0 \\ 0 & 1 & 0 & 0 \\ 0 & 0 & 0 & 1\end{bmatrix} \quad
+  \Big\llbracket \; \lowerbox[3]{\ccap} \; \Big\rrbracket ~=~ \begin{bmatrix} 1 \\ 0 \\ 0 \\ 1\end{bmatrix} \quad
+  \left\llbracket \; \lowerbox[5]{\ccup} \; \right\rrbracket ~=~ \begin{bmatrix} 1 & 0 & 0 & 1 \end{bmatrix} \\
+  \left\llbracket \;\; \tikzfig{tikz/defs/zspid} \;\; \right\rrbracket ~=~ |0^m\rangle\langle0^n| + c|1^m\rangle\langle1^n|, c \in \mathbb{C} \qquad
+  \left\llbracket \;\; \raisebox{-10pt}{\wspid[0.7]} \;\; \right\rrbracket ~=~ |00\rangle \braz + |01\rangle \brao + |10\rangle \brao \\
+  \left\llbracket \;\;\; \raisebox{-8pt}{\hgate} \;\; \right\rrbracket = \frac{1}{\sqrt{2}}\begin{bmatrix}1 & 1 \\ 1 & -1\end{bmatrix}
+\end{gather*}
+
+For simplicity, we introduce the following additional notation:
+
+\begin{gather*}
+  \tikzfig{tikz/defs/zcirc}\\
+  \tikzfig{tikz/defs/xcirc}\qquad \qquad \qquad \qquad
+  \raisebox{-10pt}{\coWs[0.7]} ~:=~ \tikzfig{tikz/defs/w_trans}
+\end{gather*}
+
+
+The complete rule set is given in Appendix \ref*{sec:apprules}. Several important lemmas are found in Appendix \ref*{sec:applem}.
+
+\subsection{Controlled Diagrams}
+
+Following \cite{shaikh2022sum}, we cover the definitions of controlled states and controlled square matrices, and arithmetic on them.
+
+\begin{definition}\label{def:ctrlsqmat}
+    For an arbitrary square matrix $M$, the controlled matrix of $M$ is the diagram $\tilde{M}$ such that:
+
+    \begin{gather}
+        \tikzfig{tikz/con/c_sq1}\qquad\qquad\qquad\qquad
+        \tikzfig{tikz/con/c_sq2}
+    \end{gather} 
+\end{definition}
+
+\begin{definition}
+  For an arbitrary state $\psi$, the controlled state of $\psi$ is the diagram $\tilde{\psi}$ such that:
+
+  \begin{equation}\label{eq:cstate}
+      \tikzfig{tikz/con/c_state}
+  \end{equation}
+\end{definition}
+
+\begin{prop}[Propositions 3.3 and 3.4 of \cite{shaikh2022sum}]
+    Given controlled matrices $\tilde{M_1}, ..., \tilde{M_k}$ and $c_1, ..., c_k \in \mathbb{C}$, the controlled square matrices $\widetilde{\Pi_i M_i}$ and $\widetilde{\Sigma_i c_i M_i}$ are respectively given by
+    \begin{equation*}
+      \tikzfig{tikz/con/csq_prod}\qquad\qquad\qquad\qquad\tikzfig{tikz/con/csq_sum}
+    \end{equation*}
+\end{prop}
+
+The addition and multiplication of controlled states are defined similarly to controlled matrix arithmetic, except that a layer of $\lowerbox{\coW}$s are appended at the bottom to preserve the number of outputs.
+The role of $\lowerbox{\coW}$ is to \textit{copy} controlled diagrams, as we will show in Section~\ref{sec:ring}.
+
+\begin{prop}
+  Given controlled states $\tilde{\psi}$ and $\tilde{\phi}$, we define addition $\tilde{\psi} \boxplus \tilde{\phi}$ and multiplication $\tilde{\psi} \boxtimes \tilde{\phi}$ operations on them to result in the controlled states:
+  \begin{equation*}
+    \tikzfig{tikz/con/cs_add_def} \qquad \qquad\qquad\qquad        \tikzfig{tikz/con/cs_times_def}
+\end{equation*}
+\end{prop}
+\begin{remark}
+  Ref.~\cite{shaikh2022sum} defined this addition with red spiders at the bottom instead of $\lowerbox{\coW}$s; the linear map is the same, being $\tilde{\phi + \psi}$. In choosing to use $\lowerbox{\coW}$, we will soon define the arithmetic fragment of the ZW-calculus.
+  
+  Removing the $\lowerbox{\coW}$'s from the bottom of this multiplication gives the controlled diagram for the tensor product in Hilbert space $\tilde{\psi \otimes \phi}$, as noted in Ref.~\cite{jeandel2024adddiffzx}.
+\end{remark}
+Although the interpretation of $\tilde{\psi} \boxtimes \tilde{\phi}$ is not a nice expression in terms of $\psi$ and $\phi$, what we will show in this work is that this multiplication is not that of the linear maps, but of multiplication in the ring of \emph{multilinear polynomials} which we will identify with these controlled diagrams.

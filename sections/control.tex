@@ -1,69 +1,6 @@
-\section{Controlled Diagrams}
+\section{The Control Higher-Order Map}
 
-\subsection{Definitions}
-
-We recall the definition of a controlled diagram from \cite{shaikh2022sum}, 
-
-\begin{definition}\label{def:ctrlsqmat}
-    For an arbitrary square matrix $M$, the controlled matrix of $M$ is the diagram $\tilde{M}$ such that:
-
-    \begin{gather}
-        \tikzfig{tikz/con/c_sq1}\qquad\qquad\qquad\qquad
-        \tikzfig{tikz/con/c_sq2}
-    \end{gather} 
-\end{definition}
-
-It is possible to perform matrix arithmetic with controlled diagrams. 
-
-\begin{prop}[\cite{shaikh2022sum}]
-    Given controlled matrices $\tilde{M_1}, ..., \tilde{M_k}$, the controlled matrix $\widetilde{\Pi_i M_i}$ is given by
-    \begin{equation*}
-        \tikzfig{tikz/con/csq_prod}
-    \end{equation*}
-
-    Given controlled matrices $\tilde{M_1}, ..., \tilde{M_k}$ and $c_1, ..., c_k \in \mathbb{C}$, the controlled matrix $\widetilde{\Sigma_i c_i M_i}$ is given by
-    \begin{equation*}
-        \tikzfig{tikz/con/csq_sum}
-    \end{equation*}
-\end{prop}
-
-\begin{proof}
-    See propositions 3.3 and 3.4 in~\cite{shaikh2022sum}.
-\end{proof}
-
-We can also define the analogue for states.
-
-\begin{definition}
-    For an arbitrary state $\psi$, the controlled state of $\psi$ is the diagram $\tilde{\psi}$ such that:
-
-    \begin{equation}\label{eq:cstate}
-        \tikzfig{tikz/con/c_state}
-    \end{equation}
-\end{definition}
-
-The addition and multiplication of controlled states are defined similarly to controlled matrix arithmetic, except that a layer of $\lowerbox{\coW}$s are appended at the bottom to preserve the number of outputs.
-
-\begin{equation*}
-    \tikzfig{tikz/con/cs_add_def} \qquad \qquad\qquad\qquad        \tikzfig{tikz/con/cs_times_def}
-\end{equation*}
-
-The role of $\lowerbox{\coW}$ is to \textit{copy} controlled diagrams, as shown in section \ref{sec:ring}.
-
-%Combining the notions of controlled square matrices and controlled states, we can a more general notion of controlled matrices. 
-
-%\begin{definition}
-%    For all $m \leq n$, the controlled matrix of an arbitrary matrix $M \in \mathbb{C}^{m \times n}$ is defined as the diagram $\tilde{M}$ such that:
-%    \begin{equation*}
-%        \tikzfig{tikz/con/c_mat1} \qquad \tikzfig{tikz/con/c_mat2}
-%    \end{equation*}
-%\end{definition}
-
-%We focus on matrices with non-decreasing dimension to avoid cases like the following which fail to satisfy funtoriality:
-%\begin{equation*}
-%    \tikzfig{tikz/con/cm_fail}
-%\end{equation*} 
-
-\subsection{Control Functor}
+\subsection{Functorial Boxes}
 
 %The operation of turning a non-dimension-decreasing matrix to its controlled diagram can be made into a lax monoidal functor. Let $\mathbf{Hilb_{\leq}}$ be the subcategory of Hilbert spaces and non-dimension-descreasing linear transformations. Adding an additional horizontal wire to facilitate composition, $F: \mathbf{Hilb_{\leq}} \to \mathbf{Hilb}$ is defined as follows for arbitrary  $D \in Hom_{Hilb_{\leq}}(V, W)$.
 The operation of turning a square matrix to its controlled diagram can be made into a lax monoidal functor. Let $\mathbf{Hilb_{sq}}$ be the subcategory of Hilbert spaces and square matrices. Adding an additional horizontal wire to facilitate composition, $\Control: \mathbf{Hilb_{sq}} \to \mathbf{Hilb}$ is defined as follows for arbitrary  $M \in Hom_{Hilb_{sq}}(V, V)$.
@@ -124,7 +61,7 @@ In the functorial box notation of \cite{mellies2006functorial}, this would be:
 
 \subsection{Multiple Control}
 
-This section proves that controlling a controlled diagram gives the AND of the control wires. First we show how to represent the binary AND gate in the ZXW calculus, and check it in Appendix~\ref*{sec:appiso}. This construction is by deMorgan's law of a diagram for binary OR from \Cref{prop:vec_pnf}.
+This section proves that controlling a controlled diagram gives the AND of the control wires. First we show how to represent the binary AND gate in the ZXW-calculus, and check it in Appendix~\ref*{sec:appiso}. This construction is by deMorgan's law of a diagram for binary OR from \Cref{prop:vec_pnf}.
 \begin{lemma}\label{lemma:and}
     \begin{equation*}
         \tikzfig{tikz/func/and_def}
