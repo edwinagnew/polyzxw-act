@@ -46,7 +46,7 @@
 		\node [style=wire label] (82) at (4.25, 1.75) {$\mathbb{C}^2$};
 	\end{pgfonlayer}
 	\begin{pgfonlayer}{edgelayer}
-		\draw [style=new edge style 0] (39.center)
+		\draw [style=filllayer] (39.center)
 			 to (49.center)
 			 to [bend right=60, looseness=0.75] (36.center)
 			 to (42.center)
@@ -56,10 +56,10 @@
 			 to [bend right=45] (44.center)
 			 to (50.center)
 			 to [bend right=45] cycle;
-		\draw [style=new edge style 0] (51.center) to (41.center);
-		\draw [style=new edge style 0] (51.center) to (42.center);
-		\draw [style=new edge style 0] (47.center) to (36.center);
-		\draw [style=new edge style 0] (50.center) to (48.center);
+		\draw [style=filllayer] (51.center) to (41.center);
+		\draw [style=filllayer] (51.center) to (42.center);
+		\draw [style=filllayer] (47.center) to (36.center);
+		\draw [style=filllayer] (50.center) to (48.center);
 		\draw (55.center) to (54.center);
 		\draw (54.center) to (53.center);
 		\draw (53.center) to (52.center);

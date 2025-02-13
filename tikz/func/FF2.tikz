@@ -90,7 +90,7 @@
 		\node [style=none] (165) at (-7.75, 0.75) {$\eqq{\ref{rule:K0}}$};
 	\end{pgfonlayer}
 	\begin{pgfonlayer}{edgelayer}
-		\draw [style=new edge style 0] (4.center)
+		\draw [style=filllayer] (4.center)
 			 to (12.center)
 			 to [bend right=60, looseness=0.75] (2.center)
 			 to (7.center)
@@ -100,13 +100,13 @@
 			 to [bend right=45] (9.center)
 			 to (13.center)
 			 to [bend right=45] cycle;
-		\draw [style=new edge style 0] (14.center) to (6.center);
-		\draw [style=new edge style 0] (14.center) to (7.center);
+		\draw [style=filllayer] (14.center) to (6.center);
+		\draw [style=filllayer] (14.center) to (7.center);
 		\draw (18.center) to (17.center);
 		\draw (17.center) to (16.center);
 		\draw (16.center) to (15.center);
 		\draw (15.center) to (18.center);
-		\draw [style=new edge style 0] (35.center)
+		\draw [style=filllayer] (35.center)
 			 to (27.center)
 			 to (28.center)
 			 to (29.center)
@@ -116,8 +116,8 @@
 			 to [bend right=15] (33.center)
 			 to (34.center)
 			 to [bend right=15] cycle;
-		\draw [style=new edge style 0] (27.center) to (26.center);
-		\draw [style=new edge style 0] (26.center) to (29.center);
+		\draw [style=filllayer] (27.center) to (26.center);
+		\draw [style=filllayer] (26.center) to (29.center);
 		\draw (96.center) to (95.center);
 		\draw (95.center) to (94.center);
 		\draw (94.center) to (93.center);

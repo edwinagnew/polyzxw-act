@@ -45,7 +45,7 @@
 		\draw (62.center) to (50.center);
 		\draw (50.center) to (61.center);
 		\draw (51.center) to (56.center);
-		\draw [style=new edge style 0] (68.center)
+		\draw [style=filllayer] (68.center)
 			 to (76.center)
 			 to [bend right=60, looseness=0.75] (66.center)
 			 to (71.center)
@@ -55,10 +55,10 @@
 			 to [bend right=45] (73.center)
 			 to (77.center)
 			 to [bend right=45] cycle;
-		\draw [style=new edge style 0] (78.center) to (70.center);
-		\draw [style=new edge style 0] (78.center) to (71.center);
-		\draw [style=new edge style 0] (74.center) to (66.center);
-		\draw [style=new edge style 0] (77.center) to (75.center);
+		\draw [style=filllayer] (78.center) to (70.center);
+		\draw [style=filllayer] (78.center) to (71.center);
+		\draw [style=filllayer] (74.center) to (66.center);
+		\draw [style=filllayer] (77.center) to (75.center);
 		\draw (64.center) to (65.center);
 	\end{pgfonlayer}
 \end{tikzpicture}

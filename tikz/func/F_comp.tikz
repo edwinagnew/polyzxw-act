@@ -179,7 +179,7 @@
 		\draw (157.center) to (141);
 		\draw (141) to (169.center);
 		\draw (144.center) to (160.center);
-		\draw [style=new edge style 0] (201.center)
+		\draw [style=filllayer] (201.center)
 			 to [bend right=45] (192.center)
 			 to (200.center)
 			 to [bend right=60, looseness=0.75] (190.center)
@@ -189,8 +189,8 @@
 			 to (191.center)
 			 to [bend right=45] (197.center)
 			 to cycle;
-		\draw [style=new edge style 0] (202.center) to (194.center);
-		\draw [style=new edge style 0] (202.center) to (195.center);
+		\draw [style=filllayer] (202.center) to (194.center);
+		\draw [style=filllayer] (202.center) to (195.center);
 		\draw (206.center) to (205.center);
 		\draw (205.center) to (204.center);
 		\draw (204.center) to (203.center);
@@ -203,7 +203,7 @@
 		\draw (244.center) to (188.center);
 		\draw (201.center) to (199.center);
 		\draw (198.center) to (190.center);
-		\draw [style=new edge style 0] (250.center)
+		\draw [style=filllayer] (250.center)
 			 to (258.center)
 			 to [bend right=60, looseness=0.75] (248.center)
 			 to (253.center)
@@ -213,16 +213,16 @@
 			 to [bend right=45] (255.center)
 			 to (259.center)
 			 to [bend right=45] cycle;
-		\draw [style=new edge style 0] (260.center) to (252.center);
-		\draw [style=new edge style 0] (260.center) to (253.center);
-		\draw [style=new edge style 0] (256.center) to (248.center);
-		\draw [style=new edge style 0] (259.center) to (257.center);
+		\draw [style=filllayer] (260.center) to (252.center);
+		\draw [style=filllayer] (260.center) to (253.center);
+		\draw [style=filllayer] (256.center) to (248.center);
+		\draw [style=filllayer] (259.center) to (257.center);
 		\draw (264.center) to (263.center);
 		\draw (263.center) to (262.center);
 		\draw (262.center) to (261.center);
 		\draw (261.center) to (264.center);
 		\draw (266.center) to (246.center);
-		\draw [style=new edge style 0] (275.center)
+		\draw [style=filllayer] (275.center)
 			 to [bend right=45] (281.center)
 			 to (285.center)
 			 to [bend right=45] (276.center)
@@ -232,10 +232,10 @@
 			 to (277.center)
 			 to (278.center)
 			 to cycle;
-		\draw [style=new edge style 0] (286.center) to (278.center);
-		\draw [style=new edge style 0] (286.center) to (279.center);
-		\draw [style=new edge style 0] (282.center) to (274.center);
-		\draw [style=new edge style 0] (285.center) to (283.center);
+		\draw [style=filllayer] (286.center) to (278.center);
+		\draw [style=filllayer] (286.center) to (279.center);
+		\draw [style=filllayer] (282.center) to (274.center);
+		\draw [style=filllayer] (285.center) to (283.center);
 		\draw (290.center) to (289.center);
 		\draw (289.center) to (288.center);
 		\draw (288.center) to (287.center);

@@ -45,7 +45,7 @@
 		\node [style={rn_phase}] (93) at (9.5, 0.5) {$\pi$};
 	\end{pgfonlayer}
 	\begin{pgfonlayer}{edgelayer}
-		\draw [style=new edge style 0] (46.center)
+		\draw [style=filllayer] (46.center)
 			 to (51.center)
 			 to (49.center)
 			 to (50.center)

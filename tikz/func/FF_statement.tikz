@@ -67,7 +67,7 @@
 		\node [style=none] (88) at (0, 0) {$=$};
 	\end{pgfonlayer}
 	\begin{pgfonlayer}{edgelayer}
-		\draw [style=new edge style 0] (4.center)
+		\draw [style=filllayer] (4.center)
 			 to (12.center)
 			 to [bend right=60, looseness=0.75] (2.center)
 			 to (7.center)
@@ -77,13 +77,13 @@
 			 to [bend right=45] (9.center)
 			 to (13.center)
 			 to [bend right=45] cycle;
-		\draw [style=new edge style 0] (14.center) to (6.center);
-		\draw [style=new edge style 0] (14.center) to (7.center);
+		\draw [style=filllayer] (14.center) to (6.center);
+		\draw [style=filllayer] (14.center) to (7.center);
 		\draw (18.center) to (17.center);
 		\draw (17.center) to (16.center);
 		\draw (16.center) to (15.center);
 		\draw (15.center) to (18.center);
-		\draw [style=new edge style 0] (35.center)
+		\draw [style=filllayer] (35.center)
 			 to (27.center)
 			 to (28.center)
 			 to (29.center)
@@ -93,22 +93,22 @@
 			 to [bend right=15] (33.center)
 			 to (34.center)
 			 to [bend right=15] cycle;
-		\draw [style=new edge style 0] (27.center) to (26.center);
-		\draw [style=new edge style 0] (26.center) to (29.center);
-		\draw [style=new edge style 0] (37.center) to (35.center);
-		\draw [style=new edge style 0] (39.center) to (32.center);
+		\draw [style=filllayer] (27.center) to (26.center);
+		\draw [style=filllayer] (26.center) to (29.center);
+		\draw [style=filllayer] (37.center) to (35.center);
+		\draw [style=filllayer] (39.center) to (32.center);
 		\draw (60.center) to (59.center);
 		\draw (59.center) to (58.center);
 		\draw (58.center) to (57.center);
 		\draw (57.center) to (60.center);
 		\draw (63.center) to (43.center);
 		\draw (62.center) to (42.center);
-		\draw [style=new edge style 0, bend left=15] (85) to (87);
-		\draw [style=new edge style 0, bend right=15] (86) to (87);
-		\draw [style=new edge style 0] (79.center) to (85);
-		\draw [style=new edge style 0] (52.center) to (86);
-		\draw [style=new edge style 0] (85) to (81.center);
-		\draw [style=new edge style 0] (86) to (53.center);
+		\draw [style=filllayer, bend left=15] (85) to (87);
+		\draw [style=filllayer, bend right=15] (86) to (87);
+		\draw [style=filllayer] (79.center) to (85);
+		\draw [style=filllayer] (52.center) to (86);
+		\draw [style=filllayer] (85) to (81.center);
+		\draw [style=filllayer] (86) to (53.center);
 		\draw [in=90, out=0, looseness=1.25] (87) to (83.center);
 		\draw (10.center) to (2.center);
 		\draw (0.center) to (20.center);
