@@ -40,9 +40,9 @@ Just as it is typical to represent a polynomial in normal form as a sum of produ
 
 \begin{definition}
     An $n$-output arithmetic diagram is said to be written in \textbf{polynormal form} (PNF) if it looks like:
-    \begin{equation*}
+    \begin{equation}\label{eq:pnf}
         \tikzfig{tikz/poly/pnf}
-    \end{equation*}
+    \end{equation}
 
     The $i$th coefficient $a_i$ is connected to the $k$th $\lowerbox{\coWs}$ iff the $k$th bit in the binary expansion of $i$ is 1. 
 \end{definition}
@@ -50,12 +50,10 @@ Just as it is typical to represent a polynomial in normal form as a sum of produ
 This normal form is familiar from completeness of all linear maps for qubits~\cite{Hadzihasanovic2018zwzxcomplete} and for qudits~\cite{poor2023completeness}. The reason we introduce the definition of a PNF is that it is an arithmetic diagram and therefore has a more immediate arithmetic interpretation. The reason for the specific connectivity condition is that it enables a PNF to directly represent its own matrix.
 
 \begin{prop}\label{prop:vec_pnf}
-    \begin{gather}\label{eq:pnf_vec}
-        \tikzfig{tikz/poly/pnf} ~=~ 
-        \begin{bmatrix}
+The diagram in equation (\ref{eq:pnf}) equals the matrix
+    $\begin{bmatrix}
             1 &  a_0 \\ 0 & a_1 \\ ... & ... \\ 0 & a_{2^n-1}
-        \end{bmatrix}
-    \end{gather}
+        \end{bmatrix}$
 \end{prop} 
 
 \begin{proof}
@@ -82,10 +80,8 @@ At last we can prove the isomorphism. Throughout we shall let $\polyring$ denote
     There is an isomorphism $\polyring \simeq \tilde{S_n}$
 \end{thm}
 
-First, we shall define the map $\phi_n: \polyring \to \csring$ before proving it induces an isomorphism. $\phi_n$ is defined to map an arbitrary polynomial $p(x_1, ..., x_n) = a_0 + a_1x_n + ... + a_{2^n-1}x_1x_2...x_n$ to the following PNF:
-    \begin{equation*}
-        \phi_n(p) ~=~ \tikzfig{tikz/poly/pnf}
-    \end{equation*}
+First, we shall define the map $\phi_n: \polyring \to \csring$ before proving it induces an isomorphism. $\phi_n$ is defined to map an arbitrary polynomial $p(x_1, ..., x_n) = a_0 + a_1x_n + ... + a_{2^n-1}x_1x_2...x_n$ to PNF in equation (\ref{eq:pnf}).
+
 
 Some important special cases are mapping scalars $a \in \mathbb{C}$:
  \begin{equation*}
