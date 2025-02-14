@@ -3,61 +3,25 @@
 \subsection{Functorial Boxes}
 
 %The operation of turning a non-dimension-decreasing matrix to its controlled diagram can be made into a lax monoidal functor. Let $\mathbf{Hilb_{\leq}}$ be the subcategory of Hilbert spaces and non-dimension-descreasing linear transformations. Adding an additional horizontal wire to facilitate composition, $F: \mathbf{Hilb_{\leq}} \to \mathbf{Hilb}$ is defined as follows for arbitrary  $D \in Hom_{Hilb_{\leq}}(V, W)$.
-The operation of turning a square matrix to its controlled diagram can be made into a lax monoidal functor. Let $\mathbf{Hilb_{sq}}$ be the subcategory of Hilbert spaces and square matrices. Adding an additional horizontal wire to facilitate composition, $\Control: \mathbf{Hilb_{sq}} \to \mathbf{Hilb}$ is defined as follows for arbitrary  $M \in Hom_{Hilb_{sq}}(V, V)$.
-
-\begin{equation}\label{eq:F_def}
-    \Control :: \tikzfig{tikz/func/F_def}
-\end{equation}
-
-In the functorial box notation of \cite{mellies2006functorial}, this would be:
+We define the superator $\Control$ which takes a square matrix $M: V \to V$ to its controlled square diagram $V \otimes \mathbb{C}^2 \to V \otimes \mathbb{C}^2$. In the functorial box notation of \cite{mellies2006functorial}, we write:
 \begin{equation}
     \tikzfig{tikz/func/F_def_box}
 \end{equation}
 
+$\Control$ inherits two important algebraic properties.
 
-\begin{prop}
-    The map $\Control$ defined in (\ref{eq:F_def}) is a lax monoidal funtor.
+
+\begin{prop}\label{prop:ctrl_comp_h}
+\begin{equation*}
+	\tikzfig{tikz/func/ctrl_comp_hdef}
+\end{equation*}\end{prop}
+
+
+\begin{prop}\label{prop:ctrl_comp_v}
+\begin{equation*}
+	\tikzfig{tikz/func/ctrl_comp_vdef}
+\end{equation*}
 \end{prop}
-\begin{proof}
-    On $id_V: V \to V$:
-    \begin{equation*}
-        \tikzfig{tikz/func/F_id}
-    \end{equation*}
-
-    Let $D_1: V\to V$, $D_2: V \to V$. Then composing $\Control(M_2) \circ \Control(M_1)$:
-    \begin{equation*}
-        \tikzfig{tikz/func/F_comp}
-    \end{equation*}
-
-    Where $(*)$ follows from:
-    \begin{equation*}
-        \tikzfig{tikz/func/F_comp2}
-    \end{equation*}
-    \begin{equation*}
-        \tikzfig{tikz/func/F_comp3}
-    \end{equation*}
-
-    Which implies that controlled diagrams can fuse under $\lowerbox{\zspid}$.
-
-    $\Control$ preserves the monoidal unit since $\mone_{\mathbf{Hilb_{sq}}} = \mone_{\mathbf{Hilb}} = \lowerbox{\emptydiag}$. $\Control$ is lax thanks to the following morphism: $\phi_{V, W}: \Control(V) \otimes \Control(W) \to \Control(V \otimes W)$:
-    \begin{equation*}
-        \phi_{V, W} = \tikzfig{tikz/func/F_lax_def}
-    \end{equation*}
-
-    $\phi$ is natural since for any $M_1: V \to V,\; M_2: W \to W$, we have:
-    \begin{equation*}
-        \tikzfig{tikz/func/F_lax_nat}
-    \end{equation*}
-
-
-    Finally, $\phi$ satisfies the coherence condition since for any $U, V, W$:
-    \begin{equation*}
-        \tikzfig{tikz/func/F_lax_ass}
-    \end{equation*}
-
-
-    
-\end{proof}
 
 \subsection{Multiple Control}
 
@@ -75,7 +39,7 @@ Multiple applications of $\Control$ ANDs the controls, proved in Appendix~\ref*{
     \end{equation*}
 \end{prop}
 
-Since AND is a monoid, it is reasonable to expect that multiple control induces a monad. Unfortunately, this does not appear to go through. Although AND does define a natural transformation (in the relevant category), defining the unit of the monad necessitates defining $\Control$ of non-square matrices, which breaks functoriality. Nevertheless we prove that AND is a natural transformation.
+%Since AND is a monoid, it is reasonable to expect that multiple control induces a monad. Unfortunately, this does not appear to go through. Although AND does define a natural transformation (in the relevant category), defining the unit of the monad necessitates defining $\Control$ of non-square matrices, which breaks functoriality. Nevertheless we prove that AND is a natural transformation.
 
 \begin{prop}
     $\mu: \Control ^2 \to \Control$ is a natural transformation with components $\mu_V: \Control^2 V \to \Control V$ defined as follows:
