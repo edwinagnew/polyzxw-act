@@ -1,0 +1,16 @@
+\section{Completeness for Factoring Controlled Operators}
+Instead of the indeterminates being complex numbers represented by $\numberstate$'s, we can let them be same-size matrices represented by controlled square matrix diagrams.
+We then have that:
+\begin{thm}
+    ZXW diagrams where the outputs of an arithmetic ZXW diagram are each plugged into controls of same-size controlled matrices, are isomorphic to multivariate polynomials over same-size square matrices with complex number coefficients.
+    The rules for their completeness are the same subset of ZXW rules used for completeness for arithmetic diagrams in the ZXW-calculus in \Cref{thm:uni_pnf}, plus the controlled square matrix as a generator along with the four rewrite rules for it in \Cref{def:ctrlsqmat}, \Cref{lem:csq_copy}, and \Cref{lem:csq_add_comm}.
+\end{thm}
+\begin{proof}
+    The proof is by the same algorithm for rewriting to PNF as \Cref{thm:uni_pnf}, modifying step (6) to copy controlled square matrices using \Cref{lem:csq_copy}, using \Cref{lem:csq_add_comm} to commute controlled square matrices whose controls act on mutually exclusive sectors.
+\end{proof}
+
+As an application, we leverage both our rewrite rules for arithmetic ZXW diagrams, and for controlled diagrams, to \emph{factor} them.  For example, for same size square matrices $I, A, B$ and $a, b, c \in \mathbb{C}$:
+\begin{gather*}
+    \tikzfig{tikz/poly/matspoly}
+\end{gather*}
+Factoring Hamiltonians is important to optimise quantum algorithms for chemistry and physics simulations. However, previous graphical rewrites for factoring Hamiltonians had only been doable for Hamiltonians with concretely-specified matrix terms~\cite{shaikh2022sum}. This completeness result guarantees that for any Hamiltonian, even if its matrix terms are black-box, these graphical rewrite rules are capable of deriving any of its possible factorisations.

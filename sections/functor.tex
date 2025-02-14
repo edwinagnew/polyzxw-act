@@ -2,8 +2,7 @@
 
 \subsection{Functorial Boxes}
 
-%The operation of turning a non-dimension-decreasing matrix to its controlled diagram can be made into a lax monoidal functor. Let $\mathbf{Hilb_{\leq}}$ be the subcategory of Hilbert spaces and non-dimension-descreasing linear transformations. Adding an additional horizontal wire to facilitate composition, $F: \mathbf{Hilb_{\leq}} \to \mathbf{Hilb}$ is defined as follows for arbitrary  $D \in Hom_{Hilb_{\leq}}(V, W)$.
-The operation of turning a square matrix to its controlled diagram can be made into a lax monoidal functor. Let $\mathbf{Hilb_{sq}}$ be the subcategory of Hilbert spaces and square matrices. Adding an additional horizontal wire to facilitate composition, $\Control: \mathbf{Hilb_{sq}} \to \mathbf{Hilb}$ is defined as follows for arbitrary  $M \in Hom_{Hilb_{sq}}(V, V)$.
+The operation of turning a square matrix to its controlled diagram can be made into a lax monoidal functor. Let $\mathbf{Hilb_{sq}}$ be the subcategory $\mathbf{Hilb}$ consisting of endomorphisms on any tensoring of two-dimensional Hilbert spaces, i.e. square matrices of size $2^n$. Through tensoring with an additional qubit wire, we can define an endofunctor $\Control: \mathbf{Hilb_{sq}} \to \mathbf{Hilb_{sq}}$ as follows for arbitrary $M \in Hom_{Hilb_{sq}}(V, V)$.
 
 \begin{equation}\label{eq:F_def}
     \Control :: \tikzfig{tikz/func/F_def}

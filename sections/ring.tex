@@ -1,0 +1,96 @@
+\section{Ring Axioms for Controlled Diagrams}
+In this section, we reverse-engineer the underlying algebraic properties of controlled state and controlled square matrix diagrams. This builds up to diagrams for the unique normal form for states used for the first proofs of complete axiomatisation for qubit graphical calculi~\cite{hadzihasanovic2017thesis, Hadzihasanovic2018zwzxcomplete}.
+
+All proofs in this section can be found in Appendix~\ref*{sec:appiso}.
+
+\subsection{Rings}\label{sec:ring}
+Let $\tilde{M_n}$ be the set of controlled square matrices on $n$ qubits. The goal of this section is to prove that the addition and multiplication operations introduced above induce a ring on $\tilde{M_n}$. Likewise, we show that the set of controlled $n$-qubit states $\tilde{S_n}$ also forms a ring. Before doing so, we prove a few important lemmas. The first lemma enables us to copy controlled matrices.
+
+\begin{lemma}\label{lem:csq_copy}
+    For any square matrix $M$, 
+    \begin{equation}\label{eq:csq_copy}
+    \tikzfig{tikz/con/csq_copy}
+\end{equation}
+\end{lemma}
+
+
+
+Now we show that controlled matrix addition and multiplication satisfy the ring axioms. Associativity of $+, \times$ follow immediately from (\ref{rule:Aso}, \ref{rule:S1}), respectively. Commutativity of addition follows from the commutativity of matrix addition.
+
+\begin{lemma}\label{lem:csq_add_comm}
+    Let $M_1, M_2$ be $n \times n$ matrices. 
+    \begin{equation}\label{eq:csq_add_comm}
+        \tikzfig{tikz/con/csq_add_comm_statement}
+    \end{equation}
+\end{lemma}
+
+
+The additive identity is defined as $\redzeroup \otimes I_n$:
+\begin{equation*}
+    \tikzfig{tikz/con/csq_add_id}
+\end{equation*}
+
+
+The multiplicative identity is defined very similarly as $\greenzeroup \otimes I_n$. The existence of additive inverses relies on the copying lemma from before.
+
+\begin{lemma}
+    The additive inverse of $\tilde{M}$ is $\raisebox{-5pt}{\numbergate[-1]} \circ \tilde{M} $
+\end{lemma}
+\begin{proof}
+    \begin{equation*}
+        \tikzfig{tikz/con/csq_add_inv}
+    \end{equation*}
+\end{proof}
+
+Finally, we prove distributivity.
+
+\begin{lemma}\label{lem:csq_dist}
+    \begin{equation*}
+        \tikzfig{tikz/con/csq_dist_statement}
+    \end{equation*}
+\end{lemma}
+
+
+Combining the lemmas of this section shows that controlled matrices form a ring. A similar result can be shown for controlled states. Once again, we start with the ability to copy controlled states. 
+\begin{lemma}\label{lem:cs_copy}
+    For any state $\psi$,
+    \begin{equation}\label{eq:cs_copy}
+        \tikzfig{tikz/con/cs_copy}
+    \end{equation}
+\end{lemma}
+
+Many of the ring axioms follow directly from basic ZXW rules. For example we can show commutativity of addition as follows:
+
+\begin{lemma}\label{lem:cs_add_comm}
+    For $n$-partite states $\psi_1, \psi_2$, $\tilde{\psi_1} \boxplus \tilde{\psi_2} = \tilde{\psi_2} \boxplus \tilde{\psi_1}  $
+\end{lemma}
+
+Associativity of $\boxplus$ follows similarly, using (\ref{rule:Aso}). Next we have the additive identity.
+
+\begin{lemma}\label{lem:cs_add_id}
+    $\tilde{\psi} \boxplus\mathbf{\tilde{0}} = \tilde{\psi}$
+\end{lemma}
+
+
+The additive inverse is defined similarly to the case of controlled matrices. 
+
+
+\begin{lemma}\label{lem:cs_add_inv}
+    For a controlled state $\tilde{\psi}$, its additive inverse is $\tilde{\psi} \circ \raisebox{-5pt}{\numbergate[-1]}$
+\end{lemma}
+
+
+Associativity and commutativity of $\boxtimes$ follow as before, using (\ref{rule:S1}) for $\lowerbox{\zspid}$. Finally, we must prove distributivity.
+
+
+\begin{lemma}\label{lem:cs_dist}
+    $\tilde{\psi_1} \boxtimes (\tilde{\psi_2} \boxplus \tilde{\psi_3}) = (\tilde{\psi_1} \boxtimes \tilde{\psi_2}) \boxplus (\tilde{\psi_1} \boxtimes \tilde{\psi_3})$
+\end{lemma}
+
+\begin{remark}\label{remark:entrywise}
+    A different addition and multiplication for controlled states was defined in Ref.~\cite{jeandel2018zxconstructive}. There corresponded to entry-wise addition and multiplication of statevectors, while our $\boxplus$ and $\boxtimes$ correspond to addition and multiplication of polynomials in bijective correspondence to controlled states, which we show next.
+\end{remark}
+
+
+
+
