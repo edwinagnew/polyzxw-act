@@ -506,3 +506,54 @@ The following two lemmas follow immediately from the bra-ket definition of $\low
         \tikzfig{tikz/poly/pnf} ~=~ \tikzfig{tikz/poly/homproof/iso4} \neweqline ~=~ \phi_{n}(a_0) + \phi_{n}(a_1x_{n}) + ... + \phi_{n}(a_{2^{n}-1x_1x_2...x_{n}}) \neweqline ~=~ \phi_{n}(a_0 + a_1x_{n} + ... + a_{2^{n}-1}x_1x_2...x_{n}) 
     \end{gather*}
 \end{proof}
+
+\textbf{Proof of Proposition \ref{prop:ctrl_comp_h}}
+\begin{proof}
+    %On $id_V: V \to V$:
+    %\begin{equation*}
+     %   \tikzfig{tikz/func/F_id}
+    %\end{equation*}
+
+    \begin{equation*}
+        \tikzfig{tikz/func/F_comp}
+    \end{equation*}
+
+    Where $(*)$ follows from:
+    \begin{equation*}
+        \tikzfig{tikz/func/F_comp2}
+    \end{equation*}
+    \begin{equation*}
+        \tikzfig{tikz/func/F_comp3}
+    \end{equation*}
+
+    Which implies that controlled diagrams can fuse under $\lowerbox{\zspid}$.
+
+    %$\Control$ preserves the monoidal unit since $\mone_{\mathbf{Hilb_{sq}}} = \mone_{\mathbf{Hilb}} = \lowerbox{\emptydiag}$. $\Control$ is lax thanks to the following morphism: $\phi_{V, W}: \Control(V) \otimes \Control(W) \to \Control(V \otimes W)$:
+    %\begin{equation*}
+     %   \phi_{V, W} = \tikzfig{tikz/func/F_lax_def}
+    %\end{equation*}
+
+    %$\phi$ is natural since for any $M_1: V \to V,\; M_2: W \to W$, we have:
+    %\begin{equation*}
+     %   \tikzfig{tikz/func/F_lax_nat}
+    %\end{equation*}
+
+
+    %Finally, $\phi$ satisfies the coherence condition since for any $U, V, W$:
+    %\begin{equation*}
+     %   \tikzfig{tikz/func/F_lax_ass}
+    %\end{equation*}
+\end{proof}
+
+\textbf{Proof of Proposition \ref{prop:ctrl_comp_v}}
+\begin{proof}
+Plugging $\ket{0}$:
+\begin{equation*}
+	\tikzfig{tikz/func/ctrl_comp_v0}
+\end{equation*}
+
+Plugging $\ket{1}$:
+\begin{equation*}
+	\tikzfig{tikz/func/ctrl_comp_v1}
+\end{equation*}
+\end{proof}

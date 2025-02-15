@@ -115,13 +115,13 @@ When trying to multiply these diagrams, rather than getting $(x-1)(2x+3) = 2x^2 
 The reason for the missing $2x^2$ term is that (\ref{eq:kill_quad}) implies $x^2 = 0$. Other than that, controlled state arithmetic appears to faithfully reflect polynomial arithmetic. To help formalise this correspondence, we introduce the following definition.
 
 \begin{definition}
-    A ZXW diagram with a single input on top is \textbf{arithmetic} if it contains only  $\lowerbox{\idwire}$, $\lowerbox{\swap}$ wires, $\lowerbox[7]{\wspids}$, $\lowerbox[7]{\zspids}$, $\lowerbox{\coWs}$ nodes and $\numberstate$ boxes.
+    A ZXW diagram with a single input on top is \textbf{arithmetic} if it contains only  $\lowerbox{\idwire}$, $\lowerbox{\swap}$ wires, $\lowerbox[10]{\wspids}$, $\lowerbox[10]{\zspids}$, $\lowerbox{\coWs}$ nodes and $\lowerbox{\numberstate}$ boxes.
 \end{definition}
 \begin{remark}
     This fragment of the ZXW-calculus defines a subcategory; adding $\lowerbox{\redzero}$, this is an instance of a Cartesian Distributive Category as defined in Ref.~\cite{wilson2023diffpolycirc}.
 \end{remark}
 
-To interpret an arithmetic ZW diagram as an arithmetic expression, read $\wspid$ as $+$, $\zspid$ as $\times$, $\numberstate$ as the number $a$, $\coW$ as fanout and output/bottom wires as variables $x_1, ..., x_n$ numbered from left to right. The following lemma establishes that all arithmetic diagrams are controlled states:
+To interpret an arithmetic ZXW diagram as an arithmetic expression, read $\lowerbox{\wspid}$ as $+$, $\lowerbox{\zspid}$ as $\times$, $\lowerbox{\numberstate}$ as the number $a$, $\lowerbox{\coW}$ as fanout, and output/bottom wires as variables $x_1, ..., x_n$ numbered from left to right. The following lemma establishes that all arithmetic diagrams are controlled states:
 \begin{lemma}
     For any arithmetic diagram $A$, \begin{equation}\label{eq:arith_cs}
         \tikzfig{tikz/poly/arith0_statement}

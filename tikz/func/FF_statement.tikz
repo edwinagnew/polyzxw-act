@@ -103,8 +103,8 @@
 		\draw (57.center) to (60.center);
 		\draw (63.center) to (43.center);
 		\draw (62.center) to (42.center);
-		\draw [style=filllayer, bend left=15] (85) to (87);
-		\draw [style=filllayer, bend right=15] (86) to (87);
+		\draw [bend left=15] (85) to (87);
+		\draw [bend right=15] (86) to (87);
 		\draw [style=filllayer] (79.center) to (85);
 		\draw [style=filllayer] (52.center) to (86);
 		\draw [style=filllayer] (85) to (81.center);
