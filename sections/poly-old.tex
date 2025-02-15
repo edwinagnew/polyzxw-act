@@ -121,7 +121,7 @@ The reason for the missing $2x^2$ term is that (\ref{eq:kill_quad}) implies $x^2
     This fragment of the ZXW-calculus defines a subcategory; adding $\lowerbox{\redzero}$, this is an instance of a Cartesian Distributive Category as defined in Ref.~\cite{wilson2023diffpolycirc}.
 \end{remark}
 
-To interpret an arithmetic ZXW diagram as an arithmetic expression, read $\wspid$ as $+$, $\zspid$ as $\times$, $\numberstate$ as the number $a$, $\coW$ as fanout and output/bottom wires as variables $x_1, ..., x_n$ numbered from left to right. The following lemma establishes that all arithmetic diagrams are controlled states:
+To interpret an arithmetic ZW diagram as an arithmetic expression, read $\wspid$ as $+$, $\zspid$ as $\times$, $\numberstate$ as the number $a$, $\coW$ as fanout and output/bottom wires as variables $x_1, ..., x_n$ numbered from left to right. The following lemma establishes that all arithmetic diagrams are controlled states:
 \begin{lemma}
     For any arithmetic diagram $A$, \begin{equation}\label{eq:arith_cs}
         \tikzfig{tikz/poly/arith0_statement}
@@ -198,14 +198,14 @@ The full proof is found in Appendix~\ref*{sec:appiso}.
 Instead of the indeterminates being complex numbers represented by $\numberstate$'s, we can let them be same-size matrices represented by controlled square matrix diagrams.
 We then have that:
 \begin{thm}
-    ZXW diagrams where the outputs of an arithmetic ZXW diagram are each plugged into controls of same-size controlled matrices, are isomorphic to multivariate polynomials over same-size square matrices with complex number coefficients.
+    ZXW diagrams where the outputs of an arithmetic ZW diagram are each plugged into controls of same-size controlled matrices, are isomorphic to multivariate polynomials over same-size square matrices with complex number coefficients.
     The rules for their completeness are the same subset of ZXW rules used for completeness for arithmetic diagrams in the ZXW-calculus in \Cref{thm:uni_pnf}, plus the controlled square matrix as a generator along with the four rewrite rules for it in \Cref{def:ctrlsqmat}, \Cref{lem:csq_copy}, and \Cref{lem:csq_add_comm}.
 \end{thm}
 \begin{proof}
     The proof is by the same algorithm for rewriting to PNF as \Cref{thm:uni_pnf}, modifying step (6) to copy controlled square matrices using \Cref{lem:csq_copy}, using \Cref{lem:csq_add_comm} to commute controlled square matrices whose controls act on mutually exclusive sectors.
 \end{proof}
 
-As an application, we leverage both our rewrite rules for arithmetic ZXW diagrams, and for controlled diagrams, to \emph{factor} them.  For example, for same size square matrices $I, A, B$ and $a, b, c \in \mathbb{C}$:
+As an application, we leverage both our rewrite rules for arithmetic ZW diagrams, and for controlled diagrams, to \emph{factor} them.  For example, for same size square matrices $I, A, B$ and $a, b, c \in \mathbb{C}$:
 \begin{gather*}
     \tikzfig{tikz/poly/matspoly}
 \end{gather*}

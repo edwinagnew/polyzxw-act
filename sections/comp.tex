@@ -1,13 +1,16 @@
 \section{Complexity}
 
-This section examines the significance of translating quantum circuits into polynomials from the perspective of computational complexity. In particular, since there is an efficient (randomised) algorithm for polynomial identity testing, we show it is unlikely there is an efficient algorithm for rewriting an arbitrary ZXW diagram into an arithmetic ZXW diagram.
+There should not exist any efficient algorithm for rewriting arbitrary ZXW diagrams to polynormal form, as such an algorithm would efficiently compute all matrix elements of any quantum circuit given as a ZX, ZW, or ZXW diagram---for instance any Clifford+T circuit. A natural question is whether it is possible to efficiently rewrite arbitrary ZXW diagrams to \emph{any} mathematically equal arithmetic ZW diagram.
+
+This section examines the significance of translating quantum circuits into polynomials from the perspective of computational complexity.
+In particular, since there is an efficient (randomised) algorithm for polynomial identity testing, we show it is unlikely there is an efficient algorithm for rewriting an arbitrary ZXW diagram into an arithmetic ZW diagram.
 
 \subsection{Algebraic Circuits}
 
-While boolean complexity theory studies the number of AND/OR gates required to compute some specified function, algebraic circuit complexity studies the number of addition/multiplication operations required to compute some specifed polynomial. More formally, we have the following definition from~\cite{shpilka2010arithmetic}.
+While boolean complexity theory studies the number of AND/OR gates required to compute a given function, algebraic circuit complexity studies the number of addition/multiplication operations required to compute a given polynomial. More formally, we have the following definition from~\cite{shpilka2010arithmetic}.
 
 \begin{definition}
-	An algebraic circuit $C$ over $n$ variables and some field $\mathbb{F}$ is a directed acyclic graph where the leaves are labelled with constants $c \in \mathbb{F}$ or variables $x_i$ and internal nodes labelled with $+$ or $\times$ gates. The root of $C$ is identified with the polynomial $p \in \mathbb{F}[x_1, ..., x_n]$ that is computed by $C$.
+	An algebraic circuit $C$ over $n$ variables and some field $\mathbb{F}$ is a directed acyclic graph with a single root node, with leaves labelled by constants $c \in \mathbb{F}$ or variables $x_i$, and internal nodes labelled by $+$ or $\times$ gates. The root of $C$ is identified with the polynomial $p \in \mathbb{F}[x_1, ..., x_n]$ that is computed by $C$.
 \end{definition}
 
 
@@ -15,21 +18,21 @@ While boolean complexity theory studies the number of AND/OR gates required to c
     Given an arithmetic circuit $C$ that describes a polynomial $p(x_1, ..., x_n) \in \mathbb{F}[x_1, ..., x_n]$, the polynomial identity testing problem ($PIT$) is to decide whether $p = 0$.
 \end{definition}
 
-Where $\mathbb{F}$ is some ``sufficiently large'' field. $PIT$ can be used to check whether two polynomials are equal since $p = q \iff p-q = 0$. More surprising examples of problems that reduce to PIT are bipartite perfect matching in graphs and primality testing ~\cite{saxena2009progress}. Thanks to the Schwartz-Zippel Lemma, there is an efficient randomised algorithm for $PIT$ which simply evaluates the polynomial on random inputs and checks whether all of them are zero. More precisely, $PIT \in \mathsf{coRP}$, a complexity class conjectured to equal $\mathsf{P}$.
+Where $\mathbb{F}$ is some ``sufficiently large'' field. $PIT$ can be used to check whether two polynomials are equal since $p = q \iff p-q = 0$. More surprising examples of problems that reduce to $PIT$ are bipartite perfect matching in graphs and primality testing~\cite{saxena2009progress}. Thanks to the Schwartz-Zippel Lemma, there is an efficient randomised algorithm for $PIT$ which simply evaluates the polynomial on random inputs and checks whether all of them are zero. More precisely, $PIT \in \mathsf{coRP}$, a complexity class conjectured to equal $\mathsf{P}$.
 
-By theorem \ref{thm:iso}, we can interpret any quantum state as an algebraic circuit (formal proposition?). Therefore, PIT can be used to compare quantum states. The question is how easily this can be done.
+By Theorem~\ref{thm:iso}, we can interpret any quantum state as an algebraic circuit. Therefore, $PIT$ can be used to compare quantum states. The question is how easily this can be done.
 
 \subsection{Proof Complexity}
 
-In the original ZXW completeness paper ~\cite{poor2023completeness}, the proof of completeness centres around a normal form equivalent to the one used in section \ref{sec:poly}. The goal of the proof is to show that any state can be rewritten into this normal form using the ZXW rules. This implies completeness because one can simply reverse the rules to show equality between two different diagrams. Since the normal form is a direct representation of the diagram's state-vector, it may be exponentially larger than the starting diagram and so the proof of completeness gives an exponential upper bound for the length of proofs of equality in the ZXW-calculus. A possible strategy for speeding this process up would be to rewrite the starting diagrams into compact arithmetic diagrams, and then use $PIT$ to compare them. We now prove this impossible, under standard complexity assumptions.
+In the original ZW completeness paper for qubits~\cite{Hadzihasanovic2018zwzxcomplete} (as well as the original ZXW completeness paper for arbitrary finite dimensions~\cite{poor2023completeness}), the proof of completeness centres around a unique normal form equivalent to the one used in Section~\ref{sec:iso}. This approach to proving completeness is by showing that any state can be rewritten to a unique normal form using the ZXW rules. By simply reversing the rules, one can show equality or inequality between any two diagrams. Since the normal form is a direct representation of the diagram's statevector, it may be exponentially larger than the starting diagram; hence, the proof of completeness gives an exponential upper bound for the length of proofs of equality in the ZXW-calculus. A possible strategy for speeding this process up would be to rewrite the starting diagrams into compact arithmetic diagrams, and then use $PIT$ to compare them. We now prove this impossible, under standard complexity assumptions.
 
 \begin{prop}
 If all quantum states can be rewritten to arithmetic diagrams in polynomial time, then $\mathsf{RP} = \mathsf{NP}$.
 \end{prop}
 \begin{proof}
-Suppose that we can efficiently rewrite quantum states to arithmetic diagrams. Then we shall reduce an $\mathsf{NQP}$-complete problem to $\overline{PIT} \in \mathsf{RP}$. Since $\mathsf{RP} \subseteq \mathsf{NP} \subseteq \mathsf{NQP}$, this implies $\mathsf{RP} = \mathsf{NP}$.
+Suppose that we can efficiently rewrite quantum states to arithmetic diagrams. Then we can use this to reduce an $\mathsf{NQP}$-complete problem to $\overline{PIT} \in \mathsf{RP}$ (which implies $PIT \in \mathsf{coRP}$). Since $\mathsf{RP} \subseteq \mathsf{NP} \subseteq \mathsf{NQP}$, this implies $\mathsf{RP} = \mathsf{NP}$.
 
-The $\mathsf{NQP}$-complete problem we are considering is the exact non-identity problem ($ENI$) which decides whether some unitary does not compute the identity matrix \cite{tanaka2010exact}.  Let $x$ be a description of quantum circuit $U_x$ over $n = poly(|x|)$ qubits. Then by translating each gate of $U_x$ into a constant ZXW diagram, we can rewrite $U_x$ into a ZXW diagram in polynomial time. Now bend the ZXW diagram into a state $D_x$, as below.
+The $\mathsf{NQP}$-complete problem we are considering is the exact non-identity problem ($ENI$) which decides whether some unitary does not compute the identity matrix \cite{tanaka2010exact}.  Let $x$ be a description of a unitary quantum circuit $U_x$ over $n = poly(|x|)$ qubits. Then by translating each gate of $U_x$ into a constant ZXW diagram, we can rewrite $U_x$ into a ZXW diagram in polynomial time. Now bend the ZXW diagram into a state $D_x$, as below.
 \begin{equation*}
 	\tikzfig{tikz/comp/bent_u}
 \end{equation*}
@@ -37,6 +40,8 @@ The $\mathsf{NQP}$-complete problem we are considering is the exact non-identity
 Now apply the assumption to rewrite $D_x$ into an arithmetic diagram $A_x$. Interpret $A_x$ as a polynomial $p_x$ over variables $x_1, ..., x_n, y_1, ... y_n$. The polynomial for the bent identity is represented by the linear sized arithmetic circuit $p^n_\cap := \prod_{i=1}^n (1 + x_iy_{n-i+1})$. So $p_x = p^n_\cap  \iff U_x = I$ which means $\overline{PIT}(p_x - p^n_\cap) = 1 \iff ENI(U_x) = 1$. Thus we have reduced $ENI$ to $\overline{PIT}$. 
 
 \end{proof}
+
+Under standard derandomisation assumptions, $P = \mathsf{RP} = \mathsf{coRP}$. This + our supposition implies P = NP, i.e. our problem is NP-hard. Actually, NQP-hard as that would collapse NQP to P.
 
 Note that under standard derandomisation assumptions, $P = \mathsf{RP} = \mathsf{coRP}$. Therefore, the result above effectively shows that it is $\mathsf{NP}$-hard to rewrite a ZXW diagram to an arithmetic diagram. In fact,  $\mathsf{NQP}$ is believed to be strictly larger than $\mathsf{NP}$ so it even harder.
 

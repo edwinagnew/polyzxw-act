@@ -1,4 +1,4 @@
-\section{Isomorphism between the Ring of Controlled States and Multilinear Polynomials}
+\section{Isomorphism between the Ring of Controlled States and Multilinear Polynomials}\label{sec:iso}
 
 Its been known since 2011 that $\lowerbox{\wspid}, \lowerbox{\zspid}$ can be used to add and multiply number states $\numberstate$, respectively \cite{coecke2011ghz}. In the previous section we saw that $\lowerbox{\wspid}, \lowerbox{\zspid}$ can moreover be used to copy controlled diagrams. In this section, we explain this connection by demonstrating that controlled states are in fact isomorphic to multilinear polynomials. This being a bijection is a well-known folklore result in the study of entangled states, but to the best of our inquiries we are not aware of a proof. More generally, Ref.~\cite{wilson2023diffpolycirc} presented Cartesian Distributive Categories exemplified by polynomial circuits, which are isomorphic to polynomials over arbitrary commutative semirings or rings; their proof is non-constructive, giving explicit proof only for the case of Boolean circuits~\cite{wilson2021revderbool}.
 
@@ -26,7 +26,7 @@ The reason for the missing $2x^2$ term is that (\ref{eq:kill_quad}) implies $x^2
     This fragment of the ZXW-calculus defines a subcategory; adding $\lowerbox{\redzero}$, this is an instance of a Cartesian Distributive Category as defined in Ref.~\cite{wilson2023diffpolycirc}.
 \end{remark}
 
-To interpret an arithmetic ZXW diagram as an arithmetic expression, read $\wspid$ as $+$, $\zspid$ as $\times$, $\numberstate$ as the number $a$, $\coW$ as fanout and output/bottom wires as variables $x_1, ..., x_n$ numbered from left to right. The following lemma establishes that all arithmetic diagrams are controlled states:
+To interpret an arithmetic ZW diagram as an arithmetic expression, read $\wspid$ as $+$, $\zspid$ as $\times$, $\numberstate$ as the number $a$, $\coW$ as fanout and output/bottom wires as variables $x_1, ..., x_n$ numbered from left to right. The following lemma establishes that all arithmetic diagrams are controlled states:
 \begin{lemma}
     For any arithmetic diagram $A$, \begin{equation}\label{eq:arith_cs}
         \tikzfig{tikz/poly/arith0_statement}
