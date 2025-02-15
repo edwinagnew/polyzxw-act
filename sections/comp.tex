@@ -15,16 +15,16 @@ While boolean complexity theory studies the number of AND/OR gates required to c
     Given an arithmetic circuit $C$ that describes a polynomial $p(x_1, ..., x_n) \in \mathbb{F}[x_1, ..., x_n]$, the polynomial identity testing problem ($PIT$) is to decide whether $p = 0$.
 \end{definition}
 
-Where $\mathbb{F}$ is some ``sufficiently large'' field. $PIT$ can be used to check whether two polynomials are equal since $p = q \iff p-q = 0$. More surprising examples of problems that reduce to PIT are bipartite perfect matching in graphs and primality testing ~\cite{saxena2009progress}. Thanks to the Schwartz-Zippel Lemma, there is an efficient randomised algorithm for $PIT$ which simply evaluates the polynomial on random inputs and checks whether all of them are zero. More precisely, $PIT \in \mathsf{coRP}$, a complexity class conjectured to equal $\mathsf{P}$.
+$PIT$ can be used to check whether two polynomials are equal since $p = q \iff p-q = 0$. More surprising examples of problems that reduce to PIT are bipartite perfect matching in graphs and primality testing ~\cite{saxena2009progress}. Thanks to the Schwartz-Zippel Lemma, there is an efficient randomised algorithm for $PIT$ which simply evaluates the polynomial on random inputs and checks whether all of them are zero. More precisely, $PIT \in \mathsf{coRP}$, a complexity class conjectured to equal $\mathsf{P}$.
 
-By theorem \ref{thm:iso}, we can interpret any quantum state as an algebraic circuit (formal proposition?). Therefore, PIT can be used to compare quantum states. The question is how easily this can be done.
+By theorem \ref{thm:iso}, we can interpret any quantum state as an algebraic circuit. Therefore, PIT can be used to compare quantum states. The question is how easily this can be done.
 
 \subsection{Proof Complexity}
 
-In the original ZXW completeness paper ~\cite{poor2023completeness}, the proof of completeness centres around a normal form equivalent to the one used in section \ref{sec:poly}. The goal of the proof is to show that any state can be rewritten into this normal form using the ZXW rules. This implies completeness because one can simply reverse the rules to show equality between two different diagrams. Since the normal form is a direct representation of the diagram's state-vector, it may be exponentially larger than the starting diagram and so the proof of completeness gives an exponential upper bound for the length of proofs of equality in the ZXW-calculus. A possible strategy for speeding this process up would be to rewrite the starting diagrams into compact arithmetic diagrams, and then use $PIT$ to compare them. We now prove this impossible, under standard complexity assumptions.
+In the original ZXW completeness paper ~\cite{poor2023completeness}, the proof of completeness centres around a normal form equivalent to the one used in section \ref{sec:iso}. The goal of the proof is to show that any state can be rewritten into this normal form using the ZXW rules. This implies completeness because one can simply reverse the rules to show equality between two different diagrams. Since the normal form is a direct representation of the diagram's state-vector, it may be exponentially larger than the starting diagram and so the proof of completeness gives an exponential upper bound for the length of proofs of equality in the ZXW-calculus. A possible strategy for speeding this process up would be to rewrite the starting diagrams into compact arithmetic diagrams, and then use $PIT$ to compare them. We now prove this impossible to do in general, under standard complexity assumptions.
 
 \begin{prop}
-If all quantum states can be rewritten to arithmetic diagrams in polynomial time, then $\mathsf{RP} = \mathsf{NP}$.
+If all quantum states can be rewritten to arithmetic diagrams in polynomial time, then $\mathsf{RP} = \mathsf{NQP}$.
 \end{prop}
 \begin{proof}
 Suppose that we can efficiently rewrite quantum states to arithmetic diagrams. Then we shall reduce an $\mathsf{NQP}$-complete problem to $\overline{PIT} \in \mathsf{RP}$. Since $\mathsf{RP} \subseteq \mathsf{NP} \subseteq \mathsf{NQP}$, this implies $\mathsf{RP} = \mathsf{NP}$.
@@ -38,6 +38,4 @@ Now apply the assumption to rewrite $D_x$ into an arithmetic diagram $A_x$. Inte
 
 \end{proof}
 
-Note that under standard derandomisation assumptions, $P = \mathsf{RP} = \mathsf{coRP}$. Therefore, the result above effectively shows that it is $\mathsf{NP}$-hard to rewrite a ZXW diagram to an arithmetic diagram. In fact,  $\mathsf{NQP}$ is believed to be strictly larger than $\mathsf{NP}$ so it even harder.
-
-What remains open is whether it is at all possible to rewrite every quantum size into a small arithmetic diagram. More conclusion
+Note that under standard derandomisation assumptions, $\mathsf{P} = \mathsf{RP} = \mathsf{coRP}$. Since $\mathsf{NP} \subseteq \mathsf{NQP}$ (an inclusion believed to be strict), then $\mathsf{P} \neq \mathsf{NP}$ implies it is not possible to rewrite arbitrary ZXW diagrams into arithmetic diagrams. An interesting open question is whether there nevertheless exists a small arithmetic circuit for every quantum state. If so, this may have interesting applications for algebraic complexity theory.
