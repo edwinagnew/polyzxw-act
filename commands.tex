@@ -103,7 +103,7 @@
 	\end{pgfonlayer}
 \end{tikzpicture}}
 
-\newcommand{\wstate}[1][0.5]{\begin{tikzpicture}[scale=#1]
+\newcommand{\wstate}[1][0.4]{\begin{tikzpicture}[scale=#1]
 	\begin{pgfonlayer}{nodelayer}
 		\node [style=uw] (0) at (0, 0) {};
 		\node [style=none] (1) at (-1, -1) {};
@@ -117,7 +117,7 @@
 	\end{pgfonlayer}
 \end{tikzpicture}}
 
-\newcommand{\zspid}[1][0.5]{\begin{tikzpicture}[scale=#1]
+\newcommand{\zspid}[1][0.4]{\begin{tikzpicture}[scale=#1]
 	\begin{pgfonlayer}{nodelayer}
 		\node [style=gn] (0) at (0, 0) {};
 		\node [style=none] (1) at (0.5, -0.5) {};
@@ -132,7 +132,7 @@
 \end{tikzpicture}
 }
 
-\newcommand{\xspid}[1][0.5]{\begin{tikzpicture}[scale=#1]
+\newcommand{\xspid}[1][0.4]{\begin{tikzpicture}[scale=#1]
 	\begin{pgfonlayer}{nodelayer}
 		\node [style=rn] (0) at (0, 0) {};
 		\node [style=none] (1) at (0.5, -0.5) {};
@@ -148,7 +148,7 @@
 }
 
 
-\newcommand{\coZ}[1][0.5]{\begin{tikzpicture}[scale=#1]
+\newcommand{\coZ}[1][0.4]{\begin{tikzpicture}[scale=#1]
 	\begin{pgfonlayer}{nodelayer}
 		\node [style=gn] (0) at (0, 0) {};
 		\node [style=none] (1) at (0.5, 0.5) {};
@@ -164,7 +164,7 @@
 }
 
 
-\newcommand{\coX}[1][0.5]{\begin{tikzpicture}[scale=#1]
+\newcommand{\coX}[1][0.4]{\begin{tikzpicture}[scale=#1]
 	\begin{pgfonlayer}{nodelayer}
 		\node [style=rn] (0) at (0, 0) {};
 		\node [style=none] (1) at (0.5, 0.5) {};
@@ -180,7 +180,7 @@
 }
 
 
-\newcommand{\wspid}[1][0.5]{\begin{tikzpicture}[scale=#1]
+\newcommand{\wspid}[1][0.4]{\begin{tikzpicture}[scale=#1]
 	\begin{pgfonlayer}{nodelayer}
 		\node [style=uw] (0) at (0, 0) {};
 		\node [style=none] (1) at (0.5, -0.5) {};
@@ -215,7 +215,7 @@
 % same but with dots
 %
 
-\newcommand{\zspids}[1][0.5]{\begin{tikzpicture}[scale=#1]
+\newcommand{\zspids}[1][0.4]{\begin{tikzpicture}[scale=#1]
 	\begin{pgfonlayer}{nodelayer}
 		\node [style=gn] (0) at (0, 0) {};
 		\node [style=none] (1) at (0.5, -0.5) {};
@@ -232,7 +232,7 @@
 }
 
 
-\newcommand{\xspids}[1][0.5]{\begin{tikzpicture}[scale=#1]
+\newcommand{\xspids}[1][0.4]{\begin{tikzpicture}[scale=#1]
 	\begin{pgfonlayer}{nodelayer}
 		\node [style=rn] (0) at (0, 0) {};
 		\node [style=none] (1) at (0.5, -0.5) {};
@@ -248,7 +248,7 @@
 \end{tikzpicture}
 }
 
-\newcommand{\wspids}[1][0.5]{\begin{tikzpicture}[scale=#1]
+\newcommand{\wspids}[1][0.4]{\begin{tikzpicture}[scale=#1]
 	\begin{pgfonlayer}{nodelayer}
 		\node [style=uw] (0) at (0, 0) {};
 		\node [style=none] (1) at (0.5, -0.5) {};
@@ -264,7 +264,7 @@
 \end{tikzpicture}
 }
 
-\newcommand{\coZs}[1][0.5]{\begin{tikzpicture}[scale=#1]
+\newcommand{\coZs}[1][0.4]{\begin{tikzpicture}[scale=#1]
 	\begin{pgfonlayer}{nodelayer}
 		\node [style=gn] (0) at (0, 0) {};
 		\node [style=none] (1) at (0.5, 0.5) {};
@@ -280,7 +280,7 @@
 \end{tikzpicture}
 }
 
-\newcommand{\coXs}[1][0.5]{\begin{tikzpicture}[scale=#1]
+\newcommand{\coXs}[1][0.4]{\begin{tikzpicture}[scale=#1]
 	\begin{pgfonlayer}{nodelayer}
 		\node [style=rn] (0) at (0, 0) {};
 		\node [style=none] (1) at (0.5, 0.5) {};
@@ -296,7 +296,7 @@
 \end{tikzpicture}
 }
 
-\newcommand{\coWs}[1][0.5]{\begin{tikzpicture}[scale=#1]
+\newcommand{\coWs}[1][0.4]{\begin{tikzpicture}[scale=#1]
 	\begin{pgfonlayer}{nodelayer}
 		\node [style=dw] (0) at (0, 0) {};
 		\node [style=none] (1) at (0.5, 0.5) {};
@@ -316,7 +316,7 @@
 
 
 
-\newcommand{\zgate}[2][0.5]{\begin{tikzpicture}[scale=#1]
+\newcommand{\zgate}[2][0.4]{\begin{tikzpicture}[scale=#1]
 	\begin{pgfonlayer}{nodelayer}
 		\node [style={gn_phase}] (0) at (0, 0) {$#2$};
 		\node [style=none] (3) at (0, 0.75) {};
@@ -329,7 +329,7 @@
 \end{tikzpicture}
 }
 
-\newcommand{\xgate}[1][0.5]{\begin{tikzpicture}[scale=#1]
+\newcommand{\xgate}[1][0.4]{\begin{tikzpicture}[scale=#1]
 	\begin{pgfonlayer}{nodelayer}
 		\node [style={rn_phase}] (0) at (0, 0) {$\pi$};
 		\node [style=none] (3) at (0, 0.75) {};
@@ -427,7 +427,7 @@
 \end{tikzpicture}
 }
 
-\newcommand{\numberstate}[1][a]{\begin{tikzpicture}[scale=0.5]
+\newcommand{\numberstate}[1][a]{\begin{tikzpicture}[scale=0.4]
 	\begin{pgfonlayer}{nodelayer}
 		\node [style=gbox] (0) at (0, 0) {$#1$};
 		\node [style=none] (1) at (0, 1) {};

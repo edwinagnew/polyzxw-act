@@ -1,6 +1,6 @@
 \section{Isomorphism between the Ring of Controlled States and Multilinear Polynomials}\label{sec:iso}
 
-Its been known since 2011 that $\lowerbox{\wspid}, \lowerbox{\zspid}$ can be used to add and multiply number states $\numberstate$, respectively \cite{coecke2011ghz}. In the previous section we saw that $\lowerbox{\wspid}, \lowerbox{\zspid}$ can moreover be used to copy controlled diagrams. In this section, we explain this connection by demonstrating that controlled states are in fact isomorphic to multilinear polynomials. This being a bijection is a well-known folklore result in the study of entangled states, but to the best of our inquiries we are not aware of a proof. More generally, Ref.~\cite{wilson2023diffpolycirc} presented Cartesian Distributive Categories exemplified by polynomial circuits, which are isomorphic to polynomials over arbitrary commutative semirings or rings; their proof is non-constructive, giving explicit proof only for the case of Boolean circuits~\cite{wilson2021revderbool}.
+Its been known since 2011 that $\lowerbox{\wspid}, \lowerbox{\zspid}$ can be used to add and multiply number states $\lowerbox{\numberstate}$, respectively \cite{coecke2011ghz}. In the previous section we saw that $\lowerbox{\wspid}, \lowerbox{\zspid}$ can moreover be used to copy controlled diagrams. In this section, we explain this connection by demonstrating that controlled states are in fact isomorphic to multilinear polynomials. This being a bijection is a well-known folklore result in the study of entangled states, but to the best of our inquiries we are not aware of a proof. More generally, Ref.~\cite{wilson2023diffpolycirc} presented Cartesian Distributive Categories exemplified by polynomial circuits, which are isomorphic to polynomials over arbitrary commutative semirings or rings; their proof is non-constructive, giving explicit proof only for the case of Boolean circuits~\cite{wilson2021revderbool}.
 
 Firstly, we describe how to interpret certain ZXW diagrams as polynomials. Consider the diagrams:
 \begin{equation*}
@@ -17,29 +17,29 @@ When trying to multiply these diagrams, rather than getting $(x-1)(2x+3) = 2x^2 
     \tikzfig{tikz/poly/eg5}
 \end{equation*}
 
-The reason for the missing $2x^2$ term is that (\ref{eq:kill_quad}) implies $x^2 = 0$. Other than that, controlled state arithmetic appears to faithfully reflect polynomial arithmetic. To help formalise this correspondence, we introduce the following definition.
+The reason for the missing $2x^2$ term is that Lemma \ref{eq:kill_quad} implies $x^2 = 0$. Other than that, controlled state arithmetic appears to faithfully reflect polynomial arithmetic. To help formalise this correspondence, we introduce the following definition.
 
 \begin{definition}
-    A ZXW diagram with a single input on top is \textbf{arithmetic} if it contains only  $\lowerbox{\idwire}$, $\lowerbox{\swap}$ wires, $\lowerbox[7]{\wspids}$, $\lowerbox[7]{\zspids}$, $\lowerbox{\coWs}$ nodes and $\numberstate$ boxes.
+    A ZXW diagram with a single input on top is \textbf{arithmetic} if it contains only  $\lowerbox{\idwire}$, $\lowerbox{\swap}$ wires, $\lowerbox[10]{\wspids}$, $\lowerbox[10]{\zspids}$, $\lowerbox{\coWs}$ nodes and $\lowerbox{\numberstate}$ boxes.
 \end{definition}
 \begin{remark}
     This fragment of the ZXW-calculus defines a subcategory; adding $\lowerbox{\redzero}$, this is an instance of a Cartesian Distributive Category as defined in Ref.~\cite{wilson2023diffpolycirc}.
 \end{remark}
 
-To interpret an arithmetic ZXW diagram as an arithmetic expression, read $\wspid$ as $+$, $\zspid$ as $\times$, $\numberstate$ as the number $a$, $\coW$ as fanout and output/bottom wires as variables $x_1, ..., x_n$ numbered from left to right. The following lemma establishes that all arithmetic diagrams are controlled states:
+To interpret an arithmetic ZXW diagram as an arithmetic expression, read $\lowerbox{\wspid}$ as $+$, $\lowerbox{\zspid}$ as $\times$, $\lowerbox{\numberstate}$ as the number $a$, $\lowerbox{\coW}$ as fanout and output/bottom wires as variables $x_1, ..., x_n$ numbered from left to right. The following lemma establishes that all arithmetic diagrams are controlled states:
 \begin{lemma}
     For any arithmetic diagram $A$, \begin{equation}\label{eq:arith_cs}
         \tikzfig{tikz/poly/arith0_statement}
     \end{equation}
 \end{lemma}
 \begin{proof}
-    By definition, other than wires $A$ contains only $\raisebox{-7pt}{\wspids}$, $\raisebox{-7pt}{\zspids}$, $\raisebox{-5pt}{\coWs}$, and $\raisebox{-3pt}{\numberstate}$. All $\raisebox{-3pt}{\numberstate}$'s can be removed with (\ref{rule:Ept}). Meanwhile all the spiders copy $\raisebox{-5pt}{\redzero}$ due to (\ref{rule:Bs0}, \ref{rule:K0}, \ref{eq:wid}) respectively.
+    By definition, other than wires $A$ contains only $\raisebox{-10pt}{\wspids}$, $\raisebox{-10pt}{\zspids}$, $\raisebox{-5pt}{\coWs}$, and $\raisebox{-3pt}{\numberstate}$. All $\raisebox{-3pt}{\numberstate}$'s can be removed with (\ref{rule:Ept}). Meanwhile all the spiders copy $\raisebox{-5pt}{\redzero}$ due to (\ref{rule:Bs0}, \ref{rule:K0}, \ref{eq:wid}) respectively.
 \end{proof}
 
-Just as it is typical to represent a polynomial in normal form as a sum of products, it is possible to rewrite every arithmetic diagram into a normal form as a single $\lowerbox{\wspids}$, followed by a layer of $\lowerbox{\zspids}$, followed by a layer of $\numberstate, \lowerbox{\coWs}$. 
+Just as it is typical to represent a polynomial in normal form as a sum of products, it is possible to rewrite every arithmetic diagram into a normal form as a single $\lowerbox[10]{\wspids}$, followed by a layer of $\lowerbox[10]{\zspids}$, followed by a layer of $\lowerbox[2]{\numberstate}, \lowerbox[2]{\coWs}$. 
 
 \begin{definition}
-    An $n$-output arithmetic diagram is said to be written in \textbf{polynormal form} (PNF) if it looks like:
+    An $n$-output arithmetic diagram is said to be written in \textbf{polynormal form} (PNF) if it is of the form:
     \begin{equation}\label{eq:pnf}
         \tikzfig{tikz/poly/pnf}
     \end{equation}
@@ -73,24 +73,19 @@ Thus, every controlled state can be represented as at least one arithmetic diagr
 
 \subsection{Isomorphism}
 
-At last we can prove the isomorphism. Throughout we shall let $\polyring$ denote the ring $\mathbb{C}[x_1, ..., x_{n}]/(x_1^2, ..., x_{n}^2)$.
+At last we can prove the isomorphism. Throughout we shall let $\polyring$ denote the multilinear ring $\mathbb{C}[x_1, ..., x_{n}]/(x_1^2, ..., x_{n}^2)$. Recall that $\tilde{S_n}$ is the ring of controlled states with $n$ outputs. 
 
 
 \begin{thm}\label{thm:iso}
     There is an isomorphism $\polyring \simeq \tilde{S_n}$
 \end{thm}
 
-First, we shall define the map $\phi_n: \polyring \to \csring$ before proving it induces an isomorphism. $\phi_n$ is defined to map an arbitrary polynomial $p(x_1, ..., x_n) = a_0 + a_1x_n + ... + a_{2^n-1}x_1x_2...x_n$ to PNF in equation (\ref{eq:pnf}).
+First, we shall define the map $\phi_n: \polyring \to \csring$ before proving it induces an isomorphism. $\phi_n$ is defined to map an arbitrary polynomial $p(x_1, ..., x_n) = a_0 + a_1x_n + ... + a_{2^n-1}x_1x_2...x_n$ to the PNF in equation (\ref{eq:pnf}).
 
 
-Some important special cases are mapping scalars $a \in \mathbb{C}$:
+Some important special cases are mapping scalars $a \in \mathbb{C}$ and indeterminates $x_i$:
  \begin{equation*}
-        \tikzfig{tikz/poly/homproof/homdef1}
+        \tikzfig{tikz/poly/homproof/homdef1} \quad \tikzfig{tikz/poly/homproof/homdef2}
 \end{equation*}
-
-And mapping indeterminates $x_i$:
-    \begin{equation*}
-        \tikzfig{tikz/poly/homproof/homdef2}
-    \end{equation*}
-
-The full proof is found in Appendix~\ref*{sec:appiso}.
+   
+That $\phi_n$ is a bijection relies on proposition \ref{prop:vec_pnf}. The full proof is found in Appendix~\ref*{sec:appiso}.
