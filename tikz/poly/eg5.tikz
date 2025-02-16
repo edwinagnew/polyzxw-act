@@ -66,13 +66,11 @@
 		\node [style=none] (86) at (12.25, -5) {};
 		\node [style=uw] (87) at (12.25, -6.25) {};
 		\node [style=gbox] (88) at (11, -7) {$-3$};
-		\node [style=gn] (89) at (11.75, -7.5) {};
-		\node [style=gn] (90) at (12.75, -7.5) {};
+		\node [style=gbox] (89) at (11.75, -7.75) {$-2$};
+		\node [style=gbox] (90) at (12.75, -7.75) {$3$};
 		\node [style=none] (92) at (12.25, -10.25) {};
 		\node [style=none] (93) at (4, -7.25) {$\eqq{\ref{eq:kill_quad}}$};
 		\node [style=dw] (95) at (12.25, -8.75) {};
-		\node [style=gbox] (97) at (10.75, -8.25) {$-2$};
-		\node [style=gbox] (98) at (13.75, -8.25) {$3$};
 		\node [style=none] (100) at (6.75, -4.75) {};
 		\node [style=uw] (101) at (6.75, -5.5) {};
 		\node [style=gbox] (102) at (5.5, -6.25) {$-3$};
@@ -90,8 +88,7 @@
 		\node [style=uw] (125) at (17.75, -6.25) {};
 		\node [style=gbox] (126) at (16.5, -7) {$-3$};
 		\node [style=none] (127) at (17.75, -8.75) {};
-		\node [style=gn] (131) at (17.75, -7.25) {};
-		\node [style=gbox] (132) at (19, -8) {$1$};
+		\node [style=gbox] (131) at (17.75, -7.25) {$1$};
 		\node [style=none] (133) at (21.75, -6) {};
 		\node [style=uw] (134) at (21.75, -7) {};
 		\node [style=gbox] (135) at (21, -8) {$-3$};
@@ -176,8 +173,6 @@
 		\draw (87) to (90);
 		\draw (95) to (89);
 		\draw (95) to (90);
-		\draw (97) to (89);
-		\draw (90) to (98);
 		\draw (101) to (100.center);
 		\draw (101) to (102);
 		\draw (101) to (103);
@@ -194,7 +189,6 @@
 		\draw [bend right=15] (125) to (126);
 		\draw (125) to (131);
 		\draw (131) to (127.center);
-		\draw [bend left] (131) to (132);
 		\draw (134) to (133.center);
 		\draw [bend right] (134) to (135);
 		\draw [bend left] (134) to (136.center);

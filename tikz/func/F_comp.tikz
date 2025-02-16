@@ -29,7 +29,7 @@
 		\node [style=none] (99) at (-7.25, -6.75) {};
 		\node [style=none] (100) at (-8.75, -6.75) {};
 		\node [style=none] (101) at (-8, -5.25) {};
-		\node [style=gn] (102) at (-6.75, -4.25) {};
+		\node [style=gn] (102) at (-6.75, -4.75) {};
 		\node [style=none] (103) at (-8, -6) {$\tilde{M_1}$};
 		\node [style=none] (106) at (-9.5, -6) {};
 		\node [style=none] (107) at (-8.75, -6) {};
@@ -138,6 +138,7 @@
 		\node [style=none] (293) at (0.25, 0) {};
 		\node [style=none] (297) at (8.25, 0) {};
 		\node [style=none] (298) at (-6.25, -6) {};
+		\node [style=gn] (299) at (-6.75, -4.25) {};
 	\end{pgfonlayer}
 	\begin{pgfonlayer}{edgelayer}
 		\draw (19.center) to (18.center);
@@ -162,14 +163,12 @@
 		\draw (97.center) to (100.center);
 		\draw (101.center) to (102);
 		\draw (106.center) to (107.center);
-		\draw (102) to (113.center);
 		\draw (119.center) to (118.center);
 		\draw (118.center) to (117.center);
 		\draw (117.center) to (116.center);
 		\draw (116.center) to (119.center);
 		\draw (129.center) to (132.center);
 		\draw (120.center) to (102);
-		\draw (102) to (134.center);
 		\draw (141) to (152.center);
 		\draw (156.center) to (155.center);
 		\draw (155.center) to (154.center);
@@ -245,5 +244,8 @@
 		\draw (297.center) to (28.center);
 		\draw (242.center) to (211.center);
 		\draw (298.center) to (110.center);
+		\draw (299) to (113.center);
+		\draw (299) to (134.center);
+		\draw (299) to (102);
 	\end{pgfonlayer}
 \end{tikzpicture}

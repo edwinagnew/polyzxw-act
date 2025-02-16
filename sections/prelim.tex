@@ -1,6 +1,6 @@
 \section{Preliminaries}
 
-This section introduces the ZXW-calculus, and how controlled diagrams are defined in it. The ZXW-calculus is a diagrammatic formalism for qudit computation, unifying the ZX and ZW calculi and synthesising their relative strenghts. The ZXW-calculus consists of diagrams built from a small number of generators and equipped with a complete set of rewrite rules which enables all equalities between linear maps to be proven diagramatically.  Diagrams are to be read top to bottom or, in later sections, left to right.
+This section introduces the ZXW-calculus, and how controlled diagrams are defined in it. The ZXW-calculus is a diagrammatic formalism for qudit computation, unifying the ZX and ZW calculi and synthesising their relative strengths. The ZXW-calculus consists of diagrams built from a small number of generators and equipped with a complete set of rewrite rules which enables all equalities between linear maps to be proven diagrammatically.  Diagrams are to be read top to bottom or, in later sections, left to right.
 
 \subsection{The ZXW-Calculus}
 %%% some intro about the zxw-calculus, specifically some applications/citations and the explaining the completeness results, should go here.
@@ -33,7 +33,7 @@ Following \cite{shaikh2022sum}, we cover the definitions of controlled states an
 Note that this is a different definition of controlled states to Ref.~\cite{jeandel2024adddiffzx} in which controlling on $\ket{0}$ is $\ket{+}^{\otimes n}$ instead of $\ket{0}^{\otimes n}$; this choice appears to make a substantial difference in the algebraic properties, which we discuss in Remark~\ref{remark:entrywise}.
 
 \begin{definition}\label{def:ctrlsqmat}
-    For an arbitrary square matrix $M$, the controlled matrix of $M$ is the diagram $\tilde{M}$ such that:
+    For an arbitrary square matrix $M$, a controlled matrix of $M$ is a diagram $\tilde{M}$ such that:
 
     \begin{gather}
         \tikzfig{tikz/con/c_sq1}\qquad\qquad\qquad\qquad
@@ -42,7 +42,7 @@ Note that this is a different definition of controlled states to Ref.~\cite{jean
 \end{definition}
 
 \begin{definition}
-  For an arbitrary state $\psi$, the controlled state of $\psi$ is the diagram $\tilde{\psi}$ such that:
+  For an arbitrary state $\psi$, a controlled state of $\psi$ is a diagram $\tilde{\psi}$ such that:
 
   \begin{equation}\label{eq:cstate}
       \tikzfig{tikz/con/c_state}

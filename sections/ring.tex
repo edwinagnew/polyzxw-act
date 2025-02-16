@@ -24,22 +24,22 @@ Now we show that controlled matrix addition and multiplication satisfy the ring 
  %   \end{equation}
 %\end{lemma}
 
-
+\begin{lemma}\label{lem:csq_add_id}
 The additive identity is defined as $\redzeroup \otimes I_n$:
 \begin{equation*}
     \tikzfig{tikz/con/csq_add_id}
 \end{equation*}
+\end{lemma}
 
 
 The multiplicative identity is defined very similarly as $\lowerbox{\greenzeroup} \otimes I_n$. The existence of additive inverses relies on the copying lemma from before.
 
 \begin{lemma}\label{lem:csq_inv}
-    The additive inverse of $\tilde{M}$ is $\raisebox{-5pt}{\numbergate[-1]} \circ \tilde{M} $
+    The additive inverse of $\tilde{M}$ is $\raisebox{-5pt}{\numbergate[-1]} \circ \tilde{M} $.
 \end{lemma}
 
-Finally, we prove distributivity.
-
 \begin{lemma}\label{lem:csq_dist}
+    The addition and multiplication operations of controlled matrices distribute:
     \begin{equation*}
         \tikzfig{tikz/con/csq_dist_statement}
     \end{equation*}
@@ -57,13 +57,13 @@ Combining the lemmas of this section shows that controlled matrices form a ring.
 Many of the ring axioms follow directly from basic ZXW rules. For example we can show commutativity of addition as follows:
 
 \begin{lemma}\label{lem:cs_add_comm}
-    For $n$-partite states $\psi_1, \psi_2$, $\tilde{\psi_1} \boxplus \tilde{\psi_2} = \tilde{\psi_2} \boxplus \tilde{\psi_1}  $
+    For $n$-partite states $\psi_1, \psi_2$, $\tilde{\psi_1} \boxplus \tilde{\psi_2} = \tilde{\psi_2} \boxplus \tilde{\psi_1}  $.
 \end{lemma}
 
 Associativity of $\boxplus$ follows similarly, using (\ref{rule:Aso}). Next we have the additive identity.
 
 \begin{lemma}\label{lem:cs_add_id}
-    $\tilde{\psi} \boxplus\mathbf{\tilde{0}} = \tilde{\psi}$
+    $\tilde{\psi} \boxplus\mathbf{\tilde{0}} = \tilde{\psi}$.
 \end{lemma}
 
 
@@ -71,7 +71,7 @@ The additive inverse is defined similarly to the case of controlled matrices.
 
 
 \begin{lemma}\label{lem:cs_add_inv}
-    For a controlled state $\tilde{\psi}$, its additive inverse is $\tilde{\psi} \circ \raisebox{-7pt}{\numbergate[-1]}$
+    For a controlled state $\tilde{\psi}$, its additive inverse is $\tilde{\psi} \circ \raisebox{-7pt}{\numbergate[-1]}$.
 \end{lemma}
 
 
@@ -79,7 +79,7 @@ Associativity and commutativity of $\boxtimes$ follow as before, using (\ref{rul
 
 
 \begin{lemma}\label{lem:cs_dist}
-    $\tilde{\psi_1} \boxtimes (\tilde{\psi_2} \boxplus \tilde{\psi_3}) = (\tilde{\psi_1} \boxtimes \tilde{\psi_2}) \boxplus (\tilde{\psi_1} \boxtimes \tilde{\psi_3})$
+    $\tilde{\psi_1} \boxtimes (\tilde{\psi_2} \boxplus \tilde{\psi_3}) = (\tilde{\psi_1} \boxtimes \tilde{\psi_2}) \boxplus (\tilde{\psi_1} \boxtimes \tilde{\psi_3})$.
 \end{lemma}
 
 \begin{remark}\label{remark:entrywise}
