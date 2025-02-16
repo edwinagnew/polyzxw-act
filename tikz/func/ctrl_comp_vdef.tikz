@@ -1,28 +1,6 @@
 \begin{tikzpicture}
 	\begin{pgfonlayer}{nodelayer}
 		\node [style=none] (149) at (1.5, -0.5) {$=$};
-		\node [style=none] (150) at (2.75, 0.5) {};
-		\node [style=none] (151) at (4, 1.25) {};
-		\node [style=none] (152) at (5.5, 1.25) {};
-		\node [style=none] (153) at (5.5, -0.25) {};
-		\node [style=none] (154) at (4, -0.25) {};
-		\node [style=none] (155) at (4.75, 0.5) {$\tilde{M_1}$};
-		\node [style=none] (156) at (4, 0.5) {};
-		\node [style=none] (157) at (5.5, 0.5) {};
-		\node [style=none] (158) at (4, -0.75) {};
-		\node [style=none] (159) at (5.5, -0.75) {};
-		\node [style=none] (160) at (5.5, -2.25) {};
-		\node [style=none] (161) at (4, -2.25) {};
-		\node [style=none] (162) at (4.75, -1.5) {$\tilde{M_2}$};
-		\node [style=none] (163) at (4, -1.5) {};
-		\node [style=none] (164) at (5.5, -1.5) {};
-		\node [style=none] (165) at (4.75, 1.25) {};
-		\node [style=none] (166) at (6.75, -1.5) {};
-		\node [style=none] (167) at (2.75, -1.5) {};
-		\node [style=none] (168) at (4.75, -0.75) {};
-		\node [style=gn] (169) at (4.75, 2) {};
-		\node [style=none] (170) at (2.75, 2) {};
-		\node [style=none] (171) at (6.75, 2) {};
 		\node [style=none] (173) at (-6, 0.5) {};
 		\node [style=none] (175) at (0.25, 0.5) {};
 		\node [style=none] (176) at (-5, 2) {};
@@ -54,24 +32,52 @@
 		\node [style=none] (204) at (-2, -1.5) {};
 		\node [style=none] (205) at (0.25, -1.5) {};
 		\node [style=none] (206) at (-6, -1.5) {};
-		\node [style=none] (207) at (6.75, 0.5) {};
+		\node [style=none] (207) at (2.75, 1.5) {};
+		\node [style=none] (208) at (11.75, 1.5) {};
+		\node [style=none] (209) at (5.25, 2.75) {};
+		\node [style=none] (210) at (9, -0.25) {};
+		\node [style=none] (211) at (9, 3.25) {};
+		\node [style=none] (212) at (6.25, 0.75) {};
+		\node [style=none] (213) at (6.25, -0.25) {};
+		\node [style=none] (214) at (5.25, 0.75) {};
+		\node [style=none] (215) at (5.75, 0.25) {\tiny$\Control$};
+		\node [style=none] (216) at (9.5, 0.25) {};
+		\node [style=none] (219) at (5.75, 3.25) {};
+		\node [style=none] (220) at (9.5, 2.75) {};
+		\node [style=none] (221) at (5.25, -0.25) {};
+		\node [style=none] (222) at (6.75, 2.25) {};
+		\node [style=none] (223) at (8.25, 2.25) {};
+		\node [style=none] (224) at (8.25, 0.75) {};
+		\node [style=none] (225) at (6.75, 0.75) {};
+		\node [style=none] (226) at (7.5, 1.5) {$M_1$};
+		\node [style=none] (227) at (6.75, 1.5) {};
+		\node [style=none] (232) at (8.25, 1.5) {};
+		\node [style=none] (240) at (5.25, -1.5) {};
+		\node [style=none] (241) at (9, -4.5) {};
+		\node [style=none] (242) at (9, -1) {};
+		\node [style=none] (243) at (6.25, -3.5) {};
+		\node [style=none] (244) at (6.25, -4.5) {};
+		\node [style=none] (245) at (5.25, -3.5) {};
+		\node [style=none] (246) at (5.75, -4) {\tiny$\Control$};
+		\node [style=none] (247) at (9.5, -4) {};
+		\node [style=none] (250) at (5.75, -1) {};
+		\node [style=none] (251) at (9.5, -1.5) {};
+		\node [style=none] (252) at (5.25, -4.5) {};
+		\node [style=none] (259) at (6.75, -2) {};
+		\node [style=none] (260) at (8.25, -2) {};
+		\node [style=none] (261) at (8.25, -3.5) {};
+		\node [style=none] (262) at (6.75, -3.5) {};
+		\node [style=none] (264) at (7.5, -2.75) {$M_2$};
+		\node [style=none] (265) at (6.75, -2.75) {};
+		\node [style=none] (266) at (8.25, -2.75) {};
+		\node [style=none] (267) at (11.75, -2.75) {};
+		\node [style=none] (268) at (2.75, -2.75) {};
+		\node [style=gn] (269) at (3.75, 2.75) {};
+		\node [style=gn] (270) at (11, 2.75) {};
+		\node [style=none] (271) at (11.75, 2.75) {};
+		\node [style=none] (272) at (2.75, 2.75) {};
 	\end{pgfonlayer}
 	\begin{pgfonlayer}{edgelayer}
-		\draw (154.center) to (153.center);
-		\draw (153.center) to (152.center);
-		\draw (152.center) to (151.center);
-		\draw (151.center) to (154.center);
-		\draw (161.center) to (160.center);
-		\draw (160.center) to (159.center);
-		\draw (159.center) to (158.center);
-		\draw (158.center) to (161.center);
-		\draw (166.center) to (164.center);
-		\draw (167.center) to (163.center);
-		\draw (170.center) to (169);
-		\draw (169) to (171.center);
-		\draw (169) to (165.center);
-		\draw [in=-15, out=15, looseness=1.50] (168.center) to (169);
-		\draw (150.center) to (156.center);
 		\draw [style=filllayer] (187.center)
 			 to [bend right=45] (178.center)
 			 to (186.center)
@@ -98,6 +104,47 @@
 		\draw [style=filllayer] (201.center) to (175.center);
 		\draw [style=filllayer] (206.center) to (203.center);
 		\draw [style=filllayer] (204.center) to (205.center);
-		\draw [style=filllayer] (157.center) to (207.center);
+		\draw [style=filllayer] (220.center)
+			 to [bend right=45] (211.center)
+			 to (219.center)
+			 to [bend right=60, looseness=0.75] (209.center)
+			 to (214.center)
+			 to (212.center)
+			 to (213.center)
+			 to (210.center)
+			 to [bend right=45] (216.center)
+			 to cycle;
+		\draw [style=filllayer] (221.center) to (213.center);
+		\draw [style=filllayer] (221.center) to (214.center);
+		\draw (225.center) to (224.center);
+		\draw (224.center) to (223.center);
+		\draw (223.center) to (222.center);
+		\draw (222.center) to (225.center);
+		\draw (207.center) to (227.center);
+		\draw [style=filllayer] (232.center) to (208.center);
+		\draw [style=filllayer] (251.center)
+			 to [bend right=45] (242.center)
+			 to (250.center)
+			 to [bend right=60, looseness=0.75] (240.center)
+			 to (245.center)
+			 to (243.center)
+			 to (244.center)
+			 to (241.center)
+			 to [bend right=45] (247.center)
+			 to cycle;
+		\draw [style=filllayer] (252.center) to (244.center);
+		\draw [style=filllayer] (252.center) to (245.center);
+		\draw (262.center) to (261.center);
+		\draw (261.center) to (260.center);
+		\draw (260.center) to (259.center);
+		\draw (259.center) to (262.center);
+		\draw [style=filllayer] (268.center) to (265.center);
+		\draw [style=filllayer] (266.center) to (267.center);
+		\draw (270) to (271.center);
+		\draw (269) to (209.center);
+		\draw (220.center) to (270);
+		\draw [in=-60, out=180] (240.center) to (269);
+		\draw [in=240, out=0] (251.center) to (270);
+		\draw (272.center) to (269);
 	\end{pgfonlayer}
 \end{tikzpicture}

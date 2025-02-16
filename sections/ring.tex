@@ -4,7 +4,7 @@ In this section, we reverse-engineer the underlying algebraic properties of cont
 All proofs in this section can be found in Appendix~\ref*{sec:appiso}.
 
 \subsection{Rings}\label{sec:ring}
-Let $\tilde{M_n}$ be the set of controlled square matrices on $n$ qubits. The goal of this section is to prove that the addition and multiplication operations introduced above induce a ring on $\tilde{M_n}$. Likewise, we show that the set of controlled $n$-qubit states $\tilde{S_n}$ also forms a ring. Before doing so, we prove a few important lemmas. The first lemma enables us to copy controlled matrices.
+Let $\tilde{M_n}$ be the set of controlled square matrices on $n$ qubits. The goal of this section is to prove that the addition and multiplication operations introduced above induce a ring on $\tilde{M_n}$. By Proposition \ref{prop:cmat_ops}, the addition and multiplication of controlled matrices is just the controlled addition and multiplication of the underlying matrices so the fact that the ring properties hold is not particularly surprising. What is more interesting is how easily these properties can be proven with a small subset of the ZXW rules. Likewise, we show that the set of controlled $n$-qubit states $\tilde{S_n}$ also forms a ring. The first lemma enables us to copy controlled matrices.
 
 \begin{lemma}\label{lem:csq_copy}
     For any square matrix $M$, 
@@ -15,14 +15,14 @@ Let $\tilde{M_n}$ be the set of controlled square matrices on $n$ qubits. The go
 
 
 
-Now we show that controlled matrix addition and multiplication satisfy the ring axioms. Associativity of $+, \times$ follow immediately from (\ref{rule:Aso}, \ref{rule:S1}), respectively. Commutativity of addition follows from the commutativity of matrix addition.
+Now we show that controlled matrix addition and multiplication satisfy the ring axioms. Associativity of $+, \times$ follow immediately from (\ref{rule:Aso}, \ref{rule:S1}), respectively. Commutativity of addition follows from the commutativity of matrix addition and Proposition \ref{prop:cmat_ops}.
 
-\begin{lemma}\label{lem:csq_add_comm}
-    Let $M_1, M_2$ be $n \times n$ matrices. 
-    \begin{equation}\label{eq:csq_add_comm}
-        \tikzfig{tikz/con/csq_add_comm_statement}
-    \end{equation}
-\end{lemma}
+%\begin{lemma}\label{lem:csq_add_comm}
+%    Let $M_1, M_2$ be $n \times n$ matrices. 
+%    \begin{equation}\label{eq:csq_add_comm}
+ %       \tikzfig{tikz/con/csq_add_comm_statement}
+ %   \end{equation}
+%\end{lemma}
 
 
 The additive identity is defined as $\redzeroup \otimes I_n$:

@@ -98,6 +98,17 @@ The following two lemmas follow immediately from the bra-ket definition of $\low
     \end{equation}
 \end{lemma}
 
+\begin{lemma}
+\begin{equation}\label{eq:inner}
+	\tikzfig{tikz/lemmas/inner_statement}
+\end{equation}
+\end{lemma}
+\begin{proof}
+\begin{equation*}
+\tikzfig{tikz/lemmas/inner}
+\end{equation*}
+\end{proof}
+
 
 \begin{lemma}
     \begin{equation}\label{eq:xcpy}
@@ -265,15 +276,15 @@ The following two lemmas follow immediately from the bra-ket definition of $\low
     Thus the two sides are equal over the Z basis and so are equal as diagrams.
 \end{proof}
 
-\textbf{Proof of Lemma \ref*{lem:csq_add_comm}}
-\begin{proof}
-    We prove by plugging red and commutativity of matrix addition. By definition of controlled matrices, plugging $\lowerbox{\redzero}$ gives $I_n$ on both sides. Meanwhile, plugging $\lowerbox{\redpi}$ gives:
-    \begin{equation*}
-       \tikzfig{tikz/con/csq_add_comm}
-   \end{equation*}
-\end{proof}
+%\textbf{Proof of Lemma \ref*{lem:csq_add_comm}}
+%\begin{proof}
+%    We prove by plugging red and commutativity of matrix addition. By definition of controlled matrices, plugging $\lowerbox{\redzero}$ gives $I_n$ on both sides. Meanwhile, plugging $\lowerbox{\redpi}$ gives:
+%    \begin{equation*}
+ %      \tikzfig{tikz/con/csq_add_comm}
+ %  \end{equation*}
+%\end{proof}
 
-\textbf{Proof of lemma \ref*{lem:csq_inv}}
+\textbf{Proof of Lemma \ref*{lem:csq_inv}}
 \begin{proof}
     \begin{equation*}
         \tikzfig{tikz/con/csq_add_inv}
@@ -525,15 +536,7 @@ The following two lemmas follow immediately from the bra-ket definition of $\low
         \tikzfig{tikz/func/F_comp}
     \end{equation*}
 
-    Where $(*)$ follows from:
-    \begin{equation*}
-        \tikzfig{tikz/func/F_comp2}
-    \end{equation*}
-    \begin{equation*}
-        \tikzfig{tikz/func/F_comp3}
-    \end{equation*}
-
-    Which implies that controlled diagrams can fuse under $\lowerbox{\zspid}$.
+    Where $(*)$ follows from Proposition \ref{prop:cmat_ops}.
 
     %$\Control$ preserves the monoidal unit since $\mone_{\mathbf{Hilb_{sq}}} = \mone_{\mathbf{Hilb}} = \lowerbox{\emptydiag}$. $\Control$ is lax thanks to the following morphism: $\phi_{V, W}: \Control(V) \otimes \Control(W) \to \Control(V \otimes W)$:
     %\begin{equation*}
