@@ -1,6 +1,5 @@
 \section{ZXW rules}\label{sec:apprules}
 
-
 \textbf{ZX Rules}:
 
 \begin{gather}
@@ -230,33 +229,9 @@ The following two lemmas follow immediately from the bra-ket definition of $\low
     \end{equation*}
   \end{proof}
 
-\section{Main Proofs}\label{sec:appiso}
-
-\textbf{Proof of Lemma \ref*{lemma:and}}
-\begin{proof}
-    We can verify this computes the AND gate by computing on basis states.
-    \begin{equation}\label{eq:and1}
-        \tikzfig{tikz/func/and1}
-    \end{equation}
-    Thus $AND(1, x) = x$. Since the diagram is clearly commutative, it remains to check $AND(0, x) = 0$.
-    \begin{equation}\label{eq:and0}
-        \tikzfig{tikz/func/and0}
-    \end{equation}
-\end{proof}
-
-\textbf{Proof of Proposition \ref*{prop:FF}}
-
-\begin{proof}
-    Plugging basis states:
-    \begin{equation*}
-        \tikzfig{tikz/func/FF1}
-    \end{equation*}
-    \begin{equation*}
-        \tikzfig{tikz/func/FF2}
-    \end{equation*}
-\end{proof}
-
-\textbf{Proof of Lemma \ref*{lem:csq_copy}}
+\section{Main Proofs}\label{sec:appproofs}
+\subsection{Proofs for Section~\ref{sec:ring}}\label{sec:ringproofs}
+\textbf{Proof of Lemma \ref{lem:csq_copy}}
 \begin{proof}
     First of all, using (\ref{rule:BZW}) we can rewrite the LHS to
     \begin{equation*}
@@ -276,7 +251,7 @@ The following two lemmas follow immediately from the bra-ket definition of $\low
     Thus the two sides are equal over the Z basis and so are equal as diagrams.
 \end{proof}
 
-\textbf{Proof of Lemma \ref*{lem:csq_add_comm}}
+\textbf{Proof of Lemma \ref{lem:csq_add_comm}}
 \begin{proof}
     We prove by plugging red and commutativity of matrix addition. By definition of controlled matrices, plugging $\lowerbox{\redzero}$ gives $I_n$ on both sides. Meanwhile, plugging $\lowerbox{\redpi}$ gives:
     \begin{equation*}
@@ -284,21 +259,21 @@ The following two lemmas follow immediately from the bra-ket definition of $\low
    \end{equation*}
 \end{proof}
 
-\textbf{Proof of Lemma \ref*{lem:csq_inv}}
+\textbf{Proof of Lemma \ref{lem:csq_inv}}
 \begin{proof}
     \begin{equation*}
         \tikzfig{tikz/con/csq_add_inv}
     \end{equation*}
 \end{proof}
 
-\textbf{Proof of Lemma \ref*{lem:csq_dist}}
+\textbf{Proof of Lemma \ref{lem:csq_dist}}
 \begin{proof}
     \begin{equation*}
         \tikzfig{tikz/con/csq_dist}
     \end{equation*}
 \end{proof}
 
-\textbf{Proof of Lemma \ref*{lem:cs_copy}}
+\textbf{Proof of Lemma \ref{lem:cs_copy}}
 \begin{proof}
     As before, plugging $|0\rangle$ gives
     \begin{equation*}
@@ -313,12 +288,12 @@ The following two lemmas follow immediately from the bra-ket definition of $\low
     Completing the proof
 \end{proof}
 
-\textbf{Proof of Lemma \ref*{lem:cs_add_comm}}
+\textbf{Proof of Lemma \ref{lem:cs_add_comm}}
 \begin{proof}
     \tikzfig{tikz/con/cs_add_comm}
 \end{proof}
 
-\textbf{Proof of Lemma \ref*{lem:cs_add_id}}
+\textbf{Proof of Lemma \ref{lem:cs_add_id}}
 \begin{proof}
     It is clear that $\lowerbox[10]{\zeroproj}$ is the controlled state $\tilde{\mathbf{0}}$. 
     
@@ -329,7 +304,7 @@ The following two lemmas follow immediately from the bra-ket definition of $\low
 
 \end{proof}
 
-\textbf{Proof of Lemma \ref*{lem:cs_add_inv}}
+\textbf{Proof of Lemma \ref{lem:cs_add_inv}}
 \begin{proof}
     $\tilde{\psi} \circ \raisebox{-5pt}{\numbergate[-1]}$ is still a controlled state since $\raisebox{-5pt}{\numbergate[-1]}$ does nothing to $\raisebox{-5pt}{\redzero}$. Then $\tilde{\psi} \circ \raisebox{-5pt}{\numbergate[-1]}$ inverts $\tilde{\psi}$ since:
     \begin{equation*}
@@ -337,7 +312,7 @@ The following two lemmas follow immediately from the bra-ket definition of $\low
     \end{equation*}
 \end{proof}
 
-\textbf{Proof of Lemma \ref*{lem:cs_add_inv}}
+\textbf{Proof of Lemma \ref{lem:cs_add_inv}}
 \begin{proof}
     \begin{gather*} %\label{eq:cs_dist}
         \tilde{\psi_1} \boxtimes (\tilde{\psi_2} \boxplus \tilde{\psi_3}) ~=~ \tikzfig{tikz/distproof/d1} ~
@@ -349,7 +324,7 @@ The following two lemmas follow immediately from the bra-ket definition of $\low
 \end{proof}
 
 
-\textbf{Proof of Proposition \ref*{prop:vec_pnf}}
+\textbf{Proof of Proposition \ref{prop:vec_pnf}}
 \begin{proof}
     We prove by induction on $n$.
     
@@ -405,7 +380,8 @@ The following two lemmas follow immediately from the bra-ket definition of $\low
     Completing the inductive step.
 \end{proof}
 
-\textbf{Proof of Theorem \ref*{thm:uni_pnf}}
+\subsection{Proofs for Section~\ref{sec:iso}}\label{sec:isoproofs}
+\textbf{Proof of Theorem \ref{thm:uni_pnf}}
 
 \begin{proof}
     Let $A$ be an arithmetic diagram. If $A = \numberstate$, we are done. 
@@ -443,7 +419,7 @@ The following two lemmas follow immediately from the bra-ket definition of $\low
 \end{proof}
 
 
-\textbf{Proof of Theorem \ref*{thm:iso}}
+\textbf{Proof of Theorem \ref{thm:iso}}
 \begin{proof}
     
     First, we show $\phi_n$ is a homomorphism, i.e. \begin{equation*}
@@ -525,39 +501,56 @@ The following two lemmas follow immediately from the bra-ket definition of $\low
     \end{gather*}
 \end{proof}
 
+\subsection{Proofs for Section~\ref{sec:ctrlmap}}\label{sec:ctrlmapproofs}
+
 \textbf{Proof of Proposition \ref{prop:ctrl_comp_h}}
 \begin{proof}
-    %On $id_V: V \to V$:
-    %\begin{equation*}
-     %   \tikzfig{tikz/func/F_id}
-    %\end{equation*}
-
+    $\Control$ is sound with regards to sequential composition:
     \begin{equation*}
         \tikzfig{tikz/func/F_comp}
     \end{equation*}
 
     Where $(*)$ follows from Proposition \ref{prop:cmat_ops}.
-
-    %$\Control$ preserves the monoidal unit since $\mone_{\mathbf{Hilb_{sq}}} = \mone_{\mathbf{Hilb}} = \lowerbox{\emptydiag}$. $\Control$ is lax thanks to the following morphism: $\phi_{V, W}: \Control(V) \otimes \Control(W) \to \Control(V \otimes W)$:
-    %\begin{equation*}
-     %   \phi_{V, W} = \tikzfig{tikz/func/F_lax_def}
-    %\end{equation*}
-
-    %$\phi$ is natural since for any $M_1: V \to V,\; M_2: W \to W$, we have:
-    %\begin{equation*}
-     %   \tikzfig{tikz/func/F_lax_nat}
-    %\end{equation*}
-
-
-    %Finally, $\phi$ satisfies the coherence condition since for any $U, V, W$:
-    %\begin{equation*}
-     %   \tikzfig{tikz/func/F_lax_ass}
-    %\end{equation*}
 \end{proof}
 
-%\textbf{Proof of Proposition \ref{prop:ctrl_comp_v}}
-%\begin{proof}
-%\begin{equation*}
-%	\tikzfig{tikz/func/ctrl_comp}
-%\end{equation*}
-%\end{proof}
+\textbf{Proof of Proposition \ref{prop:ctrl_comp_v}}
+\begin{proof}
+    Consider the morphism: $\phi_{V, W}: \Control(V) \otimes \Control(W) \to \Control(V \otimes W)$:
+    \begin{equation*}
+       \phi_{V, W} = \tikzfig{tikz/func/F_lax_def}
+    \end{equation*}
+
+    By conjugating by $\phi$, $\Control$ is sound under parallel composition of any $M_1: V \to V,\; M_2: W \to W$:
+    \begin{equation*}
+        \tikzfig{tikz/func/ctrl_comp}
+    \end{equation*}
+
+    Parallel composition is associative by associativity of the tensor product and of $\phi$:
+    \begin{equation*}
+       \tikzfig{tikz/func/F_lax_ass}
+    \end{equation*}
+\end{proof}
+
+\textbf{Proof of Lemma \ref{lemma:and}}
+\begin{proof}
+    We can verify this computes the AND gate by computing on basis states.
+    \begin{equation}\label{eq:and1}
+        \tikzfig{tikz/func/and1}
+    \end{equation}
+    Thus $AND(1, x) = x$. Since the diagram is clearly commutative, it remains to check $AND(0, x) = 0$.
+    \begin{equation}\label{eq:and0}
+        \tikzfig{tikz/func/and0}
+    \end{equation}
+\end{proof}
+
+\textbf{Proof of Proposition \ref{prop:FF}}
+
+\begin{proof}
+    Plugging basis states:
+    \begin{equation*}
+        \tikzfig{tikz/func/FF1}
+    \end{equation*}
+    \begin{equation*}
+        \tikzfig{tikz/func/FF2}
+    \end{equation*}
+\end{proof}

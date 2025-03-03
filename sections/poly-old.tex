@@ -2,7 +2,7 @@
 \section{Polynomials}
 In this section, we reverse-engineer the underlying algebraic properties of controlled state and controlled square matrix diagrams. This builds up to diagrams for the unique normal form for states used for the first proofs of complete axiomatisation for qubit graphical calculi~\cite{hadzihasanovic2017thesis, Hadzihasanovic2018zwzxcomplete}.
 
-All proofs in this section can be found in Appendix~\ref*{sec:appiso}.
+All proofs in this section can be found in Appendix~\ref{sec:appproofs}.
 
 \subsection{Rings}\label{sec:ring}
 Let $\tilde{M_n}$ be the set of controlled square matrices on $n$ qubits. The goal of this section is to prove that the addition and multiplication operations introduced above induce a ring on $\tilde{M_n}$. Likewise, we show that the set of controlled $n$-qubit states $\tilde{S_n}$ also forms a ring. Before doing so, we prove a few important lemmas. The first lemma enables us to copy controlled matrices.
@@ -154,7 +154,7 @@ This normal form is familiar from completeness of all linear maps for qubits~\ci
 \end{prop} 
 
 \begin{proof}
-    See Appendix~\ref*{sec:appiso}.
+    See Appendix~\ref{sec:appproofs}.
 \end{proof}
 
 Thus, every controlled state can be represented as at least one arithmetic diagram (namely, its PNF). Moreover, we now show that any other arithmetic diagram can always be rewritten to its PNF.
@@ -165,7 +165,7 @@ Thus, every controlled state can be represented as at least one arithmetic diagr
 \end{thm}
 
 \begin{proof}
-    An algorithm to rewrite any arithmetic diagram to PNF is given in Appendix~\ref*{sec:appiso}.
+    An algorithm to rewrite any arithmetic diagram to PNF is given in Appendix~\ref{sec:appproofs}.
 \end{proof}
 
 \subsection{Isomorphism}
@@ -192,7 +192,7 @@ And mapping indeterminates $x_i$:
         \tikzfig{tikz/poly/homproof/homdef2}
     \end{equation*}
 
-The full proof is found in Appendix~\ref*{sec:appiso}.
+The full proof is found in Appendix~\ref{sec:appproofs}.
 
 \subsection{Factorisation}
 Instead of the indeterminates being complex numbers represented by $\numberstate$'s, we can let them be same-size matrices represented by controlled square matrix diagrams.

@@ -1,4 +1,4 @@
-\section{The Control Higher-Order Map}
+\section{The Control Higher-Order Map}\label{sec:ctrlmap}
 
 \subsection{Functorial Boxes}
 
@@ -8,66 +8,31 @@ We define the higher-order map $\Control$ which takes a square matrix $M: V \to 
     \tikzfig{tikz/func/F_def_box}
 \end{equation}
 
-We prove in appendix \ref{sec:appiso} that composing controlled operations behaves nicely. 
+We prove in Appendix~\ref{sec:ctrlmapproofs} that composition of controlled operations in sequence and in parallel is well-behaved.
 
 \begin{prop}\label{prop:ctrl_comp_h}
 \begin{equation*}
 	\tikzfig{tikz/func/ctrl_comp_hdef}
 \end{equation*}\end{prop}
 
-
-%\begin{prop}\label{prop:ctrl_comp_v}
-%\begin{equation*}
-%	\tikzfig{tikz/func/ctrl_comp_vdef}
-%\end{equation*}
-%\end{prop}
+\begin{prop}\label{prop:ctrl_comp_v}
+\begin{equation*}
+	\tikzfig{tikz/func/ctrl_comp_vdef}
+\end{equation*}
+\end{prop}
 
 \subsection{Multiple Control}
 
-This section proves that controlling a controlled diagram gives the AND of the control wires. First we show how to represent the binary AND gate in the ZXW-calculus, and check it in Appendix~\ref*{sec:appiso}. This construction is by deMorgan's law of a diagram for binary OR from \Cref{prop:vec_pnf}.
+This section proves that controlling a controlled diagram gives the AND of the control wires. First we show how to represent the binary AND gate in the ZXW-calculus, by deMorgan's law of the diagram for binary OR given in \Cref{prop:vec_pnf}.
 \begin{lemma}\label{lemma:and}
     \begin{equation*}
         \tikzfig{tikz/func/and_def}
     \end{equation*}
 \end{lemma}
 
-Multiple applications of $\Control$ ANDs the controls, proved in Appendix~\ref*{sec:appiso}.
+Multiple applications of $\Control$ ANDs the controls:
 \begin{prop}\label{prop:FF}
     \begin{equation*}
         \tikzfig{tikz/func/FF_statement}
     \end{equation*}
 \end{prop}
-
-%Since AND is a monoid, it is reasonable to expect that multiple control induces a monad. Unfortunately, this does not appear to go through. Although AND does define a natural transformation (in the relevant category), defining the unit of the monad necessitates defining $\Control$ of non-square matrices, which breaks functoriality. Nevertheless we prove that AND is a natural transformation.
-
-%\begin{prop}
- %   $\mu: \Control ^2 \to \Control$ is a natural transformation with components $\mu_V: \Control^2 V \to \Control V$ defined as follows:
-%    \begin{equation*}
- %       \tikzfig{tikz/func/mu_def}
- %   \end{equation*}
-%\end{prop}
-
-%\begin{proof}
- %   \begin{equation}\label{eq:munat}
-  %      \tikzfig{tikz/func/mu_nat}
-   % \end{equation}
-   % due to the $Z-H$ bialgebra rule in the ZH calculus, as the multiply box is an H gate after an H-box.
-%\end{proof}
-%\begin{corollary}
- %   By the $Z-X$ and $Z-W$ bialgebra rules as well as the Z spider fusion rule, in addition to the multiply box, \Cref{eq:munat} holds for all other 2-input, 1-output generators: Z, X, and W.
-%\end{corollary}
-
-%\begin{prop}
-%    $(F, \mu, \eta)$ defined a monad on $\mathbf{Hilb_j}$
-%\end{prop}
-%\begin{proof}
-%    Firstly, $\mu$ is a natural transformation since for any $M: V \to V$:
-%Similary, $\eta$ is a natural transformation since for any $M: V \to V$:
-%    \begin{equation*}
-%        \tikzfig{tikz/func/eta_nat}
-%    \end{equation*}
-% For the unitality coherence condition:
-%    \begin{equation*}
-%        \tikzfig{tikz/func/coh1}
-%    \end{equation*}
-%\end{proof}
