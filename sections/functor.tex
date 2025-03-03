@@ -1,8 +1,7 @@
 \section{The Control Higher-Order Map}\label{sec:ctrlmap}
-
-\subsection{Functorial Boxes}
-
 %The operation of turning a non-dimension-decreasing matrix to its controlled diagram can be made into a lax monoidal functor. Let $\mathbf{Hilb_{\leq}}$ be the subcategory of Hilbert spaces and non-dimension-decreasing linear transformations. Adding an additional horizontal wire to facilitate composition, $F: \mathbf{Hilb_{\leq}} \to \mathbf{Hilb}$ is defined as follows for arbitrary  $D \in Hom_{Hilb_{\leq}}(V, W)$.
+In quantum circuits, quantum control is realized through controlled gates.
+In this section, we show that we can reason with controlled gates by a straightforward construction on top of our ring of controlled square matrices.
 We define the higher-order map $\Control$ which takes a square matrix $M: V \to V$ to its controlled square diagram $V \otimes \mathbb{C}^2 \to V \otimes \mathbb{C}^2$. In the functorial box notation of \cite{mellies2006functorial}, we write:
 \begin{equation}
     \tikzfig{tikz/func/F_def_box}
@@ -21,16 +20,7 @@ We prove in Appendix~\ref{sec:ctrlmapproofs} that composition of controlled oper
 \end{equation*}
 \end{prop}
 
-\subsection{Multiple Control}
-
-This section proves that controlling a controlled diagram gives the AND of the control wires. First we show how to represent the binary AND gate in the ZXW-calculus, by deMorgan's law of the diagram for binary OR given in \Cref{prop:vec_pnf}.
-\begin{lemma}\label{lemma:and}
-    \begin{equation*}
-        \tikzfig{tikz/func/and_def}
-    \end{equation*}
-\end{lemma}
-
-Multiple applications of $\Control$ ANDs the controls:
+Furthermore, successive applications of $\Control$ recovers the standard notion of multiple-control, which computes the AND of the control qubits:
 \begin{prop}\label{prop:FF}
     \begin{equation*}
         \tikzfig{tikz/func/FF_statement}

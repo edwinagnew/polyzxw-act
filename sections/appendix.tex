@@ -531,7 +531,23 @@ The following two lemmas follow immediately from the bra-ket definition of $\low
     \end{equation*}
 \end{proof}
 
-\textbf{Proof of Lemma \ref{lemma:and}}
+\textbf{Proof of Proposition \ref{prop:FF}}
+\begin{proof}
+    Plugging basis states:
+    \begin{equation*}
+        \tikzfig{tikz/func/FF1}
+    \end{equation*}
+    \begin{equation*}
+        \tikzfig{tikz/func/FF2}
+    \end{equation*}
+\end{proof}
+
+The AND gate is a primitive in the ZH-calculus~\cite{backens2019zh}. We can also represent the binary AND gate in the ZXW-calculus, by deMorgan's law of the diagram for binary OR given in \Cref{prop:vec_pnf}.
+\begin{lemma}\label{lemma:and}
+    \begin{equation*}
+        \tikzfig{tikz/func/and_def}
+    \end{equation*}
+\end{lemma}
 \begin{proof}
     We can verify this computes the AND gate by computing on basis states.
     \begin{equation}\label{eq:and1}
@@ -541,16 +557,4 @@ The following two lemmas follow immediately from the bra-ket definition of $\low
     \begin{equation}\label{eq:and0}
         \tikzfig{tikz/func/and0}
     \end{equation}
-\end{proof}
-
-\textbf{Proof of Proposition \ref{prop:FF}}
-
-\begin{proof}
-    Plugging basis states:
-    \begin{equation*}
-        \tikzfig{tikz/func/FF1}
-    \end{equation*}
-    \begin{equation*}
-        \tikzfig{tikz/func/FF2}
-    \end{equation*}
 \end{proof}
