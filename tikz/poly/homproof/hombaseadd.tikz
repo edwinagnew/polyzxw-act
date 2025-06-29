@@ -1,6 +1,5 @@
 \begin{tikzpicture}
 	\begin{pgfonlayer}{nodelayer}
-		\node [style=none] (0) at (-6.25, 0) {$\phi_1(p) \boxplus \phi_1(q) = $};
 		\node [style=uw] (1) at (-2.25, 1) {};
 		\node [style=gbox] (3) at (-2.75, 0) {$a_0$};
 		\node [style=gbox] (4) at (-1.75, 0) {$a_1$};
@@ -34,7 +33,33 @@
 		\node [style=none] (41) at (-0.5, -8.25) {};
 		\node [style=uw] (42) at (-0.5, -4.75) {};
 		\node [style=none] (43) at (-0.5, -3.75) {};
-		\node [style=none] (45) at (4, -6) {$=\phi_1(p + q)$};
+		\node [style=none] (45) at (8.75, -6) {$=\phi_1(p + q)$};
+		\node [style=none] (46) at (-12.5, 0) {$\phi_1(p) \boxplus \phi_1(q) = $};
+		\node [style=uw] (52) at (-7.25, 2.25) {};
+		\node [style=none] (53) at (-7.25, 3.25) {};
+		\node [style=none] (57) at (-4, 0) {$=$};
+		\node [style=none] (58) at (-8.5, 1.25) {};
+		\node [style=none] (59) at (-9.5, 0.25) {};
+		\node [style=none] (60) at (-7.5, 0.25) {};
+		\node [style=none] (61) at (-8.5, 0.25) {};
+		\node [style=label] (66) at (-8.5, 0.5) {$\tilde{\phi_1\!(p)}$};
+		\node [style=none] (67) at (-6, 1.25) {};
+		\node [style=none] (68) at (-7, 0.25) {};
+		\node [style=none] (69) at (-5, 0.25) {};
+		\node [style=none] (71) at (-6, 0.25) {};
+		\node [style=label] (75) at (-6, 0.5) {$\tilde{\phi_1\!(q)}$};
+		\node [style=dw] (76) at (-7.25, -1) {};
+		\node [style=none] (77) at (-7.25, -2) {};
+		\node [style=none] (78) at (-8.5, 0) {};
+		\node [style=none] (79) at (-6, 0) {};
+		\node [style=none] (80) at (5, -5) {};
+		\node [style=none] (81) at (3.75, -6.25) {};
+		\node [style=none] (82) at (6.25, -6.25) {};
+		\node [style=none] (83) at (5, -6.25) {};
+		\node [style=label] (84) at (5, -6) {$\tilde{\phi_1\!(p\plu q)}$};
+		\node [style=none] (85) at (5, -7.25) {};
+		\node [style=none] (86) at (5, -4) {};
+		\node [style=none] (87) at (2.25, -6) {$=$};
 	\end{pgfonlayer}
 	\begin{pgfonlayer}{edgelayer}
 		\draw [bend left=15] (3) to (1);
@@ -61,10 +86,29 @@
 		\draw [bend right=15] (36) to (33);
 		\draw [bend left=15] (29) to (33);
 		\draw (42) to (43.center);
-		\draw [in=315, out=90] (39) to (42);
+		\draw [in=-30, out=90] (39) to (42);
 		\draw [bend left=15] (38) to (42);
 		\draw [in=90, out=-90] (39) to (41.center);
 		\draw [bend left=15] (31) to (30);
 		\draw [bend right=15] (31) to (36);
+		\draw (52) to (53.center);
+		\draw (59.center) to (58.center);
+		\draw (59.center) to (60.center);
+		\draw (60.center) to (58.center);
+		\draw (68.center) to (67.center);
+		\draw (68.center) to (69.center);
+		\draw (69.center) to (67.center);
+		\draw [in=210, out=90] (58.center) to (52);
+		\draw [in=90, out=-30] (52) to (67.center);
+		\draw (76) to (77.center);
+		\draw [in=-210, out=-90] (78.center) to (76);
+		\draw [in=-90, out=30] (76) to (79.center);
+		\draw (78.center) to (61.center);
+		\draw (79.center) to (71.center);
+		\draw (81.center) to (80.center);
+		\draw (81.center) to (82.center);
+		\draw (82.center) to (80.center);
+		\draw (85.center) to (83.center);
+		\draw (86.center) to (80.center);
 	\end{pgfonlayer}
 \end{tikzpicture}

@@ -1,0 +1,16 @@
+% Keep the size of this file to a minimum to reduce preview compilation time in TikZiT %
+\usepackage{amsthm,amsfonts,amssymb}
+\usepackage{amsmath}
+\usepackage{mathtools}
+\usepackage{fontsize}
+\usepackage{braket}
+%\changefontsize{12pt}
+
+\newcommand{\minu}{\texttt{-}}
+\newcommand{\plu}{\texttt{+}}
+
+\definecolor{zx_red}{RGB}{232,165,165}
+\definecolor{zx_green}{RGB}{216,248,216}
+
+%\usepackage{pgfplots}
+%\pgfplotsset{compat=newest, compat/show suggested version=false}

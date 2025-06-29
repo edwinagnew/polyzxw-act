@@ -9,8 +9,4 @@ We then have that:
     The proof is by the same algorithm for rewriting to PNF as \Cref{thm:uni_pnf}, modifying step (6) to copy controlled square matrices using \Cref{lem:csq_copy}, using \Cref{lem:csq_add_comm} to commute controlled square matrices whose controls act on mutually exclusive sectors.
 \end{proof}
 
-As an application, we leverage both our rewrite rules for arithmetic ZW diagrams, and for controlled diagrams, to \emph{factor} them.  For example, for same size square matrices $I, A, B$ and $a, b, c \in \mathbb{C}$:
-\begin{gather*}
-    \tikzfig{tikz/poly/matspoly}
-\end{gather*}
-Factoring Hamiltonians is important to optimise quantum algorithms for chemistry and physics simulations. However, previous graphical rewrites for factoring Hamiltonians had only been doable for Hamiltonians with concretely-specified matrix terms~\cite{shaikh2022sum}. This completeness result guarantees that for any Hamiltonian, even if its matrix terms are black-box, these graphical rewrite rules are capable of deriving any of its possible factorisations.
+\todo[inline]{The complete rules table will go here.}
