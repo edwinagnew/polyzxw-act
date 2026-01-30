@@ -3,3 +3,15 @@ main-*
 
 !main.pdf
 !main.tex
+
+# Editor config
+.vscode/
+
+# Build artifacts
+commands.aux
+commands.fdb_latexmk
+packages.aux
+packages.fdb_latexmk
+
+# Specific sections
+sections/zxw_rules.tex
