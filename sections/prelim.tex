@@ -34,22 +34,57 @@ Equations in ZXW apply diagrammatic rewrites which prove equalities of the under
 Following \cite{shaikh2022sum}, we cover the definitions of controlled states and controlled square matrices, and arithmetic on them.
 Note that this is a different definition of controlled states to Ref.~\cite{jeandel2024adddiffzx} in which controlling on $\ket{0}$ is $\ket{+}^{\otimes n}$ instead of $\ket{0}^{\otimes n}$; this choice appears to make a substantial difference in the algebraic properties, which we discuss in Remark~\ref{remark:entrywise}.
 
-\begin{definition}\label{def:ctrlsqmat}
-    For an arbitrary square matrix $M$, a controlled matrix of $M$ is a diagram $\tilde{M}$ such that:
+% \begin{definition}\label{def:ctrlsqmat}
+%     For an arbitrary square matrix $M$, a controlled matrix of $M$ is a diagram $\tilde{M}$ such that:
 
-    \begin{gather}
-        \tikzfig{tikz/con/c_sq1}\qquad\qquad\qquad\qquad
-        \tikzfig{tikz/con/c_sq2}
-    \end{gather} 
+%     \begin{gather}
+%         \tikzfig{tikz/con/c_sq1}\qquad\qquad\qquad\qquad
+%         \tikzfig{tikz/con/c_sq2}
+%     \end{gather} 
+% \end{definition}
+
+\begin{definition}\label{def:ctrlsqmat}
+  For an arbitrary $n \times n$ matrix $M$, we define the controlled matrix of $M$ as the diagram $\tilde{M}$ with the following interpretation: 
+
+\[
+ \left\llbracket \quad \tikzfig{tikz/con/c_sq_def} \;\;\; \right\rrbracket ~=~ \begin{bmatrix}I & 0 \\ 0 & M\end{bmatrix} 
+ \]
+
 \end{definition}
 
-\begin{definition}
-  For an arbitrary state $\psi$, a controlled state of $\psi$ is a diagram $\tilde{\psi}$ such that:
+We represent the additional dimension of $\tilde{M}$ as a vertical wire to distinguish it as the control wire. By definition, controlled matrices satisfy the two equations:
 
+\begin{gather}
+    \tikzfig{tikz/con/c_sq1}\qquad\qquad\qquad\qquad
+    \tikzfig{tikz/con/c_sq2}
+\end{gather} 
+
+To help embed a controlled matrix in a circuit, we draw on the functorial box notation of \cite{mellies2006functorial} and write:
+\begin{equation*}
+    \tikzfig{tikz/con/F_def_box}
+\end{equation*}
+
+For example, the CNOT gate can be defined from a controlled $X$ gate since:
+\begin{equation*}
+    \tikzfig{tikz/con/Fbox_cx}
+\end{equation*}
+
+
+We define controlled states similarly.
+\begin{definition}
+  For an arbitrary $n$ qubit state $\psi$, the controlled state of $\psi$ is the diagram with the following interpretation:
+  
+  \[
+ \left\llbracket \quad \tikzfig{tikz/con/c_state_def} \;\;\; \right\rrbracket ~=~ \begin{bmatrix} 1 & \\ 0 & \\ ... & \psi \\ 0 & \\ 0 & \end{bmatrix}
+ \]
+
+
+\end{definition}
+
+Controlled states satisfy the equations:
   \begin{equation}\label{eq:cstate}
       \tikzfig{tikz/con/c_state}
   \end{equation}
-\end{definition}
 
 \begin{prop}[Propositions 3.3 and 3.4 of \cite{shaikh2022sum}]\label{prop:cmat_ops}
     Given controlled matrices $\tilde{M_1}, ..., \tilde{M_k}$ and $c_1, ..., c_k \in \mathbb{C}$, the controlled square matrices $\widetilde{\Pi_i M_i}$ and $\widetilde{\Sigma_i c_i M_i}$ are respectively given by
