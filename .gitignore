@@ -12,6 +12,3 @@ commands.aux
 commands.fdb_latexmk
 packages.aux
 packages.fdb_latexmk
-
-# Specific sections
-sections/zxw_rules.tex
