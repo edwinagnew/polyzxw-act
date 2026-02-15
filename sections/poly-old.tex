@@ -25,9 +25,9 @@ Now we show that controlled matrix addition and multiplication satisfy the ring 
 
 
 The additive identity is defined as $\redzeroup \otimes I_n$:
-\begin{equation*}
+\begin{equation}
     \tikzfig{tikz/con/csq_add_id}
-\end{equation*}
+\end{equation}
 
 
 The multiplicative identity is defined very similarly as $\greenzeroup \otimes I_n$. The existence of additive inverses relies on the copying lemma from before.
@@ -36,17 +36,17 @@ The multiplicative identity is defined very similarly as $\greenzeroup \otimes I
     The additive inverse of $\tilde{M}$ is $\raisebox{-5pt}{\numbergate[-1]} \circ \tilde{M} $
 \end{lemma}
 \begin{proof}
-    \begin{equation*}
+    \begin{equation}
         \tikzfig{tikz/con/csq_add_inv}
-    \end{equation*}
+    \end{equation}
 \end{proof}
 
 Finally, we prove distributivity.
 
 \begin{lemma}\label{lem:csq_dist}
-    \begin{equation*}
+    \begin{equation}
         \tikzfig{tikz/con/csq_dist_statement}
-    \end{equation*}
+    \end{equation}
 \end{lemma}
 
 
@@ -98,19 +98,19 @@ Associativity and commutativity of $\boxtimes$ follow as before, using (\ref{rul
 Its been known since 2011 that $\lowerbox{\wspid}, \lowerbox{\zspid}$ can be used to add and multiply number states $\numberstate$, respectively \cite{coecke2011ghz}. In the previous section we saw that $\lowerbox{\wspid}, \lowerbox{\zspid}$ can moreover be used to copy controlled diagrams. In this section, we explain this connection by demonstrating that controlled states are in fact isomorphic to multilinear polynomials. This being a bijection is a well-known folklore result in the study of entangled states, but to the best of our inquiries we are not aware of a proof. More generally, Ref.~\cite{wilson2023diffpolycirc} presented Cartesian Distributive Categories exemplified by polynomial circuits, which are isomorphic to polynomials over arbitrary commutative semirings or rings; their proof is non-constructive, giving explicit proof only for the case of Boolean circuits~\cite{wilson2021revderbool}.
 
 Firstly, we describe how to interpret certain ZXW diagrams as polynomials. Consider the diagrams:
-\begin{equation*}
+\begin{equation}
     \tikzfig{tikz/poly/eg1}
-\end{equation*}
+\end{equation}
 
 If we treat the bottom wires as an indeterminate $x$, we can read these bottom-up as computing $x - 1$ and $2x + 3$, respectively. Moreover, since these diagrams are both controlled states, they can be added together,  yield a diagram resembling $3x + 2$:
-\begin{equation*}
+\begin{equation}
     \tikzfig{tikz/poly/eg4}
-\end{equation*}
+\end{equation}
 
 When trying to multiply these diagrams, rather than getting $(x-1)(2x+3) = 2x^2 + x - 3$, we instead get $x - 3$.
-\begin{equation*}
+\begin{equation}
     \tikzfig{tikz/poly/eg5}
-\end{equation*}
+\end{equation}
 
 The reason for the missing $2x^2$ term is that (\ref{eq:kill_quad}) implies $x^2 = 0$. Other than that, controlled state arithmetic appears to faithfully reflect polynomial arithmetic. To help formalise this correspondence, we introduce the following definition.
 
@@ -135,9 +135,9 @@ Just as it is typical to represent a polynomial in normal form as a sum of produ
 
 \begin{definition}
     An $n$-output arithmetic diagram is said to be written in \textbf{polynormal form} (PNF) if it looks like:
-    \begin{equation*}
+    \begin{equation}
         \tikzfig{tikz/poly/pnf}
-    \end{equation*}
+    \end{equation}
 
     The $i$th coefficient $a_i$ is connected to the $k$th $\lowerbox{\coWs}$ iff the $k$th bit in the binary expansion of $i$ is 1. 
 \end{definition}
@@ -178,19 +178,19 @@ At last we can prove the isomorphism. Throughout we shall let $\polyring$ denote
 \end{thm}
 
 First, we shall define the map $\phi_n: \polyring \to \csring$ before proving it induces an isomorphism. $\phi_n$ is defined to map an arbitrary polynomial $p(x_1, ..., x_n) = a_0 + a_1x_n + ... + a_{2^n-1}x_1x_2...x_n$ to the following PNF:
-    \begin{equation*}
+    \begin{equation}
         \phi_n(p) ~=~ \tikzfig{tikz/poly/pnf}
-    \end{equation*}
+    \end{equation}
 
 Some important special cases are mapping scalars $a \in \mathbb{C}$:
- \begin{equation*}
+ \begin{equation}
         \tikzfig{tikz/poly/homproof/homdef1}
-\end{equation*}
+\end{equation}
 
 And mapping indeterminates $x_i$:
-    \begin{equation*}
+    \begin{equation}
         \tikzfig{tikz/poly/homproof/homdef2}
-    \end{equation*}
+    \end{equation}
 
 The full proof is found in Appendix~\ref{sec:appproofs}.
 
@@ -206,7 +206,7 @@ We then have that:
 \end{proof}
 
 As an application, we leverage both our rewrite rules for arithmetic ZW diagrams, and for controlled diagrams, to \emph{factor} them.  For example, for same size square matrices $I, A, B$ and $a, b, c \in \mathbb{C}$:
-\begin{gather*}
+\begin{gather}
     \tikzfig{tikz/poly/matspoly}
-\end{gather*}
+\end{gather}
 Factoring Hamiltonians is important to optimise quantum algorithms for chemistry and physics simulations. However, previous graphical rewrites for factoring Hamiltonians had only been doable for Hamiltonians with concretely-specified matrix terms~\cite{shaikh2022sum}. This completeness result guarantees that for any Hamiltonian, even if its matrix terms are black-box, these graphical rewrite rules are capable of deriving any of its possible factorisations.

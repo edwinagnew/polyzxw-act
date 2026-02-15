@@ -33,9 +33,9 @@ If all quantum states can be rewritten to arithmetic diagrams in polynomial time
 Suppose that we can efficiently rewrite quantum states to arithmetic diagrams. Then we can use this to reduce an $\mathsf{NQP}$-complete problem to $\overline{PIT} \in \mathsf{RP}$ (which implies $PIT \in \mathsf{coRP}$). Since $\mathsf{RP} \subseteq \mathsf{NP} \subseteq \mathsf{NQP}$, this implies $\mathsf{RP} = \mathsf{NP}$.
 
 The $\mathsf{NQP}$-complete problem we are considering is the exact non-identity problem ($ENI$) which decides whether some unitary does not compute the identity matrix \cite{tanaka2010exact}.  Let $x$ be a description of a unitary quantum circuit $U_x$ over $n = poly(|x|)$ qubits. Then by translating each gate of $U_x$ into a constant ZXW diagram, we can rewrite $U_x$ into a ZXW diagram in polynomial time. Now bend the ZXW diagram into a state $D_x$, as below.
-\begin{equation*}
+\begin{equation}
 	\tikzfig{tikz/comp/bent_u}
-\end{equation*}
+\end{equation}
 
 Now apply the assumption to rewrite $D_x$ into an arithmetic diagram $A_x$. Interpret $A_x$ as a polynomial $p_x$ over variables $x_1, ..., x_n, y_1, ... y_n$. The polynomial for the bent identity is represented by the linear sized arithmetic circuit $p^n_\cap := \prod_{i=1}^n (1 + x_iy_{n-i+1})$. So $p_x = p^n_\cap  \iff U_x = I$ which means $\overline{PIT}(p_x - p^n_\cap) = 1 \iff ENI(U_x) = 1$. Thus we have reduced $ENI$ to $\overline{PIT}$. 
 

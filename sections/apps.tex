@@ -2,9 +2,9 @@
 
 \subsection{Factorising Hamiltonians}
 As an application, we leverage both our rewrite rules for arithmetic ZW diagrams, and for controlled diagrams, to \emph{factor} them.  For example, for same size square matrices $I, A, B$ and $a, b, c \in \mathbb{C}$:
-\begin{gather*}
+\begin{gather}
     \tikzfig{tikz/poly/matspoly}
-\end{gather*}
+\end{gather}
 Factoring Hamiltonians is important to optimise quantum algorithms for chemistry and physics simulations. However, previous graphical rewrites for factoring Hamiltonians had only been doable for Hamiltonians with concretely-specified matrix terms~\cite{shaikh2022sum}. This completeness result guarantees that for any Hamiltonian, even if its matrix terms are black-box, these graphical rewrite rules are capable of deriving any of its possible factorisations.
 
 
@@ -20,19 +20,19 @@ We define the higher-order map $\Control$ which takes a square matrix $M: V \to 
 We prove in Appendix~\ref{sec:ctrlmapproofs} that composition of controlled operations in sequence and in parallel is well-behaved.
 
 \begin{prop}\label{prop:ctrl_comp_h}
-\begin{equation*}
+\begin{equation}
 	\tikzfig{tikz/func/ctrl_comp_hdef}
-\end{equation*}\end{prop}
+\end{equation}\end{prop}
 
 \begin{prop}\label{prop:ctrl_comp_v}
-\begin{equation*}
+\begin{equation}
 	\tikzfig{tikz/func/ctrl_comp_vdef}
-\end{equation*}
+\end{equation}
 \end{prop}
 
 Furthermore, successive applications of $\Control$ recovers the standard notion of multiple-control, which computes the AND of the control qubits:
 \begin{prop}\label{prop:FF}
-    \begin{equation*}
+    \begin{equation}
         \tikzfig{tikz/func/FF_statement}
-    \end{equation*}
+    \end{equation}
 \end{prop}

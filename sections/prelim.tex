@@ -6,7 +6,7 @@ This section introduces the ZXW-calculus, and how controlled diagrams are define
 %%% some intro about the zxw-calculus, specifically some applications/citations and the explaining the completeness results, should go here.
 The qubit ZXW-calculus is built from the following generators:
 
-\begin{gather*}
+\begin{gather}
   \left\llbracket \quad \lowerbox{\idwire[0.5]} \;\;\; \right\rrbracket ~=~ \begin{bmatrix}1 & 0 \\ 0 & 1\end{bmatrix} \quad
   \left\llbracket \; \lowerbox[10]{\swap[0.4]} \; \right\rrbracket ~=~ \begin{bmatrix} 1 & 0 & 0 & 0 \\ 0 & 0 & 1 & 0 \\ 0 & 1 & 0 & 0 \\ 0 & 0 & 0 & 1\end{bmatrix} \quad
   \Big\llbracket \; \lowerbox[3]{\ccap} \; \Big\rrbracket ~=~ \begin{bmatrix} 1 \\ 0 \\ 0 \\ 1\end{bmatrix} \quad
@@ -14,20 +14,20 @@ The qubit ZXW-calculus is built from the following generators:
   \left\llbracket \;\; \tikzfig{tikz/defs/zspid} \;\; \right\rrbracket ~=~ |0^m\rangle\langle0^n| + c|1^m\rangle\langle1^n|, c \in \mathbb{C} \qquad
   \left\llbracket \;\; \raisebox{-10pt}{\wspid[0.7]} \;\; \right\rrbracket ~=~ |00\rangle \braz + |01\rangle \brao + |10\rangle \brao \\
   \left\llbracket \;\;\; \raisebox{-8pt}{\hgate} \;\; \right\rrbracket = \frac{1}{\sqrt{2}}\begin{bmatrix}1 & 1 \\ 1 & -1\end{bmatrix}
-\end{gather*}
+\end{gather}
 
 For simplicity, we introduce the following additional notation:
 
-\begin{gather*}
+\begin{gather}
   \tikzfig{tikz/defs/zcirc}\\
   \tikzfig{tikz/defs/xcirc}\qquad \qquad \qquad \qquad
   \raisebox{-10pt}{\coWs[0.7]} ~:=~ \tikzfig{tikz/defs/w_trans}
-\end{gather*}
+\end{gather}
 
 
 Equations in ZXW apply diagrammatic rewrites which prove equalities of the underlying matrices. The complete rule set is given in Figure \ref{fig:zxw_rules}. Several important lemmas are found in Appendix \ref{sec:applem}.
 
-%\input{sections/zxw_rules}
+\input{sections/zxw_rules}
 
 \subsection{Controlled Diagrams}
 
@@ -60,14 +60,14 @@ We represent the additional dimension of $\tilde{M}$ as a vertical wire to disti
 \end{gather} 
 
 To help embed a controlled matrix in a circuit, we draw on the functorial box notation of \cite{mellies2006functorial} and write:
-\begin{equation*}
+\begin{equation}
     \tikzfig{tikz/con/F_def_box}
-\end{equation*}
+\end{equation}
 
 For example, the CNOT gate can be defined from a controlled $X$ gate since:
-\begin{equation*}
+\begin{equation}
     \tikzfig{tikz/con/Fbox_cx}
-\end{equation*}
+\end{equation}
 
 
 We define controlled states similarly.
@@ -75,7 +75,7 @@ We define controlled states similarly.
   For an arbitrary $n$ qubit state $\psi$, the controlled state of $\psi$ is the diagram with the following interpretation:
   
   \[
- \left\llbracket \quad \tikzfig{tikz/con/c_state_def} \;\;\; \right\rrbracket ~=~ \begin{bmatrix} 1 & \\ 0 & \\ ... & \psi \\ 0 & \\ 0 & \end{bmatrix}
+ \left\llbracket \;\;\; \tikzfig{tikz/con/c_state_def} \;\;\; \right\rrbracket ~=~ \left[ \begin{array}{cc|cc} \cline{2-3} \; 1 \; & & & \\ \; 0 \; & & & \\ \; \vdots \; & \multicolumn{2}{c}{\psi} & \\ & & & \\ \; 0 \; & & & \\ \cline{2-3} & \end{array} \right]
  \]
 
 
@@ -88,9 +88,9 @@ Controlled states satisfy the equations:
 
 \begin{prop}[Propositions 3.3 and 3.4 of \cite{shaikh2022sum}]\label{prop:cmat_ops}
     Given controlled matrices $\tilde{M_1}, ..., \tilde{M_k}$ and $c_1, ..., c_k \in \mathbb{C}$, the controlled square matrices $\widetilde{\Pi_i M_i}$ and $\widetilde{\Sigma_i c_i M_i}$ are respectively given by
-    \begin{equation*}
+    \begin{equation}
       \tikzfig{tikz/con/csq_prod}\qquad\qquad\qquad\qquad\tikzfig{tikz/con/csq_sum}
-    \end{equation*}
+    \end{equation}
 \end{prop}
 
 The addition and multiplication of controlled states are defined similarly to controlled matrix arithmetic, except that a layer of $\lowerbox{\coW}$s are appended at the bottom to preserve the number of outputs.
@@ -98,9 +98,9 @@ The role of $\lowerbox{\coW}$ is to \textit{copy} controlled diagrams, as we wil
 
 \begin{prop}
   Given controlled states $\tilde{\psi}$ and $\tilde{\phi}$, we define addition $\tilde{\psi} \boxplus \tilde{\phi}$ and multiplication $\tilde{\psi} \boxtimes \tilde{\phi}$ operations on them to result in the controlled states:
-  \begin{equation*}
+  \begin{equation}
     \tikzfig{tikz/con/cs_add_def} \qquad \qquad\qquad\qquad        \tikzfig{tikz/con/cs_times_def}
-\end{equation*}
+\end{equation}
 \end{prop}
 \begin{remark}
   Ref.~\cite{shaikh2022sum} defined this addition with red spiders at the bottom instead of $\lowerbox{\coW}$s; the linear map is the same, being $\widetilde{\phi + \psi}$. In choosing to use $\lowerbox{\coW}$, we will soon define the arithmetic fragment of the ZW-calculus.

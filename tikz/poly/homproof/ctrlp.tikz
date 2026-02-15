@@ -1,0 +1,84 @@
+\begin{tikzpicture}
+	\begin{pgfonlayer}{nodelayer}
+		\node [style=none] (87) at (4.525, 1.75) {};
+		\node [style=none] (88) at (3.65, 0.125) {};
+		\node [style=none] (89) at (5.4, 0.125) {};
+		\node [style=none] (84) at (2.025, 1.75) {};
+		\node [style=none] (85) at (1.15, 0.125) {};
+		\node [style=none] (86) at (2.9, 0.125) {};
+		\node [style=dw] (33) at (2, -0.875) {};
+		\node [style=none] (35) at (2, -1.75) {};
+		\node [style=none] (36) at (4.25, -1.75) {};
+		\node [style=label] (37) at (3.25, -1.25) {$\ldots$};
+		\node [style=left label] (38) at (1.875, -1.5) {$x_1$};
+		\node [style=right label] (39) at (4.45, -1.5) {$x_n$};
+		\node [style=none] (40) at (1.75, 0) {\tiny$...$};
+		\node [style=none] (42) at (0, 0) {$=$};
+		\node [style=dw] (53) at (2, -0.875) {};
+		\node [style=dw] (54) at (4.25, -0.875) {};
+		\node [style=none] (58) at (1.25, 0.25) {};
+		\node [style=none] (59) at (1.25, 0.25) {};
+		\node [style=none] (60) at (2.25, 0.25) {};
+		\node [style=label] (62) at (1.775, 0.525) {$\tilde{p_0}$};
+		\node [style=none] (63) at (1.75, 1) {};
+		\node [style=none] (64) at (2.25, 0.25) {};
+		\node [style=gn] (65) at (4.475, 1.375) {};
+		\node [style=none] (66) at (4.5, 0) {\tiny$...$};
+		\node [style=none] (67) at (4, 0.25) {};
+		\node [style=none] (68) at (4, 0.25) {};
+		\node [style=none] (69) at (5, 0.25) {};
+		\node [style=label] (70) at (4.525, 0.525) {$\tilde{p_1}$};
+		\node [style=none] (71) at (4.5, 1) {};
+		\node [style=none] (72) at (5, 0.25) {};
+		\node [style=uw] (73) at (3.25, 2.125) {};
+		\node [style=none] (74) at (1.75, 1) {};
+		\node [style=none] (75) at (4.5, 1) {};
+		\node [style=none] (76) at (3.25, 2.875) {};
+		\node [style=none] (77) at (4.5, 1) {};
+		\node [style=dw] (78) at (5.325, -0.875) {};
+		\node [style=none] (79) at (5.325, -1.75) {};
+		\node [style=right label] (80) at (5.525, -1.5) {$x_{n\plu 1}$};
+		\node [style=dw] (81) at (5.325, -0.875) {};
+		\node [style=rn] (82) at (2.5, 0.5) {};
+		\node [style=none] (90) at (-1.475, 0.5) {};
+		\node [style=none] (91) at (-1.975, -0.25) {};
+		\node [style=none] (92) at (-0.975, -0.25) {};
+		\node [style=none] (93) at (-1.475, -0.25) {};
+		\node [style=label] (94) at (-1.5, 0.025) {$\tilde{p}$};
+		\node [style=none] (95) at (-1.475, -1) {};
+		\node [style=none] (96) at (-1.5, 1.25) {};
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\draw [style=bg] (89.center)
+			 to [in=330, out=90] (87.center)
+			 to [bend right] (88.center)
+			 to cycle;
+		\draw [style=bg] (86.center)
+			 to [in=-30, out=90] (84.center)
+			 to [bend right] (85.center)
+			 to cycle;
+		\draw (33) to (35.center);
+		\draw (59.center) to (60.center);
+		\draw (59.center) to (63.center);
+		\draw (60.center) to (63.center);
+		\draw (68.center) to (69.center);
+		\draw (68.center) to (71.center);
+		\draw (69.center) to (71.center);
+		\draw [in=90, out=-150] (73) to (74.center);
+		\draw [in=90, out=-30, looseness=1.25] (73) to (75.center);
+		\draw (76.center) to (73);
+		\draw (78) to (79.center);
+		\draw [in=30, out=-30, looseness=0.25] (65) to (81);
+		\draw [in=30, out=-90] (72.center) to (54);
+		\draw [in=30, out=-105, looseness=0.75] (68.center) to (53);
+		\draw [in=150, out=-90] (59.center) to (53);
+		\draw [in=150, out=-75] (64.center) to (54);
+		\draw [in=150, out=-90, looseness=0.50] (82) to (81);
+		\draw (54) to (36.center);
+		\draw (91.center) to (90.center);
+		\draw (91.center) to (92.center);
+		\draw (92.center) to (90.center);
+		\draw (95.center) to (93.center);
+		\draw (96.center) to (90.center);
+	\end{pgfonlayer}
+\end{tikzpicture}

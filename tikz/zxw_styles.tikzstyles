@@ -35,7 +35,7 @@
 \tikzstyle{dbl rn_phase}=[{gn_phase}, fill={zx_red}, draw=black, tikzit fill={rgb,255: red,232; green,165; blue,165}, line width=0.5mm]
 
 % Edge styles
-\tikzstyle{blue line}=[-, fill=none, draw={rgb,255: red,69; green,69; blue,255}, tikzit draw=blue, opacity=0.4]
+\tikzstyle{blue line}=[-, fill=none, draw={rgb,255: red,69; green,69; blue,255}, tikzit draw=blue]
 \tikzstyle{thick line}=[-, line width=0.5mm]
 \tikzstyle{filllayer}=[-, fill={rgb,255: red,178; green,227; blue,247}, opacity=0.5]
 \tikzstyle{bg}=[-, filllayer, fill={rgb,255: red,255; green,250; blue,200}, draw=lightgray]
