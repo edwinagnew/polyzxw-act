@@ -33,7 +33,7 @@
 		\node [style=none] (33) at (2.25, 0) {};
 		\node [style=none] (34) at (2.25, -1) {};
 		\node [style=gbox] (35) at (1.25, 1) {$-1$};
-		\node [style=none] (36) at (4.25, 0.5) {$\eqq{\ref{eq:csq_copy}}$};
+		\node [style=none] (36) at (4.25, 0.5) {$\eqq{\ref{rule:Mcpy}}$};
 		\node [style=none] (37) at (6.25, 0.25) {};
 		\node [style=none] (38) at (7.75, 0.25) {};
 		\node [style=none] (39) at (7.75, -1.25) {};

@@ -294,7 +294,6 @@
 		\node [style=none] (416) at (12.175, -18.875) {\tiny$...$};
 		\node [style=label] (417) at (12.2, -18.35) {$\tilde{p_1}$};
 		\node [style=none] (418) at (16, -19.125) {};
-		\node [style=none] (419) at (4.425, -19) {$=$};
 		\node [style=none] (421) at (14.75, -22.25) {};
 		\node [style=dw] (422) at (7.425, -21.25) {};
 		\node [style=dw] (423) at (12.925, -21.25) {};
@@ -339,7 +338,6 @@
 		\node [style=none] (465) at (-6.45, -26) {};
 		\node [style=label] (467) at (-6.425, -27.35) {$\widetilde{p_0 \plu q_0}$};
 		\node [style=none] (470) at (-1.625, -27.875) {};
-		\node [style=none] (471) at (-9, -28) {$=$};
 		\node [style=none] (472) at (-2.375, -30) {};
 		\node [style=dw] (473) at (-6.2, -29) {};
 		\node [style=dw] (474) at (-3.7, -29) {};
@@ -367,6 +365,8 @@
 		\node [style=none] (511) at (5.75, -28) {$\phi_{n\plu 1} \left( (p_0 \plu q_0) + (p_1 \plu q_1) \; x_{n\plu 1}) \right)$};
 		\node [style=none] (512) at (11.5, -28) {$=$};
 		\node [style=none] (513) at (14.25, -28) {$\phi_{n\plu 1} (p\plu q)$};
+		\node [style=none] (514) at (-9, -27.675) {$\stackrel{(\ref{rule:IH1})}{=}$};
+		\node [style=none] (515) at (4.425, -18.675) {$\stackrel{(\ref{rule:BZW})}{=}$};
 	\end{pgfonlayer}
 	\begin{pgfonlayer}{edgelayer}
 		\draw [style=bg] (114.center)

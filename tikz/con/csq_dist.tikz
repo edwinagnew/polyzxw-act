@@ -164,7 +164,7 @@
 		\node [style=none] (164) at (-6.75, -7) {};
 		\node [style=none] (165) at (-6, -7) {};
 		\node [style=none] (166) at (-6, -6) {};
-		\node [style=none] (167) at (-8, -6.25) {$\eqq{\ref{eq:csq_copy}}$};
+		\node [style=none] (167) at (-8, -6.25) {$\eqq{\ref{rule:Mcpy}}$};
 		\node [style=none] (168) at (-3.75, -12.5) {};
 		\node [style=none] (169) at (-2.25, -12.5) {};
 		\node [style=none] (170) at (-2.25, -14) {};
