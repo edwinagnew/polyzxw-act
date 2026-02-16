@@ -47,7 +47,7 @@
 %   \noindent
 %   \begin{gather}
 %     \tikzfig{tikz/axioms/phasecopydit}
-%     \tag{Pcy}\label{rule:Pcy}\neweqline
+%     \tag{Pcpy}\label{rule:Pcpy}\neweqline
 %     \tikzfig{tikz/axioms/wsymetrydit}
 %     \tag{Sym}\label{rule:Sym}\neweqline
 %     \tikzfig{tikz/axioms/w-bialgebra}
@@ -55,7 +55,7 @@
 %     \end{gather} \columnbreak
 %     \begin{gather}
 %     \tikzfig{tikz/axioms/additiondit}
-%     \tag{ADD}\label{rule:ADD}\neweqline
+%     \tag{Add}\label{rule:Add}\neweqline
 %     \tikzfig{tikz/axioms/associatedit}
 %     \tag{Aso}\label{rule:Aso}\neweqline
 %     \tikzfig{tikz/axioms/w-w-algebra}
@@ -74,7 +74,7 @@
 %     \tikzfig{tikz/axioms/triangleocopydit}
 %     \tag{Bs0}\label{rule:Bs0}\neweqline
 %     \tikzfig{tikz/axioms/trianglepicopydit2}
-%     \tag{Bsj}\label{rule:Bsj}\neweqline
+%     \tag{Bs1}\label{rule:Bs1}\neweqline
 %     \tikzfig{tikz/axioms/trialgebra}
 %     \tag{TA}\label{rule:TA}\neweqline
 %     \tikzfig{tikz/axioms/hadamard-decomposition2}
@@ -251,7 +251,7 @@ The following two lemmas follow immediately from the bra-ket definition of $\low
     Thus the two sides are equal over the Z basis and so are equal as diagrams.
 \end{proof}
 
-\textbf{Proof of Lemma \ref{lem:csq_add_comm}}
+\textbf{Proof of Lemma \ref{lem:csqaddcomm}}
 \begin{proof}
     We prove by plugging red and commutativity of matrix addition. By definition of controlled matrices, plugging $\lowerbox{\redzero}$ gives $I_n$ on both sides. Meanwhile, plugging $\lowerbox{\redpi}$ gives:
     \begin{equation}
@@ -273,7 +273,7 @@ The following two lemmas follow immediately from the bra-ket definition of $\low
     \end{equation}
 \end{proof}
 
-\textbf{Proof of Lemma \ref{lem:cs_copy}}
+\textbf{Proof of Lemma \ref{lem:cscopy}}
 \begin{proof}
     As before, plugging $|0\rangle$ gives
     \begin{equation}
@@ -284,16 +284,14 @@ The following two lemmas follow immediately from the bra-ket definition of $\low
         \begin{equation}
         \tikzfig{tikz/con/cs_copy2}
     \end{equation}
-
-    Completing the proof
 \end{proof}
 
-\textbf{Proof of Lemma \ref{lem:cs_add_comm}}
+\textbf{Proof of Lemma \ref{lem:csaddcomm}}
 \begin{proof}
     \tikzfig{tikz/con/cs_add_comm}
 \end{proof}
 
-\textbf{Proof of Lemma \ref{lem:cs_add_id}}
+\textbf{Proof of Lemma \ref{lem:csaddid}}
 \begin{proof}
     It is clear that $\lowerbox[10]{\zeroproj}$ is the controlled state $\tilde{\mathbf{0}}$. 
     
@@ -304,7 +302,7 @@ The following two lemmas follow immediately from the bra-ket definition of $\low
 
 \end{proof}
 
-\textbf{Proof of Lemma \ref{lem:cs_add_inv}}
+\textbf{Proof of Lemma \ref{lem:csaddinv}}
 \begin{proof}
     $\tilde{\psi} \circ \raisebox{-5pt}{\numbergate[-1]}$ is still a controlled state since $\raisebox{-5pt}{\numbergate[-1]}$ does nothing to $\raisebox{-5pt}{\redzero}$. Then $\tilde{\psi} \circ \raisebox{-5pt}{\numbergate[-1]}$ inverts $\tilde{\psi}$ since:
     \begin{equation}
@@ -312,7 +310,7 @@ The following two lemmas follow immediately from the bra-ket definition of $\low
     \end{equation}
 \end{proof}
 
-\textbf{Proof of Lemma \ref{lem:cs_add_inv}}
+\textbf{Proof of Lemma \ref{lem:csdist}}
 \begin{proof}
     \begin{gather} %\label{eq:cs_dist}
         \tilde{\psi_1} \boxtimes (\tilde{\psi_2} \boxplus \tilde{\psi_3}) ~=~ \tikzfig{tikz/distproof/d1} ~
@@ -441,7 +439,7 @@ The following two lemmas follow immediately from the bra-ket definition of $\low
     \end{equation}
     % \begin{gather}
     %     \phi_1(p) \boxtimes \phi_1(q) ~=~ \tikzfig{tikz/poly/homproof/bt1} ~\eqq{\ref{eq:dbl_dist}}~ \tikzfig{tikz/poly/homproof/bt2} \neweqline 
-    %     ~\eqq{\ref{eq:dist_circ}}~ \tikzfig{tikz/poly/homproof/bt3} ~\eqq{\ref{rule:Pcy}}~ \tikzfig{tikz/poly/homproof/bt4} \neweqline
+    %     ~\eqq{\ref{eq:dist_circ}}~ \tikzfig{tikz/poly/homproof/bt3} ~\eqq{\ref{rule:Pcpy}}~ \tikzfig{tikz/poly/homproof/bt4} \neweqline
     %     ~\eqq{\ref{eq:kill_quad}}~ \tikzfig{tikz/poly/homproof/bt5} ~\eqq{\ref{eq:0times}}~ \tikzfig{tikz/poly/homproof/bt6} ~\eqq{\ref{eq:cp_add}}~ \tikzfig{tikz/poly/homproof/bt7} \neweqline ~= \phi_1(p \times q)
     % \end{gather}
 

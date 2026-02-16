@@ -1,12 +1,12 @@
 \begin{tikzpicture}
 	\begin{pgfonlayer}{nodelayer}
-		\node [style=none] (1) at (0, 1.5) {};
-		\node [style=hbox] (2) at (-2.5, -0.5) {};
-		\node [style=none] (3) at (-2.5, -1.5) {};
-		\node [style=none] (7) at (0, -1.5) {};
-		\node [style=none] (8) at (-2.5, 1.5) {};
+		\node [style=none] (1) at (0, 0.875) {};
+		\node [style=hbox] (2) at (-2.5, -0.375) {};
+		\node [style=none] (3) at (-2.5, -0.875) {};
+		\node [style=none] (7) at (0, -0.875) {};
+		\node [style=none] (8) at (-2.5, 0.875) {};
 		\node [style=none] (17) at (-1.25, 0) {$=$};
-		\node [style=hbox] (21) at (-2.5, 0.5) {};
+		\node [style=hbox] (21) at (-2.5, 0.375) {};
 	\end{pgfonlayer}
 	\begin{pgfonlayer}{edgelayer}
 		\draw (8.center) to (21);

@@ -211,7 +211,7 @@
 		\node [style=none] (216) at (2.25, -19.5) {};
 		\node [style=none] (217) at (3.25, -19.5) {};
 		\node [style=label] (219) at (2.75, -19.5) {$\ldots$};
-		\node [style=none] (220) at (-5.25, -10) {$\stackrel{(\ref{eq:cs_copy})}{=}$};
+		\node [style=none] (220) at (-5.25, -10) {$\stackrel{\ref{rule:CScpy}}{=}$};
 		\node [style=none] (221) at (4, -2.75) {$=$};
 		\node [style=dw] (222) at (-2.25, -20.75) {};
 		\node [style=dw] (223) at (0.25, -20.75) {};

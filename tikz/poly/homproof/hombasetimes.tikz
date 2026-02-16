@@ -70,7 +70,7 @@
 		\node [style=gbox] (126) at (2.25, -1.5) {$b_1$};
 		\node [style=none] (127) at (-4.25, 0.325) {$\stackrel{(\ref{eq:dbl_dist})}{=}$};
 		\node [style=gbox] (128) at (0.75, -1.5) {$a_1$};
-		\node [style=none] (129) at (-9, -8.3) {$\stackrel{(\ref{rule:Pcy})}{=}$};
+		\node [style=none] (129) at (-9, -8.3) {$\stackrel{(\ref{rule:Pcpy})}{=}$};
 		\node [style=none] (130) at (-3.75, -5.5) {};
 		\node [style=uw] (131) at (-3.75, -6.75) {};
 		\node [style=gbox] (132) at (-6.75, -8.25) {$a_0b_0$};

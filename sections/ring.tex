@@ -1,29 +1,31 @@
 \section{Ring Axioms for Controlled Diagrams}\label{sec:ring}
 In this section, we reverse-engineer the underlying algebraic properties of controlled state and controlled square matrix diagrams. This builds up to diagrams for the unique normal form for states used for the first proofs of complete axiomatisation for qubit graphical calculi~\cite{hadzihasanovic2017thesis, Hadzihasanovic2018zwzxcomplete}.
 All proofs in this section can be found in Appendix~\ref{sec:ringproofs}.
-Note that while the ZXW calculus is complete, and Lemmas~\ref{lem:csq_copy}, \ref{lem:csq_add_comm}, \ref{lem:csq_inv}, and \ref{lem:csq_dist} hold for any concrete realisations of $\tilde{M}$, for abstract $\tilde{M}$s they can only be verified via the plugging in of basis states.
+Note that while the ZXW calculus is complete, and Lemmas~\ref{lem:csq_copy}, \ref{lem:csqaddcomm}, \ref{lem:csq_inv}, and \ref{lem:csq_dist} hold for any concrete realisations of $\tilde{M}$, for abstract $\tilde{M}$s they can only be verified via the plugging in of basis states.
 
 Let $\tilde{M_n}$ be the set of controlled square matrices on $n$ qubits. The goal of this section is to prove that the addition and multiplication operations introduced above induce a ring on $\tilde{M_n}$. By Proposition \ref{prop:cmat_ops}, the addition and multiplication of controlled matrices is just the controlled addition and multiplication of the underlying matrices so the fact that the ring properties hold is not particularly surprising. What is more interesting is how easily these properties can be proven with a small subset of the ZXW rules. Likewise, we show that the set of controlled $n$-qubit states $\tilde{S_n}$ also forms a ring. The first lemma enables us to copy controlled matrices.
 
 \begin{lemma}\label{lem:csq_copy}
     For any square matrix $M$, 
-    \begin{equation}\tag{\ref{rule:Mcpy}}%\label{rule:Mcpy}
-    \tikzfig{tikz/con/csq_copy}
-\end{equation}
+    \begin{equation*}
+    \tikzfig{tikz/con/csq_copy_bzw}
+    \tag{\ref{rule:CMcpy}}
+    \end{equation*}
 \end{lemma}
 
 
 
 Now we show that controlled matrix addition and multiplication satisfy the ring axioms. Associativity of $+, \times$ follow immediately from (\ref{rule:Aso}, \ref{rule:S1}), respectively. Commutativity of addition follows from the commutativity of matrix addition and Proposition \ref{prop:cmat_ops}.
 
-\begin{lemma}\label{lem:csq_add_comm}
+\begin{lemma}\label{lem:csqaddcomm}
     Let $M_1, M_2$ be $n \times n$ matrices. 
-    \begin{equation}\label{eq:csq_add_comm}
+    \begin{equation*}
        \tikzfig{tikz/con/csq_add_comm_statement}
-    \end{equation}
+       \tag{\ref{rule:CMcom}}
+    \end{equation*}
 \end{lemma}
 
-\begin{lemma}\label{lem:csq_add_id}
+\begin{lemma}\label{lem:csqaddid}
 The additive identity is defined as $\redzeroup \otimes I_n$:
 \begin{equation}
     \tikzfig{tikz/con/csq_add_id}
@@ -46,22 +48,23 @@ The multiplicative identity is defined very similarly as $\lowerbox{\greenzeroup
 
 
 Combining the lemmas of this section shows that controlled matrices form a ring. A similar result can be shown for controlled states. Once again, we start with the ability to copy controlled states. 
-\begin{lemma}\label{lem:cs_copy}
+\begin{lemma}\label{lem:cscopy}
     For any state $\psi$,
-    \begin{equation}\label{eq:cs_copy}
+    \begin{equation*}
         \tikzfig{tikz/con/cs_copy}
-    \end{equation}
+        \tag{\ref{rule:CScpy}}
+    \end{equation*}
 \end{lemma}
 
 Many of the ring axioms follow directly from basic ZXW rules. For example we can show commutativity of addition as follows:
 
-\begin{lemma}\label{lem:cs_add_comm}
+\begin{lemma}\label{lem:csaddcomm}
     For $n$-partite states $\psi_1, \psi_2$, $\tilde{\psi_1} \boxplus \tilde{\psi_2} = \tilde{\psi_2} \boxplus \tilde{\psi_1}  $.
 \end{lemma}
 
 Associativity of $\boxplus$ follows similarly, using (\ref{rule:Aso}). Next we have the additive identity.
 
-\begin{lemma}\label{lem:cs_add_id}
+\begin{lemma}\label{lem:csaddid}
     $\tilde{\psi} \boxplus\mathbf{\tilde{0}} = \tilde{\psi}$.
 \end{lemma}
 
@@ -69,7 +72,7 @@ Associativity of $\boxplus$ follows similarly, using (\ref{rule:Aso}). Next we h
 The additive inverse is defined similarly to the case of controlled matrices. 
 
 
-\begin{lemma}\label{lem:cs_add_inv}
+\begin{lemma}\label{lem:csaddinv}
     For a controlled state $\tilde{\psi}$, its additive inverse is $\tilde{\psi} \circ \raisebox{-7pt}{\numbergate[-1]}$.
 \end{lemma}
 
@@ -77,7 +80,7 @@ The additive inverse is defined similarly to the case of controlled matrices.
 Associativity and commutativity of $\boxtimes$ follow as before, using (\ref{rule:S1}) for $\lowerbox{\zspid}$. Finally, we must prove distributivity.
 
 
-\begin{lemma}\label{lem:cs_dist}
+\begin{lemma}\label{lem:csdist}
     $\tilde{\psi_1} \boxtimes (\tilde{\psi_2} \boxplus \tilde{\psi_3}) = (\tilde{\psi_1} \boxtimes \tilde{\psi_2}) \boxplus (\tilde{\psi_1} \boxtimes \tilde{\psi_3})$.
 \end{lemma}
 

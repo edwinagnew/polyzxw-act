@@ -19,7 +19,7 @@
 		\node [style=uw] (18) at (9.5, 1) {};
 		\node [style=gbox] (19) at (8.75, -1) {$b$};
 		\node [style=gbox] (20) at (10.25, -1) {$c$};
-		\node [style=none] (21) at (7.75, 0.5) {$\eqq{\ref{rule:Pcy}}$};
+		\node [style=none] (21) at (7.75, 0.5) {$\eqq{\ref{rule:Pcpy}}$};
 		\node [style=gbox] (22) at (8.95, 0.025) {$a$};
 		\node [style=gbox] (23) at (10, 0.025) {$a$};
 		\node [style=none] (24) at (11, 0.25) {$=$};

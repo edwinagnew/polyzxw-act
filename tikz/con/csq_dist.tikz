@@ -164,7 +164,7 @@
 		\node [style=none] (164) at (-6.75, -7) {};
 		\node [style=none] (165) at (-6, -7) {};
 		\node [style=none] (166) at (-6, -6) {};
-		\node [style=none] (167) at (-8, -6.25) {$\eqq{\ref{rule:Mcpy}}$};
+		\node [style=none] (167) at (-8, -6.25) {$\eqq{\ref{rule:CMcpy}}$};
 		\node [style=none] (168) at (-3.75, -12.5) {};
 		\node [style=none] (169) at (-2.25, -12.5) {};
 		\node [style=none] (170) at (-2.25, -14) {};
@@ -212,7 +212,7 @@
 		\node [style=none] (212) at (-7, -13.75) {};
 		\node [style=none] (213) at (-6.25, -13.75) {};
 		\node [style=none] (214) at (-6.25, -12.75) {};
-		\node [style=none] (215) at (-8, -13) {$\eqq{\ref{eq:csq_add_comm}}$};
+		\node [style=none] (215) at (-8, -13) {$\stackrel{\ref{rule:CMcom}}{=}$};
 		\node [style=none] (216) at (1.25, -12.5) {};
 		\node [style=none] (217) at (2.75, -12.5) {};
 		\node [style=none] (218) at (2.75, -14) {};

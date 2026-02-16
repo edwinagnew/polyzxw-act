@@ -1,0 +1,37 @@
+\begin{tikzpicture}
+	\begin{pgfonlayer}{nodelayer}
+		\node [style=none] (16) at (-1.75, 1) {};
+		\node [style=none] (17) at (-2.75, 0) {};
+		\node [style=none] (18) at (-0.75, 0) {};
+		\node [style={rn_phase}] (19) at (-1.75, 1.75) {$\pi$};
+		\node [style=none] (20) at (-2.25, 0) {};
+		\node [style=none] (21) at (-1.25, 0) {};
+		\node [style=none] (22) at (-2.25, -0.75) {};
+		\node [style=none] (23) at (-1.25, -0.75) {};
+		\node [style=label] (24) at (-1.75, -0.5) {$\ldots$};
+		\node [style=label] (25) at (-1.75, 0.25) {$\tilde{\psi}$};
+		\node [style=none] (26) at (0, 0) {$=$};
+		\node [style=none] (27) at (1.75, 1) {};
+		\node [style=none] (28) at (0.75, 0) {};
+		\node [style=none] (29) at (2.75, 0) {};
+		\node [style=none] (30) at (1.25, 0) {};
+		\node [style=none] (31) at (2.25, 0) {};
+		\node [style=none] (32) at (1.25, -0.75) {};
+		\node [style=none] (33) at (2.25, -0.75) {};
+		\node [style=label] (34) at (1.75, -0.5) {$\ldots$};
+		\node [style=label] (35) at (1.75, 0.25) {$\psi$};
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\draw (17.center) to (16.center);
+		\draw (17.center) to (18.center);
+		\draw (18.center) to (16.center);
+		\draw (16.center) to (19);
+		\draw (23.center) to (21.center);
+		\draw (22.center) to (20.center);
+		\draw (28.center) to (27.center);
+		\draw (28.center) to (29.center);
+		\draw (29.center) to (27.center);
+		\draw (33.center) to (31.center);
+		\draw (32.center) to (30.center);
+	\end{pgfonlayer}
+\end{tikzpicture}

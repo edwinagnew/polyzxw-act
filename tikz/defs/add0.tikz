@@ -6,7 +6,7 @@
 		\node [style=none] (3) at (0.75, 0) {};
 		\node [style=gbox] (4) at (-0.75, 0) {$a$ };
 		\node [style=gbox] (5) at (0.75, 0) {$0$ };
-		\node [style=none] (6) at (2, 1.25) {$\eqq{ADD}$};
+		\node [style=none] (6) at (2, 1.25) {$\eqq{\ref{rule:Add}}$};
 		\node [style=none] (7) at (-3.25, 2) {};
 		\node [style=uw] (8) at (-3.25, 1) {};
 		\node [style=none] (9) at (-4, 0) {};

@@ -54,10 +54,14 @@ Note that this is a different definition of controlled states to Ref.~\cite{jean
 
 We represent the additional dimension of $\tilde{M}$ as a vertical wire to distinguish it as the control wire. By definition, controlled matrices satisfy the two equations:
 
-\begin{gather}
-    \tikzfig{tikz/con/c_sq1}\qquad\qquad\qquad\qquad
+\begin{equation*}
+    \tikzfig{tikz/con/c_sq1}
+    \tag{\ref{rule:c_sq1}}
+\end{equation*}
+\begin{equation}
     \tikzfig{tikz/con/c_sq2}
-\end{gather} 
+    \label{eq:csq2}
+\end{equation}
 
 To help embed a controlled matrix in a circuit, we draw on the functorial box notation of \cite{mellies2006functorial} and write:
 \begin{equation}
@@ -75,14 +79,19 @@ We define controlled states similarly.
   For an arbitrary $n$ qubit state $\psi$, the controlled state of $\psi$ is the diagram with the following interpretation:
   
   \[
- \left\llbracket \;\;\; \tikzfig{tikz/con/c_state_def} \;\;\; \right\rrbracket ~=~ \left[ \begin{array}{cc|cc} \cline{2-3} \; 1 \; & & & \\ \; 0 \; & & & \\ \; \vdots \; & \multicolumn{2}{c}{\psi} & \\ & \multicolumn{2}{c}{\psi} \\ \; 0 \; & & \multicolumn{2}{c}{} \\ \cline{2-3} & \end{array} \right]
+ \left\llbracket \;\;\; \tikzfig{tikz/con/c_state_def} \;\;\; \right\rrbracket ~=~ \left[ \begin{array}{cc|cc} \cline{2-3} \; 1 \; & & & \\ \; 0 \; & & & \\ \; \vdots \; & \multicolumn{2}{c}{\psi} \\ & \multicolumn{2}{c}{} \\ \; 0 \; & & \\ \cline{2-3} \end{array} \right]
  \]
 
 \end{definition}
 
 Controlled states satisfy the equations:
-  \begin{equation}\label{eq:cstate}
-      \tikzfig{tikz/con/c_state}
+  \begin{equation*}
+    \tikzfig{tikz/con/c_state0}
+    \tag{\ref{rule:cstate0}}
+  \end{equation*}
+  \begin{equation}
+    \tikzfig{tikz/con/c_state1}
+    \label{eq:cstate1}
   \end{equation}
 
 \begin{prop}[Propositions 3.3 and 3.4 of \cite{shaikh2022sum}]\label{prop:cmat_ops}
@@ -98,7 +107,7 @@ The role of $\lowerbox{\coW}$ is to \textit{copy} controlled diagrams, as we wil
 \begin{prop}
   Given controlled states $\tilde{\psi}$ and $\tilde{\phi}$, we define addition $\tilde{\psi} \boxplus \tilde{\phi}$ and multiplication $\tilde{\psi} \boxtimes \tilde{\phi}$ operations on them to result in the controlled states:
   \begin{equation}
-    \tikzfig{tikz/con/cs_add_def} \qquad \qquad\qquad\qquad        \tikzfig{tikz/con/cs_times_def}
+    \tikzfig{tikz/con/cs_add_def} \qquad\qquad\qquad\qquad \tikzfig{tikz/con/cs_times_def}
 \end{equation}
 \end{prop}
 \begin{remark}

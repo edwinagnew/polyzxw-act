@@ -8,7 +8,7 @@
 		\node [style=gn] (46) at (-0.25, 1.5) {};
 		\node [style=dw] (47) at (-1.5, 0) {};
 		\node [style=none] (48) at (0.5, 3.25) {};
-		\node [style=none] (49) at (-3.25, 1.75) {$\eqq{\ref{rule:Pcy}}$};
+		\node [style=none] (49) at (-3.25, 1.75) {$\eqq{\ref{rule:Pcpy}}$};
 		\node [style=gn] (50) at (-1.5, -0.75) {};
 		\node [style=gn] (60) at (-4.25, 1.5) {};
 		\node [style=none] (61) at (-4.25, 0) {};

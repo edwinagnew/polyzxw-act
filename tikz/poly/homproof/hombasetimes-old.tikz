@@ -28,7 +28,7 @@
 		\node [style=gbox] (25) at (14.25, -1.25) {$b_1$};
 		\node [style=none] (26) at (7.75, 0.25) {$\stackrel{(\ref{eq:dbl_dist})}{=}$};
 		\node [style=gbox] (27) at (12.75, -1.25) {$a_1$};
-		\node [style=none] (43) at (4.25, -7.25) {$\stackrel{(\ref{rule:Pcy})}{=}$};
+		\node [style=none] (43) at (4.25, -7.25) {$\stackrel{(\ref{rule:Pcpy})}{=}$};
 		\node [style=none] (44) at (9.5, -5) {};
 		\node [style=uw] (47) at (9.5, -6) {};
 		\node [style=gbox] (50) at (6.5, -7.25) {$a_0b_0$};
