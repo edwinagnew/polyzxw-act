@@ -62,31 +62,31 @@
 		\node [style=none] (77) at (3, 1.25) {};
 	\end{pgfonlayer}
 	\begin{pgfonlayer}{edgelayer}
-		\draw [style=blue line] (4) to (6.center);
-		\draw [style=blue line] (5) to (7.center);
-		\draw [style=blue line, in=-135, out=150] (4) to (2.center);
-		\draw [style=blue line, in=-45, out=30] (5) to (3.center);
+		\draw [style=none] (4) to (6.center);
+		\draw [style=none] (5) to (7.center);
+		\draw [style=none, in=-135, out=150] (4) to (2.center);
+		\draw [style=none, in=-45, out=30] (5) to (3.center);
 		\draw (14.center) to (15.center);
-		\draw [style=blue line, in=90, out=-150] (18) to (19.center);
-		\draw [style=blue line, in=90, out=-30] (18) to (20.center);
+		\draw [style=none, in=90, out=-150] (18) to (19.center);
+		\draw [style=none, in=90, out=-30] (18) to (20.center);
 		\draw (21.center) to (18);
-		\draw [style=blue line, in=-135, out=30] (24) to (23.center);
-		\draw [style=blue line, in=-45, out=150] (25) to (22.center);
+		\draw [style=none, in=-135, out=30] (24) to (23.center);
+		\draw [style=none, in=-45, out=150] (25) to (22.center);
 		\draw (27.center) to (26.center);
 		\draw (27.center) to (28.center);
 		\draw (28.center) to (26.center);
 		\draw (14.center) to (19.center);
 		\draw (15.center) to (19.center);
-		\draw [style=blue line] (33) to (35.center);
-		\draw [style=blue line] (34) to (36.center);
+		\draw [style=none] (33) to (35.center);
+		\draw [style=none] (34) to (36.center);
 		\draw (59.center) to (60.center);
 		\draw (59.center) to (63.center);
 		\draw (60.center) to (63.center);
 		\draw (68.center) to (69.center);
 		\draw (68.center) to (71.center);
 		\draw (69.center) to (71.center);
-		\draw [style=blue line, in=90, out=-150] (73) to (74.center);
-		\draw [style=blue line, in=90, out=-30] (73) to (75.center);
+		\draw [style=none, in=90, out=-150] (73) to (74.center);
+		\draw [style=none, in=90, out=-30] (73) to (75.center);
 		\draw (76.center) to (73);
 	\end{pgfonlayer}
 \end{tikzpicture}

@@ -24,8 +24,20 @@ For simplicity, we introduce the following additional notation:
   \raisebox{-10pt}{\coWs[0.7]} ~:=~ \tikzfig{tikz/defs/w_trans}
 \end{gather}
 
+Equations in ZXW apply diagrammatic rewrite rules which prove equalities of the underlying matrices. Omitted from Figure~\ref{fig:zxw_rules} are the \emph{structural rules} ubiquitous to quantum graphical calculi, such as that swapping twice yields the two-qubit identity and that an S-shaped cup and cap pair yields the one-qubit identity. These collectively are referred to as the \emph{Only Connectivity Matters} rule, which governs that in this calculus the following operations preserve semantic equality: So long as all connections are preserved between all inputs, outputs, and generators of the diagram, the spatial position and orientation of each generator can be varied, and wires are free to cross or bend as they please.
+The Z and X generators are symmetric with respect to swapping two inputs, while the Z, X, and W generators are symmetric with respect to swapping swapping two outputs:
+\begin{equation}
+  \scalebox{0.9}{\tikzfig{tikz/axioms/wsymetrydit}}
+  \tag{Sym}\label{rule:Sym}
+\end{equation}
+However, unlike the Z and X generators, the W generator is not symmetric with respect to swapping an input and an output due to the following:
+\begin{equation}
+  \scalebox{0.9}{\tikzfig{tikz/axioms/w-asym}}
+  \tag{Asym}\label{rule:Asym}
+\end{equation}
+For this reason, care must be taken that exactly one wire of each W generator is unambiguously its exactly one input, drawn aligned with one point of the triangle.
 
-Equations in ZXW apply diagrammatic rewrites which prove equalities of the underlying matrices. The complete rule set is given in Figure \ref{fig:zxw_rules}. Several important lemmas are found in Appendix \ref{sec:applem}.
+The complete rule set of the qubit ZXW-calculus from Ref.~\cite{poor2023completeness} is given in Figure \ref{fig:zxw_rules}. Several important lemmas are found in Appendix \ref{sec:applem}.
 
 \input{sections/zxw_rules}
 
@@ -34,49 +46,26 @@ Equations in ZXW apply diagrammatic rewrites which prove equalities of the under
 Following \cite{shaikh2022sum}, we cover the definitions of controlled states and controlled square matrices, and arithmetic on them.
 Note that this is a different definition of controlled states to Ref.~\cite{jeandel2024adddiffzx} in which controlling on $\ket{0}$ is $\ket{+}^{\otimes n}$ instead of $\ket{0}^{\otimes n}$; this choice appears to make a substantial difference in the algebraic properties, which we discuss in Remark~\ref{remark:entrywise}.
 
-% \begin{definition}\label{def:ctrlsqmat}
-%     For an arbitrary square matrix $M$, a controlled matrix of $M$ is a diagram $\tilde{M}$ such that:
-
-%     \begin{gather}
-%         \tikzfig{tikz/con/c_sq1}\qquad\qquad\qquad\qquad
-%         \tikzfig{tikz/con/c_sq2}
-%     \end{gather} 
-% \end{definition}
-
 \begin{definition}\label{def:ctrlsqmat}
-  For an arbitrary $n \times n$ matrix $M$, we define the controlled matrix of $M$ as the diagram $\tilde{M}$ with the following interpretation: 
-
-\[
- \left\llbracket \quad \tikzfig{tikz/con/c_sq_def} \;\;\; \right\rrbracket ~=~ \begin{bmatrix}I & 0 \\ 0 & M\end{bmatrix} 
- \]
-
+  For an arbitrary $n \times n$ matrix $M$, we define the controlled matrix of $M$ as the diagram $\tilde{M}$ with the following interpretation:
+\begin{equation}
+  \left\llbracket \quad \tikzfig{tikz/con/c_sq_def} \;\;\; \right\rrbracket ~=~ \begin{bmatrix}I & M\end{bmatrix} 
+\end{equation}
 \end{definition}
 
 We represent the additional dimension of $\tilde{M}$ as a vertical wire to distinguish it as the control wire. By definition, controlled matrices satisfy the two equations:
 
 \begin{equation*}
-    \tikzfig{tikz/con/c_sq1}
-    \tag{\ref{rule:c_sq1}}
+    \tikzfig{tikz/con/c_sq0}
+    \tag{\ref{rule:c_sq0}}
 \end{equation*}
 \begin{equation}
-    \tikzfig{tikz/con/c_sq2}
-    \label{eq:csq2}
+    \tikzfig{tikz/con/c_sq1}
 \end{equation}
-
-To help embed a controlled matrix in a circuit, we draw on the functorial box notation of \cite{mellies2006functorial} and write:
-\begin{equation}
-    \tikzfig{tikz/con/F_def_box}
-\end{equation}
-
-For example, the CNOT gate can be defined from a controlled $X$ gate since:
-\begin{equation}
-    \tikzfig{tikz/con/Fbox_cx}
-\end{equation}
-
 
 We define controlled states similarly.
 \begin{definition}
-  For an arbitrary $n$ qubit state $\psi$, the controlled state of $\psi$ is the diagram with the following interpretation:
+  For an arbitrary $n$-qubit state $\psi$, the controlled state of $\psi$ is the diagram with the following interpretation:
   
   \[
  \left\llbracket \;\;\; \tikzfig{tikz/con/c_state_def} \;\;\; \right\rrbracket ~=~ \left[ \begin{array}{cc|cc} \cline{2-3} \; 1 \; & & & \\ \; 0 \; & & & \\ \; \vdots \; & \multicolumn{2}{c}{\psi} \\ & \multicolumn{2}{c}{} \\ \; 0 \; & & \\ \cline{2-3} \end{array} \right]
@@ -115,4 +104,4 @@ The role of $\lowerbox{\coW}$ is to \textit{copy} controlled diagrams, as we wil
   
   Removing the $\lowerbox{\coW}$'s from the bottom of this multiplication gives the controlled diagram for the tensor product in Hilbert space $\widetilde{\psi \otimes \phi}$, as noted in Ref.~\cite{jeandel2024adddiffzx}.
 \end{remark}
-Although the interpretation of $\tilde{\psi} \boxtimes \tilde{\phi}$ is not a nice expression in terms of $\psi$ and $\phi$, what we will show in this work is that this multiplication is not that of the linear maps, but of multiplication in the ring of \emph{multilinear polynomials} which we will identify with these controlled diagrams.
+Although the interpretation of $\tilde{\psi} \boxtimes \tilde{\phi}$ is not the controlled multiplication of the linear maps $\psi$ and $\phi$, nor as nice an expression in terms of $\psi$ and $\phi$, we will show in this work that this is in fact multiplication in the ring of \emph{multilinear polynomials}.

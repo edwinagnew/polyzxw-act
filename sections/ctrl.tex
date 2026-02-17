@@ -6,7 +6,24 @@ We then have that:
     The rules for their completeness are the same subset of ZXW rules used for completeness for arithmetic diagrams in the ZXW-calculus in \Cref{thm:uni_pnf}, plus the controlled square matrix as a generator along with the four rewrite rules for it in \Cref{def:ctrlsqmat}, \Cref{lem:csq_copy}, and \Cref{lem:csqaddcomm}. (See \Cref{fig:zxw_rules}.)
 \end{thm}
 \begin{proof}
-    The proof is by the same algorithm for rewriting to PNF as \Cref{thm:uni_pnf}, modifying step (6) to copy controlled square matrices using \Cref{lem:csq_copy}, using \Cref{lem:csqaddcomm} to commute controlled square matrices whose controls act on mutually exclusive sectors.
+    The proof is by deriving a unique normal form, having fixed an (arbitrary) order on the same-size square matrix variables.
+    The algorithm to arrive at this normal form starts by rewriting the diagram sans the controlled square matrices to PNF, by the procedure of \Cref{thm:uni_pnf}.
+    Next, remove all $\lowerbox{\coWs}$'s by using \eqref{rule:CMcpy} to make copies of the controlled square matrices.
+    Finally, use \eqref{rule:CMcom} to commute controlled square matrices whose controls act on mutually exclusive sectors past each other.
+    The algorithm terminates with the controlled square matrix terms ordered by their mutually exclusive sectors in lexicographical order with respect to the order of their variables.
 \end{proof}
+\begin{remark}
+    These procedures guarantee that controlled operators in mutually exclusive sectors are commutable past each other.
+    This guarantee does not apply to controlled operators in the same sector, as this would require additional information about the operators themselves beyond being controlled operators.
+\end{remark}
+
+\subsection{Factorising Hamiltonians}
+To present a small working example, we leverage both our rewrite rules for arithmetic ZW diagrams, and for controlled diagrams, to \emph{factor} them.  For example, for same-size square matrices $I, A, B$ and $a, b, c \in \mathbb{C}$:
+\begin{gather}
+    \tikzfig{tikz/poly/matspoly}
+\end{gather}
+Factoring Hamiltonians is important to optimise quantum algorithms for chemistry and physics simulations. However, previous graphical rewrites for factoring Hamiltonians had only been doable for Hamiltonians with concretely-specified matrix terms~\cite{shaikh2022sum}. This completeness result guarantees that for any Hamiltonian, even if its matrix terms are black-box, these graphical rewrite rules are capable of deriving any of its possible factorisations.
+
+Recently, one of the new rules for controlled diagrams first proposed in this work, \eqref{rule:CMcpy}, was used in Ref.~\cite{mcdowallrose2025f2q} to derive a general form for any two-body fermionic Hamiltonian in second quantisation under any linear encoding.
 
 

@@ -1,25 +1,25 @@
 \begin{tikzpicture}
 	\begin{pgfonlayer}{nodelayer}
-		\node [style=none] (16) at (-1.75, 1) {};
-		\node [style=none] (17) at (-2.75, 0) {};
-		\node [style=none] (18) at (-0.75, 0) {};
-		\node [style={rn_phase}] (19) at (-1.75, 1.75) {$\pi$};
-		\node [style=none] (20) at (-2.25, 0) {};
-		\node [style=none] (21) at (-1.25, 0) {};
+		\node [style=none] (16) at (-1.75, 0.75) {};
+		\node [style=none] (17) at (-2.5, -0.25) {};
+		\node [style=none] (18) at (-1, -0.25) {};
+		\node [style={rn_phase}] (19) at (-1.75, 1.25) {$\pi$};
+		\node [style=none] (20) at (-2.25, -0.25) {};
+		\node [style=none] (21) at (-1.25, -0.25) {};
 		\node [style=none] (22) at (-2.25, -0.75) {};
 		\node [style=none] (23) at (-1.25, -0.75) {};
 		\node [style=label] (24) at (-1.75, -0.5) {$\ldots$};
-		\node [style=label] (25) at (-1.75, 0.25) {$\tilde{\psi}$};
+		\node [style=label] (25) at (-1.8, 0.125) {$\tilde{\psi}$};
 		\node [style=none] (26) at (0, 0) {$=$};
-		\node [style=none] (27) at (1.75, 1) {};
-		\node [style=none] (28) at (0.75, 0) {};
-		\node [style=none] (29) at (2.75, 0) {};
-		\node [style=none] (30) at (1.25, 0) {};
-		\node [style=none] (31) at (2.25, 0) {};
+		\node [style=none] (27) at (1.75, 0.75) {};
+		\node [style=none] (28) at (1, -0.25) {};
+		\node [style=none] (29) at (2.5, -0.25) {};
+		\node [style=none] (30) at (1.25, -0.25) {};
+		\node [style=none] (31) at (2.25, -0.25) {};
 		\node [style=none] (32) at (1.25, -0.75) {};
 		\node [style=none] (33) at (2.25, -0.75) {};
 		\node [style=label] (34) at (1.75, -0.5) {$\ldots$};
-		\node [style=label] (35) at (1.75, 0.25) {$\psi$};
+		\node [style=label] (35) at (1.75, 0.125) {$\psi$};
 	\end{pgfonlayer}
 	\begin{pgfonlayer}{edgelayer}
 		\draw (17.center) to (16.center);

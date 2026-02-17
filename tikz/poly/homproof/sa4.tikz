@@ -17,18 +17,18 @@
 	\begin{pgfonlayer}{edgelayer}
 		\draw (3) to (4.center);
 		\draw [bend right=15] (1) to (3);
-		\draw [style=blue line, bend left=15] (0) to (3);
+		\draw [style=none, bend left=15] (0) to (3);
 		\draw [in=90, out=-90] (1) to (2.center);
-		\draw [style=blue line] (5) to (7.center);
-		\draw [style=blue line] (6) to (8.center);
+		\draw [style=none] (5) to (7.center);
+		\draw [style=none] (6) to (8.center);
 		\draw [in=180, out=90] (10) to (1);
-		\draw [style=blue line] (10) to (11);
-		\draw [style=blue line] (10) to (12);
-		\draw [style=blue line, in=-90, out=75] (5) to (0);
-		\draw [style=blue line] (5) to (11);
-		\draw [style=blue line] (5) to (12);
-		\draw [style=blue line, in=-90, out=105] (6) to (0);
-		\draw [style=blue line] (6) to (11);
-		\draw [style=blue line] (6) to (12);
+		\draw [style=none] (10) to (11);
+		\draw [style=none] (10) to (12);
+		\draw [style=none, in=-90, out=75] (5) to (0);
+		\draw [style=none] (5) to (11);
+		\draw [style=none] (5) to (12);
+		\draw [style=none, in=-90, out=105] (6) to (0);
+		\draw [style=none] (6) to (11);
+		\draw [style=none] (6) to (12);
 	\end{pgfonlayer}
 \end{tikzpicture}

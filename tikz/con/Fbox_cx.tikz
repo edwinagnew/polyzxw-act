@@ -59,10 +59,6 @@
 		\draw [style=filllayer] (15.center) to (8.center);
 		\draw [style=filllayer] (11.center) to (3.center);
 		\draw [style=filllayer] (14.center) to (12.center);
-		\draw (19.center) to (18.center);
-		\draw (18.center) to (17.center);
-		\draw (17.center) to (16.center);
-		\draw (16.center) to (19.center);
 		\draw (22.center) to (1.center);
 		\draw (21.center) to (0.center);
 		\draw (30.center) to (29.center);
@@ -79,5 +75,10 @@
 		\draw (46) to (52.center);
 		\draw (49.center) to (50);
 		\draw (46) to (50);
+		\draw [style=white] (17.center)
+			 to (16.center)
+			 to (19.center)
+			 to (18.center)
+			 to cycle;
 	\end{pgfonlayer}
 \end{tikzpicture}

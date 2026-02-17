@@ -2,26 +2,8 @@
 	\begin{pgfonlayer}{nodelayer}
 		\node [style=none] (0) at (-13.75, -6) {};
 		\node [style=none] (1) at (-3.75, -6) {};
-		\node [style=none] (2) at (-11.25, -4.75) {};
-		\node [style=none] (3) at (-7, -7.75) {};
-		\node [style=none] (4) at (-7, -4.25) {};
-		\node [style=none] (5) at (-10.25, -6.75) {};
-		\node [style=none] (6) at (-10.25, -7.75) {};
-		\node [style=none] (7) at (-11.25, -6.75) {};
-		\node [style=none] (8) at (-10.75, -7.25) {\tiny$\Control$};
-		\node [style=none] (9) at (-6.5, -7.25) {};
 		\node [style=none] (10) at (-13.75, -4.75) {};
 		\node [style=none] (11) at (-4, -4.75) {};
-		\node [style=none] (12) at (-10.75, -4.25) {};
-		\node [style=none] (13) at (-6.5, -4.75) {};
-		\node [style=none] (14) at (-11.25, -7.75) {};
-		\node [style=none] (15) at (-9.5, -5.25) {};
-		\node [style=none] (16) at (-8, -5.25) {};
-		\node [style=none] (17) at (-8, -6.75) {};
-		\node [style=none] (18) at (-9.5, -6.75) {};
-		\node [style=none] (19) at (-8.75, -6) {$M$};
-		\node [style=none] (20) at (-9.5, -6) {};
-		\node [style=none] (21) at (-8, -6) {};
 		\node [style=none] (26) at (-12.75, -8.5) {};
 		\node [style=none] (27) at (-12.75, -7.5) {};
 		\node [style=none] (28) at (-11.75, -7.5) {};
@@ -88,24 +70,26 @@
 		\node [style={rn_phase}] (163) at (5.75, 1.5) {$\pi$};
 		\node [style=none] (164) at (-15, -5.75) {$=$};
 		\node [style=none] (165) at (-7.75, 0.75) {$\eqq{\ref{rule:K0}}$};
+		\node [style=none] (8) at (-10.75, -7.25) {\tiny$\Control$};
+		\node [style=none] (2) at (-11.25, -4.75) {};
+		\node [style=none] (3) at (-7, -7.75) {};
+		\node [style=none] (4) at (-7, -4.25) {};
+		\node [style=none] (9) at (-6.5, -7.25) {};
+		\node [style=none] (12) at (-10.75, -4.25) {};
+		\node [style=none] (13) at (-6.5, -4.75) {};
+		\node [style=none] (14) at (-11.25, -7.75) {};
+		\node [style=none] (5) at (-10.25, -6.75) {};
+		\node [style=none] (6) at (-10.25, -7.75) {};
+		\node [style=none] (7) at (-11.25, -6.75) {};
+		\node [style=none] (19) at (-8.75, -6) {$M$};
+		\node [style=none] (20) at (-9.5, -6) {};
+		\node [style=none] (21) at (-8, -6) {};
+		\node [style=none] (15) at (-9.5, -5.25) {};
+		\node [style=none] (16) at (-8, -5.25) {};
+		\node [style=none] (17) at (-8, -6.75) {};
+		\node [style=none] (18) at (-9.5, -6.75) {};
 	\end{pgfonlayer}
 	\begin{pgfonlayer}{edgelayer}
-		\draw [style=filllayer] (4.center)
-			 to (12.center)
-			 to [bend right=60, looseness=0.75] (2.center)
-			 to (7.center)
-			 to (5.center)
-			 to (6.center)
-			 to (3.center)
-			 to [bend right=45] (9.center)
-			 to (13.center)
-			 to [bend right=45] cycle;
-		\draw [style=filllayer] (14.center) to (6.center);
-		\draw [style=filllayer] (14.center) to (7.center);
-		\draw (18.center) to (17.center);
-		\draw (17.center) to (16.center);
-		\draw (16.center) to (15.center);
-		\draw (15.center) to (18.center);
 		\draw [style=filllayer] (35.center)
 			 to (27.center)
 			 to (28.center)
@@ -156,9 +140,29 @@
 		\draw (104) to (92.center);
 		\draw (37) to (35.center);
 		\draw (10.center) to (2.center);
-		\draw (0.center) to (20.center);
-		\draw (21.center) to (1.center);
 		\draw (13.center) to (11.center);
 		\draw (32.center) to (39.center);
+		\draw [style=filllayer] (4.center)
+			 to (12.center)
+			 to [bend right=60, looseness=0.75] (2.center)
+			 to (7.center)
+			 to (5.center)
+			 to (6.center)
+			 to (3.center)
+			 to [bend right=45] (9.center)
+			 to (13.center)
+			 to [bend right=45] cycle;
+		\draw [style=white] (5.center)
+			 to (7.center)
+			 to (14.center)
+			 to (6.center)
+			 to cycle;
+		\draw (0.center) to (20.center);
+		\draw (21.center) to (1.center);
+		\draw [style=white] (15.center)
+			 to (18.center)
+			 to (17.center)
+			 to (16.center)
+			 to cycle;
 	\end{pgfonlayer}
 \end{tikzpicture}

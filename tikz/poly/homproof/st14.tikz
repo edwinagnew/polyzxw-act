@@ -16,19 +16,19 @@
 	\end{pgfonlayer}
 	\begin{pgfonlayer}{edgelayer}
 		\draw (1) to (0.center);
-		\draw [style=blue line, bend right=15] (1) to (2);
+		\draw [style=none, bend right=15] (1) to (2);
 		\draw (1) to (3);
-		\draw [style=blue line] (5) to (7.center);
-		\draw [style=blue line] (6) to (8.center);
-		\draw [style=blue line] (10) to (5);
-		\draw [style=blue line] (10) to (6);
-		\draw [style=blue line] (11) to (5);
-		\draw [style=blue line] (11) to (6);
-		\draw [style=blue line] (2) to (5);
-		\draw [style=blue line] (2) to (6);
+		\draw [style=none] (5) to (7.center);
+		\draw [style=none] (6) to (8.center);
+		\draw [style=none] (10) to (5);
+		\draw [style=none] (10) to (6);
+		\draw [style=none] (11) to (5);
+		\draw [style=none] (11) to (6);
+		\draw [style=none] (2) to (5);
+		\draw [style=none] (2) to (6);
 		\draw [in=210, out=90] (12) to (3);
-		\draw [style=blue line] (12) to (11);
-		\draw [style=blue line] (12) to (10);
+		\draw [style=none] (12) to (11);
+		\draw [style=none] (12) to (10);
 		\draw [in=90, out=-60] (3) to (4.center);
 	\end{pgfonlayer}
 \end{tikzpicture}

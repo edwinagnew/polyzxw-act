@@ -17,9 +17,15 @@ When trying to multiply these diagrams, rather than getting $(x-1)(2x+3) = 2x^2 
     \tikzfig{tikz/poly/eg5}
 \end{equation}
 
-The reason for the missing $2x^2$ term is that Lemma \ref{eq:kill_quad} implies $x^2 = 0$. Other than that, controlled state arithmetic appears to faithfully reflect polynomial arithmetic. To help formalise this correspondence, we introduce the following definition.
+The reason for the missing $2x^2$ term is due to the following:
+\begin{lemma}\label{lem:kill_quad}
+    \begin{equation}\label{eq:kill_quad}
+        \tikzfig{tikz/lemmas/kill_quad_statement}
+    \end{equation}
+\end{lemma}
+This lemma, proven in Appendix~\ref{sec:applem}, implies that $x^2 = 0$ for all variables $x$. Other than this, controlled state arithmetic appears to faithfully reflect polynomial arithmetic. To formalise this correspondence, we introduce the following definition.
 
-\begin{definition}
+\begin{definition}\label{def:arithmetic}
     A ZXW diagram with a single input on top is \textbf{arithmetic} if it contains only  $\lowerbox{\idwire}$, $\lowerbox{\swap}$ wires, $\lowerbox[10]{\wspids}$, $\lowerbox[10]{\zspids}$, $\lowerbox{\coWs}$ nodes and $\lowerbox{\numberstate}$ boxes.
 \end{definition}
 \begin{remark}
@@ -57,7 +63,7 @@ The diagram in Equation~\eqref{eq:pnf} equals the matrix
 \end{prop} 
 
 \begin{proof}
-    See Appendix~\ref{sec:appproofs}.
+    See Appendix~\ref{sec:isoproofs}.
 \end{proof}
 
 Thus, every controlled state can be represented as at least one arithmetic diagram (namely, its PNF). Moreover, we now show that any other arithmetic diagram can always be rewritten to its PNF.
@@ -86,4 +92,4 @@ Some important special cases are mapping scalars $a \in \mathbb{C}$ and indeterm
         \tikzfig{tikz/poly/homproof/homdef1} \quad \tikzfig{tikz/poly/homproof/homdef2}
 \end{equation}
    
-The proof that $\phi_n$ is a homomorphism resembles equations (\ref{eq:eg_add}) and (\ref{eq:eg_times}), but with greater generality. That $\phi_n$ is a bijection relies on proposition \ref{prop:vec_pnf}. The full proof is found in Appendix~\ref{sec:appproofs}.
+The proof that $\phi_n$ is a homomorphism resembles equations (\ref{eq:eg_add}) and (\ref{eq:eg_times}), but with greater generality. That $\phi_n$ is a bijection relies on Proposition \ref{prop:vec_pnf}. The full proof is found in Appendix~\ref{sec:isoproofs}.

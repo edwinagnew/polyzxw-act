@@ -143,14 +143,6 @@
 			 to cycle;
 		\draw [style=filllayer] (37.center) to (29.center);
 		\draw [style=filllayer] (37.center) to (30.center);
-		\draw (41.center) to (40.center);
-		\draw (40.center) to (39.center);
-		\draw (39.center) to (38.center);
-		\draw (38.center) to (41.center);
-		\draw (47.center) to (46.center);
-		\draw (46.center) to (45.center);
-		\draw (45.center) to (44.center);
-		\draw (44.center) to (47.center);
 		\draw (23.center) to (43.center);
 		\draw (36.center) to (34.center);
 		\draw (33.center) to (25.center);
@@ -169,10 +161,6 @@
 			 to [bend right=45] cycle;
 		\draw [style=filllayer] (117.center) to (111.center);
 		\draw [style=filllayer] (117.center) to (112.center);
-		\draw (121.center) to (120.center);
-		\draw (120.center) to (119.center);
-		\draw (119.center) to (118.center);
-		\draw (118.center) to (121.center);
 		\draw (105.center) to (123.center);
 		\draw [style=filllayer] (124.center) to (106.center);
 		\draw [style=filllayer] (132.center)
@@ -187,10 +175,6 @@
 			 to [bend right=45] cycle;
 		\draw [style=filllayer] (135.center) to (129.center);
 		\draw [style=filllayer] (135.center) to (130.center);
-		\draw (139.center) to (138.center);
-		\draw (138.center) to (137.center);
-		\draw (137.center) to (136.center);
-		\draw (136.center) to (139.center);
 		\draw [style=filllayer] (144.center) to (141.center);
 		\draw [style=filllayer] (142.center) to (143.center);
 		\draw (146) to (147.center);
@@ -237,5 +221,25 @@
 		\draw (254.center) to (255);
 		\draw [in=300, out=180, looseness=1.25] (255) to (257);
 		\draw [in=-120, out=0, looseness=1.25] (255) to (256);
+		\draw [style=white] (40.center)
+			 to (39.center)
+			 to (38.center)
+			 to (41.center)
+			 to cycle;
+		\draw [style=white] (46.center)
+			 to (45.center)
+			 to (44.center)
+			 to (47.center)
+			 to cycle;
+		\draw [style=white] (119.center)
+			 to (118.center)
+			 to (121.center)
+			 to (120.center)
+			 to cycle;
+		\draw [style=white] (136.center)
+			 to (139.center)
+			 to (138.center)
+			 to (137.center)
+			 to cycle;
 	\end{pgfonlayer}
 \end{tikzpicture}

@@ -2,7 +2,7 @@
   \centering
   \renewcommand{\arraystretch}{1.5}
   \begin{tabular}{|p{0.45\textwidth}|p{0.45\textwidth}|}
-    \hline
+    % \hline
     % \multicolumn{2}{|c|}{\textbf{ZX Rules}} \\
     % \hline
     % \multicolumn{2}{|c|}{
@@ -14,20 +14,25 @@
     %     \end{gather}
     %   \end{minipage}
     % } \\
-    % \hline
+    \hline
+    \multicolumn{2}{|c|}{\textbf{ZX Rules}} \\
+    \hline
     \begin{minipage}{\linewidth}
+      \vspace{-1em}
       \begin{gather}
         \scalebox{0.9}{\tikzfig{tikz/axioms/s1}}
         \tag{S1}\label{rule:S1}\\
         \scalebox{0.9}{\tikzfig{tikz/axioms/s2}}
         \tag{S2}\label{rule:S2} \\
-        \scalebox{0.9}{\tikzfig{tikz/axioms/b2}}
-        \tag{B2}\label{rule:B2} \\
         \scalebox{0.9}{\tikzfig{tikz/axioms/k0copy}}
-        \tag{K0}\label{rule:K0} 
+        \tag{K0}\label{rule:K0} \\
+        \scalebox{0.9}{\tikzfig{tikz/axioms/rdotaemptydit0}}
+        \tag{Ept}\label{rule:Ept}
       \end{gather}
     \end{minipage} &
+    \noindent\colorbox{gray!20}{%
     \begin{minipage}{\linewidth}
+      \vspace{-1em}
       \begin{gather}
         \scalebox{0.9}{\tikzfig{tikz/axioms/pimultiplecpdit}}
         \tag{K1}\label{rule:K1} \\
@@ -37,27 +42,27 @@
         \tag{Zer}\label{rule:Zer} \\
         \scalebox{0.9}{\tikzfig{tikz/axioms/h_id}}
         \tag{H}\label{rule:H} \\
-        \scalebox{0.9}{\tikzfig{tikz/axioms/rdotaemptydit0}}
-        \tag{Ept}\label{rule:Ept}
+        \scalebox{0.9}{\tikzfig{tikz/axioms/b2}}
+        \tag{B2}\label{rule:B2}
       \end{gather}
-    \end{minipage} \\
+    \end{minipage}} \\
     \hline
     \multicolumn{2}{|c|}{\textbf{ZW Rules}} \\
     \hline
     \begin{minipage}{\linewidth}
+      \vspace{-1em}
       \begin{gather}
         \scalebox{0.9}{\tikzfig{tikz/axioms/phasecopydit}}
         \tag{Pcpy}\label{rule:Pcpy} \\
-        \scalebox{0.9}{\tikzfig{tikz/axioms/wsymetrydit}}
-        \tag{Sym}\label{rule:Sym} \\
+        \scalebox{0.9}{\tikzfig{tikz/axioms/additiondit}}
+        \tag{Add}\label{rule:Add} \\
         \scalebox{0.9}{\tikzfig{tikz/axioms/w-bialgebra}}
         \tag{BZW}\label{rule:BZW}
       \end{gather}
     \end{minipage} &
     \begin{minipage}{\linewidth}
+      \vspace{-1em}
       \begin{gather}
-        \scalebox{0.9}{\tikzfig{tikz/axioms/additiondit}}
-        \tag{Add}\label{rule:Add} \\
         \scalebox{0.9}{\tikzfig{tikz/axioms/associatedit}}
         \tag{Aso}\label{rule:Aso} \\
         \scalebox{0.9}{\tikzfig{tikz/axioms/w-w-algebra}}
@@ -68,6 +73,7 @@
     \multicolumn{2}{|c|}{\textbf{ZXW Rules}} \\
     \hline
     \begin{minipage}{\linewidth}
+      \vspace{-1em}
       \begin{gather}
         \scalebox{0.9}{\tikzfig{tikz/axioms/triangleocopydit}}
         \tag{Bs0}\label{rule:Bs0} \\
@@ -75,18 +81,21 @@
         \tag{TA}\label{rule:TA}
       \end{gather}
     \end{minipage} &
+    \noindent\colorbox{gray!20}{%
     \begin{minipage}{\linewidth}
+      \vspace{-1em}
       \begin{gather}
         \scalebox{0.9}{\tikzfig{tikz/axioms/trianglepicopydit2}}
         \tag{Bs1}\label{rule:Bs1}\\
         \scalebox{0.9}{\tikzfig{tikz/axioms/hadamard-decomposition2}}
         \tag{HD}\label{rule:HD}
       \end{gather}
-    \end{minipage} \\ 
+    \end{minipage}} \\ 
     \hline
-    \multicolumn{2}{|c|}{\textbf{Controlled ZXW Ring Rules}} \\
+    \multicolumn{2}{|c|}{\textbf{Controlled Ring Rules}} \\
     \hline
     \begin{minipage}{\linewidth}
+      \vspace{-1em}
       \begin{gather}
         \tikzfig{tikz/con/c_state0}
         \tag{CS0}\label{rule:cstate0} \\
@@ -95,10 +104,11 @@
       \end{gather}
     \end{minipage} &
     \begin{minipage}{\linewidth}
+      \vspace{-1em}
       \begin{gather}
-        \tikzfig{tikz/con/c_sq1}
-        \tag{M0}\label{rule:c_sq1} \\
-        \scalebox{0.85}{\tikzfig{tikz/con/csq_copy}}
+        \scalebox{0.75}{\tikzfig{tikz/con/c_sq0}}
+        \tag{CM0}\label{rule:c_sq0} \\
+        \scalebox{0.75}{\tikzfig{tikz/con/csq_copy}}
         \tag{CMcpy}\label{rule:CMcpy}\\
         \scalebox{0.75}{\tikzfig{tikz/con/csq_add_comm_statement}}
         \tag{CMcom}\label{rule:CMcom}
@@ -106,6 +116,8 @@
     \end{minipage} \\
     \hline
   \end{tabular}
-  \caption{The ZXW Calculus Rules, where $k \in \{0, 1\}$ and $a \in \mathbb{C}$. The ZX rules, ZW rules, and ZXW rules are sufficient for ZXW completeness~\cite{poor2023completeness}, while the controlled ZXW ring rules are additionally required for Theorem \ref{thm:ctrl_pnf}.}
+  \caption{These ZX, ZW, and ZXW Rules are altogether complete for qubit linear maps~\cite{poor2023completeness}, where $k \in \{0, 1\}$ and $a \in \mathbb{C}$.
+  The subset of ZX, ZW, and ZXW Rules with white background suffice for completeness of \emph{arithmetic diagrams} (Definition~\ref{def:arithmetic}), where \eqref{rule:TA} was used only to prove Lemma~\ref{lem:kill_quad}.
+  Culminating in Theorem~\ref{thm:ctrl_pnf} of this work, we show that controlled states and controlled operators form rings. The arithmetic and Controlled Ring Rules, which are the above rules with white background, achieve completeness for all operations over these rings.}
   \label{fig:zxw_rules}
 \end{figure}

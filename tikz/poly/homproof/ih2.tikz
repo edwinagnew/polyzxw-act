@@ -46,26 +46,26 @@
 		\node [style=right label] (93) at (4.975, -1.5) {$x_n$};
 	\end{pgfonlayer}
 	\begin{pgfonlayer}{edgelayer}
-		\draw [style=blue line] (8) to (10.center);
-		\draw [style=blue line] (9) to (11.center);
-		\draw [style=blue line, in=-135, out=150] (8) to (1.center);
-		\draw [style=blue line, in=-45, out=30] (9) to (2.center);
+		\draw [style=none] (8) to (10.center);
+		\draw [style=none] (9) to (11.center);
+		\draw [style=none, in=-135, out=150] (8) to (1.center);
+		\draw [style=none, in=-45, out=30] (9) to (2.center);
 		\draw (46.center) to (47.center);
-		\draw [style=blue line, in=90, out=-150] (51) to (52.center);
-		\draw [style=blue line, in=90, out=-30] (51) to (53.center);
+		\draw [style=none, in=90, out=-150] (51) to (52.center);
+		\draw [style=none, in=90, out=-30] (51) to (53.center);
 		\draw (54.center) to (51);
-		\draw [style=blue line, in=-135, out=30] (68) to (67.center);
-		\draw [style=blue line, in=-45, out=150] (69) to (66.center);
+		\draw [style=none, in=-135, out=30] (68) to (67.center);
+		\draw [style=none, in=-45, out=150] (69) to (66.center);
 		\draw (72.center) to (71.center);
 		\draw (72.center) to (73.center);
 		\draw (73.center) to (71.center);
 		\draw (46.center) to (52.center);
 		\draw (47.center) to (52.center);
 		\draw (78.center) to (77.center);
-		\draw [style=blue line] (90.center) to (77.center);
-		\draw [style=blue line, bend left=15] (91.center) to (92.center);
+		\draw [style=none] (90.center) to (77.center);
+		\draw [style=none, bend left=15] (91.center) to (92.center);
 		\draw (78.center) to (91.center);
 		\draw (91.center) to (77.center);
-		\draw [style=blue line, bend left=15] (26.center) to (78.center);
+		\draw [style=none, bend left=15] (26.center) to (78.center);
 	\end{pgfonlayer}
 \end{tikzpicture}

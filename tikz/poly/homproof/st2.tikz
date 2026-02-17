@@ -24,8 +24,8 @@
 	\end{pgfonlayer}
 	\begin{pgfonlayer}{edgelayer}
 		\draw (3) to (0.center);
-		\draw [style=blue line] (4) to (2);
-		\draw [style=blue line] (1) to (6);
+		\draw [style=none] (4) to (2);
+		\draw [style=none] (1) to (6);
 		\draw (7) to (4);
 		\draw (8) to (5);
 		\draw (6) to (7);
@@ -39,16 +39,16 @@
 		\draw (3) to (10);
 		\draw [bend left=15] (3) to (11);
 		\draw (12) to (13.center);
-		\draw [style=blue line] (16) to (18.center);
-		\draw [style=blue line] (17) to (19.center);
-		\draw [style=blue line] (16) to (1);
-		\draw [style=blue line] (16) to (2);
-		\draw [style=blue line] (16) to (15);
-		\draw [style=blue line] (16) to (14);
-		\draw [style=blue line] (17) to (1);
-		\draw [style=blue line] (17) to (2);
-		\draw [style=blue line] (17) to (15);
-		\draw [style=blue line] (17) to (14);
+		\draw [style=none] (16) to (18.center);
+		\draw [style=none] (17) to (19.center);
+		\draw [style=none] (16) to (1);
+		\draw [style=none] (16) to (2);
+		\draw [style=none] (16) to (15);
+		\draw [style=none] (16) to (14);
+		\draw [style=none] (17) to (1);
+		\draw [style=none] (17) to (2);
+		\draw [style=none] (17) to (15);
+		\draw [style=none] (17) to (14);
 		\draw (15) to (9);
 		\draw (15) to (12);
 		\draw (14) to (5);

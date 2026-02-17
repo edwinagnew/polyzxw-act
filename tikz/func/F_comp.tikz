@@ -61,9 +61,7 @@
 		\node [style=none] (168) at (3.25, -6) {};
 		\node [style=none] (169) at (3.25, -4.25) {};
 		\node [style=none] (170) at (4.5, -5.5) {$=$};
-		\node [style=none] (181) at (7.25, -5.25) {};
 		\node [style=none] (182) at (5.5, -5.75) {};
-		\node [style=none] (184) at (7.25, -6.25) {};
 		\node [style=none] (188) at (12.75, -5.75) {};
 		\node [style=none] (190) at (6.5, -4.25) {};
 		\node [style=none] (191) at (11.25, -7.75) {};
@@ -190,14 +188,6 @@
 			 to cycle;
 		\draw [style=filllayer] (202.center) to (194.center);
 		\draw [style=filllayer] (202.center) to (195.center);
-		\draw (206.center) to (205.center);
-		\draw (205.center) to (204.center);
-		\draw (204.center) to (203.center);
-		\draw (203.center) to (206.center);
-		\draw (239.center) to (238.center);
-		\draw (238.center) to (237.center);
-		\draw (237.center) to (236.center);
-		\draw (236.center) to (239.center);
 		\draw (182.center) to (209.center);
 		\draw (244.center) to (188.center);
 		\draw (201.center) to (199.center);
@@ -216,10 +206,6 @@
 		\draw [style=filllayer] (260.center) to (253.center);
 		\draw [style=filllayer] (256.center) to (248.center);
 		\draw [style=filllayer] (259.center) to (257.center);
-		\draw (264.center) to (263.center);
-		\draw (263.center) to (262.center);
-		\draw (262.center) to (261.center);
-		\draw (261.center) to (264.center);
 		\draw (266.center) to (246.center);
 		\draw [style=filllayer] (275.center)
 			 to [bend right=45] (281.center)
@@ -235,10 +221,6 @@
 		\draw [style=filllayer] (286.center) to (279.center);
 		\draw [style=filllayer] (282.center) to (274.center);
 		\draw [style=filllayer] (285.center) to (283.center);
-		\draw (290.center) to (289.center);
-		\draw (289.center) to (288.center);
-		\draw (288.center) to (287.center);
-		\draw (287.center) to (290.center);
 		\draw (293.center) to (273.center);
 		\draw (267.center) to (292.center);
 		\draw (297.center) to (28.center);
@@ -247,5 +229,25 @@
 		\draw (299) to (113.center);
 		\draw (299) to (134.center);
 		\draw (299) to (102);
+		\draw [style=white] (264.center)
+			 to (263.center)
+			 to (262.center)
+			 to (261.center)
+			 to cycle;
+		\draw [style=white] (290.center)
+			 to (289.center)
+			 to (288.center)
+			 to (287.center)
+			 to cycle;
+		\draw [style=white] (206.center)
+			 to (205.center)
+			 to (204.center)
+			 to (203.center)
+			 to cycle;
+		\draw [style=white] (239.center)
+			 to (238.center)
+			 to (237.center)
+			 to (236.center)
+			 to cycle;
 	\end{pgfonlayer}
 \end{tikzpicture}

@@ -18,24 +18,24 @@
 	\end{pgfonlayer}
 	\begin{pgfonlayer}{edgelayer}
 		\draw (1) to (0.center);
-		\draw [style=blue line, bend right=15] (1) to (2);
+		\draw [style=none, bend right=15] (1) to (2);
 		\draw (1) to (3);
 		\draw (1) to (4);
 		\draw (5) to (6.center);
-		\draw [style=blue line] (8) to (10.center);
-		\draw [style=blue line] (9) to (11.center);
-		\draw [style=blue line] (8) to (7);
-		\draw [style=blue line] (9) to (7);
-		\draw [style=blue line] (13) to (3);
-		\draw [style=blue line] (13) to (8);
-		\draw [style=blue line] (13) to (9);
-		\draw [style=blue line] (14) to (4);
-		\draw [style=blue line] (14) to (8);
-		\draw [style=blue line] (14) to (9);
-		\draw [style=blue line] (2) to (8);
-		\draw [style=blue line] (2) to (9);
+		\draw [style=none] (8) to (10.center);
+		\draw [style=none] (9) to (11.center);
+		\draw [style=none] (8) to (7);
+		\draw [style=none] (9) to (7);
+		\draw [style=none] (13) to (3);
+		\draw [style=none] (13) to (8);
+		\draw [style=none] (13) to (9);
+		\draw [style=none] (14) to (4);
+		\draw [style=none] (14) to (8);
+		\draw [style=none] (14) to (9);
+		\draw [style=none] (2) to (8);
+		\draw [style=none] (2) to (9);
 		\draw [in=-45, out=120] (5) to (4);
 		\draw [bend right=15] (5) to (3);
-		\draw [style=blue line] (7) to (3);
+		\draw [style=none] (7) to (3);
 	\end{pgfonlayer}
 \end{tikzpicture}

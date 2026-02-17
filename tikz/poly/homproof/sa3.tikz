@@ -16,15 +16,15 @@
 	\begin{pgfonlayer}{edgelayer}
 		\draw (2) to (3.center);
 		\draw (4) to (5.center);
-		\draw [style=blue line, bend left=15] (0) to (4);
-		\draw [style=blue line] (7) to (9.center);
-		\draw [style=blue line] (8) to (10.center);
-		\draw [style=blue line] (7) to (0);
-		\draw [style=blue line] (7) to (1);
-		\draw [style=blue line] (7) to (6);
-		\draw [style=blue line] (8) to (0);
-		\draw [style=blue line] (8) to (1);
-		\draw [style=blue line] (8) to (6);
+		\draw [style=none, bend left=15] (0) to (4);
+		\draw [style=none] (7) to (9.center);
+		\draw [style=none] (8) to (10.center);
+		\draw [style=none] (7) to (0);
+		\draw [style=none] (7) to (1);
+		\draw [style=none] (7) to (6);
+		\draw [style=none] (8) to (0);
+		\draw [style=none] (8) to (1);
+		\draw [style=none] (8) to (6);
 		\draw (1) to (4);
 		\draw [bend right=15] (1) to (2);
 		\draw [bend right=15] (6) to (4);

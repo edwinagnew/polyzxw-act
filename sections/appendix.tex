@@ -81,6 +81,63 @@
 %     \tag{HD}\label{rule:HD}
 %     \end{gather}
 % \end{multicols}
+\section{Proofs for Section~\ref{sec:ctrlmap}}\label{sec:ctrlmapproofs}
+
+\textbf{Proof of Proposition \ref{prop:ctrl_comp_h}}
+\begin{proof}
+    $\Control$ is sound with regards to sequential composition:
+    \begin{equation}
+        \tikzfig{tikz/func/F_comp}
+    \end{equation}
+
+    Where $(*)$ follows from Proposition \ref{prop:cmat_ops}.
+\end{proof}
+
+\textbf{Proof of Proposition \ref{prop:ctrl_comp_v}}
+\begin{proof}
+    Consider the morphism: $\phi_{V, W}: \Control(V) \otimes \Control(W) \to \Control(V \otimes W)$:
+    \begin{equation}
+       \phi_{V, W} = \tikzfig{tikz/func/F_lax_def}
+    \end{equation}
+
+    By conjugating by $\phi$, $\Control$ is sound under parallel composition of any $M_1: V \to V,\; M_2: W \to W$:
+    \begin{equation}
+        \tikzfig{tikz/func/ctrl_comp}
+    \end{equation}
+
+    Parallel composition is associative by associativity of the tensor product and of $\phi$:
+    \begin{equation}
+       \tikzfig{tikz/func/F_lax_ass}
+    \end{equation}
+\end{proof}
+
+\textbf{Proof of Proposition \ref{prop:FF}}
+\begin{proof}
+    Plugging basis states:
+    \begin{equation}
+        \tikzfig{tikz/func/FF1}
+    \end{equation}
+    \begin{equation}
+        \tikzfig{tikz/func/FF2}
+    \end{equation}
+\end{proof}
+
+The AND gate is a primitive in the ZH-calculus~\cite{backens2019zh}. We can also represent the binary AND gate in the ZXW-calculus, by deMorgan's law of the diagram for binary OR given in \Cref{prop:vec_pnf}.
+\begin{lemma}\label{lemma:and}
+    \begin{equation}
+        \tikzfig{tikz/func/and_def}
+    \end{equation}
+\end{lemma}
+\begin{proof}
+    We can verify this computes the AND gate by computing on basis states.
+    \begin{equation}\label{eq:and1}
+        \tikzfig{tikz/func/and1}
+    \end{equation}
+    Thus $AND(1, x) = x$. Since the diagram is clearly commutative, it remains to check $AND(0, x) = 0$.
+    \begin{equation}\label{eq:and0}
+        \tikzfig{tikz/func/and0}
+    \end{equation}
+\end{proof}
 
 \section{Basic Lemmas}\label{sec:applem}
 
@@ -167,18 +224,12 @@ The following two lemmas follow immediately from the bra-ket definition of $\low
     \end{equation}
   \end{proof}
   
-  
-  \begin{lemma}{}{}
-    \begin{equation}\label{eq:kill_quad}
-    \tikzfig{tikz/lemmas/kill_quad_statement}
-  \end{equation}
-  \end{lemma}
-  \begin{proof}
-    \begin{equation}
-        \tikzfig{tikz/lemmas/kill_quad}
-    \end{equation}
-  \end{proof}
-  
+\textbf{Proof of Lemma \ref{lem:kill_quad}}
+\begin{proof}
+\begin{equation}
+    \tikzfig{tikz/lemmas/kill_quad}
+\end{equation}
+\end{proof}  
   
   \begin{lemma}
     \begin{equation}\label{eq:dbl_dist}
@@ -229,8 +280,7 @@ The following two lemmas follow immediately from the bra-ket definition of $\low
     \end{equation}
   \end{proof}
 
-\section{Main Proofs}\label{sec:appproofs}
-\subsection{Proofs for Section~\ref{sec:ring}}\label{sec:ringproofs}
+\section{Proofs for Section~\ref{sec:ring}}\label{sec:ringproofs}
 \textbf{Proof of Lemma \ref{lem:csq_copy}}
 \begin{proof}
     First of all, using (\ref{rule:BZW}) we can rewrite the LHS to
@@ -253,7 +303,7 @@ The following two lemmas follow immediately from the bra-ket definition of $\low
 
 \textbf{Proof of Lemma \ref{lem:csqaddcomm}}
 \begin{proof}
-    We prove by plugging red and commutativity of matrix addition. By definition of controlled matrices, plugging $\lowerbox{\redzero}$ gives $I_n$ on both sides. Meanwhile, plugging $\lowerbox{\redpi}$ gives:
+    We prove by plugging red and commutativity of matrix addition. By definition of controlled matrices, plugging $\lowerbox{\redzero}$ gives $\lowerbox{\redzero}$ and $I_n$ on both sides. Meanwhile, plugging $\lowerbox{\redpi}$ gives:
     \begin{equation}
        \tikzfig{tikz/con/csq_add_comm}
    \end{equation}
@@ -321,7 +371,7 @@ The following two lemmas follow immediately from the bra-ket definition of $\low
 
 \end{proof}
 
-
+\section{Proofs for Section~\ref{sec:iso}}\label{sec:isoproofs}
 \textbf{Proof of Proposition \ref{prop:vec_pnf}}
 \begin{proof}
     We prove by induction on $n$.
@@ -378,7 +428,6 @@ The following two lemmas follow immediately from the bra-ket definition of $\low
     Completing the inductive step.
 \end{proof}
 
-\subsection{Proofs for Section~\ref{sec:iso}}\label{sec:isoproofs}
 \textbf{Proof of Theorem \ref{thm:uni_pnf}}
 
 \begin{proof}
@@ -413,16 +462,15 @@ The following two lemmas follow immediately from the bra-ket definition of $\low
 
     Thus $A$ has been written in PNF, completing the proof.
     
-
 \end{proof}
-
 
 \textbf{Proof of Theorem \ref{thm:iso}}
 \begin{proof}
     
     First, we show $\phi_n$ is a homomorphism, i.e. \begin{equation}
         \forall p, q \in \polyring, \phi_n(p + q) = \phi_n(p) \boxplus \phi_n(q) ,\quad \phi_n(p \times q) = \phi_n(p) \boxtimes \phi_n(q)
-    \end{equation} The strategy for the proof will be an induction on $n$. 
+    \end{equation}
+    The strategy for the proof will be an induction on $n$. Here, the yellow shaded regions serve no purpose other than to make the subdiagram that was rewritten in the preceding or following step easier to visually identify.
 
     \medskip
     
@@ -454,11 +502,13 @@ The following two lemmas follow immediately from the bra-ket definition of $\low
     Let $Hom(n)$ assert than $\phi_n$ is a homomorphism.  Then for the inductive step we wish to prove that $\forall n, Hom(n) \implies Hom(n+1)$.
 
     The proof relies on the recursive definition of $R[x_1, x_2] = R[x_1][x_2]$, for any ring $R$, to rewrite an arbitrary polynomial $p(x_1, ..., x_{n+1}) = a_0 + a_1x_{n+1} + ... + a_{2^{n+1}-1}x_1x_2...x_{n+1} \in \polyring[n+1]$ as $p(x_{n+1}) = p_0 + p_1x_{n+1}$, where $p_0, p_1 \in \polyring$. This allows the $p_i$ to be treated similarly to the scalars in the base case. To emphasise this, they will be drawn in green boxes. To help distinguish when an operation is covered by the inductive hypothesis, the wires for variables $x_1, ..., x_n$ will be drawn in blue, while the $x_{n+1}$ wires will be drawn in black. Thus the inductive hypothesis states that:
-    \begin{equation}\label{eq:ih1}\tag{IH1}
+    \begin{equation}
         \tikzfig{tikz/poly/homproof/ih1}
+        \tag{IH1}\label{eq:ih1}
     \end{equation}
-    \begin{equation}\label{eq:ih2}\tag{IH2}
+    \begin{equation}
         \tikzfig{tikz/poly/homproof/ih2}
+        \tag{IH2}\label{eq:ih2}
     \end{equation}
 
     Let $p(x_{n+1}) = p_0 + p_1x_{n+1}$ and $q(x_{n+1}) = q_0 + q_1x_{n+1}$, where $p_0, p_1, q_0, q_1 \in \polyring$.
@@ -490,9 +540,9 @@ The following two lemmas follow immediately from the bra-ket definition of $\low
 
 
     Similarly, for multiplication:
-    % \begin{equation}
-    %     \tikzfig{tikz/poly/homproof/st}
-    % \end{equation}
+    \begin{equation}
+        \tikzfig{tikz/poly/homproof/st}
+    \end{equation}
     % \begin{gather}
     % \phi_{n+1}(p) \boxtimes \phi_{n+1}(q) ~=~ \tikzfig{tikz/poly/homproof/st1} \eqq{\ref{eq:dbl_dist}}  ~ \tikzfig{tikz/poly/homproof/st2} \neweqline
     % \eqq{\ref{eq:cs_copy}} ~ \tikzfig{tikz/poly/homproof/st3} \eqq{\ref{eq:ih2}} ~ \tikzfig{tikz/poly/homproof/st4} \neweqline
@@ -516,69 +566,11 @@ The following two lemmas follow immediately from the bra-ket definition of $\low
         \begin{bmatrix}
             1 & a_0 \\ 0 & a_1 \\ ... & .. \\ 0 & a_{2^{n}-1}
         \end{bmatrix}
-        = \tikzfig{tikz/poly/pnf}
+        \quad = \quad \tikzfig{tikz/poly/pnf}
     \end{gather}
 
     Then all we have to do is interpret it as the image of a polynomial:
     \begin{gather}
-        \tikzfig{tikz/poly/pnf} ~=~ \tikzfig{tikz/poly/homproof/iso4} \neweqline ~=~ \phi_{n}(a_0) + \phi_{n}(a_1x_{n}) + ... + \phi_{n}(a_{2^{n}-1x_1x_2...x_{n}}) \neweqline ~=~ \phi_{n}(a_0 + a_1x_{n} + ... + a_{2^{n}-1}x_1x_2...x_{n}) 
+        \tikzfig{tikz/poly/pnf} \quad ~=~ \quad \tikzfig{tikz/poly/homproof/iso4} \neweqline ~=~ \phi_{n}(a_0) + \phi_{n}(a_1x_{n}) + ... + \phi_{n}(a_{2^{n}-1} x_1x_2...x_{n}) \neweqline ~=~ \phi_{n}(a_0 + a_1x_{n} + ... + a_{2^{n}-1}x_1x_2...x_{n}) 
     \end{gather}
-\end{proof}
-
-\subsection{Proofs for Section~\ref{sec:ctrlmap}}\label{sec:ctrlmapproofs}
-
-\textbf{Proof of Proposition \ref{prop:ctrl_comp_h}}
-\begin{proof}
-    $\Control$ is sound with regards to sequential composition:
-    \begin{equation}
-        \tikzfig{tikz/func/F_comp}
-    \end{equation}
-
-    Where $(*)$ follows from Proposition \ref{prop:cmat_ops}.
-\end{proof}
-
-\textbf{Proof of Proposition \ref{prop:ctrl_comp_v}}
-\begin{proof}
-    Consider the morphism: $\phi_{V, W}: \Control(V) \otimes \Control(W) \to \Control(V \otimes W)$:
-    \begin{equation}
-       \phi_{V, W} = \tikzfig{tikz/func/F_lax_def}
-    \end{equation}
-
-    By conjugating by $\phi$, $\Control$ is sound under parallel composition of any $M_1: V \to V,\; M_2: W \to W$:
-    \begin{equation}
-        \tikzfig{tikz/func/ctrl_comp}
-    \end{equation}
-
-    Parallel composition is associative by associativity of the tensor product and of $\phi$:
-    \begin{equation}
-       \tikzfig{tikz/func/F_lax_ass}
-    \end{equation}
-\end{proof}
-
-\textbf{Proof of Proposition \ref{prop:FF}}
-\begin{proof}
-    Plugging basis states:
-    \begin{equation}
-        \tikzfig{tikz/func/FF1}
-    \end{equation}
-    \begin{equation}
-        \tikzfig{tikz/func/FF2}
-    \end{equation}
-\end{proof}
-
-The AND gate is a primitive in the ZH-calculus~\cite{backens2019zh}. We can also represent the binary AND gate in the ZXW-calculus, by deMorgan's law of the diagram for binary OR given in \Cref{prop:vec_pnf}.
-\begin{lemma}\label{lemma:and}
-    \begin{equation}
-        \tikzfig{tikz/func/and_def}
-    \end{equation}
-\end{lemma}
-\begin{proof}
-    We can verify this computes the AND gate by computing on basis states.
-    \begin{equation}\label{eq:and1}
-        \tikzfig{tikz/func/and1}
-    \end{equation}
-    Thus $AND(1, x) = x$. Since the diagram is clearly commutative, it remains to check $AND(0, x) = 0$.
-    \begin{equation}\label{eq:and0}
-        \tikzfig{tikz/func/and0}
-    \end{equation}
 \end{proof}

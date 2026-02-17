@@ -1,28 +1,5 @@
 \begin{tikzpicture}
 	\begin{pgfonlayer}{nodelayer}
-		\node [style=none] (0) at (-7.5, -6.25) {};
-		\node [style=none] (1) at (2.25, -6.25) {};
-		\node [style=none] (2) at (-5, -5) {};
-		\node [style=none] (3) at (-0.75, -8) {};
-		\node [style=none] (4) at (-0.75, -4.5) {};
-		\node [style=none] (5) at (-4, -7) {};
-		\node [style=none] (6) at (-4, -8) {};
-		\node [style=none] (7) at (-5, -7) {};
-		\node [style=none] (8) at (-4.5, -7.5) {\tiny$\Control$};
-		\node [style=none] (9) at (-0.25, -7.5) {};
-		\node [style=none] (10) at (-7.5, -5) {};
-		\node [style=none] (11) at (2.25, -5) {};
-		\node [style=none] (12) at (-4.5, -4.5) {};
-		\node [style=none] (13) at (-0.25, -5) {};
-		\node [style=none] (14) at (-5, -8) {};
-		\node [style=none] (15) at (-3.25, -5.5) {};
-		\node [style=none] (16) at (-1.75, -5.5) {};
-		\node [style=none] (17) at (-1.75, -7) {};
-		\node [style=none] (18) at (-3.25, -7) {};
-		\node [style=none] (19) at (-2.5, -6.25) {$M$};
-		\node [style=none] (20) at (-3.25, -6.25) {};
-		\node [style=none] (21) at (-1.75, -6.25) {};
-		\node [style=none] (26) at (-6.5, -8.75) {};
 		\node [style=none] (27) at (-6.5, -7.75) {};
 		\node [style=none] (28) at (-5.5, -7.75) {};
 		\node [style=none] (29) at (-5.5, -8.75) {};
@@ -32,6 +9,13 @@
 		\node [style=none] (33) at (0.5, -3.5) {};
 		\node [style=none] (34) at (-6, -3.5) {};
 		\node [style=none] (35) at (-6.5, -4) {};
+		\node [style=none] (0) at (-7.5, -6.25) {};
+		\node [style=none] (1) at (2.25, -6.25) {};
+		\node [style=none] (8) at (-4.5, -7.5) {\tiny$\Control$};
+		\node [style=none] (10) at (-7.5, -5) {};
+		\node [style=none] (11) at (2.25, -5) {};
+		\node [style=none] (14) at (-5, -8) {};
+		\node [style=none] (26) at (-6.5, -8.75) {};
 		\node [style=none] (36) at (-6, -8.25) {\tiny$\Control$};
 		\node [style=rn] (37) at (-7.5, -4) {};
 		\node [style=none] (39) at (2.25, -4) {};
@@ -97,24 +81,24 @@
 		\node [style=none] (143) at (-16.75, 1.25) {};
 		\node [style=gn] (144) at (-18.25, 1.25) {};
 		\node [style=rn] (145) at (-19.75, 1.25) {};
+		\node [style=none] (2) at (-5, -5) {};
+		\node [style=none] (3) at (-0.75, -8) {};
+		\node [style=none] (4) at (-0.75, -4.5) {};
+		\node [style=none] (5) at (-4, -7) {};
+		\node [style=none] (6) at (-4, -8) {};
+		\node [style=none] (7) at (-5, -7) {};
+		\node [style=none] (9) at (-0.25, -7.5) {};
+		\node [style=none] (12) at (-4.5, -4.5) {};
+		\node [style=none] (13) at (-0.25, -5) {};
+		\node [style=none] (15) at (-3.25, -5.5) {};
+		\node [style=none] (16) at (-1.75, -5.5) {};
+		\node [style=none] (17) at (-1.75, -7) {};
+		\node [style=none] (18) at (-3.25, -7) {};
+		\node [style=none] (19) at (-2.5, -6.25) {$M$};
+		\node [style=none] (20) at (-3.25, -6.25) {};
+		\node [style=none] (21) at (-1.75, -6.25) {};
 	\end{pgfonlayer}
 	\begin{pgfonlayer}{edgelayer}
-		\draw [style=filllayer] (4.center)
-			 to (12.center)
-			 to [bend right=60, looseness=0.75] (2.center)
-			 to (7.center)
-			 to (5.center)
-			 to (6.center)
-			 to (3.center)
-			 to [bend right=45] (9.center)
-			 to (13.center)
-			 to [bend right=45] cycle;
-		\draw [style=filllayer] (14.center) to (6.center);
-		\draw [style=filllayer] (14.center) to (7.center);
-		\draw (18.center) to (17.center);
-		\draw (17.center) to (16.center);
-		\draw (16.center) to (15.center);
-		\draw (15.center) to (18.center);
 		\draw [style=filllayer] (35.center)
 			 to (27.center)
 			 to (28.center)
@@ -169,9 +153,29 @@
 		\draw (104) to (92.center);
 		\draw (10.center) to (2.center);
 		\draw (13.center) to (11.center);
-		\draw (21.center) to (1.center);
-		\draw (0.center) to (20.center);
 		\draw (37) to (35.center);
 		\draw (32.center) to (39.center);
+		\draw [style=filllayer] (4.center)
+			 to (12.center)
+			 to [bend right=60, looseness=0.75] (2.center)
+			 to (7.center)
+			 to (5.center)
+			 to (6.center)
+			 to (3.center)
+			 to [bend right=45] (9.center)
+			 to (13.center)
+			 to [bend right=45] cycle;
+		\draw [style=white] (5.center)
+			 to (6.center)
+			 to (14.center)
+			 to (7.center)
+			 to cycle;
+		\draw (21.center) to (1.center);
+		\draw (0.center) to (20.center);
+		\draw [style=white] (16.center)
+			 to (15.center)
+			 to (18.center)
+			 to (17.center)
+			 to cycle;
 	\end{pgfonlayer}
 \end{tikzpicture}
