@@ -1,0 +1,39 @@
+\section{Applications}
+
+\subsection{Factorising Hamiltonians}
+As an application, we leverage both our rewrite rules for arithmetic ZW diagrams, and for controlled diagrams, to \emph{factor} them.  For example, for same size square matrices $I, A, B$ and $a, b, c \in \mathbb{C}$:
+\begin{gather}
+    \tikzfig{tikz/poly/matspoly}
+\end{gather}
+Factoring Hamiltonians is important to optimise quantum algorithms for chemistry and physics simulations. However, previous graphical rewrites for factoring Hamiltonians had only been doable for Hamiltonians with concretely-specified matrix terms~\cite{shaikh2022sum}. This completeness result guarantees that for any Hamiltonian, even if its matrix terms are black-box, these graphical rewrite rules are capable of deriving any of its possible factorisations.
+
+Recently, one of the new rules for controlled diagrams first proposed in this work, \eqref{rule:CMcpy}, was used in Ref.~\cite{mcdowallrose2025f2q} to derive a general form for any two-body fermionic Hamiltonian in second quantization under any linear encoding.
+
+\subsection{The Control Higher-Order Map}\label{sec:ctrlmap}
+%The operation of turning a non-dimension-decreasing matrix to its controlled diagram can be made into a lax monoidal functor. Let $\mathbf{Hilb_{\leq}}$ be the subcategory of Hilbert spaces and non-dimension-decreasing linear transformations. Adding an additional horizontal wire to facilitate composition, $F: \mathbf{Hilb_{\leq}} \to \mathbf{Hilb}$ is defined as follows for arbitrary  $D \in Hom_{Hilb_{\leq}}(V, W)$.
+In quantum circuits, quantum control is realized through controlled gates.
+In this section, we show that we can reason with controlled gates by a straightforward construction on top of our ring of controlled square matrices.
+We define the higher-order map $\Control$ which takes a square matrix $M: V \to V$ to its controlled square diagram $V \otimes \mathbb{C}^2 \to V \otimes \mathbb{C}^2$. In the functorial box notation of \cite{mellies2006functorial}, we write:
+\begin{equation}
+    \tikzfig{tikz/func/F_def_box}
+\end{equation}
+
+We prove in Appendix~\ref{sec:ctrlmapproofs} that composition of controlled operations in sequence and in parallel is well-behaved.
+
+\begin{prop}\label{prop:ctrl_comp_h}
+\begin{equation}
+	\tikzfig{tikz/func/ctrl_comp_hdef}
+\end{equation}\end{prop}
+
+\begin{prop}\label{prop:ctrl_comp_v}
+\begin{equation}
+	\tikzfig{tikz/func/ctrl_comp_vdef}
+\end{equation}
+\end{prop}
+
+Furthermore, successive applications of $\Control$ recovers the standard notion of multiple-control, which computes the AND of the control qubits:
+\begin{prop}\label{prop:FF}
+    \begin{equation}
+        \tikzfig{tikz/func/FF_statement}
+    \end{equation}
+\end{prop}

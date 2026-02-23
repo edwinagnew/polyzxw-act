@@ -1,0 +1,80 @@
+\begin{tikzpicture}
+	\begin{pgfonlayer}{nodelayer}
+		\node [style=none] (75) at (-2.475, 6.075) {};
+		\node [style=none] (76) at (-2.475, 5.2) {};
+		\node [style=none] (77) at (2.175, 5.2) {};
+		\node [style=none] (78) at (2.175, 6.075) {};
+		\node [style=none] (0) at (-0.15, 5.625) {Is the top\hspace{1.5em}?};
+		\node [style=none] (1) at (-0.8, 5) {};
+		\node [style=none] (2) at (-3.4, 2.75) {};
+		\node [style=none] (4) at (-2.425, 4.125) {Y};
+		\node [style=none] (5) at (0.5, 5) {};
+		\node [style=none] (6) at (3.1, 2.75) {};
+		\node [style=none] (8) at (2.125, 4.125) {N};
+		\node [style=none] (10) at (3.1, 1.125) {};
+		\node [style=none] (11) at (0.5, -1.125) {};
+		\node [style=none] (13) at (1.475, 0.25) {Y};
+		\node [style=none] (21) at (3.75, 1.125) {};
+		\node [style=none] (22) at (3.75, -4.375) {};
+		\node [style=none] (24) at (3.325, 0) {N};
+		\node [style=none] (87) at (1.25, 6.05) {};
+		\node [style=gbox] (88) at (1.25, 5.55) {$\!a\!$};
+		\node [style=none] (89) at (1.4, 2.325) {};
+		\node [style=none] (90) at (1.4, 1.45) {};
+		\node [style=none] (91) at (6.05, 1.45) {};
+		\node [style=none] (92) at (6.05, 2.325) {};
+		\node [style=none] (93) at (3.725, 1.875) {Is the top\hspace{1.5em}?};
+		\node [style=gn] (94) at (5.125, 1.85) {};
+		\node [style=none] (95) at (5.125, 2.275) {};
+		\node [style=none] (96) at (4.875, 1.5) {};
+		\node [style=none] (97) at (5.375, 1.5) {};
+		\node [style=none] (98) at (-3.75, 2.5) {$\tilde{\phi}^{\minu 1} = a$};
+		\node [style=none] (99) at (0.225, -1.625) {Apply (1)};
+		\node [style=none] (100) at (0.474999, -2.125) {};
+		\node [style=none] (101) at (3.075, -4.375) {};
+		\node [style=none] (102) at (1.475, -4.675) {};
+		\node [style=none] (103) at (1.475, -5.8) {};
+		\node [style=none] (104) at (6.125, -5.8) {};
+		\node [style=none] (105) at (6.125, -4.675) {};
+		\node [style=none] (106) at (3.3, -5.25) {The top is};
+		\node [style=uw] (107) at (5.45, -5.35) {};
+		\node [style=none] (108) at (5.45, -4.725) {};
+		\node [style=none] (109) at (5.2, -5.75) {};
+		\node [style=none] (110) at (5.7, -5.75) {};
+		\node [style=none] (111) at (-0.15, 7.125) {};
+		\node [style=none] (112) at (-0.15, 6.375) {};
+		\node [style=none] (113) at (3.75, -6.125) {};
+		\node [style=none] (114) at (3.75, -6.875) {};
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\draw [style=filllayer] (77.center)
+			 to [bend right=75, looseness=0.75] (78.center)
+			 to [bend right=15, looseness=0.25] (75.center)
+			 to [bend right=75, looseness=0.75] (76.center)
+			 to [bend right=15, looseness=0.25] cycle;
+		\draw [style=arrow] (1.center) to (2.center);
+		\draw [style=arrow] (5.center) to (6.center);
+		\draw [style=arrow] (10.center) to (11.center);
+		\draw [style=arrow] (21.center) to (22.center);
+		\draw (87.center) to (88);
+		\draw [style=filllayer] (91.center)
+			 to [bend right=75, looseness=0.75] (92.center)
+			 to [bend right=15, looseness=0.25] (89.center)
+			 to [bend right=75, looseness=0.75] (90.center)
+			 to [bend right=15, looseness=0.25] cycle;
+		\draw (95.center) to (94);
+		\draw (94) to (96.center);
+		\draw (97.center) to (94);
+		\draw [style=arrow] (100.center) to (101.center);
+		\draw [style=filllayer] (105.center)
+			 to [bend right=15, looseness=0.25] (102.center)
+			 to [bend right=75, looseness=0.75] (103.center)
+			 to [bend right=15, looseness=0.25] (104.center)
+			 to [bend right=75, looseness=0.75] cycle;
+		\draw (108.center) to (107);
+		\draw (107) to (109.center);
+		\draw (110.center) to (107);
+		\draw [style=arrow] (111.center) to (112.center);
+		\draw [style=arrow] (113.center) to (114.center);
+	\end{pgfonlayer}
+\end{tikzpicture}

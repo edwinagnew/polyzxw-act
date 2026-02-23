@@ -1,6 +1,6 @@
 \section{Preliminaries}
 
-This section introduces the ZXW-calculus, and how controlled diagrams are defined in it. The ZXW-calculus is a graphical formalism for qudit computation, unifying the ZX and ZW calculi and synthesising their relative strengths. The ZXW-calculus consists of diagrams built from a small number of generators and equipped with a complete set of rewrite rules, which enables all equalities between linear maps to be proven diagrammatically.  Diagrams are to be read top to bottom or, in later sections, left to right.
+This section introduces the ZXW-calculus, and how controlled diagrams are defined in it. The ZXW-calculus is a graphical formalism for qudit computation, unifying the ZX and ZW calculi and synthesising their relative strengths. The ZXW-calculus consists of diagrams built from a small number of generators and equipped with a complete set of rewrite rules, which enables all equalities between linear maps to be proven diagrammatically.  Diagrams are to be read top to bottom and left to right.
 
 \subsection{The ZXW-Calculus}
 %%% some intro about the zxw-calculus, specifically some applications/citations and the explaining the completeness results, should go here.
@@ -25,7 +25,7 @@ For simplicity, we introduce the following additional notation:
 \end{gather}
 
 Equations in ZXW apply diagrammatic rewrite rules which prove equalities of the underlying matrices. Omitted from Figure~\ref{fig:zxw_rules} are the \emph{structural rules} ubiquitous to quantum graphical calculi, such as that swapping twice yields the two-qubit identity and that an S-shaped cup and cap pair yields the one-qubit identity. These collectively are referred to as the \emph{Only Connectivity Matters} rule, which governs that in this calculus the following operations preserve semantic equality: So long as all connections are preserved between all inputs, outputs, and generators of the diagram, the spatial position and orientation of each generator can be varied, and wires are free to cross or bend as they please.
-The Z and X generators are symmetric with respect to swapping two inputs, while the Z, X, and W generators are symmetric with respect to swapping swapping two outputs:
+The Z and X generators are symmetric with respect to swapping two inputs, while the Z, X, and W generators are symmetric with respect to swapping two outputs:
 \begin{equation}
   \scalebox{0.9}{\tikzfig{tikz/axioms/wsymetrydit}}
   \tag{Sym}\label{rule:Sym}
@@ -37,7 +37,7 @@ However, unlike the Z and X generators, the W generator is not symmetric with re
 \end{equation}
 For this reason, care must be taken that exactly one wire of each W generator is unambiguously its exactly one input, drawn aligned with one point of the triangle.
 
-The complete rule set of the qubit ZXW-calculus from Ref.~\cite{poor2023completeness} is given in Figure \ref{fig:zxw_rules}. Several important lemmas are found in Appendix \ref{sec:applem}.
+The complete rule set of the qubit ZXW-calculus from Ref.~\cite{poor2023completeness}, and our new rules for controlled states and controlled square matrices, are presented in Figure \ref{fig:zxw_rules}. Several important lemmas are found in Appendix \ref{sec:applem}.
 
 \input{sections/zxw_rules}
 
@@ -49,11 +49,11 @@ Note that this is a different definition of controlled states to Ref.~\cite{jean
 \begin{definition}\label{def:ctrlsqmat}
   For an arbitrary $n \times n$ matrix $M$, we define the controlled matrix of $M$ as the diagram $\tilde{M}$ with the following interpretation:
 \begin{equation}
-  \left\llbracket \quad \tikzfig{tikz/con/c_sq_def} \;\;\; \right\rrbracket ~=~ \begin{bmatrix}I & M\end{bmatrix} 
+  \left\llbracket \quad \tikzfig{tikz/con/c_sq_def} \;\;\; \right\rrbracket ~=~ \bra{0} \otimes I + \bra{1} \otimes M ~=~ \begin{bmatrix} I & M \end{bmatrix} 
 \end{equation}
 \end{definition}
 
-We represent the additional dimension of $\tilde{M}$ as a vertical wire to distinguish it as the control wire. By definition, controlled matrices satisfy the two equations:
+We represent the additional dimension of $\tilde{M}$ as a vertical wire to distinguish it as the control wire. Controlled matrices satisfy the two equations:
 
 \begin{equation*}
     \tikzfig{tikz/con/c_sq0}
