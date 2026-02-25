@@ -365,7 +365,7 @@ The following two lemmas follow immediately from the bra-ket definition of $\low
     \begin{gather} %\label{eq:cs_dist}
         \tilde{\psi_1} \boxtimes (\tilde{\psi_2} \boxplus \tilde{\psi_3}) ~=~ \tikzfig{tikz/distproof/d1} ~
         \eqq{\ref{rule:BZW}} ~ \tikzfig{tikz/distproof/d2} \neweqline ~=~ \tikzfig{tikz/distproof/d3} ~
-        \eqq{\ref{eq:cs_copy}} ~ \tikzfig{tikz/distproof/d4} \neweqline ~=~ \tikzfig{tikz/distproof/d5}
+        \eqq{\ref{rule:CScpy}} ~ \tikzfig{tikz/distproof/d4} \neweqline ~=~ \tikzfig{tikz/distproof/d5}
         ~=~ \tikzfig{tikz/distproof/d6} \neweqline ~=~ (\tilde{\psi_1} \boxtimes \tilde{\psi_2}) \boxplus (\tilde{\psi_1} \boxtimes \tilde{\psi_3})
     \end{gather} 
 
@@ -390,10 +390,10 @@ The following two lemmas follow immediately from the bra-ket definition of $\low
     Where $D_{even}, D_{odd}$ are PNF diagrams. Since they are over $n$ variables, we can apply the inductive hypothesis and obtain:
     \begin{equation}\tag{*}
         D_{even} = \begin{bmatrix}
-            1 & a_0 \\ 0 & a_2 \\ ... & ... \\ 0 & a_{2^{n+1}-2}
-        \end{bmatrix}, 
+            1 & a_0 \\ 0 & a_2 \\ \vdots & \vdots \\ 0 & a_{2^{n+1}-2}
+        \end{bmatrix}, \qquad \qquad
         D_{odd} = \begin{bmatrix}
-            1 & a_1 \\ 0 & a_3 \\ ... & ... \\ 0 & a_{2^{n+1}-1}
+            1 & a_1 \\ 0 & a_3 \\ \vdots & \vdots \\ 0 & a_{2^{n+1}-1}
         \end{bmatrix}
     \end{equation}
 
@@ -411,17 +411,17 @@ The following two lemmas follow immediately from the bra-ket definition of $\low
     \begin{gather}
         \tikzfig{tikz/poly/lemmas/uni4}
         \neweqline ~=~ (D_{even} \otimes \ketz) + (D_{odd}\keto \brao \otimes  \keto) \neweqline \eqq{*}~ \begin{bmatrix}
-            1 & a_0 \\ 0 & a_2 \\ ... & ... \\ 0 & a_{2^{n+1}-2}
+            1 & a_0 \\ 0 & a_2 \\ \vdots & \vdots \\ 0 & a_{2^{n+1}-2}
         \end{bmatrix} \otimes \ketz + \begin{bmatrix}
-            0 & a_1 \\ 0 & a_3 \\ ... & ... \\ 0 & a_{2^{n+1}-1}
+            0 & a_1 \\ 0 & a_3 \\ \vdots & \vdots \\ 0 & a_{2^{n+1}-1}
         \end{bmatrix} \otimes \keto  \neweqline
         ~=~ \begin{bmatrix}
-            1 & a_0 \\ 0 & 0 \\ 0 & a_2 \\ 0 & 0 \\ ... & ... \\ 0 & a_{2^{n+1}-2} \\ 0 & 0
+            1 & a_0 \\ 0 & 0 \\ 0 & a_2 \\ 0 & 0 \\ \vdots & \vdots \\ 0 & a_{2^{n+1}-2} \\ 0 & 0
         \end{bmatrix} + \begin{bmatrix}
-            0 & 0 \\ 0 & a_1 \\ 0 & 0 \\ 0 & a_3 \\ ... & ... \\ 0 & 0 \\ 0 & a_{2^{n+1}-1}
+            0 & 0 \\ 0 & a_1 \\ 0 & 0 \\ 0 & a_3 \\ \vdots & \vdots \\ 0 & 0 \\ 0 & a_{2^{n+1}-1}
         \end{bmatrix} 
         ~=~ \begin{bmatrix}
-            1 & a_0 \\ 0 & a_1 \\ 0 & a_2 \\ 0 & a_3 \\ ... & ... \\ 0 & a_{2^{n+1}-2} \\ 0 & a_{2^{n+1} -1}
+            1 & a_0 \\ 0 & a_1 \\ 0 & a_2 \\ 0 & a_3 \\ \vdots & \vdots \\ 0 & a_{2^{n+1}-2} \\ 0 & a_{2^{n+1} -1}
         \end{bmatrix}
     \end{gather}
 
@@ -564,7 +564,7 @@ The following two lemmas follow immediately from the bra-ket definition of $\low
     Finally, to see $\phi_n$ is an isomorphism, we use Theorem \ref{thm:uni_pnf} to write an arbitrary controlled state in PNF:
     \begin{gather}
         \begin{bmatrix}
-            1 & a_0 \\ 0 & a_1 \\ ... & .. \\ 0 & a_{2^{n}-1}
+            1 & a_0 \\ 0 & a_1 \\ \vdots & \vdots \\ 0 & a_{2^{n}-1}
         \end{bmatrix}
         \quad = \quad \tikzfig{tikz/poly/pnf}
     \end{gather}
