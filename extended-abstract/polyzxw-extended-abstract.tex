@@ -3,8 +3,12 @@
 \usepackage{amsmath, amssymb}
 \usepackage{stmaryrd}
 \usepackage{tikzit}
-\input{../tikz/zxw_styles.tikzdefs}
-\input{../tikz/zxw_styles.tikzstyles}
+\newcommand{\tikzroot}{../tikz}
+\IfFileExists{\tikzroot/zxw_styles.tikzdefs}{}{\renewcommand{\tikzroot}{extended-abstract/../tikz}}
+\newcommand{\refsroot}{../refs}
+\IfFileExists{\refsroot.bib}{}{\renewcommand{\refsroot}{extended-abstract/../refs}}
+\input{\tikzroot/zxw_styles.tikzdefs}
+\input{\tikzroot/zxw_styles.tikzstyles}
 \usepackage[english]{babel}
 \usepackage{enumitem}
 
@@ -15,6 +19,34 @@
 \newcommand{\CMzero}{\Rule{CM0}}
 \newcommand{\CMcpy}{\Rule{CMcpy}}
 \newcommand{\CMcom}{\Rule{CMcom}}
+\newcommand{\csring}{\tilde{\mathcal{S}}_n}
+\newcommand{\polyring}{\mathbb{C}[x_1,\ldots,x_n]/(x_1^2,\ldots,x_n^2)}
+\newcommand{\lowerbox}[2][5]{\raisebox{-#1pt}{#2}}
+\newcommand{\zspids}[1][0.4]{\begin{tikzpicture}[scale=#1]
+  \begin{pgfonlayer}{nodelayer}
+    \node [style=gn] (0) at (0, 0) {};
+    \node [style=none] (1) at (0.5, -0.5) {};
+    \node [style=none] (2) at (-0.5, -0.5) {};
+    \node [style=none] (3) at (0, 0.75) {};
+    \node [style=label] (4) at (0, -0.5) {$\ldots$};
+  \end{pgfonlayer}
+  \begin{pgfonlayer}{edgelayer}
+    \draw (0) to (1.center);
+    \draw (2.center) to (0);
+    \draw (3.center) to (0);
+  \end{pgfonlayer}
+\end{tikzpicture}
+}
+\newcommand{\numberstate}[1][a]{\begin{tikzpicture}[scale=0.4]
+  \begin{pgfonlayer}{nodelayer}
+    \node [style=gbox] (0) at (0, 0) {$#1$};
+    \node [style=none] (1) at (0, 1) {};
+  \end{pgfonlayer}
+  \begin{pgfonlayer}{edgelayer}
+    \draw (1.center) to (0);
+  \end{pgfonlayer}
+\end{tikzpicture}
+}
 \setlength{\textfloatsep}{8pt plus 1pt minus 2pt}
 \setlength{\floatsep}{7pt plus 1pt minus 1pt}
 \setlength{\intextsep}{7pt plus 1pt minus 1pt}
@@ -38,50 +70,55 @@ We show that controlled diagrams in the ZXW-calculus admit rich algebraic struct
 \end{abstract}
 
 Quantum control is a universal primitive that underlies block encodings, LCUs and Hamiltonian simulation. Yet graphical calculi typically treat control as a gadget rather than a first-class algebraic object. We work in the qubit ZXW-calculus (complete for finite-dimensional linear maps) and add controlled states and controlled square matrices as generators. The goal is to characterise their algebraic laws and exploit them for equational reasoning.
-These rewrite rules already support Hamiltonian-level reasoning in practice: they are used for Hamiltonian summation/exponentiation~\cite{shaikh2022sum}, and the copy rule \CMcpy\ has been used to derive general forms of two-body fermionic Hamiltonians under arbitrary linear encodings~\cite{mcdowallrose2025f2q}, directly relevant to electronic-structure mappings.
+These rewrite rules already support Hamiltonian-level reasoning in practice: they are used for Hamiltonian summation/exponentiation~\cite{shaikh2022sum}, and the copy rule \CMcpy\ found in this work has been used to derive general forms of two-body fermionic Hamiltonians under arbitrary linear encodings~\cite{mcdowallrose2025f2q}, directly relevant to electronic-structure mappings.
 As a consequence, completeness for matrix-valued polynomials gives a purely diagrammatic route to factorising arbitrary qubit Hamiltonians (see Fig.~\ref{fig:factorization-proof}), including settings with black-box matrix terms. The same framework unifies ordinary controlled gates, multi-control constructions, and algebraic manipulation of controlled states in one calculus. Interpreting controlled states as multilinear polynomials also exposes direct links to classical algebraic tooling for optimization and structural analysis.
 
 \paragraph{Controlled generators (Def.~2.1, 2.2).} We reproduce the two defining equations exactly to fix notation and semantics before stating the main algebraic results.
 \par
 \noindent
-\begin{minipage}[c]{0.49\linewidth}
+\begin{minipage}[t]{0.49\linewidth}
+\vspace{0pt}
 \begin{equation}
-  \resizebox{0.76\linewidth}{!}{$\left\llbracket \quad \tikzfig{../tikz/con/c_sq_def} \;\;\; \right\rrbracket ~=~ \bra{0} \otimes I + \bra{1} \otimes M ~=~ \begin{bmatrix} I & M \end{bmatrix}$}
+  \scalebox{0.76}{$\left\llbracket \quad \tikzfig{\tikzroot/con/c_sq_def} \;\;\; \right\rrbracket ~=~ \bra{0} \otimes I + \bra{1} \otimes M ~=~ \begin{bmatrix} I & M \end{bmatrix}$}
   \label{eq:def-csq}
 \end{equation}
 \end{minipage}\hfill
-\begin{minipage}[c]{0.49\linewidth}
+\begin{minipage}[t]{0.49\linewidth}
+\vspace{0pt}
 \begin{equation}
- \resizebox{0.56\linewidth}{!}{$\left\llbracket \;\;\; \tikzfig{../tikz/con/c_state_def} \;\;\; \right\rrbracket ~=~ \left[ \begin{array}{cc|cc} \cline{2-3} \; 1 \; & & & \\ \; 0 \; & & & \\ \; \vdots \; & \multicolumn{2}{c}{\psi} \\ & \multicolumn{2}{c}{} \\ \; 0 \; & & \\ \cline{2-3} \end{array} \right]$}
+ \scalebox{0.76}{$\left\llbracket \;\;\; \tikzfig{\tikzroot/con/c_state_def} \;\;\; \right\rrbracket ~=~ \ket{\vec{0}}\bra{0} + \ket{\psi}\bra{1} = \left[\ket{\vec{0}} \quad \ket{\psi}\right]$}
 \label{eq:def-cstate}
 \end{equation}
 \end{minipage}
-These definitions separate the always-on $|0\rangle$ sector from the active $|1\rangle$ sector, which is precisely what the later ring rules exploit.
 
 \subsection{Ring structure of controlled states}
-With operations $\boxplus$ and $\boxtimes$, controlled $n$-partite states form a commutative ring. Operationally, additive identity/inverse, associativity/commutativity, and distributivity are derived directly by local rewrites rather than matrix detours.
+With operations $\boxplus$ and $\boxtimes$, controlled $n$-partite states form a commutative ring. Operationally, additive identity/inverse, associativity/commutativity, and distributivity are derived natively through the axioms of the calculus.
 
 \subsection{Ring structure of controlled square matrices}
 Controlled square matrices form a non-commutative ring under controlled addition and composition. The two base equations from Eq.~3.2 are:
 \begin{equation}
-  \tikzfig{../tikz/con/c_sq0}
+  \tikzfig{\tikzroot/con/c_sq0}
   \qquad
-  \tikzfig{../tikz/con/c_sq1}
+  \tikzfig{\tikzroot/con/c_sq1}
   \label{eq:csq-pair}
 \end{equation}
 These identities fix the inactive and active sectors. Together with copy and sector-wise commutation (Fig.~\ref{fig:ctrl-ring}), they permit duplication and reordering of terms in disjoint sectors entirely inside the calculus.
 
 \subsection{Polynomial semantics and complete normal form}
-Arithmetic ZXW diagrams admit a canonical polynormal form (PNF), shown in Fig.~\ref{fig:pnf}. The key semantic consequence is
+Arithmetic ZXW diagrams admit a canonical polynormal form (PNF), shown in Fig.~\ref{fig:pnf}. The key result is the following isomorphism:
 \[
-\tilde S_n \simeq \mathbb{C}[x_1,\ldots,x_n]/(x_1^2,\ldots,x_n^2),
+\tilde{\mathcal{S}}_n \simeq \polyring.
 \]
-so controlled states correspond exactly to multilinear polynomials. Equality checking reduces to rewriting both sides to PNF and comparing coefficients.
-The novelty is that this work gives explicit controlled-diagram rewrite rules for that normalization pipeline. It builds on state-normal-form completeness from ZW/ZX~\cite{hadzihasanovic2017thesis,Hadzihasanovic2018zwzxcomplete}, and goes beyond prior Cartesian-Distributive analyses where explicit rule-level derivation was given only for Boolean circuits~\cite{wilson2021revderbool,wilson2023diffpolycirc}.
+So controlled states correspond exactly to multilinear polynomials. Equality checking reduces to rewriting both sides to PNF and comparing coefficients. This builds on state-normal-form completeness from ZW/ZX~\cite{hadzihasanovic2017thesis,Hadzihasanovic2018zwzxcomplete}, and goes beyond prior Cartesian-Distributive analyses where explicit rule-level derivation was given only for Boolean circuits~\cite{wilson2021revderbool,wilson2023diffpolycirc}.
+
+First, we shall define the map $\phi_n: \polyring \to \csring$ before proving it induces an isomorphism. $\phi_n$ is defined to map an arbitrary polynomial $p(x_1, ..., x_n) = a_0 + a_1x_n + ... + a_{2^n-1}x_1x_2...x_n$ to the PNF in Fig.~\ref{fig:pnf}.
+
+The proof that $\phi_n$ is a homomorphism follows from controlled addition/multiplication rewrites, and bijectivity follows from uniqueness of the PNF coefficients.
+
 
 \begin{figure}[t]
   \centering
-  \tikzfig{../tikz/poly/pnf}
+  \tikzfig{\tikzroot/poly/pnf}
   \vspace{0.2em}
   {\small
   $
@@ -92,10 +129,9 @@ The novelty is that this work gives explicit controlled-diagram rewrite rules fo
     \vdots & \vdots \\
     0 & a_{2^n-1}
   \end{bmatrix}$}
-  \caption{Polynormal form for controlled states (sums feeding products), with its matrix semantics shown explicitly.}
+  \caption{Polynormal form for controlled states in the arithmetic fragment of the ZW-calculus.}
   \label{fig:pnf}
 \end{figure}
-The PNF figure is the canonical endpoint for arithmetic rewriting.
 
 \begin{figure}[t]
   \centering
@@ -107,29 +143,28 @@ The PNF figure is the canonical endpoint for arithmetic rewriting.
     \begin{minipage}{\linewidth}
       \vspace{-1.2em}
       \begin{gather*}
-        \tikzfig{../tikz/con/c_state0}\\[-0.4em]
+        \tikzfig{\tikzroot/con/c_state0}\\[-0.4em]
         \CSzero\\
-        \scalebox{0.9}{\tikzfig{../tikz/con/cs_copy}}\\[-0.4em]
+        \scalebox{0.9}{\tikzfig{\tikzroot/con/cs_copy}}\\[-0.4em]
         \CScpy
       \end{gather*}
     \end{minipage} &
     \begin{minipage}{\linewidth}
       \vspace{-1.2em}
       \begin{gather*}
-        \scalebox{0.9}{\tikzfig{../tikz/con/c_sq0}}\\[-0.4em]
+        \scalebox{0.9}{\tikzfig{\tikzroot/con/c_sq0}}\\[-0.4em]
         \CMzero\\
-        \scalebox{0.85}{\tikzfig{../tikz/con/csq_copy}}\\[-0.4em]
+        \scalebox{0.85}{\tikzfig{\tikzroot/con/csq_copy}}\\[-0.4em]
         \CMcpy\\
-        \scalebox{0.85}{\tikzfig{../tikz/con/csq_add_comm_statement}}\\[-0.4em]
+        \scalebox{0.85}{\tikzfig{\tikzroot/con/csq_add_comm_statement}}\\[-0.4em]
         \CMcom
       \end{gather*}
     \end{minipage}\\
     \hline
   \end{tabular}
-  \caption{Controlled ring rules used below: identities on $|0\rangle$, copy lemmas, and disjoint-sector commutation.}
+  \caption{Controlled ring rules used below: identities on $|0\rangle$, copy lemmas, and disjoint-sector commutation. Adding the ZX, ZW, and ZXW Rules here suffice for completeness of arithmetic diagrams, the ring of controlled states and the ring of controlled square matrices. [TODO link all]}
   \label{fig:ctrl-ring}
 \end{figure}
-These rules bridge the definitions above to the completeness results below: \CMcpy\ duplicates controlled terms and \CMcom\ reorders terms on disjoint sectors, enabling factorisable matrix-valued polynomials.
 
 \subsection{Completeness for matrix-valued polynomials}
 Replacing scalar indeterminates in PNF by controlled square matrices yields multivariate polynomials over same-size matrices. The same rewrite fragment remains complete in this lifted setting, enabling normalization and factorization with black-box matrix terms.
@@ -137,22 +172,34 @@ Replacing scalar indeterminates in PNF by controlled square matrices yields mult
 \subsection{Higher-order control map}
 The map $\Control$ sends a matrix to its controlled form and preserves sequential and parallel composition. Iterating $\Control$ recovers standard multi-control gates (e.g., Toffoli from controlled-controlled-$X$), connecting circuit-level control to the rewrite theory above.
 
+\paragraph{Ring and PNF summary.}
+Let \(\tilde{\mathcal{S}}_n\) be the set of all controlled \(n\)-partite states.
+We show that \((\tilde{\mathcal{S}}_n,\boxplus,\boxtimes)\) defines a commutative ring:
+\begin{itemize}
+\item \(\boxplus\) gives an Abelian group
+\item \(\boxtimes\) gives a commutative monoid
+\item \(\boxtimes\) distributes over \(\boxplus\)
+\end{itemize}
+
+Moreover, \(\tilde{\mathcal{S}}_n\) is a ring isomorphism of multilinear polynomials \(\mathbb{C}[x_1,\ldots,x_n]/(x_1^2,\ldots,x_n^2)\). Likewise, let \(\tilde{M}_n\) be the set of all controlled square matrices on \(n\) qubits. We show that \((\tilde{M}_n,+,\times)\) forms a non-commutative ring.
+
+These structures support Polynomial Normal Form: higher-order generators are not repeated, and control structure is arranged canonically so coefficients of \(p(x_1,\ldots,x_n)\) appear in the standard PNF ordering (Fig.~\ref{fig:pnf}).
+
 \subsection{Diagrammatic Verification of Ring Requirements}
 \begingroup
 \small
-\paragraph{(1) Definition of addition.}
-\(\scalebox{0.54}{\tikzfig{../tikz/con/csq_sum}}\).
-This defines weighted controlled addition \(\widetilde{\sum_i c_iM_i}\) by control-branching.
-
-\paragraph{(2) Definition of multiplication.}
-\(\scalebox{0.54}{\tikzfig{../tikz/con/csq_prod}}\).
-This defines controlled multiplication \(\widetilde{\prod_i M_i}\) by serial composition in the active sector.
+\paragraph{(1-2) Definitions of addition and multiplication.}
+The left diagram defines weighted controlled addition \(\widetilde{\sum_i c_iM_i}\) by control-branching, and the right diagram defines controlled multiplication \(\widetilde{\prod_i M_i}\) by serial composition in the active sector.
+\[
+\scalebox{0.74}{\tikzfig{\tikzroot/con/csq_sum}}
+\qquad\qquad\qquad
+\scalebox{0.74}{\tikzfig{\tikzroot/con/csq_prod}}
+\]
 
 \paragraph{(3) Definition of scalar multiplication.}
-For \(c\in\mathbb{C}\), set \(c\odot\tilde M:=\widetilde{cM}\), the one-branch instance of (1).
+For \(c\in\mathbb{C}\), set \(a\odot\tilde M:=\widetilde{aM}\), the one-branch instance of (2). $\lowerbox{\numberstate}$
 
 \paragraph{(4) Commutativity of addition.}
-\(\scalebox{0.39}{\tikzfig{../tikz/con/csq_add_comm_statement}}\).
 This is \CMcom: swapping additive branches preserves the same controlled sum.
 
 \paragraph{(5) Additive identity and additive inverse.}
@@ -171,8 +218,8 @@ Regrouping the product wiring from (2) gives
 \((\tilde M_1\boxtimes\tilde M_2)\boxtimes\tilde M_3=\tilde M_1\boxtimes(\tilde M_2\boxtimes\tilde M_3)\).
 
 \paragraph{(9) Left and right distributivity.}
-\(\scalebox{0.42}{\tikzfig{../tikz/con/csq_dist_statement}}\).
 Control copying (\CMcpy) yields left distributivity; the mirrored rewrite yields right distributivity.
+\[\scalebox{0.62}{\tikzfig{\tikzroot/con/csq_dist_statement}}\].
 
 \paragraph{(10) Multiplicative inverse (when defined).}
 Not a ring axiom. If \(M\) is invertible, then
@@ -191,7 +238,7 @@ Not a ring axiom. If \(M\) is invertible, then
 \begingroup
 \footnotesize
 \bibliographystyle{abbrv}
-\bibliography{../refs}
+\bibliography{\refsroot}
 \endgroup
 
 \end{document}
