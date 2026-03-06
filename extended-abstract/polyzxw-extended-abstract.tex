@@ -232,27 +232,27 @@ The proof that $\phi_n$ is a homomorphism follows from controlled addition/multi
 
 \paragraph{Completeness for matrix-valued polynomials}
 Replacing scalar indeterminates in PNF by controlled square matrices yields multivariate polynomials over same-size matrices. The same rewrite fragment remains complete in this lifted setting, enabling normalization and factorization with black-box matrix terms.
-
+\newpage
 \paragraph{Diagrammatic Verification of Ring Requirements}
 \begin{enumerate}
-  \item Ring addition.\\ The left diagram defines weighted controlled addition \(\widetilde{\sum_i c_iM_i}\) by control-branching.
+  \item \textbf{Ring addition:} The left diagram defines weighted controlled addition \(\widetilde{\sum_i c_iM_i}\) by control-branching.
 \[
 \scalebox{0.74}{\tikzfig{\tikzroot/con/csq_sum}}
 \qquad\qquad\qquad
 \scalebox{0.74}{\tikzfig{\tikzroot/con/csq_prod}}
 \]
-  \item Ring multiplication.\\ The right diagram above defines controlled multiplication \(\widetilde{\prod_i M_i}\) by serial composition in the active sector.
-  \item Scalar multiplication.\\ For \(c\in\mathbb{C}\), set \(a\odot\tilde M:=\widetilde{aM}\), the one-branch instance of (2). $\lowerbox{\numberstate}$
-  \item Commutativity of addition.\\ This is (\CMcom): swapping additive branches preserves the same controlled sum.
-  \item Additive identity and additive inverse.\\ Using (1), \(\tilde M\boxplus\widetilde{0}=\tilde M\), and with \((-\tilde M):=(-1)\odot\tilde M\), \(\tilde M\boxplus(-\tilde M)=\widetilde{0}\).
-  \item Associativity of addition.\\ Regrouping the same addition wiring from (1) gives
+  \item \textbf{Ring multiplication:}\\ The right diagram above defines controlled multiplication \(\widetilde{\prod_i M_i}\) by serial composition in the active sector.
+  \item \textbf{Scalar multiplication:} For \(c\in\mathbb{C}\), set \(a\odot\tilde M:=\widetilde{aM}\), the one-branch instance of (2). $\lowerbox{\numberstate}$
+  \item \textbf{Commutativity of addition:}\\ This is (\CMcom): swapping additive branches preserves the same controlled sum.
+  \item \textbf{Additive identity and additive inverse:} Using (1), \(\tilde M\boxplus\widetilde{0}=\tilde M\), and \((-\tilde M):=(-1)\odot\tilde M\), \(\tilde M\boxplus(-\tilde M)=\widetilde{0}\).
+  \item \textbf{Associativity of addition:}\\ Regrouping the same addition wiring from (1) gives
 \((\tilde M_1\boxplus\tilde M_2)\boxplus\tilde M_3=\tilde M_1\boxplus(\tilde M_2\boxplus\tilde M_3)\).
-  \item Multiplicative identity.\\ By \CMzero\ with \(M=I\), the unit is \(\widetilde{I}\), with \(\widetilde{I}\boxtimes\tilde M=\tilde M=\tilde M\boxtimes\widetilde{I}\).
-  \item Associativity of multiplication.\\ Regrouping the product wiring from (2) gives \((\tilde M_1\boxtimes\tilde M_2)\boxtimes\tilde M_3=\tilde M_1\boxtimes(\tilde M_2\boxtimes\tilde M_3)\).
-  \item Left and right distributivity.\\ Control copying (\CMcpy) yields left distributivity; the mirrored rewrite yields right distributivity.
+  \item \textbf{Multiplicative identity:} By \CMzero\ with \(M=I\), the unit is \(\widetilde{I}\), with \(\widetilde{I}\boxtimes\tilde M=\tilde M=\tilde M\boxtimes\widetilde{I}\).
+  \item \textbf{Associativity of multiplication:}\\ Regrouping the product wiring from (2) gives \((\tilde M_1\boxtimes\tilde M_2)\boxtimes\tilde M_3=\tilde M_1\boxtimes(\tilde M_2\boxtimes\tilde M_3)\).
+  \item \textbf{Left and right distributivity:}\\ Control copying (\CMcpy) yields left distributivity; the mirrored rewrite yields right distributivity.
   \[\scalebox{0.62}{\tikzfig{\tikzroot/con/csq_dist_statement}}\]
-  \item Multiplicative inverse (when defined).\\ Not a ring axiom. If \(M\) is invertible, then \(\tilde M\boxtimes\widetilde{M^{-1}}=\widetilde{I}=\widetilde{M^{-1}}\boxtimes\tilde M\).
-\endgroup
+  \item \textbf{Multiplicative inverse (when defined):} Not a ring axiom. If \(M\) is invertible, then \(\tilde M\boxtimes\widetilde{M^{-1}}=\widetilde{I}=\widetilde{M^{-1}}\boxtimes\tilde M\).
+\end{enumerate}
 
 \begin{figure}[t]
   \centering
