@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.4.8)  6 MAR 2026 16:39
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.4.8)  6 MAR 2026 16:50
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -967,7 +967,7 @@ ed.
 Here is how much of TeX's memory you used:
  27021 strings out of 473190
  519754 string characters out of 5715801
- 1027473 words of memory out of 5000000
+ 1027620 words of memory out of 5000000
  49659 multiletter control sequences out of 15000+600000
  660155 words of font info for 257 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -988,7 +988,7 @@ cal/texlive/2025/texmf-dist/fonts/type1/urw/symbol/usyr.pfb></usr/local/texlive
 s/type1/urw/times/utmr8a.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/ur
 w/times/utmr8a.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/urw/times/ut
 mri8a.pfb>
-Output written on polyzxw-extended-abstract.pdf (4 pages, 165343 bytes).
+Output written on polyzxw-extended-abstract.pdf (4 pages, 165352 bytes).
 PDF statistics:
  176 PDF objects out of 1000 (max. 8388607)
  136 compressed objects within 2 object streams
