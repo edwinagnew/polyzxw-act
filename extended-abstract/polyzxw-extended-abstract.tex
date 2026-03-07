@@ -59,6 +59,17 @@
     \draw (1.center) to (0);
   \end{pgfonlayer}
 \end{tikzpicture}}
+\newcommand{\numbergate}[1][a]{\begin{tikzpicture}[scale=0.5]
+	\begin{pgfonlayer}{nodelayer}
+		\node [style=gbox] (0) at (0, 0) {$#1$};
+		\node [style=none] (3) at (0, 0.75) {};
+		\node [style=none] (4) at (0, -0.75) {};
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\draw (3.center) to (0);
+		\draw (0) to (4.center);
+	\end{pgfonlayer}
+\end{tikzpicture}}
 \newcommand{\idwire}[1][0.5]{\begin{tikzpicture}[scale=#1]
 	\begin{pgfonlayer}{nodelayer}
 		\node [style=none] (0) at (0, 0) {};
@@ -94,6 +105,24 @@
 		\draw (3.center) to (0);
 	\end{pgfonlayer}
 \end{tikzpicture}}
+\newcommand{\redzeroup}{\begin{tikzpicture}
+	\begin{pgfonlayer}{nodelayer}
+		\node [style={rn}] (0) at (0, 0) {};
+		\node [style=none] (1) at (0, 0.5) {};
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\draw (0) to (1.center);
+	\end{pgfonlayer}
+\end{tikzpicture}}
+\newcommand{\greenzeroup}{\begin{tikzpicture}
+	\begin{pgfonlayer}{nodelayer}
+		\node [style={gn}] (0) at (0, 0) {};
+		\node [style=none] (1) at (0, 0.5) {};
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\draw (0) to (1.center);
+	\end{pgfonlayer}
+\end{tikzpicture}}
 \setlength{\textfloatsep}{8pt plus 1pt minus 2pt}
 \setlength{\floatsep}{7pt plus 1pt minus 1pt}
 \setlength{\intextsep}{7pt plus 1pt minus 1pt}
@@ -121,11 +150,11 @@ These rewrite rules already support Hamiltonian-level reasoning in practice: the
 In this calculus, completeness for matrix-valued polynomials gives a purely diagrammatic route to factorising arbitrary qubit Hamiltonians.
 Unlike traditional quantum graphical calculi whose parameters are restricted to phases and generator arity, here we allow higher-order reasoning by black-boxing controlled states and controlled square matrices as new generators.
 This enables powerful new graphical rules for reasoning about quantum control in a wide variety of settings, where the axiomatic rewrites hold on the basis of the new generators being controlled diagrams irrespective of their internal structure.
-The same framework unifies ordinary quantum controlled gates, multiple-control constructions, and algebraic manipulation of controlled states in one calculus. Interpreting controlled states and operators as multilinear polynomials also exposes direct links to classical algebraic tooling for optimization and structural analysis.
+The same framework unifies ordinary quantum controlled gates, multiple-control constructions, and algebraic manipulation of controlled states in one calculus. Interpreting controlled states and operators as multilinear polynomials also exposes direct links to classical algebraic tooling for optimisation and structural analysis.
 
 \paragraph{Controlled states and controlled square matrices (Def.~2.1, 2.2).}
 In extension of qubit graphical calculi, we introduce two additional generators.
-\vspace{-1em}
+\vspace{-0.5em}
 \par
 \noindent
 \begin{minipage}[H]{0.49\linewidth}
@@ -148,18 +177,18 @@ As a prelude to our main results, we define the higher-order map $\Control$ to e
 $\Control$ sends any square matrix to its controlled square matrix acting on one more qubit wire---the control qubit. It is defined as the composition of the controlled square matrix generator with an arity-3 Z spider.
 For example, the CX gate can be recovered as $\Control(X)$:
 \begin{equation}
-    \tikzfig{\tikzroot/con/Fbox_cx}
+    \scalebox{0.8}{\tikzfig{\tikzroot/con/Fbox_cx}}
 \end{equation}
 Our results verify that $\Control$ preserves sequential and parallel composition, and that nesting $\Control$ recovers standard multi-control gates (e.g., Toffoli from $\Control(\Control(X))$.
 Therefore, standard notions of quantum control are captured by the more general (i.e. not imposing unitarity or Hermiticity) semantics of our controlled generators.
 
-\paragraph{Arithmetic diagrams and polynomial normal form.}
-Per Def. 5.1, a ZXW diagram with a single input on top is \textbf{arithmetic} if it contains only  $\lowerbox{\idwire}$, $\lowerbox{\swap}$ wires, $\lowerbox[10]{\wspids}$, $\lowerbox[10]{\zspids}$, $\lowerbox{\coWs}$ nodes and $\lowerbox{\numberstate}$ boxes.
+\paragraph{Arithmetic diagrams and a normal form for them.}
+Per Def.~5.1, a ZXW diagram with a single input on top is \textbf{arithmetic} if it contains only  $\lowerbox{\idwire}$, $\lowerbox{\swap}$ wires; $\lowerbox[10]{\wspids}$, $\lowerbox[10]{\zspids}$, $\lowerbox{\coWs}$ nodes; and $\lowerbox{\numberstate}$ boxes.
 We show that all arithmetic diagrams must be controlled states, and conversely all controlled states are realisable as arithmetic diagrams.
 In particular, we present an efficient algorithm to rewrite any arithmetic diagrams, and therefore any controlled states, to \emph{polynormal form (PNF)}, where control structure is arranged canonically so coefficients of \(p(x_1,\ldots,x_n)\) appear in the standard lexicographical ordering (Fig.~\ref{fig:pnf}).
 \begin{figure}[H]
   \centering
-  \tikzfig{\tikzroot/poly/pnf}
+  \scalebox{0.9}{\tikzfig{\tikzroot/poly/pnf}}
   \vspace{0.2em}
   {\small
   $
@@ -178,31 +207,51 @@ This rule set was given for Cartesian Distributive Categories in~\cite{wilson202
 
 \paragraph{Isomorphism to multilinear polynomials.}
 Let \(\tilde{\mathcal{S}}_n\) be the set of all controlled \(n\)-partite states.
-We show that \((\tilde{\mathcal{S}}_n,\boxplus,\boxtimes)\) defines a commutative ring:
-\begin{itemize}
-\setlength{\itemindent}{2.9em}
-\item \(\boxplus\) defines an Abelian group
-\item \(\boxtimes\) defines a commutative monoid
-\item \(\boxtimes\) distributes over \(\boxplus\)
-\end{itemize}
+Given controlled states $\tilde{\psi}$ and $\tilde{\phi}$, we define their addition $\tilde{\psi} \boxplus \tilde{\phi}$ and multiplication $\tilde{\psi} \boxtimes \tilde{\phi}$:
+\begin{equation}
+    \scalebox{0.8}{\tikzfig{\tikzroot/con/cs_add_def}} \qquad\qquad\qquad\qquad \scalebox{0.8}{\tikzfig{\tikzroot/con/cs_times_def}}
+\end{equation}
+We show that \((\tilde{\mathcal{S}}_n,\boxplus,\boxtimes)\) defines a commutative ring: \(\boxplus\) defines an Abelian group, \(\boxtimes\) defines a commutative monoid, and \(\boxtimes\) distributes over \(\boxplus\).
+Furthermore, we investigate the precise nature of the correspondence to the ring of multilinear polynomials \(\mathbb{C}[x_1,\ldots,x_n]/(x_1^2,\ldots,x_n^2)\). For states, this is a folklore result in algebraic complexity, thereby essential in the study of multipartite entanglement. We extend this study to \emph{controlled} states.
 
-Furthermore, we investigate the precise nature of the correspondence to the ring of multilinear polynomials \(\mathbb{C}[x_1,\ldots,x_n]/(x_1^2,\ldots,x_n^2)\). For statevectors, this is a folklore result in algebraic complexity, thereby essential in the study of multipartite entanglement. We extend this study to \emph{controlled} states.
-
-First, we define the map $\phi_n: \polyring \to \csring$, wihch maps an arbitrary multilinear polynomial $p(x_1, ..., x_n) = a_0 + a_1x_n + ... + a_{2^n-1}x_1x_2...x_n$ to the polynormal form in Fig.~\ref{fig:pnf}.
+First, we define the map $\phi_n: \polyring \to \csring$, which maps an arbitrary multilinear polynomial $p(x_1, ..., x_n) = a_0 + a_1x_n + ... + a_{2^n-1}x_1x_2...x_n$ to the polynormal form in Fig.~\ref{fig:pnf}.
 What we find is that the ring of controlled states is not only in bijection, but in \emph{isomorphism} to the ring of multilinear polynomials, where $\phi_n$ defines the isomorphism. In particular, the addition and multiplication operations on controlled states---identified with the W and Z generators respectively---are in one-to-one correspondence with the addition and multiplication of polynomials, and the rewrite rules for controlled states correspond to the algebraic properties of polynomials. This means that we can use the rich algebraic structure of polynomials to reason about controlled states in a powerful way, and that any algebraic manipulation of polynomials can be translated into a corresponding manipulation of controlled states in the ZXW-calculus.
 
-Likewise, let \(\tilde{M}_n\) be the set of all controlled square matrices on \(n\) qubits. We show that \((\tilde{M}_n,+,\times)\) forms a non-commutative ring.
+\paragraph{Completeness for matrix-valued polynomials}
+Having proven that controlled states form a ring isomorphic to multilinear polynomials, the question is what algebraic structure controlled square matrices have.
+Let \(\tilde{M}_n\) be the set of all controlled square matrices on \(n\) qubits.
+We define their weighted addition \(\widetilde{\sum_i c_iM_i}\) and multiplication \(\widetilde{\prod_i M_i}\):
+\begin{equation}
+  \scalebox{0.74}{\tikzfig{\tikzroot/con/csq_sum}}
+\qquad\qquad\qquad
+\scalebox{0.74}{\tikzfig{\tikzroot/con/csq_prod}}
+\end{equation}
+We give an efficient algorithm to write any controlled square matrix to polynormal form: Higher-order generators are not repeated, and control structure is arranged canonically so coefficients of \(p(x_1,\ldots,x_n)\) appear in PNF for controlled states (Fig.~\ref{fig:pnf}).
+Moreover, we prove that \((\tilde{M}_n,+,\times)\) forms a non-commutative ring---isomorphic to multivariate polynomials over same-size square matrices with coefficients in $\mathbb{C}$---due to satisfying all ring axioms:
+\begin{enumerate}[noitemsep]
+  \item Scalar multiplication.\\ For \(c\in\mathbb{C}\), set \(\tilde{a}\times\tilde{M}:=\widetilde{aM}\), i.e. the multiplication defined in Eq.~(5) by $\lowerbox{\numberstate}$.
+  \item Commutativity of addition.\\ This is axiomatised in (\CMcom).
+  \item Additive identity.\\ The additive identity is defined as $\lowerbox[3]{\scalebox{0.8}{\redzeroup}} \otimes I_n$, as the unit of $\lowerbox[10]{\wspids}$ satisfying \(\tilde M + \tilde{0}=\tilde M\).
+  \item Additive inverse.\\ The additive inverse of $\tilde M$ is \(\widetilde{-M}:= \raisebox{-5pt}{\numbergate[-1]} \circ \tilde{M}\), satisfying \(\tilde M + \widetilde{-M}=\tilde{0}\).
+  \item Associativity of addition.\\ This follows from associativity of $\lowerbox[10]{\wspids}$: \((\tilde M_1 + \tilde M_2) + \tilde M_3=\tilde M_1 + (\tilde M_2 + \tilde M_3)\).
+  \item Multiplicative identity.\\ Like the additive identity, the multiplicative identity is $\lowerbox[3]{\scalebox{0.8}{\greenzeroup}} \otimes I_n$, as the unit of $\lowerbox[10]{\zspids}$ satisfying \(\tilde M \times \tilde{1}=\tilde M\).
+  \item Associativity of multiplication.\\ This follows from associativity of $\lowerbox[10]{\zspids}$: \((\tilde M_1\times\tilde M_2)\times\tilde M_3=\tilde M_1\times(\tilde M_2\times\tilde M_3)\).
+  % \item Multiplicative inverse (when defined; not a ring axiom).\\ If \(M\) is invertible, then \(\tilde M\times\widetilde{M^{-1}}=\widetilde{I}=\widetilde{M^{-1}}\times\tilde M\).
+  \item Distributivity of multiplication over addition.\\
+  \item We prove this from (\CMcom), (\CMcpy), and (\Rule{BZW}). Thus, \(\tilde M_1 \times (\tilde M_2 + \tilde M_3)=(\tilde M_1 \times \tilde M_2) + (\tilde M_1 \times \tilde M_3)\):
+  % We prove this follows from (\CMcom), (\CMcpy), and (\Rule{BZW}). Therefore, we have \(\tilde M_1 \times (\tilde M_2 + \tilde M_3)=(\tilde M_1 \times \tilde M_2) + (\tilde M_1 \times \tilde M_3)\):
+  \begin{equation}
+    \scalebox{0.8}{\tikzfig{\tikzroot/con/csq_dist_statement}}
+  \end{equation}
+\endgroup
 
-These structures support Polynomial Normal Form: higher-order generators are not repeated, and control structure is arranged canonically so coefficients of \(p(x_1,\ldots,x_n)\) appear in the standard PNF ordering (Fig.~\ref{fig:pnf}).
-
-The proof that $\phi_n$ is a homomorphism follows from controlled addition/multiplication rewrites, and bijectivity follows from uniqueness of the PNF coefficients.
-
-\begin{figure}[t]
+\textbf{Summary of completeness results.}
+\begin{figure}[H]
   \centering
   \renewcommand{\arraystretch}{1.25}
   \begin{tabular}{|p{0.45\textwidth}|p{0.45\textwidth}|}
     \hline
-    \multicolumn{2}{|c|}{\textbf{Controlled Ring Rules (subset of Fig.~1)}} \\
+    \multicolumn{2}{|c|}{\textbf{Controlled Ring Rules (Subset of Fig.~1)}} \\
     \hline
     \begin{minipage}{\linewidth}
       \vspace{-1.2em}
@@ -214,7 +263,7 @@ The proof that $\phi_n$ is a homomorphism follows from controlled addition/multi
       \end{gather*}
     \end{minipage} &
     \begin{minipage}{\linewidth}
-      \vspace{-1.2em}
+      \vspace{-0.9em}
       \begin{gather*}
         \scalebox{0.9}{\tikzfig{\tikzroot/con/c_sq0}}\\[-0.4em]
         (\CMzero)\\
@@ -223,44 +272,12 @@ The proof that $\phi_n$ is a homomorphism follows from controlled addition/multi
         \scalebox{0.85}{\tikzfig{\tikzroot/con/csq_add_comm_statement}}\\[-0.4em]
         (\CMcom)
       \end{gather*}
+      \vspace{-1.7em}
     \end{minipage}\\
     \hline
   \end{tabular}
-  \caption{Controlled ring rules used below: identities on $|0\rangle$, copy lemmas, and disjoint-sector commutation. Adding the ZX, ZW, and ZXW Rules here suffice for completeness of arithmetic diagrams (Theorem 5.1), the ring of controlled states (Theorem 5.2) and the ring of controlled square matrices (Theorem 6.1).}
+  \caption{In this work, we prove that adding these Controlled Ring Rules to the complete ZW- or ZXW-calculus rules attains completeness for all arithmetic diagrams (Theorem~5.1), completeness for all ring axioms for controlled states (Theorem~5.2), and completeness for all ring axioms for controlled square matrices (Theorem~6.1).}
   \label{fig:ctrl-ring}
-\end{figure}
-
-\paragraph{Completeness for matrix-valued polynomials}
-Replacing scalar indeterminates in PNF by controlled square matrices yields multivariate polynomials over same-size matrices. The same rewrite fragment remains complete in this lifted setting, enabling normalization and factorization with black-box matrix terms.
-
-\paragraph{Diagrammatic Verification of Ring Requirements}
-\begin{enumerate}
-  \item Ring addition.\\ The left diagram defines weighted controlled addition \(\widetilde{\sum_i c_iM_i}\) by control-branching.
-\[
-\scalebox{0.74}{\tikzfig{\tikzroot/con/csq_sum}}
-\qquad\qquad\qquad
-\scalebox{0.74}{\tikzfig{\tikzroot/con/csq_prod}}
-\]
-  \item Ring multiplication.\\ The right diagram above defines controlled multiplication \(\widetilde{\prod_i M_i}\) by serial composition in the active sector.
-  \item Scalar multiplication.\\ For \(c\in\mathbb{C}\), set \(a\odot\tilde M:=\widetilde{aM}\), the one-branch instance of (2). $\lowerbox{\numberstate}$
-  \item Commutativity of addition.\\ This is (\CMcom): swapping additive branches preserves the same controlled sum.
-  \item Additive identity and additive inverse.\\ Using (1), \(\tilde M\boxplus\widetilde{0}=\tilde M\), and with \((-\tilde M):=(-1)\odot\tilde M\), \(\tilde M\boxplus(-\tilde M)=\widetilde{0}\).
-  \item Associativity of addition.\\ Regrouping the same addition wiring from (1) gives
-\((\tilde M_1\boxplus\tilde M_2)\boxplus\tilde M_3=\tilde M_1\boxplus(\tilde M_2\boxplus\tilde M_3)\).
-  \item Multiplicative identity.\\ By \CMzero\ with \(M=I\), the unit is \(\widetilde{I}\), with \(\widetilde{I}\boxtimes\tilde M=\tilde M=\tilde M\boxtimes\widetilde{I}\).
-  \item Associativity of multiplication.\\ Regrouping the product wiring from (2) gives \((\tilde M_1\boxtimes\tilde M_2)\boxtimes\tilde M_3=\tilde M_1\boxtimes(\tilde M_2\boxtimes\tilde M_3)\).
-  \item Left and right distributivity.\\ Control copying (\CMcpy) yields left distributivity; the mirrored rewrite yields right distributivity.
-  \[\scalebox{0.62}{\tikzfig{\tikzroot/con/csq_dist_statement}}\]
-  \item Multiplicative inverse (when defined).\\ Not a ring axiom. If \(M\) is invertible, then \(\tilde M\boxtimes\widetilde{M^{-1}}=\widetilde{I}=\widetilde{M^{-1}}\boxtimes\tilde M\).
-\endgroup
-
-\begin{figure}[t]
-  \centering
-  \[
-  \resizebox{0.50\linewidth}{!}{$\widetilde{aI + bA^2 + cBA}\stackrel{\CMcpy,\Rule{BZW}}{=}\widetilde{aI + bA\!\cdot\!A + cB\!\cdot\!A}\stackrel{\CMcom}{=}\widetilde{aI + (bA+cB)A}$}
-  \]
-  \caption{Compact one-line factorization proof (Figure 3), preserving the same rewrite steps.}
-  \label{fig:factorization-proof}
 \end{figure}
 
 \begingroup
