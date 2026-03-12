@@ -3,7 +3,8 @@ Instead of the indeterminates being complex numbers represented by $\lowerbox{\n
 We then have that:
 \begin{thm}\label{thm:ctrl_pnf}
     ZXW diagrams where the outputs of an arithmetic ZW diagram are each plugged into controls of same-size controlled matrices, are isomorphic to multivariate polynomials over same-size square matrices with complex number coefficients.
-    The rules for their completeness are the same subset of ZXW rules used for completeness for arithmetic diagrams in the ZXW-calculus in \Cref{thm:uni_pnf}, plus the controlled square matrix as a generator along with the four rewrite rules for it in \Cref{def:ctrlsqmat}, \Cref{lem:csq_copy}, and \Cref{lem:csqaddcomm}. (See \Cref{fig:zxw_rules}.)
+    The rules for their completeness are the same subset of ZXW rules used for completeness for arithmetic diagrams in the ZXW-calculus in \Cref{thm:uni_pnf}, plus the \ref{rule:CMcpy} and \ref{rule:CMcom} rules.
+    When using the minimal set of rules from~\cite{deVisme2025minzw} for completeness for arithmetic diagrams, adding the \ref{rule:CMcpy} and \ref{rule:CMcom} rules is also a minimal rule set, i.e. none of the rules are derivable from the others.
 \end{thm}
 \begin{proof}
     The proof is by deriving a unique normal form, having fixed an (arbitrary) order on the same-size square matrix variables.
@@ -11,6 +12,10 @@ We then have that:
     Next, remove all $\lowerbox{\coWs}$'s by using \eqref{rule:CMcpy} to make copies of the controlled square matrices.
     Finally, use \eqref{rule:CMcom} to commute controlled square matrices whose controls act on mutually exclusive sectors past each other.
     The algorithm terminates with the controlled square matrix terms ordered by their mutually exclusive sectors in lexicographical order with respect to the order of their variables.
+
+    To show minimality, we can consider that the \ref{rule:CMcpy} and \ref{rule:CMcom} rules are the only rules here that involve the controlled square matrix generator, and so they cannot be derivable from the other rules here.
+    The \ref{rule:CMcpy} rule can change the total number of controlled square matrices in the diagram, while the \ref{rule:CMcom} rule cannot.
+    On the other hand, the \ref{rule:CMcom} rule can apply to two different controlled square matrices, changing their order where the outputs of one are inputs to the other; the \ref{rule:CMcpy} rule applies to two controlled square matrices only if they are of the same matrix.
 \end{proof}
 \begin{remark}
     These procedures guarantee that controlled operators in mutually exclusive sectors are commutable past each other.

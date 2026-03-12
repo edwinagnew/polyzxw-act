@@ -70,12 +70,15 @@ Thus, every controlled state can be represented as at least one arithmetic diagr
 
 
 \begin{thm}\label{thm:uni_pnf}
-    All arithmetic diagrams can be rewritten into PNF through application of ZXW rules. Therefore, those ZXW-calculus rules applied suffice for completeness for the arithmetic fragment of the ZXW-calculus.
+    All arithmetic diagrams can be rewritten into PNF through application of ZXW-calculus rules. Therefore, the rules applied suffice for completeness for the arithmetic fragment of the ZXW-calculus.
 \end{thm}
 
 \begin{proof}
     We present an algorithm to rewrite any arithmetic diagram to PNF in Appendix~\ref{sec:isoproofs}.
 \end{proof}
+\begin{remark}  
+    All of the qubit ZXW-calculus rules~\cite{poor2023completeness} applied in this proof are derivable from the minimal qubit ZW-calculus rules from~\cite{deVisme2025minzw}, derived independently from this work~\cite{Agnew2023Masters}. We can replace the \ref{rule:TA} rule with the rule of Lemma~\ref{lem:kill_quad}, and the qubit ZXW-calculus \ref{rule:WW} rule is derived in their~\cite[Lemma 23]{deVisme2025minzw}.
+\end{remark}
 
 \subsection{Isomorphism}
 At last we can prove the isomorphism. Recall that $\tilde{S_n}$ is the ring of controlled states with $n$ outputs. Throughout, we shall let $\polyring$ denote the multilinear ring $\mathbb{C}[x_1, ..., x_{n}]/(x_1^2, ..., x_{n}^2)$.
