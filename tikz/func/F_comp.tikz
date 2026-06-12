@@ -204,8 +204,6 @@
 			 to [bend right=45] cycle;
 		\draw [style=filllayer] (260.center) to (252.center);
 		\draw [style=filllayer] (260.center) to (253.center);
-		\draw [style=filllayer] (256.center) to (248.center);
-		\draw [style=filllayer] (259.center) to (257.center);
 		\draw (266.center) to (246.center);
 		\draw [style=filllayer] (275.center)
 			 to [bend right=45] (281.center)
@@ -220,7 +218,6 @@
 		\draw [style=filllayer] (286.center) to (278.center);
 		\draw [style=filllayer] (286.center) to (279.center);
 		\draw [style=filllayer] (282.center) to (274.center);
-		\draw [style=filllayer] (285.center) to (283.center);
 		\draw (293.center) to (273.center);
 		\draw (267.center) to (292.center);
 		\draw (297.center) to (28.center);
@@ -249,5 +246,8 @@
 			 to (237.center)
 			 to (236.center)
 			 to cycle;
+		\draw (285.center) to (283.center);
+		\draw (282.center) to (259.center);
+		\draw (248.center) to (256.center);
 	\end{pgfonlayer}
 \end{tikzpicture}

@@ -76,6 +76,9 @@
 		\node [style=gn] (270) at (11, 2.75) {};
 		\node [style=none] (271) at (11.75, 2.75) {};
 		\node [style=none] (272) at (2.75, 2.75) {};
+		\node [style=none] (273) at (-5, 0.5) {};
+		\node [style=none] (274) at (-0.75, 0.5) {};
+		\node [style=none] (275) at (-0.75, -1.5) {};
 	\end{pgfonlayer}
 	\begin{pgfonlayer}{edgelayer}
 		\draw [style=filllayer] (187.center)
@@ -90,12 +93,6 @@
 			 to cycle;
 		\draw [style=filllayer] (188.center) to (180.center);
 		\draw [style=filllayer] (188.center) to (181.center);
-		\draw (173.center) to (195.center);
-		\draw (187.center) to (185.center);
-		\draw (184.center) to (176.center);
-		\draw [style=filllayer] (201.center) to (175.center);
-		\draw [style=filllayer] (206.center) to (203.center);
-		\draw [style=filllayer] (204.center) to (205.center);
 		\draw [style=filllayer] (220.center)
 			 to [bend right=45] (211.center)
 			 to (219.center)
@@ -109,7 +106,6 @@
 		\draw [style=filllayer] (221.center) to (213.center);
 		\draw [style=filllayer] (221.center) to (214.center);
 		\draw (207.center) to (227.center);
-		\draw [style=filllayer] (232.center) to (208.center);
 		\draw [style=filllayer] (251.center)
 			 to [bend right=45] (242.center)
 			 to (250.center)
@@ -122,8 +118,6 @@
 			 to cycle;
 		\draw [style=filllayer] (252.center) to (244.center);
 		\draw [style=filllayer] (252.center) to (245.center);
-		\draw [style=filllayer] (268.center) to (265.center);
-		\draw [style=filllayer] (266.center) to (267.center);
 		\draw (270) to (271.center);
 		\draw (269) to (209.center);
 		\draw (220.center) to (270);
@@ -150,5 +144,17 @@
 			 to (262.center)
 			 to (261.center)
 			 to cycle;
+		\draw (184.center) to (176.center);
+		\draw (206.center) to (203.center);
+		\draw (173.center) to (273.center);
+		\draw (273.center) to (195.center);
+		\draw (275.center) to (204.center);
+		\draw (205.center) to (275.center);
+		\draw (274.center) to (175.center);
+		\draw (274.center) to (201.center);
+		\draw (187.center) to (185.center);
+		\draw (232.center) to (208.center);
+		\draw (268.center) to (265.center);
+		\draw (266.center) to (267.center);
 	\end{pgfonlayer}
 \end{tikzpicture}

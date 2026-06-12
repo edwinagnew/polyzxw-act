@@ -19,9 +19,8 @@ The qubit ZXW-calculus is built from the following generators:
 For simplicity, we introduce the following additional notation:
 
 \begin{gather}
-  \tikzfig{tikz/defs/zcirc}\\
-  \tikzfig{tikz/defs/xcirc}\qquad \qquad \qquad \qquad
-  \raisebox{-10pt}{\coWs[0.7]} ~:=~ \tikzfig{tikz/defs/w_trans}
+  \tikzfig{tikz/defs/zcirc} \quad  \tikzfig{tikz/defs/xcirc}\\ 
+  \tikzfig{tikz/defs/ws_def} \qquad \raisebox{-10pt}{\coWs[0.7]} ~:=~ \tikzfig{tikz/defs/w_trans}
 \end{gather}
 
 Equations in ZXW apply diagrammatic rewrite rules which prove equalities of the underlying matrices. Omitted from Figure~\ref{fig:zxw_rules} are the \emph{structural rules} ubiquitous to quantum graphical calculi, such as that swapping twice yields the two-qubit identity and that an S-shaped cup and cap pair yields the one-qubit identity. These collectively are referred to as the \emph{Only Connectivity Matters} rule, which governs that in this calculus the following operations preserve semantic equality: So long as all connections are preserved between all inputs, outputs, and generators of the diagram, the spatial position and orientation of each generator can be varied, and wires are free to cross or bend as they please.

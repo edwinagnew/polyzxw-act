@@ -143,12 +143,6 @@
 			 to cycle;
 		\draw [style=filllayer] (37.center) to (29.center);
 		\draw [style=filllayer] (37.center) to (30.center);
-		\draw (23.center) to (43.center);
-		\draw (36.center) to (34.center);
-		\draw (33.center) to (25.center);
-		\draw [style=filllayer] (48.center) to (24.center);
-		\draw [style=filllayer] (53.center) to (50.center);
-		\draw [style=filllayer] (51.center) to (52.center);
 		\draw [style=filllayer] (109.center)
 			 to (115.center)
 			 to [bend right=60, looseness=0.75] (107.center)
@@ -162,7 +156,6 @@
 		\draw [style=filllayer] (117.center) to (111.center);
 		\draw [style=filllayer] (117.center) to (112.center);
 		\draw (105.center) to (123.center);
-		\draw [style=filllayer] (124.center) to (106.center);
 		\draw [style=filllayer] (132.center)
 			 to (134.center)
 			 to [bend right=45] (127.center)
@@ -175,8 +168,6 @@
 			 to [bend right=45] cycle;
 		\draw [style=filllayer] (135.center) to (129.center);
 		\draw [style=filllayer] (135.center) to (130.center);
-		\draw [style=filllayer] (144.center) to (141.center);
-		\draw [style=filllayer] (142.center) to (143.center);
 		\draw (146) to (147.center);
 		\draw (145) to (107.center);
 		\draw (116.center) to (146);
@@ -241,5 +232,14 @@
 			 to (138.center)
 			 to (137.center)
 			 to cycle;
+		\draw (33.center) to (25.center);
+		\draw (36.center) to (34.center);
+		\draw (23.center) to (43.center);
+		\draw (53.center) to (50.center);
+		\draw (51.center) to (52.center);
+		\draw (24.center) to (48.center);
+		\draw (141.center) to (144.center);
+		\draw (142.center) to (143.center);
+		\draw (124.center) to (106.center);
 	\end{pgfonlayer}
 \end{tikzpicture}

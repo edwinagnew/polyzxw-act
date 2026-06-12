@@ -57,8 +57,6 @@
 			 to [bend right=45] cycle;
 		\draw [style=filllayer] (15.center) to (7.center);
 		\draw [style=filllayer] (15.center) to (8.center);
-		\draw [style=filllayer] (11.center) to (3.center);
-		\draw [style=filllayer] (14.center) to (12.center);
 		\draw (22.center) to (1.center);
 		\draw (21.center) to (0.center);
 		\draw (30.center) to (29.center);
@@ -80,5 +78,7 @@
 			 to (19.center)
 			 to (18.center)
 			 to cycle;
+		\draw (11.center) to (3.center);
+		\draw (14.center) to (12.center);
 	\end{pgfonlayer}
 \end{tikzpicture}

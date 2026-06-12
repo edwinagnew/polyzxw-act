@@ -20,15 +20,7 @@ Let $\tilde{M_n}$ be the set of controlled square matrices on $n$ qubits. The go
 
 
 
-Now we show that controlled matrix addition and multiplication satisfy the ring axioms. Associativity of $+, \times$ follow immediately from (\ref{rule:Aso}, \ref{rule:S1}), respectively. Commutativity of addition follows from the commutativity of matrix addition and Proposition \ref{prop:cmat_ops}, defining the following rewrite rule for controlled operators acting on mutually exclusive sectors:
-
-\begin{lemma}\label{lem:csqaddcomm}
-    Let $M_1, M_2$ be $n \times n$ matrices. 
-    \begin{equation*}
-       \tikzfig{tikz/con/csq_add_comm_statement}
-       \tag{\ref{rule:CMcom}}
-    \end{equation*}
-\end{lemma}
+Now we show that controlled matrix addition and multiplication satisfy the ring axioms. Associativity of $+, \times$ follow immediately from (\ref{rule:Aso}, \ref{rule:S1}), respectively. Commutativity of addition follows immediately from (\ref{rule:CMcom}). The remaining ring properties are as follows:
 
 \begin{lemma}\label{lem:csqaddid}
 The additive identity is defined as $\redzeroup \otimes I_n$:
@@ -41,7 +33,10 @@ The additive identity is defined as $\redzeroup \otimes I_n$:
 The multiplicative identity is defined very similarly as $\lowerbox{\greenzeroup} \otimes I_n$. The existence of additive inverses relies on the copying lemma from before.
 
 \begin{lemma}\label{lem:csq_inv}
-    The additive inverse of $\tilde{M}$ is $\raisebox{-5pt}{\numbergate[-1]} \circ \tilde{M}$.
+    The additive inverse of $\tilde{M}$ is built from $\raisebox{-5pt}{\numbergate[-1]}$:
+    \begin{equation*}
+    	\tikzfig{tikz/con/csq_add_inv_stmt}
+    \end{equation*}
 \end{lemma}
 
 \begin{lemma}\label{lem:csq_dist}
