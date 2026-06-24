@@ -13,4 +13,5 @@ commands.fdb_latexmk
 packages.aux
 packages.fdb_latexmk
 
-.DS_Store
+*.DS_Store
+

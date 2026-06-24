@@ -3,24 +3,23 @@ In this section, we reverse-engineer the underlying algebraic properties of cont
 All proofs in this section can be found in Appendix~\ref{sec:ringproofs}.
 
 There are only five Controlled Ring Rules necessary to derive the new completeness results in this work, presented in Figure~\ref{fig:zxw_rules}.
-All other diagrammatic equalities in this paper were proven using only the rules in Figure~\ref{fig:zxw_rules}.
-We proved these five rules through deducing action on basis states, either from our definitions of controlled states and controlled square matrices, or through Lemmas~\ref{lem:csq_copy}, \ref{lem:csqaddcomm}, and \ref{lem:cscopy}.
+All other diagrammatic equalities in this paper were proven using only the rules in Figure~\ref{fig:zxw_rules}. We verify the soundness of the rules for controlled diagrams in Appendix~\ref{sec:csound} by plugging in basis states.
+%We proved these five rules through deducing action on basis states, either from our definitions of controlled states and controlled square matrices, or through Lemmas~\ref{lem:csq_copy}, \ref{lem:csqaddcomm}, and \ref{lem:cscopy}.
 
 % Note that while the ZXW calculus is complete, and Lemmas~\ref{lem:csq_copy}, \ref{lem:csqaddcomm}, \ref{lem:csq_inv}, and \ref{lem:csq_dist} hold for any concrete realisations of $\tilde{M}$, for abstract $\tilde{M}$s they can only be verified via the plugging in of basis states.
 
-Let $\tilde{M_n}$ be the set of controlled square matrices on $n$ qubits. The goal of this section is to prove that the addition and multiplication operations introduced above induce a ring on $\tilde{M_n}$. By Proposition \ref{prop:cmat_ops}, the addition and multiplication of controlled matrices is just the controlled addition and multiplication of the underlying matrices so the fact that the ring properties hold is not particularly surprising. What is more interesting is how easily these properties can be proven with a small subset of the ZXW rules. Likewise, we show that the set of controlled $n$-qubit states $\tilde{S_n}$ also forms a ring. The first lemma enables us to copy controlled matrices.
+Let $\tilde{M_n}$ be the set of controlled square matrices on $n$ qubits. The goal of this section is to prove that the addition and multiplication operations introduced above induce a ring on $\tilde{M_n}$. By Proposition \ref{prop:cmat_ops}, the addition and multiplication of controlled matrices is just the controlled addition and multiplication of the underlying matrices so the fact that the ring properties hold is not particularly surprising. What is more interesting is how easily these properties can be proven with a small subset of the ZXW rules. Likewise, we show that the set of controlled $n$-qubit states $\tilde{S_n}$ also forms a ring. The first rule enables us to copy controlled matrices.
 
-\begin{lemma}\label{lem:csq_copy}
-    For any square matrix $M$, 
-    \begin{equation*}
-    \tikzfig{tikz/con/csq_copy_bzw}
-    \tag{\ref{rule:CMcpy}}
-    \end{equation*}
-\end{lemma}
+For any square matrix $M$, 
+\begin{equation*}
+\tikzfig{tikz/con/csq_copy_bzw}
+%\tag{\ref{rule:CMcpy}}
+\end{equation*}
 
 
 
-Now we show that controlled matrix addition and multiplication satisfy the ring axioms. Associativity of $+, \times$ follow immediately from (\ref{rule:Aso}, \ref{rule:S1}), respectively. Commutativity of addition follows immediately from (\ref{rule:CMcom}). The remaining ring properties are as follows:
+
+Now we show that controlled matrix addition and multiplication satisfy the ring axioms. Associativity of $+, \times$ follow immediately from (\ref{rule:Aso}, \ref{rule:S1}), respectively. Commutativity of addition is just (\ref{rule:CMcom}). The remaining ring properties are as follows:
 
 \begin{lemma}\label{lem:csqaddid}
 The additive identity is defined as $\redzeroup \otimes I_n$:
@@ -48,13 +47,13 @@ The multiplicative identity is defined very similarly as $\lowerbox{\greenzeroup
 
 
 Combining the lemmas of this section shows that controlled matrices form a ring. A similar result can be shown for controlled states. Once again, we start with the ability to copy controlled states. 
-\begin{lemma}\label{lem:cscopy}
-    For any state $\psi$,
-    \begin{equation*}
-        \tikzfig{tikz/con/cs_copy}
-        \tag{\ref{rule:CScpy}}
-    \end{equation*}
-\end{lemma}
+
+For any state $\psi$,
+\begin{equation*}
+    \tikzfig{tikz/con/cs_copy}
+    \tag{\ref{rule:CScpy}}
+\end{equation*}
+
 
 Several of the ring axioms follow directly from basic ZXW rules, such as commutativity of addition:
 
