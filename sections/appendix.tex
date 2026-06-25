@@ -140,19 +140,63 @@ The AND gate is a primitive in the ZH-calculus~\cite{backens2019zh}. We can also
 \end{proof}
 
 \section{Basic Lemmas}\label{sec:applem}
-\begin{lemma}
-    As a special case of~\cite[Lemma 38]{poor2023completeness} for the qubit setting, we have:
-    \begin{equation}\label{eq:wid}
-        \tikzfig{tikz/lemmas/wid}
-    \end{equation}
-\end{lemma}
+% \begin{lemma}
+%     As a special case of~\cite[Lemma 38]{poor2023completeness} for the qubit setting, we have:
+%     \begin{equation}\label{eq:wid}
+%         \tikzfig{tikz/lemmas/wid}
+%     \end{equation}
+% \end{lemma}
+%\begin{lemma}
+%     The below follows from~\cite[Lemma 37]{poor2023completeness}, $\ref{rule:K0}$, and~\cite[Lemma 3.23]{wang2022algebraiczx}:
+%     \begin{equation}\label{eq:wont}
+%         \tikzfig{tikz/lemmas/wont}
+%     \end{equation}
+% \end{lemma}
 
 \begin{lemma}
-    The below follows from~\cite[Lemma 37]{poor2023completeness}, $\ref{rule:K0}$, and~\cite[Lemma 3.23]{wang2022algebraiczx}:
+    \begin{equation}\label{eq:hopf}
+        \tikzfig{tikz/lemmas/hopf_statement}
+    \end{equation}
+\end{lemma}
+\begin{proof}
+    \begin{equation*}
+    \tikzfig{tikz/lemmas/hopf}    
+    \end{equation*}
+\end{proof}
+
+This lemma is the analogue of ~\cite[Lemma 37]{poor2023completeness} for the qubit case.
+
+\begin{lemma}
+    \begin{equation}\label{eq:wdecomp}
+        \tikzfig{tikz/lemmas/w_decomp_statement}
+    \end{equation}
+\end{lemma}
+\begin{proof}
+    \begin{equation*}
+    \tikzfig{tikz/lemmas/w_decomp}    
+    \end{equation*}
+\end{proof}
+
+\begin{lemma}
+    \begin{equation}\label{eq:wid}
+            \tikzfig{tikz/lemmas/wid}
+    \end{equation}
+\end{lemma}
+\begin{proof}
+    \begin{equation*}
+        \tikzfig{tikz/lemmas/wid_proof}
+    \end{equation*}
+\end{proof}
+
+\begin{lemma}
     \begin{equation}\label{eq:wont}
         \tikzfig{tikz/lemmas/wont}
     \end{equation}
 \end{lemma}
+\begin{proof}
+    ????
+\end{proof}
+
 
 \begin{lemma}
 \begin{equation}\label{eq:inner}
@@ -280,26 +324,55 @@ The AND gate is a primitive in the ZH-calculus~\cite{backens2019zh}. We can also
     \end{equation}
   \end{proof}
 
-\section{Proofs for Section~\ref{sec:ring}}\label{sec:ringproofs}
-\textbf{Proof of Lemma \ref{lem:csq_copy}}
-\begin{proof}
-    First of all, using (\ref{rule:BZW}) we can rewrite the LHS to
-    \begin{equation}
-        \tikzfig{tikz/con/csq_dcopy2}
-    \end{equation}
+\section{Results for Section~\ref{sec:ring}}
 
-    Then clearly 
-    \begin{equation}
-        \tikzfig{tikz/con/csq_dcopy3}
-    \end{equation}
+\subsection{Rules for controlled diagrams}\label{sec:csound}
+First, we verify the soundness of the axioms for controlled diagrams by plugging in basis states. Rules (\ref{rule:c_sq0}) and (\ref{rule:cstate0}) follow immediately from our definition of controlled matrices and states, respectively.
 
-    Meanwhile, 
-    \begin{equation}
-        \tikzfig{tikz/con/csq_dcopy4}
-    \end{equation}
 
-    Thus the two sides are equal over the Z basis and so are equal as diagrams.
-\end{proof}
+\subsubsection*{Confirmation of (\ref{rule:CMcpy})}
+
+First of all, using (\ref{rule:BZW}) we can rewrite the LHS to
+\begin{equation*}
+    \tikzfig{tikz/con/csq_dcopy2}
+\end{equation*}
+
+Then clearly 
+\begin{equation*}
+    \tikzfig{tikz/con/csq_dcopy3}
+\end{equation*}
+
+Meanwhile, 
+\begin{equation*}
+    \tikzfig{tikz/con/csq_dcopy4}
+\end{equation*}
+
+Thus the two sides are equal over the Z basis and so are equal as diagrams.
+
+
+\subsubsection*{Confirmation of \ref{rule:CScpy}}
+As before, plugging $|0\rangle$ gives
+\begin{equation*}
+    \tikzfig{tikz/con/cs_copy1}
+\end{equation*}
+
+Meanwhile, plugging $|1\rangle$ gives
+    \begin{equation*}
+    \tikzfig{tikz/con/cs_copy2}
+\end{equation*}
+
+
+\subsubsection*{Confirmation of \ref{rule:CMcom}}
+
+Plugging $|0\rangle$ of course gives 
+\begin{equation*}
+      \tikzfig{tikz/con/csq_add_comm0}
+  \end{equation*}
+
+Meanwhile, plugging $|1\rangle$ we have 
+\begin{equation*}
+      \tikzfig{tikz/con/csq_add_comm}
+  \end{equation*}
 
 %%\textbf{Proof of Lemma \ref{lem:csqaddcomm}}
 %\begin{proof}
@@ -309,36 +382,31 @@ The AND gate is a primitive in the ZH-calculus~\cite{backens2019zh}. We can also
  %  \end{equation}
 %\end{proof}
 
+\subsection{Proofs for Section~\ref{sec:ring}}\label{sec:ringproofs}
+
+Now we prove the remaining ring properties using purely diagrammatic rewrites.
+
+
+
 \textbf{Proof of Lemma \ref{lem:csq_inv}}
 \begin{proof}
-    \begin{equation}
+    \begin{equation*}
         \tikzfig{tikz/con/csq_add_inv}
-    \end{equation}
+    \end{equation*}
 \end{proof}
 
 \textbf{Proof of Lemma \ref{lem:csq_dist}}
 \begin{proof}
-    \begin{equation}
+    \begin{equation*}
         \tikzfig{tikz/con/csq_dist}
-    \end{equation}
-\end{proof}
-
-\textbf{Proof of Lemma \ref{lem:cscopy}}
-\begin{proof}
-    As before, plugging $|0\rangle$ gives
-    \begin{equation}
-        \tikzfig{tikz/con/cs_copy1}
-    \end{equation}
-
-    Meanwhile, plugging $|1\rangle$ gives
-        \begin{equation}
-        \tikzfig{tikz/con/cs_copy2}
-    \end{equation}
+    \end{equation*}
 \end{proof}
 
 \textbf{Proof of Lemma \ref{lem:csaddcomm}}
 \begin{proof}
+    \begin{equation*}
     \tikzfig{tikz/con/cs_add_comm}
+    \end{equation*}
 \end{proof}
 
 \textbf{Proof of Lemma \ref{lem:csaddid}}
@@ -346,28 +414,28 @@ The AND gate is a primitive in the ZH-calculus~\cite{backens2019zh}. We can also
     It is clear that $\lowerbox[10]{\zeroproj}$ is the controlled state $\tilde{\mathbf{0}}$. 
     
     Then we have:
-    \begin{equation}
+    \begin{equation*}
         \tikzfig{tikz/con/cs_add_id}
-    \end{equation}
+    \end{equation*}
 
 \end{proof}
 
 \textbf{Proof of Lemma \ref{lem:csaddinv}}
 \begin{proof}
     $\tilde{\psi} \circ \raisebox{-5pt}{\numbergate[-1]}$ is still a controlled state since $\raisebox{-5pt}{\numbergate[-1]}$ does nothing to $\raisebox{-5pt}{\redzero}$. Then $\tilde{\psi} \circ \raisebox{-5pt}{\numbergate[-1]}$ inverts $\tilde{\psi}$ since:
-    \begin{equation}
+    \begin{equation*}
         \tikzfig{tikz/con/cs_add_inv}
-    \end{equation}
+    \end{equation*}
 \end{proof}
 
 \textbf{Proof of Lemma \ref{lem:csdist}}
 \begin{proof}
-    \begin{gather} %\label{eq:cs_dist}
+    \begin{gather*} %\label{eq:cs_dist}
         \tilde{\psi_1} \boxtimes (\tilde{\psi_2} \boxplus \tilde{\psi_3}) ~=~ \tikzfig{tikz/distproof/d1} ~
         \eqq{\ref{rule:BZW}} ~ \tikzfig{tikz/distproof/d2} \neweqline ~=~ \tikzfig{tikz/distproof/d3} ~
         \eqq{\ref{rule:CScpy}} ~ \tikzfig{tikz/distproof/d4} \neweqline ~=~ \tikzfig{tikz/distproof/d5}
         ~=~ \tikzfig{tikz/distproof/d6} \neweqline ~=~ (\tilde{\psi_1} \boxtimes \tilde{\psi_2}) \boxplus (\tilde{\psi_1} \boxtimes \tilde{\psi_3})
-    \end{gather} 
+    \end{gather*} 
 
 \end{proof}
 
