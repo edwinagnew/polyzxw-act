@@ -1,0 +1,43 @@
+\begin{tikzpicture}
+	\begin{pgfonlayer}{nodelayer}
+		\node [style=none] (11) at (-2.5, 2.5) {};
+		\node [style=gn] (12) at (-2.5, 1.75) {};
+		\node [style=uw] (13) at (-3.125, 0.875) {};
+		\node [style=gn] (14) at (-2.625, 0.125) {};
+		\node [style=rn] (15) at (-1.25, -0.75) {};
+		\node [style=gn] (16) at (-3.75, -0.75) {};
+		\node [style=none] (17) at (-3.75, -1.5) {};
+		\node [style=none] (18) at (-1.25, -1.5) {};
+		\node [style=lw] (19) at (-2.875, -0.75) {};
+		\node [style=gn] (20) at (-2.125, -0.25) {};
+		\node [style=dw] (124) at (1.25, -0.5) {};
+		\node [style=dw] (125) at (3.25, -0.5) {};
+		\node [style=none] (126) at (2.25, 2.25) {};
+		\node [style=gn] (127) at (2.25, 0.375) {};
+		\node [style=none] (129) at (1.25, -1.25) {};
+		\node [style=none] (130) at (3.25, -1.25) {};
+		\node [style=none] (131) at (0, 0) {$=$};
+		\node [style=dw] (132) at (1.25, -0.5) {};
+		\node [style=uw] (133) at (2.25, 1.375) {};
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\draw (11.center) to (12);
+		\draw [in=90, out=-165] (12) to (13);
+		\draw [in=90, out=-30] (13) to (14);
+		\draw [in=90, out=-150, looseness=0.75] (13) to (16);
+		\draw [in=-15, out=90, looseness=0.75] (15) to (12);
+		\draw (16) to (17.center);
+		\draw (15) to (18.center);
+		\draw [in=-180, out=60] (19) to (20);
+		\draw (16) to (19);
+		\draw [in=180, out=-60] (19) to (15);
+		\draw (129.center) to (124);
+		\draw [in=30, out=-120, looseness=0.75] (127) to (124);
+		\draw [in=150, out=-60, looseness=0.75] (127) to (125);
+		\draw (130.center) to (125);
+		\draw [in=-150, out=150, looseness=0.50] (132) to (133);
+		\draw (126.center) to (133);
+		\draw [in=-30, out=30, looseness=0.50] (125) to (133);
+		\draw (133) to (127);
+	\end{pgfonlayer}
+\end{tikzpicture}

@@ -1,0 +1,62 @@
+\begin{tikzpicture}
+	\begin{pgfonlayer}{nodelayer}
+		\node [style=none] (0) at (-7.5, 2.5) {};
+		\node [style=none] (4) at (-5, 0) {$=$};
+		\node [style=gn] (9) at (-7.5, 1.5) {};
+		\node [style=uw] (10) at (-8.125, 0.625) {};
+		\node [style=gn] (11) at (-7.625, -0.125) {};
+		\node [style=rn] (12) at (-6.25, -0.75) {};
+		\node [style=gn] (13) at (-8.75, -0.75) {};
+		\node [style=none] (14) at (-8.75, -1.5) {};
+		\node [style=none] (15) at (-6.25, -1.5) {};
+		\node [style=none] (21) at (5, 0) {$=$};
+		\node [style=uw] (22) at (7, 0.625) {};
+		\node [style=none] (23) at (8, -0.875) {};
+		\node [style=none] (24) at (6, -0.875) {};
+		\node [style=none] (25) at (7, 2) {};
+		\node [style=none] (26) at (-2.5, 2.5) {};
+		\node [style=gn] (29) at (-2.75, -0.375) {};
+		\node [style=rn] (30) at (-1.25, -0.75) {};
+		\node [style=gn] (31) at (-3.75, -0.75) {};
+		\node [style=none] (32) at (-3.75, -1.5) {};
+		\node [style=none] (33) at (-1.25, -1.5) {};
+		\node [style=uw] (34) at (-3.5, 0.875) {};
+		\node [style=rn] (35) at (-2.5, 1.125) {};
+		\node [style=none] (36) at (2.5, 2.125) {};
+		\node [style=uw] (37) at (2.5, 1) {};
+		\node [style=rn] (40) at (3.75, -0.75) {};
+		\node [style=gn] (41) at (1.25, -0.75) {};
+		\node [style=none] (42) at (1.25, -1.625) {};
+		\node [style=none] (43) at (3.75, -1.625) {};
+		\node [style=none] (44) at (0, 0) {$=$};
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\draw (0.center) to (9);
+		\draw [in=90, out=-165, looseness=0.75] (9) to (10);
+		\draw [in=90, out=-30] (10) to (11);
+		\draw [in=90, out=-150, looseness=0.75] (10) to (13);
+		\draw (13) to (12);
+		\draw [in=-15, out=90, looseness=0.75] (12) to (9);
+		\draw (13) to (14.center);
+		\draw (12) to (15.center);
+		\draw [in=105, out=-30] (22) to (23.center);
+		\draw [in=75, out=-150] (22) to (24.center);
+		\draw (25.center) to (22);
+		\draw (31) to (30);
+		\draw (31) to (32.center);
+		\draw (30) to (33.center);
+		\draw [in=90, out=-135, looseness=0.75] (26.center) to (34);
+		\draw [in=105, out=-135, looseness=0.75] (34) to (31);
+		\draw [in=135, out=-45, looseness=0.75] (34) to (29);
+		\draw [in=-135, out=45, looseness=0.50] (31) to (35);
+		\draw [in=45, out=-45, looseness=0.75] (35) to (29);
+		\draw [in=90, out=90, looseness=1.50] (35) to (30);
+		\draw (36.center) to (37);
+		\draw [bend right, looseness=0.75] (41) to (40);
+		\draw [in=-30, out=90, looseness=0.75] (40) to (37);
+		\draw (41) to (42.center);
+		\draw (40) to (43.center);
+		\draw [in=-150, out=90, looseness=0.75] (41) to (37);
+		\draw [bend left, looseness=0.75] (41) to (40);
+	\end{pgfonlayer}
+\end{tikzpicture}
