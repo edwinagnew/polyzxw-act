@@ -188,13 +188,41 @@ This lemma is the analogue of ~\cite[Lemma 37]{poor2023completeness} for the qub
     \end{equation*}
 \end{proof}
 
+
 \begin{lemma}
-    \begin{equation}\label{eq:wont}
-        \tikzfig{tikz/lemmas/wont}
+    \begin{equation}\label{eq:wpi}
+        \tikzfig{tikz/lemmas/pi-statement}
     \end{equation}
 \end{lemma}
 \begin{proof}
-    ????
+    seems to assume flip and be used to prove it?
+        \begin{equation*}
+        \tikzfig{tikz/lemmas/pi}
+    \end{equation*}
+\end{proof}
+
+
+\begin{lemma}
+    \begin{equation}\label{eq:flip}
+        \tikzfig{tikz/lemmas/flip-statement}
+    \end{equation}
+\end{lemma}
+\begin{proof}
+    what is the third step??
+        \begin{equation*}
+        \tikzfig{tikz/lemmas/flip}
+    \end{equation*}
+\end{proof}
+
+\begin{lemma}
+    \begin{equation}\label{eq:wont}
+        \tikzfig{tikz/lemmas/wont-statement}
+    \end{equation}
+\end{lemma}
+\begin{proof}
+        \begin{equation*}
+        \tikzfig{tikz/lemmas/wont}
+    \end{equation*}
 \end{proof}
 
 
@@ -519,7 +547,12 @@ Now we prove the remaining ring properties using purely diagrammatic rewrites.
 
     \medskip
     
-    Clearly, we can only stop applying these rules once $A$ is a sum of products of copies. Steps (2) and (3) ensure the top of $A$ has such a structure and steps (4) - (6) ensure that there is nothing beneath the $\lowerbox{\coWs}$'s . To see that this will always terminate, observe that (2) and (3) preserve the depth of $A$ while (4), (5), (6) all decrease it. (2) and (3) can only be applied a finite number of times before another simplification must be used. So repeatedly applying these rewrites must eventually shrink the depth down to $3$, as desired. Finally, to put $A$ in PNF we must:
+    Clearly, we can only stop applying these rules once $A$ is a sum of products of copies. Steps (2) and (3) ensure the top of $A$ has such a structure and steps (4) - (6) ensure that there is nothing beneath the $\lowerbox{\coWs}$'s . To see that this will always terminate, observe that (2) preserves the depth of $A$ while (4), (5), (6) all decrease it. (3) also preserves the depth, except for the following sub-case which can be further simplified by (5) \footnote{We thank an anonymous reviewer for pointing this out.}.
+    \begin{equation*}
+    \tikzfig{tikz/poly/lemmas/algcases35}
+    \end{equation*}
+    
+    (2) and (3) can only be applied a finite number of times before another simplification must be used. So repeatedly applying these rewrites must eventually shrink the depth down to $3$, as desired. Finally, to put $A$ in PNF we must:
     \begin{enumerate}[resume, label={(\arabic*)}]
         \item Collect terms: whenever there are two boxes connected to exactly the same set of $\raisebox{-5pt}{\coWs}$'s, use (\ref{eq:cpk_add}) to fuse them together. 
         \item Pad: use (\ref{eq:zerobox}) to insert $\raisebox{-5pt}{\numbergate[0]}$ for any connectivities that do not exist in $A$.

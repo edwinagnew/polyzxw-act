@@ -14,4 +14,4 @@ packages.aux
 packages.fdb_latexmk
 
 *.DS_Store
-
+*.log

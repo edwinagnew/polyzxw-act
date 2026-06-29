@@ -1,7 +1,7 @@
 \begin{tikzpicture}
 	\begin{pgfonlayer}{nodelayer}
 		\node [style={rn_phase}] (1) at (-10, -1.5) {$\pi$};
-		\node [style=none] (4) at (-6.5, 0) {$=$};
+		\node [style=none] (4) at (-6.5, 0.25) {$\eqq{\ref{rule:K0}}$};
 		\node [style=none] (5) at (11.5, 1.375) {};
 		\node [style={rn_phase}] (6) at (11.5, 0.375) {$\pi$};
 		\node [style=none] (7) at (11.5, -1.375) {};
@@ -21,7 +21,7 @@
 		\node [style=rn] (22) at (-3, -0.75) {};
 		\node [style=none] (24) at (-3, -1.75) {};
 		\node [style={rn_phase}] (25) at (-3.75, -0.75) {$\pi$};
-		\node [style=none] (26) at (-2, 0) {$=$};
+		\node [style=none] (26) at (-2, 0.25) {$\eqq{\ref{eq:flip}}$};
 		\node [style={rn_phase}] (27) at (-0.9, 0.625) {$\pi$};
 		\node [style=none] (28) at (0, 2.25) {};
 		\node [style=gn] (29) at (0, 1.5) {};
@@ -30,7 +30,7 @@
 		\node [style={rn_phase}] (32) at (1.25, -0.75) {$\pi$};
 		\node [style=none] (33) at (1.25, -1.75) {};
 		\node [style=rn] (35) at (-0.75, -1) {};
-		\node [style=none] (36) at (2.25, 0) {$=$};
+		\node [style=none] (36) at (2.25, 0.25) {$??$};
 		\node [style={rn_phase}] (37) at (3.35, 0.625) {$\pi$};
 		\node [style=none] (38) at (4.25, 2.25) {};
 		\node [style=gn] (39) at (4.25, 1.5) {};
@@ -39,18 +39,18 @@
 		\node [style=none] (43) at (5.5, -1.75) {};
 		\node [style=rn] (44) at (3.375, -0.25) {};
 		\node [style=rn] (45) at (4.375, -0.25) {};
-		\node [style=none] (46) at (6.5, 0) {$=$};
+		\node [style=none] (46) at (6.5, 0.25) {$\eqq{\ref{rule:Ept}}$};
 		\node [style={rn_phase}] (47) at (7.6, 0.125) {$\pi$};
 		\node [style=none] (48) at (8.5, 2) {};
 		\node [style=gn] (49) at (8.5, 1) {};
 		\node [style={rn_phase}] (51) at (9.5, -0.5) {$\pi$};
 		\node [style=none] (52) at (9.5, -1.5) {};
-		\node [style=none] (53) at (10.5, 0) {$=$};
+		\node [style=none] (53) at (10.5, 0.25) {$\eqq{\ref{rule:K0}}$};
 		\node [style=none] (54) at (-12.5, 1.25) {};
 		\node [style={rn_phase}] (55) at (-13.25, -0.75) {$\pi$};
 		\node [style=none] (56) at (-11.75, -0.75) {};
 		\node [style=uw] (57) at (-12.5, 0.25) {};
-		\node [style=none] (58) at (-11, 0) {$=$};
+		\node [style=none] (58) at (-11, 0.25) {$\eqq{\ref{eq:wdecomp}}$};
 	\end{pgfonlayer}
 	\begin{pgfonlayer}{edgelayer}
 		\draw (6) to (5.center);
