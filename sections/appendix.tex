@@ -284,9 +284,23 @@ This made some rules trivial and thus disregarded in this work: $(D1)$, $(H1)$, 
 
 For $(VA)$, adopting the semantically correct interpretation that the one-output W node is the identity --- which moreover syntatically agrees with \cite{deVisme2025minzw} ---  makes the equation trivial in the qubit setting. Since this one-output W node appears in neither the original qudit ZXW completeness paper nor anywhere in this paper, the $(VA)$ rule can be safely disregarded in the qubit setting.
 
-It is straightforward to see that $(KZ)$ in the qubit setting is derivable through observing all its multipliers are identities in the qubit setting, unfusing a one-output X spider, applying the generalised $(\ref{rule:TA})$ rule from Lemmas 39 and 40 of~\cite{poor2023completeness} (neither of which apply $(KZ)$), and applying $(\ref{rule:Bs0})$ then $(\ref{rule:K0})$.
+% It is straightforward to see that $(KZ)$ in the qubit setting is derivable through observing all its multipliers are identities in the qubit setting, unfusing a one-output X spider, applying the generalised $(\ref{rule:TA})$ rule from Lemmas 39 and 40 of~\cite{poor2023completeness} (neither of which apply $(KZ)$), and applying $(\ref{rule:Bs0})$ then $(\ref{rule:K0})$.
+First we prove $(KZ)$. This proof relies on the generalised $(\ref{rule:TA})$ rule from Lemmas 39 and 40 of~\cite{poor2023completeness}, whose proof is identical in the qubit case. Note also that all multipliers on the LHS of $(KZ)$ simplify to the identity.
 
-The remainder of this section is to derive $(\ref{rule:HD})$ from $(EU)$ of~\cite{poor2023completeness}, for which we derive a number of lemmas.
+\begin{lemma}
+\begin{equation}\tag{KZ}
+    \tikzfig{tikz/lemmas/KZ-statement}
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+\begin{equation*}
+    \tikzfig{tikz/lemmas/KZ}
+\end{equation*}
+\end{proof}
+
+
+The remainder of this section is to derive $(\ref{rule:HD})$ from $(EU)$ of~\cite{poor2023completeness}, for which we first derive a number of lemmas.
 
 \begin{lemma}
     \begin{equation}\label{eq:hopf}
