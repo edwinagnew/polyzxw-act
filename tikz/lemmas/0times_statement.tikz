@@ -1,11 +1,11 @@
 \begin{tikzpicture}
 	\begin{pgfonlayer}{nodelayer}
-		\node [style=rn] (0) at (0.5, 0) {};
-		\node [style=gbox] (1) at (0.5, 1) {$a$};
-		\node [style=none] (2) at (0.5, 1.75) {};
-		\node [style=none] (3) at (2.25, 1.75) {};
-		\node [style=rn] (4) at (2.25, 0.25) {};
-		\node [style=none] (5) at (1.5, 0.75) {$=$};
+		\node [style=rn] (0) at (-1.25, -0.75) {};
+		\node [style=gbox] (1) at (-1.25, 0.25) {$a$};
+		\node [style=none] (2) at (-1.25, 1) {};
+		\node [style=none] (3) at (1.125, 1) {};
+		\node [style=rn] (4) at (1.125, -0.75) {};
+		\node [style=none] (5) at (0, 0) {$=$};
 	\end{pgfonlayer}
 	\begin{pgfonlayer}{edgelayer}
 		\draw (1) to (0);

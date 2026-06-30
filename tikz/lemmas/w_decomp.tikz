@@ -4,7 +4,7 @@
 		\node [style=none] (1) at (-5, -1) {};
 		\node [style=none] (2) at (-3.5, -1) {};
 		\node [style=uw] (3) at (-4.25, 0) {};
-		\node [style=none] (4) at (-2.25, -0.25) {$\eqq{\ref{rule:Symm}}$};
+		\node [style=none] (4) at (-2.25, -0.25) {$\eqq{\ref{rule:Sym}}$};
 		\node [style=gn] (5) at (6.5, -7.25) {};
 		\node [style=gn] (6) at (8, -7.25) {};
 		\node [style=uw] (7) at (7.25, -6.25) {};

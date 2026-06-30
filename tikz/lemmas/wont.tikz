@@ -30,7 +30,7 @@
 		\node [style={rn_phase}] (32) at (1.25, -0.75) {$\pi$};
 		\node [style=none] (33) at (1.25, -1.75) {};
 		\node [style=rn] (35) at (-0.75, -1) {};
-		\node [style=none] (36) at (2.25, 0.25) {$??$};
+		\node [style=none] (36) at (2.25, 0.25) {$\eqq{\ref{rule:Bs0}}$};
 		\node [style={rn_phase}] (37) at (3.35, 0.625) {$\pi$};
 		\node [style=none] (38) at (4.25, 2.25) {};
 		\node [style=gn] (39) at (4.25, 1.5) {};
