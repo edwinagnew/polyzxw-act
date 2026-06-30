@@ -1,0 +1,23 @@
+\begin{tikzpicture}
+	\begin{pgfonlayer}{nodelayer}
+		\node [style=wn] (0) at (0, 0) {$\land$};
+		\node [style=none] (1) at (-1, 0.75) {};
+		\node [style=none] (2) at (-1, -0.75) {};
+		\node [style=none] (3) at (1.25, 0) {};
+		\node [style=none] (4) at (2.5, 0) {$=$};
+		\node [style={rn_phase}] (15) at (-1.75, 0.75) {$\pi$};
+		\node [style=none] (16) at (3.75, 0) {};
+		\node [style=none] (19) at (6.75, 0) {};
+		\node [style=none] (20) at (-1.75, -0.75) {};
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\draw (15)
+			 to (1.center)
+			 to [bend left] (0);
+		\draw (20.center)
+			 to (2.center)
+			 to [bend right] (0);
+		\draw (0) to (3.center);
+		\draw (16.center) to (19.center);
+	\end{pgfonlayer}
+\end{tikzpicture}

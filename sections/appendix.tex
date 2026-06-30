@@ -111,33 +111,54 @@
     \end{equation}
 \end{proof}
 
-\textbf{Proof of Proposition \ref{prop:FF}}
-\begin{proof}
-    Plugging basis states:
-    \begin{equation}
-        \tikzfig{tikz/func/FF1}
-    \end{equation}
-    \begin{equation}
-        \tikzfig{tikz/func/FF2}
-    \end{equation}
-\end{proof}
-
+Before we prove Proposition\ref{prop:FF}, we first need to explain what the AND gate is in the ZXW-calculus.
 The AND gate is a primitive in the ZH-calculus~\cite{backens2019zh}. We can also represent the binary AND gate in the ZXW-calculus, by deMorgan's law of the diagram for binary OR given in \Cref{prop:vec_pnf}.
-\begin{lemma}\label{lemma:and}
+\begin{definition}\label{lemma:and}
     \begin{equation}
         \tikzfig{tikz/func/and_def}
     \end{equation}
+\end{definition}
+\begin{lemma}
+Short circuit: $AND(0, x) = 0$.
+\begin{equation}\label{eq:and0}
+    \tikzfig{tikz/func/and_lem0}
+\end{equation}
 \end{lemma}
 \begin{proof}
-    We can verify this computes the AND gate by computing on basis states.
-    \begin{equation}\label{eq:and1}
-        \tikzfig{tikz/func/and1}
+\begin{equation}
+    \tikzfig{tikz/func/and0}
+\end{equation}
+\end{proof}
+\begin{lemma}
+Unit: $AND(1, x) = x$.
+\begin{equation}\label{eq:and1}
+    \tikzfig{tikz/func/and_lem1}
+\end{equation}
+\end{lemma}
+\begin{proof}
+\begin{equation}
+    \tikzfig{tikz/func/and1}
+\end{equation}
+\end{proof}
+
+\noindent
+\textbf{Proof of Proposition \ref{prop:FF}}
+\begin{proof}
+We prove this by verifying that the following diagram satisfies the conditions of being the controlled matrix on a controlled gate.
+\begin{equation}
+    \tikzfig{tikz/func/FF_new}
+\end{equation}
+Verifying condition \eqref{rule:c_sq0}.
+    \begin{equation}
+        \tikzfig{tikz/func/FF1_new}
     \end{equation}
-    Thus $AND(1, x) = x$. Since the diagram is clearly commutative, it remains to check $AND(0, x) = 0$.
-    \begin{equation}\label{eq:and0}
-        \tikzfig{tikz/func/and0}
+Verifying condition \eqref{eq:csq1}.
+    \begin{equation}
+        \tikzfig{tikz/func/FF2_new}
     \end{equation}
 \end{proof}
+\noindent
+Since this is indeed the controlled matrix on a controlled gate, we obtain the required result by Equation~\eqref{eq:control-map-def}.
 
 \section{Basic Lemmas for Arithmetic Diagrams}\label{sec:applem}
 % \begin{lemma}

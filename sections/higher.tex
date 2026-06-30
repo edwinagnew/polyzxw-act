@@ -1,11 +1,12 @@
 \section{Quantum Control as a Higher-Order Map}\label{sec:ctrlmap}
 %The operation of turning a non-dimension-decreasing matrix to its controlled diagram can be made into a lax monoidal functor. Let $\mathbf{Hilb_{\leq}}$ be the subcategory of Hilbert spaces and non-dimension-decreasing linear transformations. Adding an additional horizontal wire to facilitate composition, $F: \mathbf{Hilb_{\leq}} \to \mathbf{Hilb}$ is defined as follows for arbitrary  $D \in Hom_{Hilb_{\leq}}(V, W)$.
 In quantum circuits, quantum control is realised through controlled gates.
-Before delving into the main proofs, in this section, we illustrate the correspondence between the controlled diagrams investigated in this work and the conventional concept of controlled gates in quantum circuits.
+In this section, we illustrate the correspondence between the controlled diagrams investigated in this work and the conventional concept of controlled gates in quantum circuits.
 Specifically, we can derive the latter as a special case of the former.
 We show this by reasoning with controlled gates through a straightforward construction on top of our ring of controlled square matrices.
 We define the higher-order map $\Control$ which takes a square matrix $M: V \to V$ to its controlled square diagram $V \otimes \mathbb{C}^2 \to V \otimes \mathbb{C}^2$. In the functorial box notation of \cite{mellies2006functorial}, we write
 \begin{equation}
+\label{eq:control-map-def}
     \tikzfig{tikz/func/F_def_box}
 \end{equation}
 where
