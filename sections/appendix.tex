@@ -139,7 +139,7 @@ The AND gate is a primitive in the ZH-calculus~\cite{backens2019zh}. We can also
     \end{equation}
 \end{proof}
 
-\section{Basic Lemmas}\label{sec:applem}
+\section{Basic Lemmas for Arithmetic Diagrams}\label{sec:applem}
 % \begin{lemma}
 %     As a special case of~\cite[Lemma 38]{poor2023completeness} for the qubit setting, we have:
 %     \begin{equation}\label{eq:wid}
@@ -152,30 +152,20 @@ The AND gate is a primitive in the ZH-calculus~\cite{backens2019zh}. We can also
 %         \tikzfig{tikz/lemmas/wont}
 %     \end{equation}
 % \end{lemma}
+In this section, we prove a number of lemmas used throughout the paper.
 
-\begin{lemma}
-    \begin{equation}\label{eq:hopf}
-        \tikzfig{tikz/lemmas/hopf_statement}
-    \end{equation}
-\end{lemma}
+Firstly, we can define the one-input, zero-output W node to have the same syntax and semantics as the one-input, zero-output phase-free X spider, as done for arbitrary finite dimension in~\cite{deVisme2025minzw}.
+In this work, all our completeness proofs for arithmetic diagrams and controlled states and operators (i.e. excluding Section~\ref{sec:deriveaxioms})
+The following proof implies that as the only place where $(\ref{rule:TA})$ applied is in the proof of the ZW-calculus rule $\left(\ref{eq:hopf}\right)$, it suffices to replace $(\ref{rule:TA})$ by $\left(\ref{eq:hopf}\right)$; all rules involving X spiders with two or more legs can be safely disregarded.
+
+\textbf{Proof of Lemma \ref{lem:kill_quad}}
 \begin{proof}
-    \begin{equation*}
-    \tikzfig{tikz/lemmas/hopf}    
-    \end{equation*}
+\begin{equation*}
+    \tikzfig{tikz/lemmas/kill_quad}
+\end{equation*}
 \end{proof}
 
-This lemma is the analogue of ~\cite[Lemma 37]{poor2023completeness} for the qubit case.
-
-\begin{lemma}
-    \begin{equation}\label{eq:wdecomp}
-        \tikzfig{tikz/lemmas/w_decomp_statement}
-    \end{equation}
-\end{lemma}
-\begin{proof}
-    \begin{equation*}
-    \tikzfig{tikz/lemmas/w_decomp}    
-    \end{equation*}
-\end{proof}
+The remainder of this section proves a number of lemmas used throughout the paper that are all syntactic equalities, because they are derived purely through applications of the axioms of the qubit ZXW-calculus given in Figure~\ref{fig:zxw_rules}. 
 
 \begin{lemma}
     \begin{equation}\label{eq:wid}
@@ -185,64 +175,6 @@ This lemma is the analogue of ~\cite[Lemma 37]{poor2023completeness} for the qub
 \begin{proof}
     \begin{equation*}
         \tikzfig{tikz/lemmas/wid_proof}
-    \end{equation*}
-\end{proof}
-
-
-\begin{lemma}
-    \begin{equation}\label{eq:wpi}
-        \tikzfig{tikz/lemmas/pi-statement}
-    \end{equation}
-\end{lemma}
-\begin{proof}
-    \begin{equation*}
-        \tikzfig{tikz/lemmas/pi}
-    \end{equation*}
-\end{proof}
-
-\begin{lemma}
-    \begin{equation}\label{eq:flip}
-        \tikzfig{tikz/lemmas/flip-statement}
-    \end{equation}
-\end{lemma}
-\begin{proof}
-    \begin{equation*}
-        \tikzfig{tikz/lemmas/flip}
-    \end{equation*}
-\end{proof}
-
-\begin{lemma}
-    \begin{equation}\label{eq:wont}
-        \tikzfig{tikz/lemmas/wont-statement}
-    \end{equation}
-\end{lemma}
-\begin{proof}
-        \begin{equation*}
-        \tikzfig{tikz/lemmas/wont}
-    \end{equation*}
-\end{proof}
-
-
-\begin{lemma}
-\begin{equation}\label{eq:inner}
-	\tikzfig{tikz/lemmas/inner_statement}
-\end{equation}
-\end{lemma}
-\begin{proof}
-\begin{equation*}
-\tikzfig{tikz/lemmas/inner}
-\end{equation*}
-\end{proof}
-
-
-\begin{lemma}
-    \begin{equation}\label{eq:xcpy}
-        \tikzfig{tikz/lemmas/xcpy_statement}
-    \end{equation}
-\end{lemma}
-\begin{proof}
-    \begin{equation*}
-        \tikzfig{tikz/lemmas/xcpy}
     \end{equation*}
 \end{proof}
   
@@ -313,12 +245,152 @@ This lemma is the analogue of ~\cite[Lemma 37]{poor2023completeness} for the qub
 \end{equation*}
 \end{proof}
 
+\begin{lemma}
+    \begin{equation}\label{eq:0times}
+        \tikzfig{tikz/lemmas/0times_statement}
+    \end{equation}
+\end{lemma}
+\begin{proof}
+    \begin{equation*}
+        \tikzfig{tikz/lemmas/0times}
+    \end{equation*}
+\end{proof}
 
-\textbf{Proof of Lemma \ref{lem:kill_quad}}
+
+\section{Derivation of the qubit ZXW-calculus axioms}\label{sec:deriveaxioms}
+This section derives the axioms of Figure~\ref{fig:zxw_rules}, purely through syntactic equalities of axioms directly sourced from the arbitrary finite dimension setting derived in~\cite{poor2023completeness}, with the dimension then restricted to two to recover the qubit case.
+This made some rules trivial and thus disregarded in this work: $(D1)$, $(H1)$, $(ZV)$, $(VW)$ reduce to the same diagram on both sides of the equality, being identity. Likewise, the $-1$ multiplier which equals the identity in the qubit setting is omitted in the second equality of $(P1)$, here renamed to $\left(\ref{rule:H}\right)$ to match the original rule name.
+
+For $(VA)$, adopting the semantically correct interpretation that the one-output W node is the identity --- which moreover syntatically agrees with \cite{deVisme2025minzw} ---  makes the equation trivial in the qubit setting. Since this one-output W node appears in neither the original qudit ZXW completeness paper nor anywhere in this paper, the $(VA)$ rule can be safely disregarded in the qubit setting.
+
+It is straightforward to see that $(KZ)$ in the qubit setting is derivable through observing all its multipliers are identities in the qubit setting, unfusing a one-output X spider, applying the generalised $(\ref{rule:TA})$ rule from Lemmas 39 and 40 of~\cite{poor2023completeness} (neither of which apply $(KZ)$), and applying $(\ref{rule:Bs0})$ then $(\ref{rule:K0})$.
+
+The remainder of this section is to derive $(\ref{rule:HD})$ from $(EU)$ of~\cite{poor2023completeness}, for which we derive a number of lemmas.
+
+\begin{lemma}
+    \begin{equation}\label{eq:hopf}
+        \tikzfig{tikz/lemmas/hopf_statement}
+    \end{equation}
+\end{lemma}
+\begin{proof}
+    \begin{equation*}
+    \tikzfig{tikz/lemmas/hopf}    
+    \end{equation*}
+\end{proof}
+
+This lemma is the analogue of ~\cite[Lemma 37]{poor2023completeness} for the qubit case.
+
+\begin{lemma}
+    \begin{equation}\label{eq:wdecomp}
+        \tikzfig{tikz/lemmas/triangle-statement}
+        %\tikzfig{tikz/lemmas/w_decomp_statement}
+    \end{equation}
+\end{lemma}
+\begin{proof}
+    \begin{equation*}
+    \tikzfig{tikz/lemmas/triangle}
+    \end{equation*}
+\end{proof}
+
+\begin{lemma}
+    \begin{equation}\label{eq:wpi}
+        \tikzfig{tikz/lemmas/pi-statement}
+    \end{equation}
+\end{lemma}
+\begin{proof}
+    \begin{equation*}
+        \tikzfig{tikz/lemmas/pi}
+    \end{equation*}
+\end{proof}
+
+\begin{lemma}
+    \begin{equation}\label{eq:flip}
+        \tikzfig{tikz/lemmas/flip-statement}
+    \end{equation}
+\end{lemma}
+\begin{proof}
+    \begin{equation*}
+        \tikzfig{tikz/lemmas/flip}
+    \end{equation*}
+\end{proof}
+
+\begin{lemma}
+    \begin{equation}\label{eq:wont}
+        \tikzfig{tikz/lemmas/wont-statement}
+    \end{equation}
+\end{lemma}
+\begin{proof}
+        \begin{equation*}
+        \tikzfig{tikz/lemmas/wont}
+    \end{equation*}
+\end{proof}
+
+
+\begin{lemma}
+\begin{equation}\label{eq:inner}
+	\tikzfig{tikz/lemmas/inner_statement}
+\end{equation}
+\end{lemma}
 \begin{proof}
 \begin{equation*}
-    \tikzfig{tikz/lemmas/kill_quad}
+\tikzfig{tikz/lemmas/inner}
 \end{equation*}
+\end{proof}
+
+\begin{lemma}
+    \begin{equation}\label{eq:xcpy}
+        \tikzfig{tikz/lemmas/xcpy_statement}
+    \end{equation}
+\end{lemma}
+\begin{proof}
+    \begin{equation*}
+        \tikzfig{tikz/lemmas/xcpy}
+    \end{equation*}
+\end{proof}
+
+\begin{lemma}
+    \begin{equation}\label{eq:halfloopid}
+        \tikzfig{tikz/lemmas/halfloopid-statement}
+    \end{equation}
+\end{lemma}
+\begin{proof}
+    \begin{equation*}
+        \tikzfig{tikz/lemmas/halfloopid}
+    \end{equation*}
+\end{proof}
+
+\begin{lemma}
+    \begin{equation}\label{eq:break}
+        \tikzfig{tikz/lemmas/break-statement}
+    \end{equation}
+\end{lemma}
+\begin{proof}
+    \begin{equation*}
+        \tikzfig{tikz/lemmas/break}
+    \end{equation*}
+\end{proof}
+
+\begin{lemma}
+    \begin{equation}\label{eq:breaktwo}
+        \tikzfig{tikz/lemmas/break2-statement}
+    \end{equation}
+\end{lemma}
+\begin{proof}
+    \begin{equation*}
+        \tikzfig{tikz/lemmas/break2}
+    \end{equation*}
+\end{proof}
+
+Finally, we derive the axiom $(\ref{rule:HD})$.
+\begin{prop}
+    \begin{equation}\label{eq:hd}
+        \tikzfig{tikz/lemmas/hd-statement}
+    \end{equation}
+\end{prop}
+\begin{proof}
+    \begin{equation*}
+        \tikzfig{tikz/lemmas/hd}
+    \end{equation*}
 \end{proof}
 
 \section{Results for Section~\ref{sec:ring}}

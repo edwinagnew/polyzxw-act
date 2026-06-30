@@ -39,7 +39,10 @@ To interpret an arithmetic ZXW diagram as an arithmetic expression, read $\lower
     \end{equation}
 \end{lemma}
 \begin{proof}
-    By definition, other than wires $A$ contains only $\raisebox{-10pt}{\wspids}$, $\raisebox{-10pt}{\zspids}$, $\raisebox{-5pt}{\coWs}$, and $\raisebox{-3pt}{\numberstate}$. All $\raisebox{-3pt}{\numberstate}$'s can be removed with (\ref{rule:Ept}). Meanwhile all the spiders copy $\raisebox{-5pt}{\redzero}$ due to (\ref{rule:Bs0}, \ref{rule:K0}, \ref{eq:wid}) respectively.
+    By definition, other than wires $A$ contains only $\raisebox{-10pt}{\wspids}$, $\raisebox{-10pt}{\zspids}$, $\raisebox{-5pt}{\coWs}$, and $\raisebox{-3pt}{\numberstate}$.
+    This lemma holds when the arithmetic diagram consists of 
+    $\raisebox{-10pt}{\wspids}$, $\raisebox{-10pt}{\zspids}$, and $\raisebox{-5pt}{\coWs}$, as a result of these generators recursively copying $\raisebox{-5pt}{\redzero}$ due to (\ref{rule:Bs0}, \ref{rule:K0}, \ref{eq:wid}) respectively.
+    Then considering arithmetic diagrams which also contain $\raisebox{-3pt}{\numberstate}$, as the other three generators copy $\raisebox{-5pt}{\redzero}$, the lemma continues to hold through application of the axiom (\ref{rule:Ept}).
 \end{proof}
 
 Just as it is typical to represent a polynomial in normal form as a sum of products, it is possible to rewrite every arithmetic diagram into a normal form as a single $\lowerbox[10]{\wspids}$, followed by a layer of $\lowerbox[10]{\zspids}$, followed by a layer of $\lowerbox[2]{\numberstate}, \lowerbox[2]{\coWs}$. 

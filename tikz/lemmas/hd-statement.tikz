@@ -1,0 +1,56 @@
+\begin{tikzpicture}
+	\begin{pgfonlayer}{nodelayer}
+		\node [style=none] (315) at (2.75, 0) {$=$};
+		\node [style=gn] (318) at (5.375, 0.75) {};
+		\node [style=uw] (319) at (4.875, 1.5) {};
+		\node [style=gn] (320) at (4.375, -0.75) {};
+		\node [style=dw] (321) at (4.875, -1.5) {};
+		\node [style=gbox] (322) at (4.875, 0) {$-2$};
+		\node [style=none] (323) at (4.875, -2.475) {};
+		\node [style=none] (324) at (4.875, 2.5) {};
+		\node [style=hbox] (325) at (-4.625, 0) {};
+		\node [style=none] (326) at (-4.625, 2) {};
+		\node [style=none] (327) at (-4.625, -2) {};
+		\node [style=rn] (328) at (0, 2.5) {};
+		\node [style=rn] (329) at (-1, 1.75) {};
+		\node [style=none] (330) at (0, 3.25) {};
+		\node [style=none] (331) at (0, -3.25) {};
+		\node [style=uw] (332) at (-1, -1) {};
+		\node [style=gn] (333) at (-1.5, -1.75) {};
+		\node [style=gn] (334) at (-1, 0.75) {};
+		\node [style=gn] (335) at (-1, 0) {};
+		\node [style={rn_phase}] (336) at (0, 1.75) {$\pi$};
+		\node [style=rn] (337) at (0, -2.5) {};
+		\node [style=gn] (338) at (1.5, -1.75) {};
+		\node [style=uw] (339) at (1, -1) {};
+		\node [style={gn_phase}] (340) at (0.5, -1.75) {$\pi$};
+		\node [style=uw] (341) at (0, 0.75) {};
+		\node [style=gn] (342) at (1, 0) {};
+		\node [style=none] (343) at (-2.75, 0) {$=$};
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\draw [in=90, out=-30] (319) to (318);
+		\draw [in=-90, out=150] (321) to (320);
+		\draw (323.center) to (321);
+		\draw [in=-150, out=165] (322) to (319);
+		\draw [in=30, out=-15] (322) to (321);
+		\draw (324.center) to (319);
+		\draw (326.center) to (325);
+		\draw (325) to (327.center);
+		\draw [in=-150, out=90] (333) to (332);
+		\draw [in=-165, out=60, looseness=0.50] (329) to (328);
+		\draw (328) to (330.center);
+		\draw (332) to (335);
+		\draw (334) to (335);
+		\draw (337) to (331.center);
+		\draw [in=150, out=-30, looseness=0.50] (332) to (337);
+		\draw [in=-150, out=90] (340) to (339);
+		\draw [in=-30, out=90] (338) to (339);
+		\draw [in=30, out=-75] (340) to (337);
+		\draw [in=-30, out=120] (342) to (341);
+		\draw [in=-150, out=60] (335) to (341);
+		\draw (336) to (341);
+		\draw (342) to (339);
+		\draw [in=-30, out=90] (342) to (328);
+	\end{pgfonlayer}
+\end{tikzpicture}

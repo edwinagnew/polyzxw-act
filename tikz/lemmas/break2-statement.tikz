@@ -11,15 +11,15 @@
 		\node [style={gn_phase}] (16) at (-2.25, 1.25) {$\pi$};
 		\node [style=uw] (17) at (-2.75, 2) {};
 		\node [style=none] (18) at (-3.25, 1.25) {};
-		\node [style=dw] (19) at (1.25, -0.5) {};
-		\node [style=dw] (20) at (3.25, -0.5) {};
-		\node [style=none] (21) at (2.25, 2.25) {};
-		\node [style=gn] (22) at (2.25, 0.375) {};
-		\node [style=none] (23) at (1.25, -1.25) {};
-		\node [style=none] (24) at (3.25, -1.25) {};
+		\node [style=dw] (19) at (1.5, -0.5) {};
+		\node [style=dw] (20) at (3.5, -0.5) {};
+		\node [style=none] (21) at (2.5, 2.25) {};
+		\node [style=gn] (22) at (2.5, 0.375) {};
+		\node [style=none] (23) at (1.5, -1.25) {};
+		\node [style=none] (24) at (3.5, -1.25) {};
 		\node [style=none] (25) at (0, 0) {$=$};
-		\node [style=dw] (26) at (1.25, -0.5) {};
-		\node [style=uw] (27) at (2.25, 1.375) {};
+		\node [style=dw] (26) at (1.5, -0.5) {};
+		\node [style=uw] (27) at (2.5, 1.375) {};
 	\end{pgfonlayer}
 	\begin{pgfonlayer}{edgelayer}
 		\draw [in=90, out=-150] (10) to (11.center);

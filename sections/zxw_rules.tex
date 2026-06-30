@@ -116,7 +116,15 @@
     \end{minipage} \\
     \hline
   \end{tabular}
-  \caption{These ZX, ZW, and ZXW Rules are altogether complete for qubit linear maps~\cite{poor2023completeness}, where $k \in \{0, 1\}$ and $a \in \mathbb{C}$.
-  The white background ZX, ZW, and ZXW Rules here suffice for completeness of \emph{arithmetic diagrams} (Definition~\ref{def:arithmetic}), where \eqref{rule:TA} was used only to prove Lemma~\ref{lem:kill_quad} and we did not use the X spider case of \eqref{rule:S2}. Equivalently, these complete rules for arithmetic diagrams can all be derived from the minimal qubit ZW-calculus of~\cite{deVisme2025minzw}. Adding to these the \ref{rule:CScpy}, \ref{rule:CMcpy}, and \ref{rule:CMcom} rules, we can show that controlled states and controlled operators form rings, culminating in Theorem~\ref{thm:ctrl_pnf} achieving completeness and minimality for all operations over these rings. We did not use the gray background rules in this work.}
+  \caption{These ZX, ZW, and ZXW Rules are altogether complete for qubit linear maps, where $k \in \{0, 1\}$ and $a \in \mathbb{C}$; we give their derivation from the restriction of the complete ZXW-calculus axioms for arbitrary finite dimension~\cite{poor2023completeness} to the qubit (i.e. dimension two) setting in Appendix~\ref{sec:deriveaxioms}.
+  Through Theorem~\ref{thm:uni_pnf} of this work, we show that the above ZX, ZW, and ZXW Axioms with white background, form a complete set of axioms for \emph{arithmetic diagrams} (Definition~\ref{def:arithmetic}). Adding to these the \ref{rule:CScpy}, \ref{rule:CMcpy}, and \ref{rule:CMcom} axioms, we can show that controlled states and controlled operators form rings, culminating in Theorem~\ref{thm:ctrl_pnf} achieving completeness and minimality for all operations over these rings.}
   \label{fig:zxw_rules}
 \end{figure}
+
+\begin{remark}
+  In the proof of Theorem~\ref{thm:uni_pnf}, the only place we used \eqref{rule:TA} was in the proof of Lemma~\ref{lem:kill_quad}. Consider that we could have replaced Equation~\eqref{rule:TA} with the equation of Lemma~\ref{lem:kill_quad}; and substituted the one-input, zero-output X spider with the one-input, zero-output W node as done in~\cite{deVisme2025minzw}.
+  As we did not use the X spider case of \eqref{rule:S2} in these
+\end{remark}
+For proving this result, Equivalently, these complete rules for arithmetic diagrams can all be derived from the minimal qubit ZW-calculus of~\cite{deVisme2025minzw}.
+
+We did not use the gray background axioms in this work.
