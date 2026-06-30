@@ -2,7 +2,7 @@
 	\begin{pgfonlayer}{nodelayer}
 		\node [style={rn_phase}] (1) at (-8, 1.5) {$\pi$};
 		\node [style=none] (4) at (-7.25, -1) {};
-		\node [style=none] (6) at (-6.5, 0) {$=$};
+		\node [style=none] (6) at (-6.5, 0) {$\eqq{\ref{eq:wdecomp}}$};
 		\node [style=uw] (87) at (-8, 0.375) {};
 		\node [style=none] (88) at (-8.75, -1) {};
 		\node [style={rn_phase}] (89) at (-4.25, 2.25) {$\pi$};
