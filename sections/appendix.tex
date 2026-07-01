@@ -19,7 +19,7 @@
 %     \tag{B2}\label{rule:B2}
 %     \neweqline
 %     \tikzfig{tikz/axioms/k0copy}
-%     \tag{K0}\label{rule:K0} 
+%     \tag{K0}\label{rule:K0}
 %   \end{gather} \columnbreak
 %   \begin{gather}
 %     \tikzfig{tikz/axioms/pimultiplecpdit}
@@ -32,11 +32,11 @@
 %     \tag{Zer}\label{rule:Zer}
 %     \neweqline
 %     \tikzfig{tikz/axioms/h_id}
-%     \tag{H}\label{rule:H} 
+%     \tag{H}\label{rule:H}
 %   \end{gather}
 % \end{multicols}
 
-% Where $k \in \{0, 1\}$. 
+% Where $k \in \{0, 1\}$.
 
 
 % \bigskip
@@ -111,7 +111,7 @@
     \end{equation}
 \end{proof}
 
-Before we prove Proposition\ref{prop:FF}, we first need to explain what the AND gate is in the ZXW-calculus.
+Before we prove Proposition \ref{prop:FF}, we first need to explain what the AND gate is in the ZXW-calculus.
 The AND gate is a primitive in the ZH-calculus~\cite{backens2019zh}. We can also represent the binary AND gate in the ZXW-calculus, by deMorgan's law of the diagram for binary OR given in \Cref{prop:vec_pnf}.
 \begin{definition}\label{lemma:and}
     \begin{equation}
@@ -186,7 +186,7 @@ The following proof implies that as the only place where $(\ref{rule:TA})$ appli
 \end{equation*}
 \end{proof}
 
-The remainder of this section proves a number of lemmas used throughout the paper that are all syntactic equalities, because they are derived purely through applications of the axioms of the qubit ZXW-calculus given in Figure~\ref{fig:zxw_rules}. 
+The remainder of this section proves a number of lemmas used throughout the paper that are all syntactic equalities, because they are derived purely through applications of the axioms of the qubit ZXW-calculus given in Figure~\ref{fig:zxw_rules}.
 
 \begin{lemma}
     \begin{equation}\label{eq:wid}
@@ -198,7 +198,7 @@ The remainder of this section proves a number of lemmas used throughout the pape
         \tikzfig{tikz/lemmas/wid_proof}
     \end{equation*}
 \end{proof}
-  
+
 \begin{lemma}
     \begin{equation}\label{eq:zerobox}
         \tikzfig{tikz/lemmas/zerobox_statement}
@@ -309,7 +309,7 @@ The remainder of this section is to derive $(\ref{rule:HD})$ from $(EU)$ of~\cit
 \end{lemma}
 \begin{proof}
     \begin{equation*}
-    \tikzfig{tikz/lemmas/hopf}    
+    \tikzfig{tikz/lemmas/hopf}
     \end{equation*}
 \end{proof}
 
@@ -449,12 +449,12 @@ First of all, using (\ref{rule:BZW}) we can rewrite the LHS to
     \tikzfig{tikz/con/csq_dcopy2}
 \end{equation*}
 
-Then clearly 
+Then clearly
 \begin{equation*}
     \tikzfig{tikz/con/csq_dcopy3}
 \end{equation*}
 
-Meanwhile, 
+Meanwhile,
 \begin{equation*}
     \tikzfig{tikz/con/csq_dcopy4}
 \end{equation*}
@@ -476,12 +476,12 @@ Meanwhile, plugging $|1\rangle$ gives
 
 \subsubsection*{Confirmation of \ref{rule:CMcom}}
 
-Plugging $|0\rangle$ of course gives 
+Plugging $|0\rangle$ of course gives
 \begin{equation*}
       \tikzfig{tikz/con/csq_add_comm0}
   \end{equation*}
 
-Meanwhile, plugging $|1\rangle$ we have 
+Meanwhile, plugging $|1\rangle$ we have
 \begin{equation*}
       \tikzfig{tikz/con/csq_add_comm}
   \end{equation*}
@@ -523,8 +523,8 @@ Now we prove the remaining ring properties using purely diagrammatic rewrites.
 
 \textbf{Proof of Lemma \ref{lem:csaddid}}
 \begin{proof}
-    It is clear that $\lowerbox[10]{\zeroproj}$ is the controlled state $\tilde{\mathbf{0}}$. 
-    
+    It is clear that $\lowerbox[10]{\zeroproj}$ is the controlled state $\tilde{\mathbf{0}}$.
+
     Then we have:
     \begin{equation*}
         \tikzfig{tikz/con/cs_add_id}
@@ -547,7 +547,7 @@ Now we prove the remaining ring properties using purely diagrammatic rewrites.
         \eqq{\ref{rule:BZW}} ~ \tikzfig{tikz/distproof/d2} \neweqline ~=~ \tikzfig{tikz/distproof/d3} ~
         \eqq{\ref{rule:CScpy}} ~ \tikzfig{tikz/distproof/d4} \neweqline ~=~ \tikzfig{tikz/distproof/d5}
         ~=~ \tikzfig{tikz/distproof/d6} \neweqline ~=~ (\tilde{\psi_1} \boxtimes \tilde{\psi_2}) \boxplus (\tilde{\psi_1} \boxtimes \tilde{\psi_3})
-    \end{gather*} 
+    \end{gather*}
 
 \end{proof}
 
@@ -555,16 +555,16 @@ Now we prove the remaining ring properties using purely diagrammatic rewrites.
 \textbf{Proof of Proposition \ref{prop:vec_pnf}}
 \begin{proof}
     We prove by induction on $n$.
-    
+
     For the base case, $n=0$. The only PNF with no outputs is a number so we have: $$\numberstate[a_0] = \begin{bmatrix}
         1 & a_0
     \end{bmatrix}$$ as desired.
-    
-    For inductive hypothesis, we assume that Proposition~\ref{prop:vec_pnf} holds for every PNF on $n$ outputs. We use this hypothesis to extend it to PNFs with $n+1$ outputs. 
-    
+
+    For inductive hypothesis, we assume that Proposition~\ref{prop:vec_pnf} holds for every PNF on $n$ outputs. We use this hypothesis to extend it to PNFs with $n+1$ outputs.
+
     Let $D$ be an arbitrary PNF with $n+1$ outputs. Firstly, observe that $x_{n+1}$ is connected to only the odd coefficients $\{a_{2k+1}\}$ since these are exactly the indices with $1$ in the least significant bit. Thus we can rewrite:
     \begin{gather}
-        \raisebox{-20pt}{\ddiag} ~=~ \tikzfig{tikz/poly/lemmas/uni10} \neweqline ~=~ \tikzfig{tikz/poly/lemmas/uni11} \neweqline ~\eqq{\ref{rule:BZW}}~ \tikzfig{tikz/poly/lemmas/uni12} \neweqline 
+        \raisebox{-20pt}{\ddiag} ~=~ \tikzfig{tikz/poly/lemmas/uni10} \neweqline ~=~ \tikzfig{tikz/poly/lemmas/uni11} \neweqline ~\eqq{\ref{rule:BZW}}~ \tikzfig{tikz/poly/lemmas/uni12} \neweqline
         ~=~ \tikzfig{tikz/poly/lemmas/uni13}
     \end{gather}
     Where $D_{even}, D_{odd}$ are PNF diagrams. Since they are over $n$ variables, we can apply the inductive hypothesis and obtain:
@@ -599,7 +599,7 @@ Now we prove the remaining ring properties using purely diagrammatic rewrites.
             1 & a_0 \\ 0 & 0 \\ 0 & a_2 \\ 0 & 0 \\ \vdots & \vdots \\ 0 & a_{2^{n+1}-2} \\ 0 & 0
         \end{bmatrix} + \begin{bmatrix}
             0 & 0 \\ 0 & a_1 \\ 0 & 0 \\ 0 & a_3 \\ \vdots & \vdots \\ 0 & 0 \\ 0 & a_{2^{n+1}-1}
-        \end{bmatrix} 
+        \end{bmatrix}
         ~=~ \begin{bmatrix}
             1 & a_0 \\ 0 & a_1 \\ 0 & a_2 \\ 0 & a_3 \\ \vdots & \vdots \\ 0 & a_{2^{n+1}-2} \\ 0 & a_{2^{n+1} -1}
         \end{bmatrix}
@@ -611,9 +611,9 @@ Now we prove the remaining ring properties using purely diagrammatic rewrites.
 \textbf{Proof of Theorem \ref{thm:uni_pnf}}
 
 \begin{proof}
-    Let $A$ be an arithmetic diagram. If $A = \numberstate$, we are done. 
-    
-    Otherwise, $A$ has at least one output. First, we shall rewrite $A$ into three layers, consisting of: (1) a single W at the top, (2) a layer of $\raisebox{-5pt}{\zspids}$ and (3) a layer of $\numberstate$'s and $\raisebox{-5pt}{\coWs}$'s. Then we shall collect terms and order the boxes to produce a PNF. 
+    Let $A$ be an arithmetic diagram. If $A = \numberstate$, we are done.
+
+    Otherwise, $A$ has at least one output. First, we shall rewrite $A$ into three layers, consisting of: (1) a single W at the top, (2) a layer of $\raisebox{-5pt}{\zspids}$ and (3) a layer of $\numberstate$'s and $\raisebox{-5pt}{\coWs}$'s. Then we shall collect terms and order the boxes to produce a PNF.
 
     If the top of $A$ is not already $\raisebox{-5pt}{\wspids}$, it must be $\raisebox{-5pt}{\zspids}$. It cannot be $\numberstate$ since the remaining arithmetic diagram would then have no inputs which is impossible. It cannot be $\raisebox{-5pt}{\coWs}$ since there is only one input and arithmetic diagrams cannot contain $\ccap$. Thus we can rewrite:
     \begin{enumerate}[label={(\arabic*)}]
@@ -630,35 +630,35 @@ Now we prove the remaining ring properties using purely diagrammatic rewrites.
         \end{enumerate}
 
     \medskip
-    
+
     Clearly, we can only stop applying these rules once $A$ is a sum of products of copies. Steps (2) and (3) ensure the top of $A$ has such a structure and steps (4) - (6) ensure that there is nothing beneath the $\lowerbox{\coWs}$'s . To see that this will always terminate, observe that (2) preserves the depth of $A$ while (4), (5), (6) all decrease it. (3) also preserves the depth, except for the following sub-case which can be further simplified by (5) \footnote{We thank an anonymous reviewer for pointing this out.}.
     \begin{equation*}
     \tikzfig{tikz/poly/lemmas/algcases35}
     \end{equation*}
-    
+
     (2) and (3) can only be applied a finite number of times before another simplification must be used. So repeatedly applying these rewrites must eventually shrink the depth down to $3$, as desired. Finally, to put $A$ in PNF we must:
     \begin{enumerate}[resume, label={(\arabic*)}]
-        \item Collect terms: whenever there are two boxes connected to exactly the same set of $\raisebox{-5pt}{\coWs}$'s, use (\ref{eq:cpk_add}) to fuse them together. 
+        \item Collect terms: whenever there are two boxes connected to exactly the same set of $\raisebox{-5pt}{\coWs}$'s, use (\ref{eq:cpk_add}) to fuse them together.
         \item Pad: use (\ref{eq:zerobox}) to insert $\raisebox{-5pt}{\numbergate[0]}$ for any connectivities that do not exist in $A$.
         \item Reorder: use (\ref{rule:Sym}) to reorder coefficients into the canonical order.
     \end{enumerate}
 
-    Step (7) ensures that every $\raisebox{-5pt}{\zspids}$ has unique connectivity. Step (8) ensures there are exactly $2^n$ coefficients so that step (9) can order them in the appropriate way. 
+    Step (7) ensures that every $\raisebox{-5pt}{\zspids}$ has unique connectivity. Step (8) ensures there are exactly $2^n$ coefficients so that step (9) can order them in the appropriate way.
 
     Thus $A$ has been written in PNF, completing the proof.
-    
+
 \end{proof}
 
 \textbf{Proof of Theorem \ref{thm:iso}}
 \begin{proof}
-    
+
     First, we show $\phi_n$ is a homomorphism, i.e. \begin{equation}
         \forall p, q \in \polyring, \phi_n(p + q) = \phi_n(p) \boxplus \phi_n(q) ,\quad \phi_n(p \times q) = \phi_n(p) \boxtimes \phi_n(q)
     \end{equation}
     The strategy for the proof will be an induction on $n$. Here, the yellow shaded regions serve no purpose other than to make the subdiagram that was rewritten in the preceding or following step easier to visually identify.
 
     \medskip
-    
+
     \textbf{Base case:}
     We have not defined controlled states for $n=0$, so the base case begins with $n=1$.
     Let $p, q \in \polyring[1]$. Write as $p(x_1) = a_0 + a_1x_1, q(x_1) = b_0 + b_1x_1$, where $a_0, a_1, b_0, b_1 \in \mathbb{C}$. Then since $p + q = a_0 + b_0 + (a_1 + b_1)x_1$,
@@ -666,12 +666,12 @@ Now we prove the remaining ring properties using purely diagrammatic rewrites.
         \tikzfig{tikz/poly/homproof/hombaseadd}
     \end{equation}
 
-    Meanwhile, since $p \times q = a_0b_0 + (a_0b_1 + a_1b_0)x_1$, 
+    Meanwhile, since $p \times q = a_0b_0 + (a_0b_1 + a_1b_0)x_1$,
     \begin{equation}
         \tikzfig{tikz/poly/homproof/hombasetimes}
     \end{equation}
     % \begin{gather}
-    %     \phi_1(p) \boxtimes \phi_1(q) ~=~ \tikzfig{tikz/poly/homproof/bt1} ~\eqq{\ref{eq:dbl_dist}}~ \tikzfig{tikz/poly/homproof/bt2} \neweqline 
+    %     \phi_1(p) \boxtimes \phi_1(q) ~=~ \tikzfig{tikz/poly/homproof/bt1} ~\eqq{\ref{eq:dbl_dist}}~ \tikzfig{tikz/poly/homproof/bt2} \neweqline
     %     ~\eqq{\ref{eq:dist_circ}}~ \tikzfig{tikz/poly/homproof/bt3} ~\eqq{\ref{rule:Pcpy}}~ \tikzfig{tikz/poly/homproof/bt4} \neweqline
     %     ~\eqq{\ref{eq:kill_quad}}~ \tikzfig{tikz/poly/homproof/bt5} ~\eqq{\ref{eq:0times}}~ \tikzfig{tikz/poly/homproof/bt6} ~\eqq{\ref{eq:cp_add}}~ \tikzfig{tikz/poly/homproof/bt7} \neweqline ~= \phi_1(p \times q)
     % \end{gather}
@@ -712,7 +712,7 @@ Now we prove the remaining ring properties using purely diagrammatic rewrites.
     \begin{equation}\label{eq:ctrlp1}
         \tikzfig{tikz/poly/homproof/ctrlp1}
     \end{equation}
-    
+
     Applying this in the inductive step for constructing a controlled diagram of $p + q$ from those of $p$ and $q$:
     \begin{equation}
         \tikzfig{tikz/poly/homproof/sa}
@@ -756,6 +756,6 @@ Now we prove the remaining ring properties using purely diagrammatic rewrites.
 
     Then all we have to do is interpret it as the image of a polynomial:
     \begin{gather}
-        \tikzfig{tikz/poly/pnf} \quad ~=~ \quad \tikzfig{tikz/poly/homproof/iso4} \neweqline ~=~ \phi_{n}(a_0) + \phi_{n}(a_1x_{n}) + ... + \phi_{n}(a_{2^{n}-1} x_1x_2...x_{n}) \neweqline ~=~ \phi_{n}(a_0 + a_1x_{n} + ... + a_{2^{n}-1}x_1x_2...x_{n}) 
+        \tikzfig{tikz/poly/pnf} \quad ~=~ \quad \tikzfig{tikz/poly/homproof/iso4} \neweqline ~=~ \phi_{n}(a_0) + \phi_{n}(a_1x_{n}) + ... + \phi_{n}(a_{2^{n}-1} x_1x_2...x_{n}) \neweqline ~=~ \phi_{n}(a_0 + a_1x_{n} + ... + a_{2^{n}-1}x_1x_2...x_{n})
     \end{gather}
 \end{proof}
