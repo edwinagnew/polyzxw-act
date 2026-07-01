@@ -68,7 +68,21 @@ We define controlled states similarly.
   For an arbitrary $n$-qubit state $\psi$, the controlled state of $\psi$ is the diagram with the following interpretation:
   
   \[
- \left\llbracket \;\;\; \tikzfig{tikz/con/c_state_def} \;\;\; \right\rrbracket ~=~ \left[ \begin{array}{cc|cc} \cline{2-3} \; 1 \; & & & \\ \; 0 \; & & & \\ \; \vdots \; & \multicolumn{2}{c}{\psi} \\ & \multicolumn{2}{c}{} \\ \; 0 \; & & \\ \cline{2-3} \end{array} \right]
+\left\llbracket \;\;\; \tikzfig{tikz/con/c_state_def} \;\;\; \right\rrbracket ~=~
+\begin{bmatrix}
+     \begin{matrix}
+         1 \\
+         0 \\
+         \vdots \\
+         0
+     \end{matrix}
+     &
+     \begin{matrix}
+         \vdots \\
+         \psi \\
+         \vdots
+     \end{matrix}
+ \end{bmatrix}
  \]
 
 \end{definition}
