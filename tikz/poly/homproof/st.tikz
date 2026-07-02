@@ -175,7 +175,7 @@
 		\node [style=dw] (521) at (-10.225, 33.75) {};
 		\node [style=gn] (522) at (-9.575, 35.125) {};
 		\node [style=gn] (523) at (-7.575, 35.125) {};
-		\node [style=none] (526) at (-15, 31.875) {$\stackrel{\eqref{eq:dist_circ}}{=}$};
+		\node [style=none] (526) at (-15, 31.875) {$\stackrel{\eqref{eq:dbl_dist}}{=}$};
 		\node [style=none] (585) at (-0.85, 31.875) {$\stackrel{(\ref{rule:BZW})}{=}$};
 		\node [style=rw] (600) at (8.95, 33.25) {};
 		\node [style=gn] (602) at (7.125, 34) {};
@@ -575,7 +575,7 @@
 		\node [style=left label] (1145) at (7.025, 1.5) {$x_1$};
 		\node [style=right label] (1146) at (13.425, 1.5) {$x_n$};
 		\node [style=right label] (1147) at (15.1, 1.5) {$x_{n+1}$};
-		\node [style=none] (1148) at (2.025, 4.25) {$=$};
+		\node [style=none] (1148) at (2.025, 4.5) {$\stackrel{(\ref{rule:cstate0})}{=}$};
 		\node [style=none] (1150) at (4.8, 4.25) {\tiny$...$};
 		\node [style=none] (1151) at (3.3, 4.5) {};
 		\node [style=label] (1152) at (4.775, 4.775) {$\widetilde{p_0\!\times\!q_0}$};
@@ -602,8 +602,8 @@
 		\node [style=none] (1179) at (-6.5, 0) {$\phi_{n\plu 1} \left( (p_0\!\times q_0) + (q_0\!\times\!p_1) x_{n\plu 1} + (p_0\!\times\!q_1) x_{n\plu 1} \right)$};
 		\node [style=none] (1180) at (2, 0) {$=$};
 		\node [style=none] (1181) at (5.5, 0) {$\phi_{n\plu 1} (p \times q)$};
-		\node [style=none] (1182) at (-1.05, 24.075) {$\stackrel{(\ref{rule:BZW})}{=}$};
-		\node [style=none] (1183) at (-0.05, 13.825) {$\stackrel{(\ref{eq:ih2})}{=}$};
+		\node [style=none] (1182) at (-1.05, 24.075) {$\stackrel{(\ref{rule:CScpy})}{=}$};
+		\node [style=none] (1183) at (-0.05, 13.825) {$\stackrel{(\ref{eq:ih2}), (\ref{eq:kill_quad})}{=}$};
 	\end{pgfonlayer}
 	\begin{pgfonlayer}{edgelayer}
 		\draw [in=150, out=-30, looseness=0.50] (1129) to (1137);

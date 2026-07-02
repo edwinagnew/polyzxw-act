@@ -152,7 +152,7 @@ Verifying condition \eqref{rule:c_sq0}.
     \begin{equation}
         \tikzfig{tikz/func/FF1_new}
     \end{equation}
-Verifying condition \eqref{eq:csq1}.
+Verifying condition \eqref{rule:c_sq1}.
     \begin{equation}
         \tikzfig{tikz/func/FF2_new}
     \end{equation}
@@ -440,7 +440,7 @@ Finally, we derive the axiom $(\ref{rule:HD})$.
 \section{Results for Section~\ref{sec:ring}}
 
 \subsection{Rules for controlled diagrams}\label{sec:csound}
-First, we verify the soundness of the axioms for controlled diagrams by plugging in basis states. Rules (\ref{rule:c_sq0}) and (\ref{rule:cstate0}) follow immediately from our definition of controlled matrices and states, respectively.
+First, we verify the soundness of the axioms for controlled diagrams by plugging in basis states. Rules (\ref{rule:c_sq0}) and (\ref{rule:c_sq1}) follow immediately from definition (\ref{def:ctrlsqmat}), whilst rules(\ref{rule:cstate0}) and (\ref{rule:cstate1}) follow immediately from definition (\ref{def:ctrlst}).
 
 
 \subsubsection*{Confirmation of (\ref{rule:CMcpy})}
@@ -687,7 +687,9 @@ Now we prove the remaining ring properties using purely diagrammatic rewrites.
 
     Let $Hom(n)$ assert than $\phi_n$ is a homomorphism.  Then for the inductive step we wish to prove that $\forall n, Hom(n) \implies Hom(n+1)$.
 
-    The proof relies on the recursive definition of $R[x_1, x_2] = R[x_1][x_2]$, for any ring $R$, to rewrite an arbitrary polynomial $p(x_1, ..., x_{n+1}) = a_0 + a_1x_{n+1} + ... + a_{2^{n+1}-1}x_1x_2...x_{n+1} \in \polyring[n+1]$ as $p(x_{n+1}) = p_0 + p_1x_{n+1}$, where $p_0, p_1 \in \polyring$. This allows the $p_i$ to be treated similarly to the scalars in the base case. To emphasise this, they will be drawn in green boxes. To help distinguish when an operation is covered by the inductive hypothesis, the wires for variables $x_1, ..., x_n$ will be drawn in blue, while the $x_{n+1}$ wires will be drawn in black. Thus the inductive hypothesis states that:
+    The proof relies on the recursive definition of $R[x_1, x_2] = R[x_1][x_2]$, for any ring $R$, to rewrite an arbitrary polynomial $p(x_1, ..., x_{n+1}) = a_0 + a_1x_{n+1} + ... + a_{2^{n+1}-1}x_1x_2...x_{n+1} \in \polyring[n+1]$ as $p(x_{n+1}) = p_0 + p_1x_{n+1}$, where $p_0, p_1 \in \polyring$. This allows the $p_i$ to be treated similarly to the scalars in the base case. 
+    %To emphasise this, they will be drawn in green boxes. To help distinguish when an operation is covered by the inductive hypothesis, the wires for variables $x_1, ..., x_n$ will be drawn in blue, while the $x_{n+1}$ wires will be drawn in black. 
+    Thus the inductive hypothesis states that:
     \begin{equation}
         \tikzfig{tikz/poly/homproof/ih1}
         \tag{IH1}\label{eq:ih1}
@@ -698,15 +700,16 @@ Now we prove the remaining ring properties using purely diagrammatic rewrites.
     \end{equation}
 
     Let $p(x_{n+1}) = p_0 + p_1x_{n+1}$ and $q(x_{n+1}) = q_0 + q_1x_{n+1}$, where $p_0, p_1, q_0, q_1 \in \polyring$.
-    According to our hypothesis,
-    \begin{equation}
-        \phi_{n\plu 1}(p) = \phi_{n\plu 1}(p_0) \boxplus \left(\phi_{n\plu 1}(p_1) \boxtimes \phi_{n\plu 1}(x_{n\plu 1}) \right)
-    \end{equation}
-    and likewise for $\phi_{n\plu 1}(q)$. We first verify correctness of the constructed controlled diagram
+    % According to our hypothesis,
+    % \begin{equation}
+    %     \phi_{n\plu 1}(p) = \phi_{n\plu 1}(p_0) \boxplus \left(\phi_{n\plu 1}(p_1) \boxtimes \phi_{n\plu 1}(x_{n\plu 1}) \right)
+    % \end{equation}
+    % and likewise for $\phi_{n\plu 1}(q)$. 
+    We first verify correctness of the constructed controlled diagram
     \begin{equation}\label{eq:ctrlp}
         \tikzfig{tikz/poly/homproof/ctrlp}
     \end{equation}
-    because it results in $\ket{0...0}$ when the control is $\ket{0}$, and in the state corresponding to $p$ when the control is $\ket{1}$.
+    because it results in $\ket{0...0}$ when the control is $\ket{0}$, and in the state corresponding to $p$ when the control is $\ket{1}$. 
     \begin{equation}\label{eq:ctrlp0}
         \tikzfig{tikz/poly/homproof/ctrlp0}
     \end{equation}
@@ -715,9 +718,9 @@ Now we prove the remaining ring properties using purely diagrammatic rewrites.
     \end{equation}
 
     Applying this in the inductive step for constructing a controlled diagram of $p + q$ from those of $p$ and $q$:
-    \begin{equation}
+    \begin{equation*}
         \tikzfig{tikz/poly/homproof/sa}
-    \end{equation}
+    \end{equation*}
     % \begin{gather}
     %     \phi_{n+1}(p) \boxplus \phi_{n+1}(q) ~=~ \tikzfig{tikz/poly/homproof/sa1} ~\eqq{\ref{rule:Aso}}~ \tikzfig{tikz/poly/homproof/sa2} \neweqline
     %     ~ \eqq{IH1} ~ \tikzfig{tikz/poly/homproof/sa3} ~\eqq{\ref{rule:BZW}}~ \tikzfig{tikz/poly/homproof/sa4} ~\eqq{IH1}~ \tikzfig{tikz/poly/homproof/sa5} \neweqline
@@ -726,9 +729,9 @@ Now we prove the remaining ring properties using purely diagrammatic rewrites.
 
 
     Similarly, for multiplication:
-    \begin{equation}
+    \begin{equation*}
         \tikzfig{tikz/poly/homproof/st}
-    \end{equation}
+    \end{equation*}
     % \begin{gather}
     % \phi_{n+1}(p) \boxtimes \phi_{n+1}(q) ~=~ \tikzfig{tikz/poly/homproof/st1} \eqq{\ref{eq:dbl_dist}}  ~ \tikzfig{tikz/poly/homproof/st2} \neweqline
     % \eqq{\ref{eq:cs_copy}} ~ \tikzfig{tikz/poly/homproof/st3} \eqq{\ref{eq:ih2}} ~ \tikzfig{tikz/poly/homproof/st4} \neweqline

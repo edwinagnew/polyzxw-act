@@ -52,19 +52,19 @@ Note that this is a different definition of controlled states to Ref.~\cite{jean
 \end{equation}
 \end{definition}
 
-We represent the additional dimension of $\tilde{M}$ as a vertical wire to distinguish it as the control wire. Controlled matrices satisfy the two equations:
+We represent the additional dimension of $\tilde{M}$ as a vertical wire to distinguish it as the control wire. Controlled matrices satisfy the two axioms:
 
 \begin{equation*}
     \tikzfig{tikz/con/c_sq0}
     \tag{\ref{rule:c_sq0}}
 \end{equation*}
-\begin{equation}
+\begin{equation*}
     \tikzfig{tikz/con/c_sq1}
-    \label{eq:csq1}
-\end{equation}
+    \tag{\ref{rule:c_sq1}}
+\end{equation*}
 
 We define controlled states similarly.
-\begin{definition}
+\begin{definition}\label{def:ctrlst}
   For an arbitrary $n$-qubit state $\psi$, the controlled state of $\psi$ is the diagram with the following interpretation:
   
   \[
@@ -87,32 +87,38 @@ We define controlled states similarly.
 
 \end{definition}
 
-Controlled states satisfy the equations:
+Controlled states satisfy the axioms:
   \begin{equation*}
     \tikzfig{tikz/con/c_state0}
     \tag{\ref{rule:cstate0}}
   \end{equation*}
-  \begin{equation}
+  \begin{equation*}
     \tikzfig{tikz/con/c_state1}
-    \label{eq:cstate1}
-  \end{equation}
+    \tag{\ref{rule:cstate1}}
+  \end{equation*}
+
+
+\begin{definition}
+Given controlled matrices $\tilde{M_1}, ..., \tilde{M_k}$ and $c_1, ..., c_k \in \mathbb{C}$, the controlled square matrices $\widetilde{\Pi_i M_i}$ and $\widetilde{\Sigma_i c_i M_i}$ are defined as follows:
+\begin{equation*}
+      \tikzfig{tikz/con/csq_prod}\qquad\qquad\qquad\qquad\tikzfig{tikz/con/csq_sum}
+    \end{equation*}
+\end{definition}
+
 
 \begin{prop}[Propositions 3.3 and 3.4 of \cite{shaikh2022sum}]\label{prop:cmat_ops}
-    Given controlled matrices $\tilde{M_1}, ..., \tilde{M_k}$ and $c_1, ..., c_k \in \mathbb{C}$, the controlled square matrices $\widetilde{\Pi_i M_i}$ and $\widetilde{\Sigma_i c_i M_i}$ are respectively given by
-    \begin{equation}
-      \tikzfig{tikz/con/csq_prod}\qquad\qquad\qquad\qquad\tikzfig{tikz/con/csq_sum}
-    \end{equation}
+    The above diagrams are indeed the controlled diagrams for $\Pi_i M_i$ and $\Sigma_i c_i M_i$, respectively.
 \end{prop}
 
 The addition and multiplication of controlled states are defined similarly to controlled matrix arithmetic, except that a layer of $\lowerbox{\coW}$s are appended at the bottom to preserve the number of outputs.
 The role of $\lowerbox{\coW}$ is to \textit{copy} controlled diagrams, as we will show in Section~\ref{sec:ring}.
 
-\begin{prop}
+\begin{definition}
   Given controlled states $\tilde{\psi}$ and $\tilde{\phi}$, we define addition $\tilde{\psi} \boxplus \tilde{\phi}$ and multiplication $\tilde{\psi} \boxtimes \tilde{\phi}$ operations on them to result in the controlled states:
   \begin{equation}
     \tikzfig{tikz/con/cs_add_def} \qquad\qquad\qquad\qquad \tikzfig{tikz/con/cs_times_def}
 \end{equation}
-\end{prop}
+\end{definition}
 \begin{remark}
   Ref.~\cite{shaikh2022sum} defined this addition with red spiders at the bottom instead of $\lowerbox{\coW}$s; the linear map is the same, being $\widetilde{\phi + \psi}$. In choosing to use $\lowerbox{\coW}$, we will soon define the arithmetic fragment of the ZW-calculus.
   

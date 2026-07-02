@@ -335,8 +335,8 @@
 		\draw [style=white] (244.center) to (245.center);
 		\draw [style=white] (245.center) to (243.center);
 		\draw [style=white] (243.center) to (244.center);
-		\draw [style=white, in=30, out=-45] (259) to (213);
-		\draw [style=white, in=30, out=-45] (260) to (253);
+		\draw [in=30, out=-45] (259) to (213);
+		\draw [in=30, out=-45] (260) to (253);
 		\draw (286) to (287.center);
 		\draw [in=90, out=-90] (272.center) to (269.center);
 		\draw [in=90, out=-75, looseness=0.50] (275.center) to (270.center);
