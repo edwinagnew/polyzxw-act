@@ -356,6 +356,12 @@
 \end{tikzpicture}
 }
 
+\newcommand{\numberbox}[1][a]{\begin{tikzpicture}[scale=0.5]
+	\begin{pgfonlayer}{nodelayer}
+		\node [style=gbox] (0) at (0, 0) {$#1$};
+	\end{pgfonlayer}
+\end{tikzpicture}}
+
 \newcommand{\numbergate}[1][a]{\begin{tikzpicture}[scale=0.5]
 	\begin{pgfonlayer}{nodelayer}
 		\node [style=gbox] (0) at (0, 0) {$#1$};
