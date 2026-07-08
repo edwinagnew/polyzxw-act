@@ -666,7 +666,7 @@ Now we prove the remaining ring properties using purely diagrammatic rewrites.
         \end{bmatrix}
     \end{gather}
 
-    Completing the inductive step.
+    Completing the inductive step. Note that it is necessary to use a "proof-by-plugging" approach for this result, since we are proving a statement about the interpretation of a ZXW diagram as a matrix, whilst the completeness of our rule set applies only to equality of ZXW diagrams. 
 \end{proof}
 
 \textbf{Proof of Theorem \ref{thm:uni_pnf}}
@@ -692,7 +692,7 @@ Now we prove the remaining ring properties using purely diagrammatic rewrites.
 
     \medskip
 
-    Clearly, we can only stop applying these rules once $A$ is a sum of products of copies. Steps (2) and (3) ensure the top of $A$ has such a structure and steps (4) - (6) ensure that there is nothing beneath the $\lowerbox{\coWs}$'s . To see that this will always terminate, observe that (2) preserves the depth of $A$ while (4), (5), (6) all decrease it. (3) also preserves the depth, except for the following sub-case which can be further simplified by (5) \footnote{We thank an anonymous reviewer for pointing this out.}.
+    Clearly, we can only stop applying these rules once $A$ is a sum of products of copies. Steps (2) and (3) ensure the top of $A$ has such a structure and steps (4) - (6) ensure that there is nothing beneath the $\lowerbox{\coWs}$'s . To see that this will always terminate, observe that (2) preserves the depth of $A$ while (4), (5), (6) all decrease it. (3) also preserves the depth, except for the following sub-case which can be further simplified by (5) \footnote{We thank an anonymous reviewer for pointing this case out.}.
     \begin{equation*}
     \tikzfig{tikz/poly/lemmas/algcases35}
     \end{equation*}
@@ -749,7 +749,7 @@ Now we prove the remaining ring properties using purely diagrammatic rewrites.
 
     The proof relies on the recursive definition of $R[x_1, x_2] = R[x_1][x_2]$, for any ring $R$, to rewrite an arbitrary polynomial $p(x_1, ..., x_{n+1}) = a_0 + a_1x_{n+1} + ... + a_{2^{n+1}-1}x_1x_2...x_{n+1} \in \polyring[n+1]$ as $p(x_{n+1}) = p_0 + p_1x_{n+1}$, where $p_0, p_1 \in \polyring$. This allows the $p_i$ to be treated similarly to the scalars in the base case. 
     %To emphasise this, they will be drawn in green boxes. To help distinguish when an operation is covered by the inductive hypothesis, the wires for variables $x_1, ..., x_n$ will be drawn in blue, while the $x_{n+1}$ wires will be drawn in black. 
-    Thus the inductive hypothesis states that:
+    Thus the inductive hypothesis states that for all $p_i, q_i \in \polyring[n]$,
     \begin{equation}
         \tikzfig{tikz/poly/homproof/ih1}
         \tag{IH1}\label{eq:ih1}
@@ -811,15 +811,15 @@ Now we prove the remaining ring properties using purely diagrammatic rewrites.
     \bigskip
 
     Finally, to see $\phi_n$ is an isomorphism, we use Theorem \ref{thm:uni_pnf} to write an arbitrary controlled state in PNF:
-    \begin{gather}
+    \begin{gather*}
         \begin{bmatrix}
             1 & a_0 \\ 0 & a_1 \\ \vdots & \vdots \\ 0 & a_{2^{n}-1}
         \end{bmatrix}
         \quad = \quad \tikzfig{tikz/poly/pnf}
-    \end{gather}
+    \end{gather*}
 
     Then all we have to do is interpret it as the image of a polynomial:
-    \begin{gather}
+    \begin{gather*}
         \tikzfig{tikz/poly/pnf} \quad ~=~ \quad \tikzfig{tikz/poly/homproof/iso4} \neweqline ~=~ \phi_{n}(a_0) + \phi_{n}(a_1x_{n}) + ... + \phi_{n}(a_{2^{n}-1} x_1x_2...x_{n}) \neweqline ~=~ \phi_{n}(a_0 + a_1x_{n} + ... + a_{2^{n}-1}x_1x_2...x_{n})
-    \end{gather}
+    \end{gather*}
 \end{proof}

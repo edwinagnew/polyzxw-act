@@ -42,9 +42,9 @@ The complete rule set of the qubit ZXW-calculus from Ref.~\cite{poor2023complete
 
 \section{Controlled Diagrams}\label{sec:ctrldiagrams}
 Following \cite{shaikh2022sum}, we cover the definitions of controlled states and controlled square matrices, and arithmetic on them.
-Note that this is a different definition of controlled states to Ref.~\cite{jeandel2024adddiffzx} in which controlling on $\ket{0}$ is $\ket{+}^{\otimes n}$ instead of $\ket{0}^{\otimes n}$; this choice appears to make a substantial difference in the algebraic properties, which we discuss in Remark~\ref{remark:entrywise}.
+Note that this is a different definition of controlled states to Ref.~\cite{jeandel2024adddiffzx} in which controlling on $\ket{0}$ gives $\ket{+}^{\otimes n}$ instead of $\ket{0}^{\otimes n}$; this choice appears to make a substantial difference in the algebraic properties, which we discuss in Remark~\ref{remark:entrywise}.
 
-We define as a higher-order generator, the controlled square matrix $\tilde{M}$, whose interpretation is entirely determined by the square matrix $M$ by which is it labelled. In the next section, we show how this is definition relates to the higher-order map $\textsf{Ctrl}$ that sends any square matrix $M$ to its controlled square matrix $\tilde{M}$.
+We define as a higher-order generator the controlled square matrix $\tilde{M}$, whose interpretation is entirely determined by the square matrix $M$ by which is it labelled. In the next section, we show how this is definition relates to the higher-order map $\textsf{Ctrl}$ that sends any square matrix $M$ to its controlled square matrix $\tilde{M}$.
 
 \begin{definition}\label{def:ctrlsqmat}
   Any diagram satisfying both axioms below is called a \emph{controlled square matrix} of the labelled square matrix $M$. We denote any such controlled diagram by $\tilde{M}$.
@@ -128,9 +128,9 @@ The role of $\lowerbox{\coW}$ is to \textit{copy} controlled diagrams, as we wil
 
 \begin{definition}
   Given controlled states $\tilde{\psi}$ and $\tilde{\phi}$, we define addition $\tilde{\psi} \boxplus \tilde{\phi}$ and multiplication $\tilde{\psi} \boxtimes \tilde{\phi}$ operations on them to result in the controlled states:
-  \begin{equation}
+  \begin{equation*}
     \tikzfig{tikz/con/cs_add_def} \qquad\qquad\qquad\qquad \tikzfig{tikz/con/cs_times_def}
-\end{equation}
+\end{equation*}
 \end{definition}
 \begin{remark}
   Ref.~\cite{shaikh2022sum} defined this addition with red spiders at the bottom instead of $\lowerbox{\coW}$s; the linear map is the same, being $\widetilde{\phi + \psi}$. In choosing to use $\lowerbox{\coW}$, we will soon define the arithmetic fragment of the ZW-calculus.
