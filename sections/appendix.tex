@@ -139,7 +139,7 @@
     \end{equation}
 \end{proof}
 
-Before we prove Proposition \ref{prop:FF}, we first need to explain what the AND gate is in the ZXW-calculus.
+Before we prove Proposition \ref{prop:FF}, we first need to define the AND gate in the ZXW-calculus.
 The AND gate is a primitive in the ZH-calculus~\cite{backens2019zh}. We can also represent the binary AND gate in the ZXW-calculus, by deMorgan's law of the diagram for binary OR given in \Cref{prop:vec_pnf}.
 \begin{definition}\label{lemma:and}
     \begin{equation}
@@ -476,7 +476,10 @@ Finally, we derive the axiom $(\ref{rule:HD})$.
 \subsection{Rules for controlled diagrams}\label{sec:csound}
 In this subsection, we verify the soundness of the axioms for controlled diagrams with respect to the interpretations.
 
-The soundness of axioms $\ref{rule:c_sq0}$, $\ref{rule:c_sq1}$, $\ref{rule:cstate0}$, and $\ref{rule:cstate1}$ with respect to the interpretations in Equations~\eqref{eq:ctrlsqinterp} and~\eqref{eq:ctrlstateinterp}, immediately follows from applying the control states $\tikzfig{tikz/lemmas/x0} = \ket{0}$ and $\tikzfig{tikz/lemmas/x1} = \ket{1}$ respectively.
+The soundness of axioms $\ref{rule:c_sq0}$, $\ref{rule:c_sq1}$, $\ref{rule:cstate0}$, and $\ref{rule:cstate1}$ with respect to the interpretations in Equations~\eqref{eq:ctrlsqinterp} and~\eqref{eq:ctrlstateinterp}, immediately follows from applying the control states $\left\llbracket\tikzfig{tikz/lemmas/x0}\right\rrbracket = \ket{0}$ and $\left\llbracket\tikzfig{tikz/lemmas/x1}\right\rrbracket = \ket{1}$ respectively.
+
+For the remaining axioms, we will also prove soundness through verifying the actions of controlled diagrams on the control states $\ket{0}$ and $\ket{1}$.
+This is a common technique which uniquely fixes the interpretation because $\ket{0}$ and $\ket{1}$ form a basis for the control qubit, and thus any single-qubit state can be uniquely written as a linear combination of these two states.
 
 \subsubsection*{Confirmation of (\ref{rule:CMcpy})}
 

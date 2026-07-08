@@ -1,12 +1,14 @@
 \section{Completeness for Factoring Controlled Operators}
-Our results so far show that controlled states and controlled square matrices each induce a ring structure, as they satisfy all ring axioms. Furthermore, the ring of controlled states is isomorphic to the ring of multilinear polynomials over complex numbers. The question then arises: What is the ring of controlled square matrices isomorphic to? In this section, we will show that it is isomorphic to the ring of multivariate polynomials over same-size square matrices over the complex numbers.
+Our results so far show that controlled states and controlled square matrices each induce a ring structure, as they satisfy all ring axioms. Furthermore, the ring of controlled states is isomorphic to the ring of multilinear polynomials over complex numbers. The question then arises: What is the ring of controlled square matrices isomorphic to?
 
-Instead of the indeterminates being complex numbers represented by $\lowerbox{\numberstate}$'s, we can let them be same-size matrices represented by controlled square matrix diagrams.
+In this section, we will show that the ring of controlled square matrices is isomorphic to the ring of multivariate polynomials over same-size square matrices over the complex numbers, with complex number coefficients. Therefore, the former admits a completeness result over the latter.
+
+In the previous section, the indeterminates of the multilinear polynomials were complex numbers represented by $\lowerbox{\numberstate}$'s.
+Consider them to instead be same-size matrices represented by controlled square matrix diagrams.
 We then have that:
 \begin{thm}\label{thm:ctrl_pnf}
-    ZXW diagrams where the outputs of an arithmetic ZW diagram are each plugged into controls of same-size controlled matrices, are isomorphic to multivariate polynomials over same-size square matrices with complex number coefficients.
-    The rules for their completeness are the same subset of ZXW rules used for completeness for arithmetic diagrams in the ZXW-calculus in \Cref{thm:uni_pnf}, plus the \ref{rule:CMcpy} and \ref{rule:CMcom} rules.
-    When using the minimal set of rules from~\cite{deVisme2025minzw} for completeness for arithmetic diagrams, adding the \ref{rule:CMcpy} and \ref{rule:CMcom} rules is also a minimal rule set, i.e. none of the rules are derivable from the others.
+    Consider a multivariate polynomial of the form $P = \sum_{i=1}^{m_i} c_i \Pi_{j=0}^{m_{ij}} M_{ij}$ over same-size square matrices $M_{ij} \in \mathbb{C}^{n \times n}$, where $n \in \mathbb{N}$, all $c_i \in \mathbb{C}$, and all $m_i, m_{ij} \geq 0$.
+    Then, the controlled operator $\widetilde{P} = \sum_{i=1}^{m_i} c_i \Pi_{j=0}^{m_{ij}} \tilde{M_{ij}}$ is uniquely represented by a ZXW diagram in normal form, consisting of ZXW diagrams for each $\tilde{M}_{ij}$ corresponding to $M_{ij}$ composed according to the ring axioms of controlled square matrices.
 \end{thm}
 \begin{proof}
     The proof is by deriving a unique normal form, having fixed an (arbitrary) order on the same-size square matrix variables.
@@ -18,6 +20,9 @@ We then have that:
     To show minimality, we can consider that the \ref{rule:CMcpy} and \ref{rule:CMcom} rules are the only rules here that involve the controlled square matrix generator, and so they cannot be derivable from the other rules here.
     The \ref{rule:CMcpy} rule can change the total number of controlled square matrices in the diagram, while the \ref{rule:CMcom} rule cannot.
     On the other hand, the \ref{rule:CMcom} rule can apply to two different controlled square matrices, changing their order where the outputs of one are inputs to the other; the \ref{rule:CMcpy} rule applies to two controlled square matrices only if they are of the same matrix.
+
+    The rules used here to derive this completeness result are the same subset of ZXW rules used for completeness for arithmetic diagrams in the ZXW-calculus in \Cref{thm:uni_pnf}, plus the \ref{rule:CMcpy} and \ref{rule:CMcom} rules.
+    When using the minimal set of rules from~\cite{deVisme2025minzw} for completeness for arithmetic diagrams, adding the \ref{rule:CMcpy} and \ref{rule:CMcom} rules is also a minimal rule set, i.e. none of the rules are derivable from the others.
 \end{proof}
 \begin{remark}
     These procedures guarantee that controlled operators in mutually exclusive sectors are commutable past each other.
