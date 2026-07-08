@@ -23,7 +23,7 @@
 		\node [style=uw] (24) at (-1.5, 5.5) {};
 		\node [style=uw] (25) at (-0.25, 5.25) {};
 		\node [style=gn] (26) at (-0.5, 4) {};
-		\node [style=none] (27) at (5.5, 5.25) {$\eqq{\ref{rule:Bs1}}$};
+		\node [style=none] (27) at (5.5, 5.25) {$\eqq{\ref{eq:tpcd}}$};
 		\node [style=none] (29) at (7.25, 6.75) {};
 		\node [style=none] (32) at (7.25, 3.5) {};
 		\node [style={rn_phase}] (33) at (9.75, 5.5) {$\pi$};

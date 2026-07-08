@@ -355,6 +355,11 @@ This lemma is the analogue of ~\cite[Lemma 37]{poor2023completeness} for the qub
     \end{equation*}
 \end{proof}
 
+Next, we will prove $(\ref{rule:Bs1})$ from the $(\ref{rule:Bs1})$ rule of~\cite{poor2023completeness} restricted to the qubit setting, which is:
+\begin{equation}\label{eq:tpcd}
+    \tikzfig{tikz/axioms/trianglepicopydit2}
+\end{equation}
+
 \begin{lemma}
     \begin{equation}\label{eq:wpi}
         \tikzfig{tikz/lemmas/pi-statement}
@@ -365,6 +370,7 @@ This lemma is the analogue of ~\cite[Lemma 37]{poor2023completeness} for the qub
         \tikzfig{tikz/lemmas/pi}
     \end{equation*}
 \end{proof}
+Because we can derive the above lemma from Equation~\eqref{eq:tpcd} (the $(\ref{rule:Bs1})$ rule of~\cite{poor2023completeness} restricted to the qubit setting), and we can derive the latter from the former by simply applying $(\ref{rule:K1})$, we have opted to replace the latter axiom with the former, which is simpler, in Figure~\ref{fig:zxw_rules}.
 
 \begin{lemma}
     \begin{equation}\label{eq:flip}
@@ -468,8 +474,9 @@ Finally, we derive the axiom $(\ref{rule:HD})$.
 \section{Proofs for Section~\ref{sec:ring}}
 
 \subsection{Rules for controlled diagrams}\label{sec:csound}
-First, we verify the soundness of the axioms for controlled diagrams by plugging in basis states. Rules (\ref{rule:c_sq0}) and (\ref{rule:c_sq1}) follow immediately from definition (\ref{def:ctrlsqmat}), whilst rules(\ref{rule:cstate0}) and (\ref{rule:cstate1}) follow immediately from definition (\ref{def:ctrlst}).
+In this subsection, we verify the soundness of the axioms for controlled diagrams with respect to the interpretations.
 
+The soundness of axioms $\ref{rule:c_sq0}$, $\ref{rule:c_sq1}$, $\ref{rule:cstate0}$, and $\ref{rule:cstate1}$ with respect to the interpretations in Equations~\eqref{eq:ctrlsqinterp} and~\eqref{eq:ctrlstateinterp}, immediately follows from applying the control states $\tikzfig{tikz/lemmas/x0} = \ket{0}$ and $\tikzfig{tikz/lemmas/x1} = \ket{1}$ respectively.
 
 \subsubsection*{Confirmation of (\ref{rule:CMcpy})}
 

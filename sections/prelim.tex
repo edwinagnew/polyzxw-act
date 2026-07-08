@@ -63,7 +63,7 @@ We define as a higher-order generator, the controlled square matrix $\tilde{M}$,
 
 We represent the additional dimension of $\tilde{M}$ as a vertical wire to distinguish it as the control wire.
 Interpreting this control wire as an input, because the interpretations of the generators of the ZXW-calculus from the previous section fix that $\left\llbracket \tikzfig{tikz/lemmas/x0} \right\rrbracket = \ket{0}$ and $\left\llbracket \tikzfig{tikz/lemmas/x1} \right\rrbracket = \ket{1}$, the interpretation of any controlled square matrix $\tilde{M}$ is necessarily the linear map:
-\begin{equation}
+\begin{equation}\label{eq:ctrlsqinterp}
   \left\llbracket \quad \tikzfig{tikz/con/c_sq_def} \;\;\; \right\rrbracket ~=~ \bra{0} \otimes I + \bra{1} \otimes M ~=~ \begin{bmatrix} I & M \end{bmatrix} 
 \end{equation}
 
@@ -78,10 +78,11 @@ Similarly, we can define higher-order controlled states as generators.
     \tikzfig{tikz/con/c_state1}
     \tag{\ref{rule:cstate1}}
   \end{equation*}
-  Again, the interpretation of any controlled state as a linear map is entirely determined by the statevector of its labelled state $\psi$:
-  \[
-\left\llbracket \;\;\; \tikzfig{tikz/con/c_state_def} \;\;\; \right\rrbracket ~=~
-\begin{bmatrix}
+\end{definition}
+Again, the interpretation of any controlled state as a linear map is entirely determined by the statevector of its labelled state $\psi$:
+  \begin{equation}\label{eq:ctrlstateinterp}
+  \left\llbracket \;\;\; \tikzfig{tikz/con/c_state_def} \;\;\; \right\rrbracket ~=~
+  \begin{bmatrix}
      \begin{matrix}
          1 \\
          0 \\
@@ -94,10 +95,8 @@ Similarly, we can define higher-order controlled states as generators.
          \psi \\
          \vdots
      \end{matrix}
- \end{bmatrix}
- \]
-
-\end{definition}
+  \end{bmatrix}
+  \end{equation}
 
 % \begin{prop}\label{prop:linearity_corollary}
 %   Adding $\left(\ref{rule:cstate0}\right)$ and $\left(\ref{rule:cstate1}\right)$ as axioms to the qubit ZXW-calculus, necessarily implies by linearity:

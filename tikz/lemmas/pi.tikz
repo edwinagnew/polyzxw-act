@@ -22,7 +22,7 @@
 		\node [style=none] (104) at (-1, -1.75) {};
 		\node [style=none] (105) at (1.5, -1.75) {};
 		\node [style={rn_phase}] (106) at (1.5, 0) {$\pi$};
-		\node [style=none] (107) at (2.75, 0) {$\eqq{\ref{rule:Bs1}}$};
+		\node [style=none] (107) at (2.75, 0) {$\eqq{\ref{eq:tpcd}}$};
 		\node [style={rn_phase}] (111) at (5.5, -1) {$\pi$};
 		\node [style=gn] (112) at (3.75, -1) {};
 		\node [style=none] (113) at (3.75, -1.75) {};
