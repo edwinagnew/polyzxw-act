@@ -328,7 +328,7 @@ First we prove $(KZ)$. This proof relies on the generalised $(\ref{rule:TA})$ ru
 \end{proof}
 
 
-The remainder of this section is to derive $(\ref{rule:HD})$ from $(EU)$ of~\cite{poor2023completeness}, for which we first derive a number of lemmas.
+The remainder of this section is to derive $(\ref{rule:HD})$ from $(HD)$ of~\cite{poor2023completeness}, for which we first derive a number of lemmas.
 
 \begin{lemma}
     \begin{equation}\label{eq:hopf}
@@ -449,7 +449,7 @@ Finally, we derive the axiom $(\ref{rule:HD})$.
     \begin{equation}\label{eq:hd}
         \tikzfig{tikz/lemmas/hd-statement}
     \end{equation}
-    where the middle of the three diagrams is the result of restricting the $(EU)$ axiom from~\cite{poor2023completeness} for arbitrary finite dimension, to the qubit (two-dimensional) setting.
+    where the middle of the three diagrams is the result of restricting the $(HD)$ axiom from~\cite{poor2023completeness} for arbitrary finite dimension, to the qubit (two-dimensional) setting.
 \end{prop}
 \begin{proof}
     \begin{equation*}
@@ -550,6 +550,13 @@ Now we prove the remaining ring properties using purely diagrammatic rewrites.
     \end{equation*}
 \end{proof}
 
+\textbf{Proof of Lemma \ref{lem:csaddassoc}}
+\begin{proof}
+    \begin{equation*}
+    \tikzfig{tikz/con/cs_add_ass}
+    \end{equation*}
+\end{proof}
+
 \textbf{Proof of Lemma \ref{lem:csaddid}}
 \begin{proof}
     It is clear that $\lowerbox[10]{\zeroproj}$ is the controlled state $\tilde{\mathbf{0}}$.
@@ -559,6 +566,21 @@ Now we prove the remaining ring properties using purely diagrammatic rewrites.
         \tikzfig{tikz/con/cs_add_id}
     \end{equation*}
 
+\end{proof}
+
+\textbf{Proof of Lemma \ref{lem:cstimesassoc}}
+\begin{proof}
+    Proof is very similar to lemma \ref{lem:csaddassoc}, just using with (\ref{rule:S1}) instead of (\ref{rule:Aso})
+    \begin{equation*}
+    \tikzfig{tikz/con/cs_times_ass}
+    \end{equation*}
+\end{proof}
+
+\textbf{Proof of Lemma \ref{lem:cstimescomm}}
+\begin{proof}
+    \begin{equation*}
+    \tikzfig{tikz/con/cs_times_comm}
+    \end{equation*}
 \end{proof}
 
 \textbf{Proof of Lemma \ref{lem:csaddinv}}

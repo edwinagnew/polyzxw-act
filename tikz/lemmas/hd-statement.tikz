@@ -1,32 +1,36 @@
 \begin{tikzpicture}
 	\begin{pgfonlayer}{nodelayer}
-		\node [style=none] (315) at (2.75, 0) {$=$};
-		\node [style=gn] (318) at (5.375, 0.75) {};
-		\node [style=uw] (319) at (4.875, 1.5) {};
-		\node [style=gn] (320) at (4.375, -0.75) {};
-		\node [style=dw] (321) at (4.875, -1.5) {};
-		\node [style=gbox] (322) at (4.875, 0) {$-2$};
-		\node [style=none] (323) at (4.875, -2.475) {};
-		\node [style=none] (324) at (4.875, 2.5) {};
+		\node [style=none] (315) at (3, 0) {$=$};
+		\node [style=gn] (318) at (5.875, 0.75) {};
+		\node [style=uw] (319) at (5.375, 1.5) {};
+		\node [style=gn] (320) at (4.875, -0.75) {};
+		\node [style=dw] (321) at (5.375, -1.5) {};
+		\node [style=gbox] (322) at (5.375, 0) {$-2$};
+		\node [style=none] (323) at (5.375, -2.475) {};
+		\node [style=none] (324) at (5.375, 2.5) {};
 		\node [style=hbox] (325) at (-4.625, 0) {};
 		\node [style=none] (326) at (-4.625, 2) {};
 		\node [style=none] (327) at (-4.625, -2) {};
-		\node [style=rn] (328) at (0, 2.5) {};
-		\node [style=rn] (329) at (-1, 1.75) {};
-		\node [style=none] (330) at (0, 3.25) {};
-		\node [style=none] (331) at (0, -3.25) {};
-		\node [style=uw] (332) at (-1, -1) {};
-		\node [style=gn] (333) at (-1.5, -1.75) {};
-		\node [style=gn] (334) at (-1, 0.75) {};
-		\node [style=gn] (335) at (-1, 0) {};
-		\node [style={rn_phase}] (336) at (0, 1.75) {$\pi$};
-		\node [style=rn] (337) at (0, -2.5) {};
-		\node [style=gn] (338) at (1.5, -1.75) {};
-		\node [style=uw] (339) at (1, -1) {};
-		\node [style={gn_phase}] (340) at (0.5, -1.75) {$\pi$};
-		\node [style=uw] (341) at (0, 0.75) {};
-		\node [style=gn] (342) at (1, 0) {};
+		\node [style=rn] (328) at (0.25, 2.5) {};
+		\node [style=rn] (329) at (-0.75, 1.75) {};
+		\node [style=none] (330) at (0.25, 3.25) {};
+		\node [style=none] (331) at (0.25, -3.25) {};
+		\node [style=uw] (332) at (-0.75, -1) {};
+		\node [style=gn] (333) at (-1.25, -1.75) {};
+		\node [style=gn] (334) at (-0.75, 0.75) {};
+		\node [style=gn] (335) at (-0.75, 0) {};
+		\node [style={rn_phase}] (336) at (0.25, 1.75) {$\pi$};
+		\node [style=rn] (337) at (0.25, -2.5) {};
+		\node [style=gn] (338) at (1.75, -1.75) {};
+		\node [style=uw] (339) at (1.25, -1) {};
+		\node [style={gn_phase}] (340) at (0.75, -1.75) {$\pi$};
+		\node [style=uw] (341) at (0.25, 0.75) {};
+		\node [style=gn] (342) at (1.25, 0) {};
 		\node [style=none] (343) at (-2.75, 0) {$=$};
+		\node [style={rn_phase}] (344) at (4, 0.5) {$\pi$};
+		\node [style=gbox] (345) at (4, -0.5) {$\frac{1}{\sqrt{2}}$};
+		\node [style={rn_phase}] (346) at (-1.75, 0.5) {$\pi$};
+		\node [style=gbox] (347) at (-1.75, -0.5) {$\frac{1}{\sqrt{2}}$};
 	\end{pgfonlayer}
 	\begin{pgfonlayer}{edgelayer}
 		\draw [in=90, out=-30] (319) to (318);
@@ -52,5 +56,7 @@
 		\draw (336) to (341);
 		\draw (342) to (339);
 		\draw [in=-30, out=90] (342) to (328);
+		\draw (344) to (345);
+		\draw (346) to (347);
 	\end{pgfonlayer}
 \end{tikzpicture}
