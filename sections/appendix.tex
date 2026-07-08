@@ -141,7 +141,7 @@
 
 Before we prove Proposition \ref{prop:FF}, we first need to explain what the AND gate is in the ZXW-calculus.
 The AND gate is a primitive in the ZH-calculus~\cite{backens2019zh}. We can also represent the binary AND gate in the ZXW-calculus, by deMorgan's law of the diagram for binary OR given in \Cref{prop:vec_pnf}.
-\begin{definition}\label{lemma:and}
+\begin{definition}\label{def:and}
     \begin{equation}
         \tikzfig{tikz/func/and_def}
     \end{equation}
@@ -464,7 +464,7 @@ Finally, we derive the axiom $(\ref{rule:HD})$.
 \end{proof}
 
 \begin{remark}
-    As a useful observation, compare the following diagram for the Hadamard gate derived above, to the diagram for the AND gate from Lemma~\ref{lemma:and}.
+    As a useful observation, compare the following diagram for the Hadamard gate derived above, to the diagram for the AND gate from Definition~\ref{def:and}.
     \begin{equation*}
         \tikzfig{tikz/lemmas/hdand}
     \end{equation*}
@@ -592,7 +592,7 @@ Now we prove the remaining ring properties using purely diagrammatic rewrites.
 
 \textbf{Proof of Lemma \ref{lem:csaddinv}}
 \begin{proof}
-    $\tilde{\psi} \circ \raisebox{-5pt}{\numbergate[-1]}$ is still a controlled state since $\raisebox{-5pt}{\numbergate[-1]}$ does nothing to $\raisebox{-5pt}{\redzero}$. Then $\tilde{\psi} \circ \raisebox{-5pt}{\numbergate[-1]}$ inverts $\tilde{\psi}$ since:
+    $\tilde{\psi}^{-1}$ is still a controlled state since $\raisebox{-5pt}{\numbergate[-1]}$ does nothing to $\raisebox{-5pt}{\redzero}$. Then $\tilde{\psi}^{-1}$ inverts $\tilde{\psi}$ since:
     \begin{equation*}
         \tikzfig{tikz/con/cs_add_inv}
     \end{equation*}
@@ -694,7 +694,7 @@ Now we prove the remaining ring properties using purely diagrammatic rewrites.
     \tikzfig{tikz/poly/lemmas/algcases35}
     \end{equation*}
 
-    (2) and (3) can only be applied a finite number of times before another simplification must be used. So repeatedly applying these rewrites must eventually shrink the depth down to $3$, as desired. Finally, to put $A$ in PNF we must:
+    (2) and (3) can only be applied a finite number of times before another simplification must be used, since (2) cannot create new ways to apply (3). So repeatedly applying these rewrites must eventually shrink the depth down to $3$, as desired. Finally, to put $A$ in PNF we must:
     \begin{enumerate}[resume, label={(\arabic*)}]
         \item Collect terms: whenever there are two boxes connected to exactly the same set of $\raisebox{-5pt}{\coWs}$'s, use (\ref{eq:cpk_add}) to fuse them together.
         \item Pad: use (\ref{eq:zerobox}) to insert $\raisebox{-5pt}{\numbergate[0]}$ for any connectivities that do not exist in $A$.
