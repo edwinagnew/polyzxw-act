@@ -1,0 +1,21 @@
+\begin{tikzpicture}
+	\begin{pgfonlayer}{nodelayer}
+		\node [style={rn_phase}] (0) at (-2, 0) {$\pi$};
+		\node [style=none] (3) at (0, 0) {$1$};
+		\node [style=none] (4) at (-1, 0) {$=$};
+		\node [style={rn_phase}] (6) at (-4, -0.25) {$\pi$};
+		\node [style=none] (7) at (-3, 0) {$=$};
+		\node [style=rn] (8) at (-4, 0.5) {};
+		\node [style=none] (9) at (1, 0) {$=$};
+		\node [style=rn] (10) at (2, 0.5) {};
+		\node [style=gbox] (11) at (2, -0.25) {$0$};
+		\node [style=none] (12) at (3, 0) {$=$};
+		\node [style=rn] (13) at (4, 0.5) {};
+		\node [style=rn] (14) at (4, -0.25) {};
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\draw (8) to (6);
+		\draw (11) to (10);
+		\draw (14) to (13);
+	\end{pgfonlayer}
+\end{tikzpicture}

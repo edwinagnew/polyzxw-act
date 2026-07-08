@@ -11,12 +11,12 @@
 		\node [style=none] (8) at (1, 1.25) {};
 		\node [style=uw] (10) at (2.5, 1.25) {};
 		\node [style=none] (12) at (1.75, 0.25) {};
-		\node [style=none] (13) at (3.25, 0.25) {};
-		\node [style=none] (14) at (3.75, -0.5) {$\ddots$};
-		\node [style=uw] (15) at (4.75, -1.75) {};
-		\node [style=none] (16) at (4, -2.75) {};
-		\node [style=none] (17) at (5.5, -2.75) {};
-		\node [style=none] (18) at (4.75, -0.75) {};
+		\node [style=none] (13) at (3.25, 0.5) {};
+		\node [style=none] (14) at (3.625, 0) {$\rotatebox{-45}{\dots}$};
+		\node [style=uw] (15) at (4, -1.25) {};
+		\node [style=none] (16) at (3.25, -2.25) {};
+		\node [style=none] (17) at (4.75, -2.25) {};
+		\node [style=none] (18) at (4, -0.375) {};
 	\end{pgfonlayer}
 	\begin{pgfonlayer}{edgelayer}
 		\draw (1.center) to (0);
@@ -25,8 +25,8 @@
 		\draw (7.center) to (6);
 		\draw [bend right=15] (6) to (8.center);
 		\draw [bend right=15] (10) to (12.center);
-		\draw [bend left=15] (10) to (13.center);
-		\draw [bend left] (6) to (10);
+		\draw [in=105, out=-30] (10) to (13.center);
+		\draw [in=90, out=-30, looseness=0.75] (6) to (10);
 		\draw [bend right=15] (15) to (16.center);
 		\draw [bend left=15] (15) to (17.center);
 		\draw (18.center) to (15);

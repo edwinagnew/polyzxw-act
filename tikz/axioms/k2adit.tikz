@@ -5,8 +5,8 @@
 		\node [style=none] (2) at (-1.5, 1) {};
 		\node [style=gbox] (3) at (-1.5, -0.375) {$a$};
 		\node [style={rn_phase}] (4) at (-1.5, 0.375) {$\pi$};
-		\node [style={rn_phase}] (5) at (3, -0.375) {$\pi$};
-		\node [style=gbox] (6) at (3, 0.375) {$-a$};
+		\node [style={rn_phase}] (5) at (3, -0.5) {$\pi$};
+		\node [style=gbox] (6) at (3, 0.375) {$\frac{1}{a}$};
 		\node [style=none] (7) at (3, -1) {};
 		\node [style=none] (8) at (3, 1) {};
 		\node [style=gbox] (9) at (1.5, -0.375) {$a$};

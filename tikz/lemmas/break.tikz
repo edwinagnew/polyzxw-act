@@ -94,7 +94,7 @@
 		\node [style=none] (131) at (-6, 0) {$=$};
 		\node [style=dw] (132) at (-4.75, -0.5) {};
 		\node [style=uw] (133) at (-3.75, 1.375) {};
-		\node [style=none] (134) at (-1.75, 7) {$\overset{\left(BZW\right)}{\phantom{=}}$};
+		\node [style=none] (134) at (-1.75, 7) {$\overset{\left(\ref{rule:BZW}\right)}{\phantom{=}}$};
 	\end{pgfonlayer}
 	\begin{pgfonlayer}{edgelayer}
 		\draw (11.center) to (12);

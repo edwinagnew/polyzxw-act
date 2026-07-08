@@ -81,6 +81,34 @@
 %     \tag{HD}\label{rule:HD}
 %     \end{gather}
 % \end{multicols}
+% \section{Proofs for Section~\ref{sec:ctrldiagrams}}\label{sec:ctrldiagramsproofs}
+% Our proofs of Proposition~\ref{prop:linearity_corollary} and~\ref{prop:linearity_corollary2} utilise the following lemmas provable from qubit ZX-calculus:
+% \begin{lemma}\label{lem:pi_sq}
+%     \begin{equation*}
+%         \tikzfig{tikz/lemmas/pi-sq-statement}
+%     \end{equation*}
+% \end{lemma}
+% \begin{proof}
+%     \begin{equation*}
+%         \tikzfig{tikz/lemmas/pi-sq}
+%     \end{equation*}
+% \end{proof}
+
+% \begin{lemma}\label{lem:lin_id}
+%     \begin{equation*}
+%         \tikzfig{tikz/lemmas/linearity-statement}
+%     \end{equation*}
+% \end{lemma}
+% \begin{proof}
+%     From Lemma~\ref{lem:pi_sq}, we have that $\tikzfig{tikz/lemmas/xpi}^2 = \tikzfig{tikz/lemmas/xpi}$, and therefore $\tikzfig{tikz/lemmas/xpi}$ must be either 0 or 1.
+%     Were $\tikzfig{tikz/lemmas/xpi} = 1$, $\tikzfig{tikz/lemmas/x0}$ and $\tikzfig{tikz/lemmas/x1}$ are both normalised single-qubit states whose inner product with each other is moreover 1.
+%     \begin{equation*}
+%         \tikzfig{tikz/lemmas/xpi2}
+%     \end{equation*}
+%     Therefore, $\tikzfig{tikz/lemmas/x0} = \tikzfig{tikz/lemmas/x1}$, which is a contradiction because they must be different states because $(\ref{rule:Bs0})$ is a product state and $(\ref{rule:Bs1})$ is an entangled state. Therefore, $\tikzfig{tikz/lemmas/xpi} = 0$ and we have the required result.  
+    
+% \end{proof}
+
 \section{Proofs for Section~\ref{sec:ctrlmap}}\label{sec:ctrlmapproofs}
 
 \textbf{Proof of Proposition \ref{prop:ctrl_comp_h}}
@@ -437,7 +465,7 @@ Finally, we derive the axiom $(\ref{rule:HD})$.
     This precisely agrees with its action applying a $-1$ phase determined by the AND of the input and output bit.
 \end{remark}
 
-\section{Results for Section~\ref{sec:ring}}
+\section{Proofs for Section~\ref{sec:ring}}
 
 \subsection{Rules for controlled diagrams}\label{sec:csound}
 First, we verify the soundness of the axioms for controlled diagrams by plugging in basis states. Rules (\ref{rule:c_sq0}) and (\ref{rule:c_sq1}) follow immediately from definition (\ref{def:ctrlsqmat}), whilst rules(\ref{rule:cstate0}) and (\ref{rule:cstate1}) follow immediately from definition (\ref{def:ctrlst}).
@@ -495,7 +523,7 @@ Meanwhile, plugging $|1\rangle$ we have
  %  \end{equation}
 %\end{proof}
 
-\subsection{Proofs for Section~\ref{sec:ring}}\label{sec:ringproofs}
+\subsection{Proofs for Ring Properties}\label{sec:ringproofs}
 
 Now we prove the remaining ring properties using purely diagrammatic rewrites.
 
