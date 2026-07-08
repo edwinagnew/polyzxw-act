@@ -7,7 +7,7 @@ Firstly, we describe how to interpret certain ZXW diagrams as polynomials. Consi
     \tikzfig{tikz/poly/eg1}
 \end{equation}
 
-If we treat the bottom wires as an indeterminate $x$, we can read these bottom-up as computing $x - 1$ and $2x + 3$, respectively. Moreover, since these diagrams are both controlled states, they can be added together,  yield a diagram resembling $3x + 2$:
+If we treat the bottom wires as an indeterminate $x$, we can read these bottom-up as computing $x - 1$ and $2x + 3$, respectively. Moreover, since these diagrams are both controlled states, they can be added together, yielding a diagram resembling $3x + 2$:
 \begin{equation}\label{eq:eg_add}
     \tikzfig{tikz/poly/eg4}
 \end{equation}
@@ -77,7 +77,7 @@ Thus, every controlled state can be represented as at least one arithmetic diagr
 \end{thm}
 
 \begin{proof}
-    We present an algorithm to rewrite any arithmetic diagram to PNF in Appendix~\ref{sec:isoproofs}.
+    We present an algorithm to rewrite any arithmetic diagram to PNF in Appendix~\ref{sec:isoproofs}. As with~\cite{poor2023completeness}, this is sufficient for completeness since equality of diagrams reduces to writing both diagrams in PNF and then reversing one of the directions.
 \end{proof}
 \begin{remark}  
     All of the qubit ZXW-calculus rules~\cite{poor2023completeness} applied in this proof are derivable from the minimal qubit ZW-calculus rules from~\cite{deVisme2025minzw}, derived independently from this work~\cite{Agnew2023Masters}. We can replace the \ref{rule:TA} rule with the rule of Lemma~\ref{lem:kill_quad}, and the qubit ZXW-calculus \ref{rule:WW} rule is derived in their~\cite[Lemma 23]{deVisme2025minzw}.
@@ -90,7 +90,7 @@ At last we can prove the isomorphism. Recall that $\tilde{S_n}$ is the ring of c
     There is an isomorphism $\polyring \simeq \tilde{S_n}$.
 \end{thm}
 
-First, we shall define the map $\phi_n: \polyring \to \csring$ before proving it induces an isomorphism. $\phi_n$ is defined to map an arbitrary polynomial $p(x_1, ..., x_n) = a_0 + a_1x_n + ... + a_{2^n-1}x_1x_2...x_n$ to the PNF in equation (\ref{eq:pnf}).
+First, we define the map $\phi_n: \polyring \to \csring$ before proving it induces an isomorphism. $\phi_n$ is defined to map an arbitrary polynomial $p(x_1, ..., x_n) = a_0 + a_1x_n + ... + a_{2^n-1}x_1x_2...x_n$ to the PNF in equation (\ref{eq:pnf}).
 
 
 Some important special cases are mapping scalars $a \in \mathbb{C}$ and indeterminates $x_i$:
