@@ -204,8 +204,9 @@ Since this is indeed the controlled matrix on a controlled gate, we obtain the r
 In this section, we prove a number of lemmas used throughout the paper.
 
 Firstly, we can define the one-input, zero-output W node to have the same syntax and semantics as the one-input, zero-output phase-free X spider, as done for arbitrary finite dimension in~\cite{deVisme2025minzw}.
-In this work, all our completeness proofs for arithmetic diagrams and controlled states and operators (i.e. excluding Section~\ref{sec:deriveaxioms})
-The following proof implies that as the only place where $(\ref{rule:TA})$ applied is in the proof of the ZW-calculus rule $\left(\ref{eq:hopf}\right)$, it suffices to replace $(\ref{rule:TA})$ by $\left(\ref{eq:hopf}\right)$; all rules involving X spiders with two or more legs can be safely disregarded.
+%In this work, all our completeness proofs for arithmetic diagrams and controlled states and operators (i.e. excluding Section~\ref{sec:deriveaxioms})
+%The following proof implies that as the only place where $(\ref{rule:TA})$ applied is in the proof of the ZW-calculus rule $\left(\ref{eq:kill_quad}\right)$, it suffices to replace $(\ref{rule:TA})$ by $\left(\ref{eq:kill_quad}\right)$; all rules involving X spiders with two or more legs can be safely disregarded.
+The remainder of this section proves a number of lemmas used throughout the paper that are all syntactic equalities, because they are derived purely through applications of the axioms of the qubit ZXW-calculus given in Figure~\ref{fig:zxw_rules}.
 
 \textbf{Proof of Lemma \ref{lem:kill_quad}}
 \begin{proof}
@@ -214,7 +215,21 @@ The following proof implies that as the only place where $(\ref{rule:TA})$ appli
 \end{equation*}
 \end{proof}
 
-The remainder of this section proves a number of lemmas used throughout the paper that are all syntactic equalities, because they are derived purely through applications of the axioms of the qubit ZXW-calculus given in Figure~\ref{fig:zxw_rules}.
+
+
+This lemma is the analogue of ~\cite[Lemma 37]{poor2023completeness} for the qubit case.
+
+\begin{lemma}
+    \begin{equation}\label{eq:wdecomp}
+        \tikzfig{tikz/lemmas/triangle-statement}
+        %\tikzfig{tikz/lemmas/w_decomp_statement}
+    \end{equation}
+\end{lemma}
+\begin{proof}
+    \begin{equation*}
+    \tikzfig{tikz/lemmas/triangle}
+    \end{equation*}
+\end{proof}
 
 \begin{lemma}
     \begin{equation}\label{eq:wid}
@@ -338,20 +353,6 @@ The remainder of this section is to derive $(\ref{rule:HD})$ from $(HD)$ of~\cit
 \begin{proof}
     \begin{equation*}
     \tikzfig{tikz/lemmas/hopf}
-    \end{equation*}
-\end{proof}
-
-This lemma is the analogue of ~\cite[Lemma 37]{poor2023completeness} for the qubit case.
-
-\begin{lemma}
-    \begin{equation}\label{eq:wdecomp}
-        \tikzfig{tikz/lemmas/triangle-statement}
-        %\tikzfig{tikz/lemmas/w_decomp_statement}
-    \end{equation}
-\end{lemma}
-\begin{proof}
-    \begin{equation*}
-    \tikzfig{tikz/lemmas/triangle}
     \end{equation*}
 \end{proof}
 
