@@ -30,12 +30,23 @@ We then have that:
 \end{remark}
 
 \subsection{Factorising Hamiltonians}
-To present a small working example, we leverage both our rewrite rules for arithmetic ZW diagrams, and for controlled diagrams, to \emph{factor} them.  For example, for same-size square matrices $I, A, B$ and $a, b, c \in \mathbb{C}$:
+An application of Theorem~\cite{thm:ctrl_pnf} is that we can leverage our complete rules for arithmetic ZW diagrams and controlled diagrams to perform the equivalent ring operations to those on the corresponding multivariate polynomials.
+This is important for synthesising quantum circuits for a number of quantum algorithms whose constructions involve many controlled gates.
+These techniques are particularly amenable for quantum circuits derived from Hamiltonian operators, as is ubiquitous in quantum algorithms for quantum chemistry and condensed matter physics.
+
+The earliest works on diagrammatic presentations of Hamiltonian operators include the Schr\"odinger equation, Taylor expansion, and Trotterization~\cite{shaikh2022sum}; and diagrammatical differentiation and integration of parametrised quantum circuits applicable to analysing barren plateaus~\cite{Wang2024diffintzx}.
+For Hamiltonians fully instantiated in terms of the ZX- or ZXW-calculus generators, including arbitrary qubit Hamiltonians that are expressible as linear combinations of tensor products of Pauli operators, the completeness results of these graphical calculi guarantee that any possible factorisations are derivable from the rules of the calculus.
+
+However, while Hamiltonian operators are ultimately compiled to qubit Pauli operators if executed on qubit quantum computers, typically the physical systems of interest are not natively qubit systems. Controlled operators for non-qubit systems in quantum graphical calculi include spin-optical interactions~\cite{de2023light}, continuous-variable operators~\cite{shaikh2024fockzx}, fermion-to-qubit mappings~\cite{mcdowallrose2025f2q}, and SU(2) representations~\cite{wang2025penrosezx}.
+Ref.~\cite{mcdowallrose2025f2q} notably used one of the new rules for controlled diagrams first proposed in this work, \eqref{rule:CMcpy}, to derive a general form for any two-body fermionic Hamiltonian in second quantisation under any linear encoding.
+
+In this work, we introduce graphical rewrite rules that can involve and even copy black-box diagrams so long as they are controlled square matrices. To present a small working example, consider same-size square matrices $I, A, B$, and $a, b, c \in \mathbb{C}$.
+The equivalent ring operations for the below factorisation of an example Hamiltonian are performed directly on the controlled diagram.
 \begin{gather}
     \tikzfig{tikz/poly/matspoly}
 \end{gather}
-Factoring Hamiltonians is important to optimise quantum algorithms for chemistry and physics simulations. However, previous graphical rewrites for factoring Hamiltonians had only been doable for Hamiltonians with concretely-specified matrix terms~\cite{shaikh2022sum}. This completeness result guarantees that for any Hamiltonian, even if its matrix terms are black-box, these graphical rewrite rules are capable of deriving any of its possible factorisations.
 
-Recently, one of the new rules for controlled diagrams first proposed in this work, \eqref{rule:CMcpy}, was used in Ref.~\cite{mcdowallrose2025f2q} to derive a general form for any two-body fermionic Hamiltonian in second quantisation under any linear encoding.
-
-
+The completeness results of the present work guarantee that for any Hamiltonian, the graphical rewrite rules of Figure~\ref{fig:zxw_rules} are capable of deriving any regroupings of the Hamiltonian terms.
+This may be generally of interest because factoring Hamiltonians reduces the Hamiltonian term count and therefore the circuit complexity, whereas expanding to unique polynormal form enables verifying that a given quantum computation indeed implements the desired Hamiltonian. 
+When the control structure has the form of any arithmetic diagrams, then this guarantee holds even when no specific diagrammatic instantiation is fixed for the Hamiltonian terms, with the complexity of obtaining polynormal form moreover scaling as a function of the number of terms in the Hamiltonian.
+In contrast, na\"ively applying the normal form procedure for the linear map itself scales as a function of the size of the matrix, which is exponential in the number of qubits.
