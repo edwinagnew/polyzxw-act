@@ -14,7 +14,7 @@ The qubit ZXW-calculus is built from the following generators:
   \left\llbracket \;\;\; \raisebox{-8pt}{\hgate} \;\; \right\rrbracket = \frac{1}{\sqrt{2}}\begin{bmatrix}1 & 1 \\ 1 & -1\end{bmatrix}
 \end{gather}
 
-Diagrams can be composed vertically (sequentially) and horizontally (in parallel), which are interpreted as matrix multiplication $\circ$ and tensor product $\otimes$, respectively.  For simplicity, we introduce the following additional notation:
+Diagrams can be composed vertically (sequentially) and horizontally (in parallel), which are interpreted as matrix multiplication $\circ$ and tensor product $\otimes$, respectively.  For simplicity, we introduce the following notations:
 
 \begin{gather}\label{eq:notation}
   \tikzfig{tikz/defs/zcirc1} \qquad \qquad \tikzfig{tikz/defs/zcirc2} \qquad \qquad \tikzfig{tikz/defs/xcirc}\\ 
@@ -44,7 +44,7 @@ The complete rule set of the qubit ZXW-calculus from Ref.~\cite{poor2023complete
 Following \cite{shaikh2022sum}, we cover the definitions of controlled states and controlled square matrices, and arithmetic on them.
 Note that this is a different definition of controlled states to Ref.~\cite{jeandel2024adddiffzx} in which controlling on $\ket{0}$ gives $\ket{+}^{\otimes n}$ instead of $\ket{0}^{\otimes n}$; this choice appears to make a substantial difference in the algebraic properties, which we discuss in Remark~\ref{remark:entrywise}.
 
-We define as a higher-order generator the controlled square matrix $\tilde{M}$, whose interpretation is entirely determined by the square matrix $M$ by which is it labelled. In the next section, we show how this is definition relates to the higher-order map $\textsf{Ctrl}$ that sends any square matrix $M$ to its controlled square matrix $\tilde{M}$.
+We define as a higher-order generator the controlled square matrix $\tilde{M}$, whose interpretation is entirely determined by the square matrix $M$ by which is it labelled. In the next section, we show how this definition relates to standard notions of quantum controlled gates, by means of a higher-order map $\textsf{Ctrl}$ that sends any square matrix $M$ to its controlled square matrix $\tilde{M}$.
 
 \begin{definition}\label{def:ctrlsqmat}
   Any diagram satisfying both axioms below is called a \emph{controlled square matrix} of the labelled square matrix $M$. We denote any such controlled diagram by $\tilde{M}$.
