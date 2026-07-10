@@ -1,0 +1,214 @@
+\begin{tikzpicture}
+	\begin{pgfonlayer}{nodelayer}
+		\node [style=none] (139) at (18.075, 1.75) {};
+		\node [style=none] (140) at (17.2, 0.125) {};
+		\node [style=none] (141) at (18.95, 0.125) {};
+		\node [style=none] (142) at (15.575, 1.75) {};
+		\node [style=none] (143) at (14.7, 0.125) {};
+		\node [style=none] (144) at (16.45, 0.125) {};
+		\node [style=none] (87) at (4.525, 1.75) {};
+		\node [style=none] (88) at (3.65, 0.125) {};
+		\node [style=none] (89) at (5.4, 0.125) {};
+		\node [style=none] (84) at (2.025, 1.75) {};
+		\node [style=none] (85) at (1.15, 0.125) {};
+		\node [style=none] (86) at (2.9, 0.125) {};
+		\node [style=dw] (33) at (2, -0.875) {};
+		\node [style=none] (35) at (2, -1.75) {};
+		\node [style=none] (36) at (4.25, -1.75) {};
+		\node [style=label] (37) at (3.25, -1.25) {$\ldots$};
+		\node [style=left label] (38) at (1.875, -1.5) {$x_1$};
+		\node [style=right label] (39) at (4.45, -1.5) {$x_n$};
+		\node [style=none] (40) at (1.75, 0) {\tiny$...$};
+		\node [style=none] (42) at (0, 0) {$=$};
+		\node [style=dw] (53) at (2, -0.875) {};
+		\node [style=dw] (54) at (4.25, -0.875) {};
+		\node [style=none] (58) at (1.25, 0.25) {};
+		\node [style=none] (59) at (1.25, 0.25) {};
+		\node [style=none] (60) at (2.25, 0.25) {};
+		\node [style=label] (62) at (1.775, 0.525) {$\tilde{p_0}$};
+		\node [style=none] (63) at (1.75, 1) {};
+		\node [style=none] (64) at (2.25, 0.25) {};
+		\node [style=gn] (65) at (4.475, 1.375) {};
+		\node [style=none] (66) at (4.5, 0) {\tiny$...$};
+		\node [style=none] (67) at (4, 0.25) {};
+		\node [style=none] (68) at (4, 0.25) {};
+		\node [style=none] (69) at (5, 0.25) {};
+		\node [style=label] (70) at (4.525, 0.525) {$\tilde{p_1}$};
+		\node [style=none] (71) at (4.5, 1) {};
+		\node [style=none] (72) at (5, 0.25) {};
+		\node [style=uw] (73) at (3.25, 2.125) {};
+		\node [style=none] (74) at (1.75, 1) {};
+		\node [style=none] (75) at (4.5, 1) {};
+		\node [style=rn] (76) at (3.25, 2.875) {};
+		\node [style=none] (77) at (4.5, 1) {};
+		\node [style=dw] (78) at (5.325, -0.875) {};
+		\node [style=none] (79) at (5.325, -1.75) {};
+		\node [style=right label] (80) at (5.525, -1.5) {$x_{n\plu 1}$};
+		\node [style=dw] (81) at (5.325, -0.875) {};
+		\node [style=rn] (82) at (2.5, 0.5) {};
+		\node [style=none] (90) at (-1.475, 0.5) {};
+		\node [style=none] (91) at (-1.975, -0.25) {};
+		\node [style=none] (92) at (-0.975, -0.25) {};
+		\node [style=none] (93) at (-1.475, -0.25) {};
+		\node [style=label] (94) at (-1.5, 0.025) {$\tilde{p}$};
+		\node [style=none] (95) at (-1.475, -1) {};
+		\node [style=rn] (96) at (-1.5, 1.25) {};
+		\node [style=none] (97) at (11.3, 1.75) {};
+		\node [style=none] (98) at (10.425, 0.125) {};
+		\node [style=none] (99) at (12.175, 0.125) {};
+		\node [style=none] (100) at (8.8, 1.75) {};
+		\node [style=none] (101) at (7.925, 0.125) {};
+		\node [style=none] (102) at (9.675, 0.125) {};
+		\node [style=dw] (103) at (8.775, -0.875) {};
+		\node [style=none] (104) at (8.775, -1.75) {};
+		\node [style=none] (105) at (11.025, -1.75) {};
+		\node [style=label] (106) at (10.025, -1.25) {$\ldots$};
+		\node [style=left label] (107) at (8.65, -1.5) {$x_1$};
+		\node [style=right label] (108) at (11.225, -1.5) {$x_n$};
+		\node [style=none] (109) at (8.525, 0) {\tiny$...$};
+		\node [style=none] (110) at (6.775, 0) {$=$};
+		\node [style=dw] (111) at (8.775, -0.875) {};
+		\node [style=dw] (112) at (11.025, -0.875) {};
+		\node [style=none] (113) at (8.025, 0.25) {};
+		\node [style=none] (114) at (8.025, 0.25) {};
+		\node [style=none] (115) at (9.025, 0.25) {};
+		\node [style=none] (117) at (8.525, 1) {};
+		\node [style=none] (118) at (9.025, 0.25) {};
+		\node [style=gn] (119) at (11.25, 1.375) {};
+		\node [style=none] (120) at (11.275, 0) {\tiny$...$};
+		\node [style=none] (121) at (10.775, 0.25) {};
+		\node [style=none] (122) at (10.775, 0.25) {};
+		\node [style=none] (123) at (11.775, 0.25) {};
+		\node [style=none] (125) at (11.275, 1) {};
+		\node [style=none] (126) at (11.775, 0.25) {};
+		\node [style=none] (128) at (8.525, 1) {};
+		\node [style=none] (129) at (11.275, 1) {};
+		\node [style=none] (131) at (11.275, 1) {};
+		\node [style=dw] (132) at (12.1, -0.875) {};
+		\node [style=none] (133) at (12.1, -1.75) {};
+		\node [style=right label] (134) at (12.3, -1.5) {$x_{n\plu 1}$};
+		\node [style=dw] (135) at (12.1, -0.875) {};
+		\node [style=rn] (136) at (9.275, 0.5) {};
+		\node [style=rn] (137) at (9.275, 2.25) {};
+		\node [style=rn] (138) at (10.775, 2.25) {};
+		\node [style=dw] (145) at (15.55, -0.875) {};
+		\node [style=none] (146) at (15.55, -1.75) {};
+		\node [style=none] (147) at (17.8, -1.75) {};
+		\node [style=label] (148) at (16.8, -1.25) {$\ldots$};
+		\node [style=left label] (149) at (15.425, -1.5) {$x_1$};
+		\node [style=right label] (150) at (18, -1.5) {$x_n$};
+		\node [style=none] (151) at (15.425, 0) {\tiny$...$};
+		\node [style=none] (152) at (13.55, 0) {$=$};
+		\node [style=dw] (153) at (15.55, -0.875) {};
+		\node [style=dw] (154) at (17.8, -0.875) {};
+		\node [style=rn] (156) at (14.95, 0.375) {};
+		\node [style=rn] (160) at (15.7, 0.375) {};
+		\node [style=none] (162) at (17.8, 0) {\tiny$...$};
+		\node [style=rn] (164) at (17.45, 0.375) {};
+		\node [style=rn] (168) at (18.2, 0.375) {};
+		\node [style=dw] (172) at (18.875, -0.875) {};
+		\node [style=none] (173) at (18.875, -1.75) {};
+		\node [style=right label] (174) at (19.075, -1.5) {$x_{n\plu 1}$};
+		\node [style=dw] (175) at (18.875, -0.875) {};
+		\node [style=rn] (176) at (16.075, 0.75) {};
+		\node [style=rn] (179) at (18.575, 0.75) {};
+		\node [style=label] (116) at (8.55, 0.525) {$\tilde{p_0}$};
+		\node [style=label] (124) at (11.3, 0.525) {$\tilde{p_1}$};
+		\node [style=rn] (186) at (21.575, -0.875) {};
+		\node [style=none] (187) at (21.575, -1.75) {};
+		\node [style=none] (188) at (23.075, -1.75) {};
+		\node [style=label] (189) at (22.325, -1.25) {$\ldots$};
+		\node [style=left label] (190) at (21.45, -1.5) {$x_1$};
+		\node [style=right label] (191) at (23.275, -1.5) {$x_n$};
+		\node [style=none] (193) at (20.325, 0) {$=$};
+		\node [style=rn] (194) at (21.575, -0.875) {};
+		\node [style=rn] (195) at (23.075, -0.875) {};
+		\node [style=rn] (201) at (24.15, -0.875) {};
+		\node [style=none] (202) at (24.15, -1.75) {};
+		\node [style=right label] (203) at (24.35, -1.5) {$x_{n\plu 1}$};
+		\node [style=rn] (204) at (24.15, -0.875) {};
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\draw [style=bg] (139.center)
+			 to [bend right] (140.center)
+			 to (141.center)
+			 to [in=330, out=90] cycle;
+		\draw [style=bg] (144.center)
+			 to [in=-30, out=90] (142.center)
+			 to [bend right] (143.center)
+			 to cycle;
+		\draw [style=bg] (89.center)
+			 to [in=330, out=90] (87.center)
+			 to [bend right] (88.center)
+			 to cycle;
+		\draw [style=bg] (86.center)
+			 to [in=-30, out=90] (84.center)
+			 to [bend right] (85.center)
+			 to cycle;
+		\draw [style=bg] (97.center)
+			 to [bend right] (98.center)
+			 to (99.center)
+			 to [in=330, out=90] cycle;
+		\draw [style=bg] (102.center)
+			 to [in=-30, out=90] (100.center)
+			 to [bend right] (101.center)
+			 to cycle;
+		\draw (33) to (35.center);
+		\draw [style=white] (60.center)
+			 to (63.center)
+			 to (59.center)
+			 to cycle;
+		\draw [style=white] (71.center)
+			 to (69.center)
+			 to (68.center)
+			 to cycle;
+		\draw [in=90, out=-150] (73) to (74.center);
+		\draw [in=90, out=-30, looseness=1.25] (73) to (75.center);
+		\draw (76) to (73);
+		\draw (78) to (79.center);
+		\draw [in=30, out=-30, looseness=0.25] (65) to (81);
+		\draw [in=30, out=-90] (72.center) to (54);
+		\draw [in=30, out=-105, looseness=0.75] (68.center) to (53);
+		\draw [in=150, out=-90] (59.center) to (53);
+		\draw [in=150, out=-75] (64.center) to (54);
+		\draw [in=150, out=-90, looseness=0.50] (82) to (81);
+		\draw (54) to (36.center);
+		\draw (91.center) to (90.center);
+		\draw (91.center) to (92.center);
+		\draw (92.center) to (90.center);
+		\draw (95.center) to (93.center);
+		\draw (96) to (90.center);
+		\draw (103) to (104.center);
+		\draw (132) to (133.center);
+		\draw [in=30, out=-30, looseness=0.25] (119) to (135);
+		\draw [in=30, out=-90] (126.center) to (112);
+		\draw [in=30, out=-105, looseness=0.75] (122.center) to (111);
+		\draw [in=150, out=-90] (114.center) to (111);
+		\draw [in=150, out=-75] (118.center) to (112);
+		\draw [in=150, out=-90, looseness=0.50] (136) to (135);
+		\draw (112) to (105.center);
+		\draw (137) to (128.center);
+		\draw (138) to (119);
+		\draw (145) to (146.center);
+		\draw (172) to (173.center);
+		\draw [in=30, out=-90] (168) to (154);
+		\draw [in=30, out=-105, looseness=0.75] (164) to (153);
+		\draw [in=150, out=-90] (156) to (153);
+		\draw [in=150, out=-75] (160) to (154);
+		\draw [in=150, out=-90, looseness=0.50] (176) to (175);
+		\draw (154) to (147.center);
+		\draw (119) to (131.center);
+		\draw [style=white, in=30, out=-90, looseness=0.50] (179) to (175);
+		\draw [style=white] (115.center)
+			 to (114.center)
+			 to (117.center)
+			 to cycle;
+		\draw [style=white] (123.center)
+			 to (125.center)
+			 to (122.center)
+			 to cycle;
+		\draw (186) to (187.center);
+		\draw (201) to (202.center);
+		\draw (195) to (188.center);
+	\end{pgfonlayer}
+\end{tikzpicture}

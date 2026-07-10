@@ -1,0 +1,28 @@
+\begin{tikzpicture}
+	\begin{pgfonlayer}{nodelayer}
+		\node [style=none] (32) at (0, 0) {$=$};
+		\node [style=none] (33) at (1.5, 1) {};
+		\node [style=hbox] (34) at (1.5, 0) {};
+		\node [style=none] (35) at (1.5, -1) {};
+		\node [style={rn_phase}] (36) at (-3.25, 1.25) {$\pi$};
+		\node [style=gbox] (37) at (-3.25, -0.25) {$\frac{1}{\sqrt{2}}$};
+		\node [style=uw] (38) at (-1.75, 1.25) {};
+		\node [style=gbox] (39) at (-1.75, 0) {$-2$};
+		\node [style=dw] (40) at (-1.75, -1.25) {};
+		\node [style=gn] (42) at (-1, 0.5) {};
+		\node [style=none] (43) at (-1.75, 2.25) {};
+		\node [style=gn] (44) at (-1, -0.5) {};
+		\node [style=none] (45) at (-1.75, -2.25) {};
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\draw (33.center) to (34);
+		\draw (34) to (35.center);
+		\draw (36) to (37);
+		\draw (43.center) to (38);
+		\draw (38) to (42);
+		\draw (38) to (39);
+		\draw (39) to (40);
+		\draw (45.center) to (40);
+		\draw (40) to (44);
+	\end{pgfonlayer}
+\end{tikzpicture}

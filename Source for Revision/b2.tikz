@@ -1,0 +1,34 @@
+\begin{tikzpicture}
+	\begin{pgfonlayer}{nodelayer}
+		\node [style=rn] (0) at (-2.5, -0.5) {};
+		\node [style=none] (1) at (-1.0, -1.5) {};
+		\node [style=none] (2) at (0.5, -1.5) {};
+		\node [style=none] (3) at (-2.5, -1.5) {};
+		\node [style=rn] (4) at (1.0, 0.5) {};
+		\node [style=none] (5) at (1.5, -1.5) {};
+		\node [style=none] (6) at (-1.0, 2.0) {};
+		\node [style=gn] (7) at (1.0, -0.5) {};
+		\node [style=none] (8) at (0.5, 1.5) {};
+		\node [style=gn] (9) at (-2.5, 1.0) {};
+		\node [style=none] (10) at (0.0, 0.0) {$=$};
+		\node [style=gn] (11) at (-1.0, 1.0) {};
+		\node [style=none] (12) at (1.5, 1.5) {};
+		\node [style=rn] (13) at (-1.0, -0.5) {};
+		\node [style=none] (14) at (-2.5, 2.0) {};
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\draw [style=none] (1.center) to (13);
+		\draw [style=none] (3.center) to (0);
+		\draw [style=none] (11) to (6.center);
+		\draw [style=none, bend right=23, looseness=1.00] (13) to (11);
+		\draw [style=none] (9) to (14.center);
+		\draw [style=none, bend left=23, looseness=1.00] (0) to (9);
+		\draw (9) to (13);
+		\draw (11) to (0);
+		\draw [style=none, bend right=23, looseness=1.00] (5.center) to (7);
+		\draw [style=none] (7) to (4);
+		\draw [style=none, bend left=23, looseness=1.00] (4) to (8.center);
+		\draw [style=none, bend right=23, looseness=1.00] (4) to (12.center);
+		\draw [bend right=23, looseness=1.00] (7) to (2.center);
+	\end{pgfonlayer}
+\end{tikzpicture}

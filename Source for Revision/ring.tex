@@ -1,0 +1,122 @@
+\section{Ring Axioms for Controlled Diagrams}\label{sec:ring}
+In this section, we reverse-engineer the underlying algebraic properties of controlled state and controlled square matrix diagrams. This builds up to diagrams for the unique normal form for states used for the first proofs of complete axiomatisation for qubit graphical calculi~\cite{hadzihasanovic2017thesis, Hadzihasanovic2018zwzxcomplete}.
+All proofs in this section can be found in Appendix~\ref{sec:ringproofs}.
+
+Adding only the seven Controlled Ring Rules of Figure~\ref{fig:zxw_rules} to a complete qubit graphical calculus, suffices to derive the new completeness results of this work.
+All other equalities of diagrams in this paper were proven using only the rules in Figure~\ref{fig:zxw_rules}. We verify the soundness of these rules for controlled diagrams in Appendix~\ref{sec:csound}.
+%We proved these five rules through deducing action on basis states, either from our definitions of controlled states and controlled square matrices, or through Lemmas~\ref{lem:csq_copy}, \ref{lem:csqaddcomm}, and \ref{lem:cscopy}.
+
+% Note that while the ZXW calculus is complete, and Lemmas~\ref{lem:csq_copy}, \ref{lem:csqaddcomm}, \ref{lem:csq_inv}, and \ref{lem:csq_dist} hold for any concrete realisations of $\tilde{M}$, for abstract $\tilde{M}$s they can only be verified via the plugging in of basis states.
+
+\subsection{Controlled Matrices}
+
+Let $\tilde{M_n}$ be the set of controlled square matrices on $n$ qubits. The goal of this section is to prove that the addition and multiplication operations introduced above induce a ring on $\tilde{M_n}$. By Proposition \ref{prop:cmat_ops}, the addition and multiplication of controlled matrices is just the controlled addition and multiplication of the underlying matrices so the fact that the ring properties hold is not particularly surprising. What is more interesting is how easily these properties can be proven with a small subset of the ZXW rules. Likewise, we show that the set of controlled $n$-qubit states $\tilde{S_n}$ also forms a ring. The first rule enables us to copy controlled matrices.
+
+For any square matrix $M$, 
+\begin{equation*}
+\tikzfig{csq_copy_bzw}
+%\tag{\ref{rule:CMcpy}}
+\end{equation*}
+
+Now we show that controlled matrix addition and multiplication satisfy the ring axioms.
+
+\paragraph{Associativity} of $+$ and $\times$ follow immediately from \eqref{rule:Aso} and \eqref{rule:S1} respectively.
+
+\paragraph{Commutativity} of addition follows from \eqref{rule:CMcom}.
+
+\begin{remark}\label{remark:comm_mult}
+    The ring of $n$ by $n$ square matrices is non-commutative for all $n \geq 2$, and is only commutative when $n = 1$. Therefore, there is no axiom for commutativity of matrix multiplication: If for two same-size square matrices $M_1$ and $M_2$, $M_1 \circ M_2 \neq M_2 \circ M_1$, then the controlled matrices will not commute either.
+\end{remark}
+
+The remaining ring properties are as follows:
+\begin{lemma}\label{lem:csqaddid}
+The additive identity is defined as $\redzeroup \otimes I_n$:
+\begin{equation}
+    \tikzfig{csq_add_id}
+\end{equation}
+\end{lemma}
+
+The multiplicative identity is defined very similarly as $\lowerbox{\greenzeroup} \otimes I_n$. The existence of additive inverses relies on the copying lemma from before.
+
+\begin{lemma}\label{lem:csq_inv}
+    The additive inverse of $\tilde{M}$ is built from $\raisebox{-5pt}{\numbergate[-1]}$:
+    \begin{equation*}
+    	\tikzfig{csq_add_inv_stmt}
+    \end{equation*}
+\end{lemma}
+
+\begin{lemma}\label{lem:csq_dist}
+    The addition and multiplication operations of controlled matrices distribute:
+    \begin{equation*}
+        \tikzfig{csq_dist_statement}
+    \end{equation*}
+\end{lemma}
+
+
+Combining the lemmas of this section shows that controlled matrices form a non-commutative ring. 
+
+
+\subsection{Controlled States}
+
+A similar result can be shown for controlled states, this time forming a commutative ring. Once again, we start with the ability to copy controlled states: for any state $\psi$,
+\begin{equation*}
+    \tikzfig{cs_copy}
+    \tag{\ref{rule:CScpy}}
+\end{equation*}
+
+
+Then the remaining ring properties can be shown using diagrammatic rewrites.
+
+\begin{lemma}\label{lem:csaddcomm}
+    For $n$-partite states $\psi_1, \psi_2$, $\tilde{\psi_1} \boxplus \tilde{\psi_2} = \tilde{\psi_2} \boxplus \tilde{\psi_1}  $.
+\end{lemma}
+
+%Associativity of $\boxplus$ follows similarly, using (\ref{rule:Aso}). 
+
+\begin{lemma}\label{lem:csaddassoc}
+    For $n$-partite states $\psi_1, \psi_2, \psi_3$, $(\tilde{\psi_1} \boxplus \tilde{\psi_2}) \boxplus \tilde{\psi_3} = \tilde{\psi_1} \boxplus (\tilde{\psi_2} \boxplus \tilde{\psi_3})  $.
+\end{lemma}
+
+
+Next we have the additive identity.
+
+\begin{lemma}\label{lem:csaddid}
+    $\tilde{\psi} \boxplus\mathbf{\tilde{0}} = \tilde{\psi}$.
+\end{lemma}
+
+
+The additive inverse is defined similarly to the case of controlled matrices. 
+
+
+\begin{lemma}\label{lem:csaddinv}
+    For a controlled state $\tilde{\psi}$, its additive inverse $\tilde{\psi}^{-1}$ is given by: 
+    \begin{equation*}
+    \tikzfig{cs_add_inv_def}
+    \end{equation*}
+\end{lemma}
+
+
+%Associativity and commutativity of $\boxtimes$ follow almost identically to lemmas , using (\ref{rule:S1}) for $\lowerbox{\zspid}$. 
+
+\begin{lemma}\label{lem:cstimesassoc}
+    For a controlled states $\tilde{\psi_1}, \tilde{\psi_2}, \tilde{\psi_3}$, $(\tilde{\psi_1} \boxtimes \tilde{\psi_2}) \boxtimes \tilde{\psi_3} = \tilde{\psi_1} \boxtimes (\tilde{\psi_2} \boxtimes \tilde{\psi_3})  $.
+\end{lemma}
+
+Unlike for controlled matrices, for controlled states, corresponding to the $n = 1$ case of Remark~\ref{remark:comm_mult}, we also have commutativity of multiplication: 
+\begin{lemma}\label{lem:cstimescomm}
+    For controlled states $\tilde{\psi_1}, \tilde{\psi_2}$, $\tilde{\psi_1} \boxtimes \tilde{\psi_2} = \tilde{\psi_2} \boxtimes \tilde{\psi_1}  $.
+\end{lemma}
+
+Finally, we must prove distributivity.
+
+\begin{lemma}\label{lem:csdist}
+    $\tilde{\psi_1} \boxtimes (\tilde{\psi_2} \boxplus \tilde{\psi_3}) = (\tilde{\psi_1} \boxtimes \tilde{\psi_2}) \boxplus (\tilde{\psi_1} \boxtimes \tilde{\psi_3})$.
+\end{lemma}
+
+\begin{remark}\label{remark:entrywise}
+    A different addition and multiplication for controlled states was defined in Ref.~\cite{jeandel2018zxconstructive}. The definitions there corresponded to entry-wise addition and multiplication of statevectors, while our $\boxplus$ and $\boxtimes$ correspond to addition and multiplication of polynomials, which we show next.
+\end{remark}
+
+
+
+

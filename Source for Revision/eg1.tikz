@@ -1,0 +1,22 @@
+\begin{tikzpicture}
+	\begin{pgfonlayer}{nodelayer}
+		\node [style=gbox] (0) at (5, 0) {$2$};
+		\node [style=none] (1) at (5, -1) {};
+		\node [style=gbox] (2) at (6, 0) {$3$};
+		\node [style=uw] (3) at (5.5, 1) {};
+		\node [style=none] (4) at (5.5, 2) {};
+		\node [style=none] (6) at (-3, 0) {};
+		\node [style=gbox] (7) at (-2, 0) {$-1$};
+		\node [style=uw] (8) at (-2.5, 1) {};
+		\node [style=none] (9) at (-2.5, 2) {};
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\draw (0) to (3);
+		\draw (3) to (2);
+		\draw (3) to (4.center);
+		\draw (0) to (1.center);
+		\draw (8) to (7);
+		\draw (8) to (9.center);
+		\draw (6.center) to (8);
+	\end{pgfonlayer}
+\end{tikzpicture}

@@ -1,0 +1,9 @@
+\begin{tikzpicture}
+	\begin{pgfonlayer}{nodelayer}
+		\node [style=none] (6) at (0, -0.25) {};
+		\node [style={rn_phase}] (8) at (0, 0.5) {$\pi$};
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\draw (8) to (6.center);
+	\end{pgfonlayer}
+\end{tikzpicture}

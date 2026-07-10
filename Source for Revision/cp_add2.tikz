@@ -1,0 +1,44 @@
+\begin{tikzpicture}
+	\begin{pgfonlayer}{nodelayer}
+		\node [style=none] (0) at (-0.5, 0.25) {};
+		\node [style=dw] (1) at (0, -0.5) {};
+		\node [style=none] (2) at (0, -1.25) {};
+		\node [style={gn_phase}] (3) at (0.75, 0.25) {$\pi$};
+		\node [style=uw] (4) at (0, 1) {};
+		\node [style=none] (5) at (0, 1.75) {};
+		\node [style=none] (6) at (1.75, 0) {$=$};
+		\node [style=gbox] (7) at (2.75, 0.25) {$1$};
+		\node [style=dw] (8) at (3.5, -0.5) {};
+		\node [style=none] (9) at (3.5, -1.25) {};
+		\node [style=gbox] (10) at (4.25, 0.25) {$-1$};
+		\node [style=uw] (11) at (3.5, 1) {};
+		\node [style=none] (12) at (3.5, 1.75) {};
+		\node [style=none] (13) at (6, 0.25) {$\eqq{\ref{eq:cp_add}}$};
+		\node [style=none] (14) at (7.5, -1.25) {};
+		\node [style=gbox] (15) at (7.5, 0) {$0$};
+		\node [style=none] (16) at (7.5, 1.25) {};
+		\node [style=none] (17) at (9, 0.25) {$\eqq{\ref{eq:zerobox}}$};
+		\node [style=none] (18) at (10.5, -1.25) {};
+		\node [style=rn] (19) at (10.5, 0.25) {};
+		\node [style=none] (20) at (10.5, 1.25) {};
+		\node [style=rn] (21) at (10.5, -0.25) {};
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\draw (1) to (2.center);
+		\draw [in=-90, out=135, looseness=0.75] (1) to (0.center);
+		\draw [bend right=15] (1) to (3);
+		\draw [in=90, out=-135, looseness=0.75] (4) to (0.center);
+		\draw [bend left=15] (4) to (3);
+		\draw (4) to (5.center);
+		\draw (8) to (9.center);
+		\draw (8) to (7);
+		\draw (8) to (10);
+		\draw (11) to (7);
+		\draw (11) to (10);
+		\draw (11) to (12.center);
+		\draw (15) to (16.center);
+		\draw (14.center) to (15);
+		\draw (19) to (20.center);
+		\draw (21) to (18.center);
+	\end{pgfonlayer}
+\end{tikzpicture}

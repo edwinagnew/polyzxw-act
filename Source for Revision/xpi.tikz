@@ -1,0 +1,5 @@
+\begin{tikzpicture}
+	\begin{pgfonlayer}{nodelayer}
+		\node [style={rn_phase}] (0) at (0, 0) {$\pi$};
+	\end{pgfonlayer}
+\end{tikzpicture}

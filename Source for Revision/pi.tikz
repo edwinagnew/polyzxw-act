@@ -1,0 +1,62 @@
+\begin{tikzpicture}
+	\begin{pgfonlayer}{nodelayer}
+		\node [style={rn_phase}] (1) at (-8, 1.5) {$\pi$};
+		\node [style=none] (4) at (-7.25, -1) {};
+		\node [style=none] (6) at (-6.5, 0) {$\eqq{\ref{eq:wdecomp}}$};
+		\node [style=uw] (87) at (-8, 0.375) {};
+		\node [style=none] (88) at (-8.75, -1) {};
+		\node [style={rn_phase}] (89) at (-4.25, 2.25) {$\pi$};
+		\node [style=gn] (90) at (-4.25, 1.25) {};
+		\node [style=uw] (91) at (-4.875, 0.375) {};
+		\node [style=gn] (92) at (-4.375, -0.375) {};
+		\node [style=rn] (93) at (-3, -1) {};
+		\node [style=gn] (94) at (-5.5, -1) {};
+		\node [style=none] (95) at (-5.5, -1.75) {};
+		\node [style=none] (96) at (-3, -1.75) {};
+		\node [style=none] (97) at (-2, 0) {$\eqq{\ref{eq:wdecomp}}$};
+		\node [style={rn_phase}] (99) at (-0.125, 1.375) {$\pi$};
+		\node [style=uw] (100) at (-0.375, 0.375) {};
+		\node [style=gn] (101) at (0.125, -0.375) {};
+		\node [style=rn] (102) at (1.5, -1) {};
+		\node [style=gn] (103) at (-1, -1) {};
+		\node [style=none] (104) at (-1, -1.75) {};
+		\node [style=none] (105) at (1.5, -1.75) {};
+		\node [style={rn_phase}] (106) at (1.5, 0) {$\pi$};
+		\node [style=none] (107) at (2.75, 0) {$\eqq{\ref{eq:tpcd}}$};
+		\node [style={rn_phase}] (111) at (5.5, -1) {$\pi$};
+		\node [style=gn] (112) at (3.75, -1) {};
+		\node [style=none] (113) at (3.75, -1.75) {};
+		\node [style=none] (114) at (5.5, -1.75) {};
+		\node [style=gn] (115) at (4.125, -0.125) {};
+		\node [style=none] (117) at (6.5, 0) {$=$};
+		\node [style=none] (136) at (7.75, -0.5) {};
+		\node [style=none] (137) at (8.75, -0.5) {};
+		\node [style={rn_phase}] (138) at (8.25, 0.25) {$\pi$};
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\draw [in=90, out=-150, looseness=0.75] (87) to (88.center);
+		\draw [in=90, out=-30, looseness=0.75] (87) to (4.center);
+		\draw (87) to (1);
+		\draw (89) to (90);
+		\draw [in=90, out=-165, looseness=0.75] (90) to (91);
+		\draw [in=90, out=-30] (91) to (92);
+		\draw [in=90, out=-150, looseness=0.75] (91) to (94);
+		\draw (94) to (93);
+		\draw [in=-15, out=90, looseness=0.75] (93) to (90);
+		\draw (94) to (95.center);
+		\draw (93) to (96.center);
+		\draw [in=90, out=-120] (99) to (100);
+		\draw [in=90, out=-30] (100) to (101);
+		\draw [in=90, out=-150, looseness=0.75] (100) to (103);
+		\draw (103) to (102);
+		\draw (103) to (104.center);
+		\draw (102) to (105.center);
+		\draw (106) to (102);
+		\draw (112) to (111);
+		\draw (112) to (113.center);
+		\draw (111) to (114.center);
+		\draw [in=90, out=-120] (115) to (112);
+		\draw [bend right] (138) to (136.center);
+		\draw [bend right] (137.center) to (138);
+	\end{pgfonlayer}
+\end{tikzpicture}

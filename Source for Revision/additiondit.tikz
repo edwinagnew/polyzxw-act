@@ -1,0 +1,19 @@
+\begin{tikzpicture}
+	\begin{pgfonlayer}{nodelayer}
+		\node [style=none] (4) at (-0.25, 0) {$=$};
+		\node [style=none] (11) at (1.5, 0.5) {};
+		\node [style=gbox] (12) at (1.5, -1) {$ a + b$};
+		\node [style=none] (14) at (-2, 1.25) {};
+		\node [style=uw] (15) at (-2, 0) {};
+		\node [style=none] (16) at (-2.75, -1) {};
+		\node [style=none] (17) at (-1.25, -1) {};
+		\node [style=gbox] (18) at (-2.75, -1) {$a$ };
+		\node [style=gbox] (19) at (-1.25, -1) {$b$ };
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\draw (11.center) to (12);
+		\draw [in=-45, out=90, looseness=0.75] (17.center) to (15);
+		\draw [in=90, out=-135, looseness=0.75] (15) to (16.center);
+		\draw (14.center) to (15);
+	\end{pgfonlayer}
+\end{tikzpicture}

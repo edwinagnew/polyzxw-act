@@ -1,0 +1,140 @@
+\section{The ZXW-Calculus}
+
+This section introduces the qubit case of the ZXW-calculus, a graphical formalism for qudit computation which unified the ZX and ZW calculi and synthesised their relative strengths~\cite{poor2023completeness}. The ZXW-calculus consists of diagrams built from a small number of generators and equipped with a complete set of rewrite rules, which enables all equalities between linear maps to be proven diagrammatically.  In this work, diagrams are read top to bottom and left to right.
+
+The qubit ZXW-calculus is built from the following generators:
+
+\begin{gather}
+  \left\llbracket \quad \lowerbox{\idwire[0.5]} \;\;\; \right\rrbracket ~=~ \begin{bmatrix}1 & 0 \\ 0 & 1\end{bmatrix} \quad
+  \left\llbracket \; \lowerbox[10]{\swap[0.4]} \; \right\rrbracket ~=~ \begin{bmatrix} 1 & 0 & 0 & 0 \\ 0 & 0 & 1 & 0 \\ 0 & 1 & 0 & 0 \\ 0 & 0 & 0 & 1\end{bmatrix} \quad
+  \Big\llbracket \; \lowerbox[3]{\ccap} \; \Big\rrbracket ~=~ \begin{bmatrix} 1 \\ 0 \\ 0 \\ 1\end{bmatrix} \quad
+  \left\llbracket \; \lowerbox[5]{\ccup} \; \right\rrbracket ~=~ \begin{bmatrix} 1 & 0 & 0 & 1 \end{bmatrix} \\
+  \left\llbracket \;\; \tikzfig{zspid} \;\; \right\rrbracket ~=~ |0^m\rangle\langle0^n| + c|1^m\rangle\langle1^n|, c \in \mathbb{C} \qquad
+  \left\llbracket \;\; \raisebox{-10pt}{\wspid[0.7]} \;\; \right\rrbracket ~=~ |00\rangle \braz + |01\rangle \brao + |10\rangle \brao \\
+  \left\llbracket \;\;\; \raisebox{-8pt}{\hgate} \;\; \right\rrbracket = \frac{1}{\sqrt{2}}\begin{bmatrix}1 & 1 \\ 1 & -1\end{bmatrix}
+\end{gather}
+
+Diagrams can be composed vertically (sequentially) and horizontally (in parallel), which are interpreted as matrix multiplication $\circ$ and tensor product $\otimes$, respectively.  For simplicity, we introduce the following notations:
+
+\begin{gather}\label{eq:notation}
+  \tikzfig{zcirc1} \qquad \qquad \tikzfig{zcirc2} \qquad \qquad \tikzfig{xcirc}\\ 
+  \tikzfig{ws_def} \qquad \qquad \raisebox{-10pt}{\coWs[0.7]} ~:=~ \tikzfig{w_trans}
+\end{gather}
+
+where $u_{m,n} = d^{\frac{m+n-2}{2}} - 1$, such that the green box $\numberbox[u_{m,n}]$ equals the scalar $2^{\frac{m+n-2}{2}}$. 
+
+Equations in ZXW apply diagrammatic rewrite rules which prove equalities of the underlying matrices. Omitted from Figure~\ref{fig:zxw_rules} are the \emph{structural rules} ubiquitous to quantum graphical calculi, such as that swapping twice yields the two-qubit identity and that an S-shaped cup and cap pair yields the one-qubit identity. These collectively are referred to as the \emph{Only Connectivity Matters} rule, which governs that in this calculus the following operations preserve semantic equality: So long as all connections are preserved between all inputs, outputs, and generators of the diagram, the spatial position and orientation of each generator can be varied, and wires are free to cross or bend.
+The Z and X generators are symmetric with respect to swapping two inputs, while the Z, X, and W generators are symmetric with respect to swapping two outputs:
+\begin{equation}
+  \scalebox{0.9}{\tikzfig{wsymetrydit}}
+  \tag{Sym}\label{rule:Sym}
+\end{equation}
+However, unlike the Z and X generators, the W generator is not symmetric with respect to swapping an input and an output due to the following:
+\begin{equation}
+  \scalebox{0.9}{\tikzfig{w-asym}}
+  \tag{Asym}\label{rule:Asym}
+\end{equation}
+For this reason, care must be taken that exactly one wire of each W generator is unambiguously its exactly one input, drawn aligned with one point of the triangle.
+
+The complete rule set of the qubit ZXW-calculus from Ref.~\cite{poor2023completeness}, and our new rules for controlled states and controlled square matrices, are presented in Figure~\ref{fig:zxw_rules}. Several important lemmas are found in Appendix~\ref{sec:applem}.
+
+\input{zxw_rules}
+
+\section{Controlled Diagrams}\label{sec:ctrldiagrams}
+Following \cite{shaikh2022sum}, we cover the definitions of controlled states and controlled square matrices, and arithmetic on them.
+Note that this is a different definition of controlled states to Ref.~\cite{jeandel2024adddiffzx} in which controlling on $\ket{0}$ gives $\ket{+}^{\otimes n}$ instead of $\ket{0}^{\otimes n}$; this choice appears to make a substantial difference in the algebraic properties, which we discuss in Remark~\ref{remark:entrywise}.
+
+We define as a higher-order generator the controlled square matrix $\tilde{M}$, whose interpretation is entirely determined by the square matrix $M$ by which is it labelled. In the next section, we show how this definition relates to standard notions of quantum controlled gates, by means of a higher-order map $\textsf{Ctrl}$ that sends any square matrix $M$ to its controlled square matrix $\tilde{M}$.
+
+\begin{definition}\label{def:ctrlsqmat}
+  Any diagram satisfying both axioms below is called a \emph{controlled square matrix} of the labelled square matrix $M$. We denote any such controlled diagram by $\tilde{M}$.
+  \begin{equation*}
+    \tikzfig{c_sq0}
+    \tag{\ref{rule:c_sq0}}
+  \end{equation*}
+  \begin{equation*}
+      \tikzfig{c_sq1}
+      \tag{\ref{rule:c_sq1}}
+  \end{equation*}
+\end{definition}
+\begin{remark}
+  This definition can be applied irrespective of the dimensions of $M$ so long as it is a square matrix. If working with only qubits then it is convenient to restrict to $M$ being a $2^n \times 2^n$ matrix for some $n \in \mathbb{N}$, but this is not necessary for the definition of controlled square matrices.
+\end{remark}
+
+We represent the additional dimension of $\tilde{M}$ as a vertical wire to distinguish it as the control wire.
+Interpreting this control wire as an input, because the interpretations of the generators of the ZXW-calculus from the previous section fix that $\left\llbracket \raisebox{-4pt}{\tikzfig{x0}} \right\rrbracket = \ket{0}$ and $\left\llbracket \raisebox{-4pt}{\tikzfig{x1}} \right\rrbracket = \ket{1}$, the interpretation of any controlled square matrix $\tilde{M}$ is necessarily the linear map:
+\begin{equation}\label{eq:ctrlsqinterp}
+  \left\llbracket \quad \tikzfig{c_sq_def} \;\;\; \right\rrbracket ~=~ \bra{0} \otimes I + \bra{1} \otimes M ~=~ \begin{bmatrix} I & M \end{bmatrix} 
+\end{equation}
+
+Similarly, we can define higher-order controlled states as generators.
+\begin{definition}\label{def:ctrlst}
+  Any diagram satisfying both axioms below is called a \emph{controlled state} of the labelled $n$-qubit state $M$. We denote any such controlled diagram by $\tilde{M}$.
+  \begin{equation*}
+    \tikzfig{c_state0}
+    \tag{\ref{rule:cstate0}}
+  \end{equation*}
+  \begin{equation*}
+    \tikzfig{c_state1}
+    \tag{\ref{rule:cstate1}}
+  \end{equation*}
+\end{definition}
+Again, the interpretation of any controlled state as a linear map is entirely determined by the statevector of its labelled state $\psi$:
+  \begin{equation}\label{eq:ctrlstateinterp}
+  \left\llbracket \;\;\; \tikzfig{c_state_def} \;\;\; \right\rrbracket ~=~
+  \begin{bmatrix}
+     \begin{matrix}
+         1 \\
+         0 \\
+         \vdots \\
+         0
+     \end{matrix}
+     &
+     \begin{matrix}
+         \vdots \\
+         \psi \\
+         \vdots
+     \end{matrix}
+  \end{bmatrix}
+  \end{equation}
+
+% \begin{prop}\label{prop:linearity_corollary}
+%   Adding $\left(\ref{rule:cstate0}\right)$ and $\left(\ref{rule:cstate1}\right)$ as axioms to the qubit ZXW-calculus, necessarily implies by linearity:
+%   \begin{equation*}
+%     \tikzfig{linearity-corollary}    
+%   \end{equation*}
+% \end{prop}
+% \begin{prop}\label{prop:linearity_corollary2}
+%   Adding $\left(\ref{rule:c_sq0}\right)$ and $\left(\ref{rule:c_sq1}\right)$ as axioms to the qubit ZXW-calculus, necessarily implies by linearity:
+%   \begin{equation*}
+%     \tikzfig{linearity-corollary2}    
+%   \end{equation*}
+% \end{prop}
+
+\begin{definition}
+Given controlled matrices $\tilde{M_1}, ..., \tilde{M_k}$ and $c_1, ..., c_k \in \mathbb{C}$, the controlled square matrices $\widetilde{\Pi_i M_i}$ and $\widetilde{\Sigma_i c_i M_i}$ are defined as follows:
+\begin{equation*}
+      \tikzfig{csq_prod}\qquad\qquad\qquad\qquad\tikzfig{csq_sum}
+    \end{equation*}
+\end{definition}
+
+
+\begin{prop}[Propositions 3.3 and 3.4 of \cite{shaikh2022sum}]\label{prop:cmat_ops}
+    The above diagrams are indeed the controlled diagrams for $\Pi_i M_i$ and $\Sigma_i c_i M_i$, respectively.
+\end{prop}
+
+The addition and multiplication of controlled states are defined similarly to controlled matrix arithmetic, except that a layer of $\lowerbox{\coW}$s are appended at the bottom to preserve the number of outputs.
+The role of $\lowerbox{\coW}$ is to \textit{copy} controlled diagrams, as we will show in Section~\ref{sec:ring}.
+
+\begin{definition}
+  Given controlled states $\tilde{\psi}$ and $\tilde{\phi}$, we define addition $\tilde{\psi} \boxplus \tilde{\phi}$ and multiplication $\tilde{\psi} \boxtimes \tilde{\phi}$ operations on them to result in the controlled states:
+  \begin{equation*}
+    \tikzfig{cs_add_def} \qquad\qquad\qquad\qquad \tikzfig{cs_times_def}
+\end{equation*}
+\end{definition}
+\begin{remark}
+  Ref.~\cite{shaikh2022sum} defined this addition with red spiders at the bottom instead of $\lowerbox{\coW}$s; the linear map is the same, being $\widetilde{\phi + \psi}$. In choosing to use $\lowerbox{\coW}$, we will soon define the arithmetic fragment of the ZW-calculus.
+  
+  Removing the $\lowerbox{\coW}$'s from the bottom of this multiplication gives the controlled diagram for the tensor product in Hilbert space $\widetilde{\psi \otimes \phi}$, as noted in Ref.~\cite{jeandel2024adddiffzx}.
+\end{remark}
+Although the interpretation of $\tilde{\psi} \boxtimes \tilde{\phi}$ is not the controlled multiplication of the linear maps $\psi$ and $\phi$, nor as nice an expression in terms of $\psi$ and $\phi$, we will show in this work that this is in fact multiplication in the ring of \emph{multilinear polynomials}.

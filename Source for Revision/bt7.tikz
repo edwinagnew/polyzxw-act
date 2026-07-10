@@ -1,0 +1,15 @@
+\begin{tikzpicture}
+	\begin{pgfonlayer}{nodelayer}
+		\node [style=none] (0) at (0, 2.25) {};
+		\node [style=uw] (1) at (0, 1.5) {};
+		\node [style=gbox] (2) at (-0.75, 0.25) {$a_0b_0$};
+		\node [style=gbox] (3) at (0.75, -0.75) {$a_0b_1 + a_1b_0$};
+		\node [style=none] (4) at (0, -2) {};
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\draw (1) to (0.center);
+		\draw [bend right=15] (1) to (2);
+		\draw [bend left=15] (1) to (3);
+		\draw [in=255, out=90] (4.center) to (3);
+	\end{pgfonlayer}
+\end{tikzpicture}

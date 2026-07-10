@@ -1,0 +1,58 @@
+\begin{tikzpicture}
+	\begin{pgfonlayer}{nodelayer}
+		\node [style=gn] (0) at (0.5, -0.5) {};
+		\node [style=none] (1) at (0.5, -1.5) {};
+		\node [style=none] (2) at (-1.5, 2) {};
+		\node [style=rn] (3) at (-1.5, -1.5) {};
+		\node [style=uw] (4) at (0.5, 1) {};
+		\node [style=gn] (5) at (-1.5, -0.5) {};
+		\node [style=uw] (6) at (-1.5, 1) {};
+		\node [style=none] (7) at (0.5, 2) {};
+		\node [style=none] (8) at (2, 0.25) {$\eqq{\ref{rule:K0}}$};
+		\node [style=uw] (9) at (13.25, -0.5) {};
+		\node [style=rn] (10) at (12.5, -1.5) {};
+		\node [style=none] (11) at (14, -1.5) {};
+		\node [style=gn] (12) at (13.25, 1) {};
+		\node [style=none] (13) at (12.5, 2) {};
+		\node [style=none] (14) at (14, 2) {};
+		\node [style=gn] (15) at (5.75, -0.5) {};
+		\node [style=none] (16) at (5.75, -1.5) {};
+		\node [style=none] (17) at (3.75, 2) {};
+		\node [style=rn] (18) at (3.75, -0.5) {};
+		\node [style=uw] (19) at (5.75, 1) {};
+		\node [style=rn] (20) at (4.25, -0.5) {};
+		\node [style=uw] (21) at (3.75, 1) {};
+		\node [style=none] (22) at (5.75, 2) {};
+		\node [style=none] (23) at (7.25, 0.25) {$\eqq{\ref{eq:wid}}$};
+		\node [style=gn] (24) at (10.25, 0) {};
+		\node [style=none] (25) at (10.25, -1.5) {};
+		\node [style=none] (26) at (8.25, 2) {};
+		\node [style=none] (31) at (10.25, 2) {};
+		\node [style=none] (32) at (11.75, 0.25) {$\eqq{\ref{eq:wid}}$};
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\draw (2.center) to (6);
+		\draw (7.center) to (4);
+		\draw (6) to (5);
+		\draw (6) to (0);
+		\draw (4) to (5);
+		\draw (0) to (4);
+		\draw (5) to (3);
+		\draw (0) to (1.center);
+		\draw [in=90, out=-135, looseness=0.75] (9) to (10);
+		\draw [in=-45, out=90, looseness=0.75] (11.center) to (9);
+		\draw (12) to (9);
+		\draw [in=-90, out=135, looseness=0.75] (12) to (13.center);
+		\draw [in=45, out=-90, looseness=0.75] (14.center) to (12);
+		\draw (17.center) to (21);
+		\draw (22.center) to (19);
+		\draw (21) to (15);
+		\draw (19) to (20);
+		\draw (15) to (19);
+		\draw (15) to (16.center);
+		\draw (18) to (21);
+		\draw (24) to (25.center);
+		\draw [bend left=15] (24) to (26.center);
+		\draw (24) to (31.center);
+	\end{pgfonlayer}
+\end{tikzpicture}

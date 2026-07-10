@@ -1,0 +1,55 @@
+\section{Completeness for Factoring Controlled Operators}
+Our results so far show that controlled states and controlled square matrices each induce a ring structure, as they satisfy all ring axioms. Furthermore, the ring of controlled states is isomorphic to the ring of multilinear polynomials over complex numbers. What is the ring of controlled square matrices isomorphic to?
+
+In this section, we will show that the ring of controlled square matrices is isomorphic to the ring of multivariate polynomials over same-size square matrices over the complex numbers, with complex number coefficients. Therefore, the former admits a completeness result over the latter.
+
+In the previous section, the indeterminates of the multilinear polynomials were complex numbers represented by $\lowerbox{\numberstate}$.
+Consider them to instead be same-size matrices represented by controlled square matrix diagrams.
+Then:
+\begin{thm}\label{thm:ctrl_pnf}
+    Consider multivariate polynomials of the form $P = \sum_{i=1}^{m_i} c_i \Pi_{j=1}^{m_{ij}} M_{ij}$ over same-size square matrices $M_{ij} \in \mathbb{C}^{n \times n}$, where $n \in \mathbb{N}$, all $c_i \in \mathbb{C}$, and all $m_i, m_{ij} \geq 0$.
+    Such polynomials are isomorphic to arithmetic diagrams whose outputs are each the control wire of same-size controlled square matrices $\widetilde{M_{ij}}$.
+    The white background ZX, ZW, and ZXW Rules of Figure~\ref{fig:zxw_rules}, along with \eqref{rule:CMcpy} and \eqref{rule:CMcom}, form a complete set of rules for all ring operations on these polynomials.
+\end{thm}
+\begin{proof}
+    We prove this by deriving a unique normal form, fixing an (arbitrary) order on the same-size square matrix variables.
+    The algorithm to arrive at this normal form starts by rewriting the diagram sans the controlled square matrices to PNF, by the procedure of \Cref{thm:uni_pnf}.
+    Next, remove all $\lowerbox{\coWs}$'s by using \eqref{rule:CMcpy} to make copies of the controlled square matrices.
+    Finally, use \eqref{rule:CMcom} to commute controlled square matrices whose controls act on mutually exclusive sectors past each other.
+    The algorithm terminates with the controlled square matrix terms ordered by their mutually exclusive sectors in lexicographical order with respect to the order of their variables.
+    The rules used here to derive this completeness result are the same subset of ZXW rules used for completeness for arithmetic diagrams in the ZXW-calculus in \Cref{thm:uni_pnf}, plus the \eqref{rule:CMcpy} and \eqref{rule:CMcom} rules.
+\end{proof}
+Note these procedures enable controlled operators in mutually exclusive sectors to commute past each other.
+This does not apply to controlled operators in the same sector, which would require additional information about the operators themselves beyond being controlled operators, namely whether they commute.
+
+\begin{prop}\label{prop:ctrl_pnf_min}
+    When using the minimal set of rules from~\cite{deVisme2025minzw} to prove the completeness result of Theorem~\ref{thm:ctrl_pnf} as described in Remark~\ref{remark:minZW}, adding the \ref{rule:CMcpy} and \ref{rule:CMcom} rules is also a minimal rule set, i.e. none of the rules are derivable from the others.
+\end{prop}
+\begin{proof}
+    To show minimality, we can consider that the \ref{rule:CMcpy} and \ref{rule:CMcom} rules are the only rules here that involve the controlled square matrix generator, and so they cannot be derivable from the other rules here.
+    The \ref{rule:CMcpy} rule can change the total number of controlled square matrices in the diagram, while the \ref{rule:CMcom} rule cannot.
+    On the other hand, the \ref{rule:CMcom} rule can apply to two different controlled square matrices, changing their order where the outputs of one are inputs to the other; the \ref{rule:CMcpy} rule applies to two controlled square matrices only if they are labelled by the same matrix.
+\end{proof}
+
+\subsection{Factorising Hamiltonians}
+An application of Theorem~\ref{thm:ctrl_pnf} is that we can leverage our complete rules for arithmetic ZW diagrams and controlled diagrams to perform the equivalent ring operations to those on the corresponding multivariate polynomials.
+This is important for synthesising quantum circuits for a number of quantum algorithms whose constructions involve many controlled gates.
+These techniques are particularly amenable for quantum circuits derived from Hamiltonian operators, as is ubiquitous in quantum algorithms for quantum chemistry and condensed matter physics.
+
+The earliest works on diagrammatic presentations of Hamiltonian operators include the Schr\"odinger equation, Taylor expansion, and Trotterization~\cite{shaikh2022sum}; and diagrammatical differentiation and integration of parametrised quantum circuits applicable to analysing barren plateaus~\cite{Wang2024diffintzx}.
+For Hamiltonians fully instantiated in terms of the ZX- or ZXW-calculus generators, including arbitrary qubit Hamiltonians that are expressible as linear combinations of tensor products of Pauli operators, the completeness results of these graphical calculi guarantee that any possible factorisations are derivable from the rules of the calculus.
+
+However, while Hamiltonian operators are ultimately compiled to qubit Pauli operators if executed on qubit quantum computers, typically the physical systems of interest are not natively qubit systems. Controlled operators for non-qubit systems in quantum graphical calculi include spin-optical interactions~\cite{de2023light}, continuous-variable operators~\cite{shaikh2024fockzx}, fermion-to-qubit mappings~\cite{mcdowallrose2025f2q}, and SU(2) representations~\cite{wang2025penrosezx}.
+Ref.~\cite{mcdowallrose2025f2q} notably used one of the new rules for controlled diagrams first proposed in this work, \eqref{rule:CMcpy}, to derive a general form for any two-body fermionic Hamiltonian in second quantisation under any linear encoding.
+
+In this work, we introduce graphical rewrite rules that can involve and even copy black-box diagrams so long as they are controlled square matrices. To present a small working example, consider same-size square matrices $I, A, B$, and $a, b, c \in \mathbb{C}$.
+The equivalent ring operations for the below factorisation of an example Hamiltonian are performed directly on the controlled diagram.
+
+\begin{gather}
+    \tikzfig{matspoly}
+\end{gather}
+
+The completeness results of the present work guarantee that for any Hamiltonian, the graphical rewrite rules of Figure~\ref{fig:zxw_rules} are capable of deriving any regroupings of the Hamiltonian terms.
+This may be generally of interest because factoring Hamiltonians reduces the Hamiltonian term count and therefore the circuit complexity, whereas expanding to unique polynormal form enables verifying that a given quantum computation indeed implements the desired Hamiltonian. 
+When the control structure has the form of any arithmetic diagrams, then this guarantee holds even when no specific diagrammatic instantiation is fixed for the Hamiltonian terms, with the complexity of obtaining polynormal form moreover scaling as a function of the number of terms in the Hamiltonian.
+In contrast, na\"ively applying the normal form procedure for the linear map itself scales as a function of the size of the matrix, which is exponential in the number of qubits.

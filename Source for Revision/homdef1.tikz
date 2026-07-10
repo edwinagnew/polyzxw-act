@@ -1,0 +1,18 @@
+\begin{tikzpicture}
+	\begin{pgfonlayer}{nodelayer}
+		\node [style=none] (0) at (0, 0) {};
+		\node [style=none] (1) at (0, 0) {$\phi_n(a) = $};
+		\node [style=gbox] (2) at (2.5, 0.5) {$a$};
+		\node [style=none] (3) at (2.5, 1.5) {};
+		\node [style=rn] (4) at (1.5, -0.5) {};
+		\node [style=rn] (5) at (3.5, -0.5) {};
+		\node [style=none] (6) at (1.5, -1.5) {};
+		\node [style=none] (7) at (3.5, -1.5) {};
+		\node [style=label] (8) at (2.5, -0.75) {$\ldots$};
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\draw (3.center) to (2);
+		\draw (4) to (6.center);
+		\draw (5) to (7.center);
+	\end{pgfonlayer}
+\end{tikzpicture}

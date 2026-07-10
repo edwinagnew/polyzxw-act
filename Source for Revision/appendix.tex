@@ -1,0 +1,827 @@
+% \section{ZXW rules}\label{sec:apprules}
+
+% \textbf{ZX Rules}:
+
+% \begin{gather}
+%   \tikzfig{s1}
+%   \tag{S1}\label{rule:S1}
+% \end{gather}
+% \begin{multicols}{2}
+%   \noindent
+%   \begin{gather}
+%     \tikzfig{s2}
+%     \tag{S2}\label{rule:S2}
+%     \neweqline
+%     \tikzfig{rdotaemptydit0}
+%     \tag{Ept}\label{rule:Ept}
+%     \neweqline
+%     \tikzfig{b2}
+%     \tag{B2}\label{rule:B2}
+%     \neweqline
+%     \tikzfig{k0copy}
+%     \tag{K0}\label{rule:K0}
+%   \end{gather} \columnbreak
+%   \begin{gather}
+%     \tikzfig{pimultiplecpdit}
+%     \tag{K1}\label{rule:K1}
+%     \neweqline
+%     \tikzfig{k2adit}
+%     \tag{K2}\label{rule:K2}
+%     \neweqline
+%     \tikzfig{zerotoreddit0}
+%     \tag{Zer}\label{rule:Zer}
+%     \neweqline
+%     \tikzfig{h_id}
+%     \tag{H}\label{rule:H}
+%   \end{gather}
+% \end{multicols}
+
+% Where $k \in \{0, 1\}$.
+
+
+% \bigskip
+
+% \textbf{ZW Rules}:
+
+% \begin{multicols}{2}
+%   \noindent
+%   \begin{gather}
+%     \tikzfig{phasecopydit}
+%     \tag{Pcpy}\label{rule:Pcpy}\neweqline
+%     \tikzfig{wsymetrydit}
+%     \tag{Sym}\label{rule:Sym}\neweqline
+%     \tikzfig{w-bialgebra}
+%     \tag{BZW}\label{rule:BZW}
+%     \end{gather} \columnbreak
+%     \begin{gather}
+%     \tikzfig{additiondit}
+%     \tag{Add}\label{rule:Add}\neweqline
+%     \tikzfig{associatedit}
+%     \tag{Aso}\label{rule:Aso}\neweqline
+%     \tikzfig{w-w-algebra}
+%     \tag{WW}\label{rule:WW}
+%   \end{gather}
+% \end{multicols}
+
+
+% \bigskip
+
+% \textbf{ZXW Rules}:
+
+% \begin{multicols}{2}
+%   \noindent
+%   \begin{gather}
+%     \tikzfig{triangleocopydit}
+%     \tag{Bs0}\label{rule:Bs0}\neweqline
+%     \tikzfig{trianglepicopydit2}
+%     \tag{Bs1}\label{rule:Bs1}\neweqline
+%     \tikzfig{trialgebra}
+%     \tag{TA}\label{rule:TA}\neweqline
+%     \tikzfig{hadamard-decomposition2}
+%     \tag{HD}\label{rule:HD}
+%     \end{gather}
+% \end{multicols}
+% \section{Proofs for Section~\ref{sec:ctrldiagrams}}\label{sec:ctrldiagramsproofs}
+% Our proofs of Proposition~\ref{prop:linearity_corollary} and~\ref{prop:linearity_corollary2} utilise the following lemmas provable from qubit ZX-calculus:
+% \begin{lemma}\label{lem:pi_sq}
+%     \begin{equation*}
+%         \tikzfig{pi-sq-statement}
+%     \end{equation*}
+% \end{lemma}
+% \begin{proof}
+%     \begin{equation*}
+%         \tikzfig{pi-sq}
+%     \end{equation*}
+% \end{proof}
+
+% \begin{lemma}\label{lem:lin_id}
+%     \begin{equation*}
+%         \tikzfig{linearity-statement}
+%     \end{equation*}
+% \end{lemma}
+% \begin{proof}
+%     From Lemma~\ref{lem:pi_sq}, we have that $\tikzfig{xpi}^2 = \tikzfig{xpi}$, and therefore $\tikzfig{xpi}$ must be either 0 or 1.
+%     Were $\tikzfig{xpi} = 1$, $\tikzfig{x0}$ and $\tikzfig{x1}$ are both normalised single-qubit states whose inner product with each other is moreover 1.
+%     \begin{equation*}
+%         \tikzfig{xpi2}
+%     \end{equation*}
+%     Therefore, $\tikzfig{x0} = \tikzfig{x1}$, which is a contradiction because they must be different states because $(\ref{rule:Bs0})$ is a product state and $(\ref{rule:Bs1})$ is an entangled state. Therefore, $\tikzfig{xpi} = 0$ and we have the required result.  
+    
+% \end{proof}
+
+\section{Proofs for Section~\ref{sec:ctrlmap}}\label{sec:ctrlmapproofs}
+
+\textbf{Proof of Proposition \ref{prop:ctrl_comp_h}}
+\begin{proof}
+    $\Control$ is sound with regards to sequential composition:
+    \begin{equation}
+        \tikzfig{F_comp}
+    \end{equation}
+
+    Where $(*)$ follows from Proposition \ref{prop:cmat_ops}.
+\end{proof}
+
+\textbf{Proof of Proposition \ref{prop:ctrl_comp_v}}
+\begin{proof}
+    Consider the morphism: $\phi_{V, W}: \Control(V) \otimes \Control(W) \to \Control(V \otimes W)$:
+    \begin{equation}
+       \phi_{V, W} = \tikzfig{F_lax_def}
+    \end{equation}
+
+    By conjugating by $\phi$, $\Control$ is sound under parallel composition of any $M_1: V \to V,\; M_2: W \to W$:
+    \begin{equation}
+        \tikzfig{ctrl_comp}
+    \end{equation}
+
+    Parallel composition is associative by associativity of the tensor product and of $\phi$:
+    \begin{equation}
+       \tikzfig{F_lax_ass}
+    \end{equation}
+\end{proof}
+
+Before we prove Proposition \ref{prop:FF}, we first need to define the AND gate in the ZXW-calculus.
+The AND gate is a primitive in the ZH-calculus~\cite{backens2019zh}. We can also represent the binary AND gate in the ZXW-calculus, by deMorgan's law of the diagram for binary OR given in \Cref{prop:vec_pnf}.
+\begin{definition}\label{def:and}
+    \begin{equation}
+        \tikzfig{and_def}
+    \end{equation}
+\end{definition}
+\begin{lemma}
+Short circuit: $AND(0, x) = 0$.
+\begin{equation}\label{eq:and0}
+    \tikzfig{and_lem0}
+\end{equation}
+\end{lemma}
+\begin{proof}
+\begin{equation}
+    \tikzfig{and0}
+\end{equation}
+\end{proof}
+\begin{lemma}
+Unit: $AND(1, x) = x$.
+\begin{equation}\label{eq:and1}
+    \tikzfig{and_lem1}
+\end{equation}
+\end{lemma}
+\begin{proof}
+\begin{equation}
+    \tikzfig{and1}
+\end{equation}
+\end{proof}
+
+\noindent
+\textbf{Proof of Proposition \ref{prop:FF}}
+\begin{proof}
+We prove this by verifying that the following diagram satisfies the conditions of being the controlled matrix on a controlled gate.
+\begin{equation}
+    \tikzfig{FF_new}
+\end{equation}
+Verifying condition \eqref{rule:c_sq0}.
+    \begin{equation}
+        \tikzfig{FF1_new}
+    \end{equation}
+Verifying condition \eqref{rule:c_sq1}.
+    \begin{equation}
+        \tikzfig{FF2_new}
+    \end{equation}
+\end{proof}
+\noindent
+Since this is indeed the controlled matrix on a controlled gate, we obtain the required result by Equation~\eqref{eq:control-map-def}.
+
+\section{Basic Lemmas for Arithmetic Diagrams}\label{sec:applem}
+% \begin{lemma}
+%     As a special case of~\cite[Lemma 38]{poor2023completeness} for the qubit setting, we have:
+%     \begin{equation}\label{eq:wid}
+%         \tikzfig{wid}
+%     \end{equation}
+% \end{lemma}
+%\begin{lemma}
+%     The below follows from~\cite[Lemma 37]{poor2023completeness}, $\ref{rule:K0}$, and~\cite[Lemma 3.23]{wang2022algebraiczx}:
+%     \begin{equation}\label{eq:wont}
+%         \tikzfig{wont}
+%     \end{equation}
+% \end{lemma}
+In this section, we prove a number of lemmas used throughout the paper.
+
+Firstly, we can define the one-input, zero-output W node to have the same syntax and semantics as the one-input, zero-output phase-free X spider, as done for arbitrary finite dimension in~\cite{deVisme2025minzw}.
+%In this work, all our completeness proofs for arithmetic diagrams and controlled states and operators (i.e. excluding Section~\ref{sec:deriveaxioms})
+%The following proof implies that as the only place where $(\ref{rule:TA})$ applied is in the proof of the ZW-calculus rule $\left(\ref{eq:kill_quad}\right)$, it suffices to replace $(\ref{rule:TA})$ by $\left(\ref{eq:kill_quad}\right)$; all rules involving X spiders with two or more legs can be safely disregarded.
+The remainder of this section proves a number of lemmas used throughout the paper that are all syntactic equalities, because they are derived purely through applications of the axioms of the qubit ZXW-calculus given in Figure~\ref{fig:zxw_rules}.
+
+\textbf{Proof of Lemma \ref{lem:kill_quad}}
+\begin{proof}
+\begin{equation*}
+    \tikzfig{kill_quad}
+\end{equation*}
+\end{proof}
+
+
+
+This lemma is the analogue of ~\cite[Lemma 37]{poor2023completeness} for the qubit case.
+
+\begin{lemma}
+    \begin{equation}\label{eq:wdecomp}
+        \tikzfig{triangle-statement}
+        %\tikzfig{w_decomp_statement}
+    \end{equation}
+\end{lemma}
+\begin{proof}
+    \begin{equation*}
+    \tikzfig{triangle}
+    \end{equation*}
+\end{proof}
+
+\begin{lemma}
+    \begin{equation}\label{eq:wid}
+        \tikzfig{wid}
+    \end{equation}
+\end{lemma}
+\begin{proof}
+    \begin{equation*}
+        \tikzfig{wid_proof}
+    \end{equation*}
+\end{proof}
+
+\begin{lemma}
+    \begin{equation}\label{eq:zerobox}
+        \tikzfig{zerobox_statement}
+    \end{equation}
+\end{lemma}
+\begin{proof}
+    \begin{equation*}
+        \tikzfig{zerobox}
+    \end{equation*}
+\end{proof}
+
+\begin{lemma}
+    \begin{equation}\label{eq:cp_add}
+        \tikzfig{cpadd_statement}
+    \end{equation}
+\end{lemma}
+\begin{proof}
+\begin{equation*}
+    \tikzfig{cpadd}
+\end{equation*}
+\end{proof}
+
+\begin{lemma}
+\begin{equation}\label{eq:x-x=0}
+    \tikzfig{cp_add2_statement}
+\end{equation}
+\end{lemma}
+\begin{proof}
+\begin{equation*}
+    \tikzfig{cp_add2}
+\end{equation*}
+\end{proof}
+
+
+\begin{lemma}
+\begin{equation}\label{eq:cpk_add}
+    \tikzfig{cpk_add_statement}
+\end{equation}
+\end{lemma}
+\begin{proof}
+\begin{equation*}
+    \tikzfig{cpk_add}
+\end{equation*}
+\end{proof}
+
+\begin{lemma}
+\begin{equation}\label{eq:dbl_dist}
+\tikzfig{dbl-dist-statement}
+\end{equation}
+\end{lemma}
+\begin{proof}
+\begin{equation*}
+\tikzfig{dbl-dist}
+\end{equation*}
+\end{proof}
+
+\begin{lemma}
+\begin{equation}\label{eq:dist_circ}
+    \tikzfig{dist_statement}
+\end{equation}
+\end{lemma}
+\begin{proof}
+\begin{equation*}
+    \tikzfig{dist}
+\end{equation*}
+\end{proof}
+
+\begin{lemma}
+    \begin{equation}\label{eq:0times}
+        \tikzfig{0times_statement}
+    \end{equation}
+\end{lemma}
+\begin{proof}
+    \begin{equation*}
+        \tikzfig{0times}
+    \end{equation*}
+\end{proof}
+
+
+\section{Derivation of the qubit ZXW-calculus axioms}\label{sec:deriveaxioms}
+This section derives the axioms of Figure~\ref{fig:zxw_rules}, purely through syntactic equalities of axioms directly sourced from the arbitrary finite dimension setting derived in~\cite{poor2023completeness}, with the dimension then restricted to two to recover the qubit case. We then derived using these rules other simpler rules introduced by earlier works, notably~\cite{wang2022algebraiczx}, to choose simpler axioms complete for the qubit ZXW-calculus for Figure~\ref{fig:zxw_rules}.
+
+Some of the rules are trivial in the qubit setting and were thus disregarded in this work: $(D1)$, $(H1)$, $(ZV)$, $(VW)$ reduce to the same diagram on both sides of the equality, being identity. Likewise, the $-1$ multiplier which equals the identity in the qubit setting is omitted in the second equality of $(P1)$, here renamed to $\left(\ref{rule:H}\right)$ to match the original rule name.
+
+For $(VA)$, adopting the semantically correct interpretation that the one-output W node is the identity --- which moreover syntatically agrees with \cite{deVisme2025minzw} ---  makes the equation trivial in the qubit setting. Since this one-output W node appears in neither the original qudit ZXW completeness paper nor anywhere in this paper, the $(VA)$ rule can be safely disregarded in the qubit setting.
+
+% It is straightforward to see that $(KZ)$ in the qubit setting is derivable through observing all its multipliers are identities in the qubit setting, unfusing a one-output X spider, applying the generalised $(\ref{rule:TA})$ rule from Lemmas 39 and 40 of~\cite{poor2023completeness} (neither of which apply $(KZ)$), and applying $(\ref{rule:Bs0})$ then $(\ref{rule:K0})$.
+First we prove $(KZ)$. This proof relies on the generalised $(\ref{rule:TA})$ rule from Lemmas 39 and 40 of~\cite{poor2023completeness}, whose proof is identical in the qubit case. Note also that all multipliers on the LHS of $(KZ)$ simplify to the identity.
+
+\begin{lemma}
+\begin{equation}\tag{KZ}
+    \tikzfig{KZ-statement}
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+\begin{equation*}
+    \tikzfig{KZ}
+\end{equation*}
+\end{proof}
+
+
+The remainder of this section is to derive $(\ref{rule:HD})$ from $(HD)$ of~\cite{poor2023completeness}, for which we first derive a number of lemmas.
+
+\begin{lemma}
+    \begin{equation}\label{eq:hopf}
+        \tikzfig{hopf_statement}
+    \end{equation}
+\end{lemma}
+\begin{proof}
+    \begin{equation*}
+    \tikzfig{hopf}
+    \end{equation*}
+\end{proof}
+
+Next, we will prove $(\ref{rule:Bs1})$ from the $(\ref{rule:Bs1})$ rule of~\cite{poor2023completeness} restricted to the qubit setting, which is:
+\begin{equation}\label{eq:tpcd}
+    \tikzfig{trianglepicopydit2}
+\end{equation}
+
+\begin{lemma}
+    \begin{equation}\label{eq:wpi}
+        \tikzfig{pi-statement}
+    \end{equation}
+\end{lemma}
+\begin{proof}
+    \begin{equation*}
+        \tikzfig{pi}
+    \end{equation*}
+\end{proof}
+Because we can derive the above lemma from Equation~\eqref{eq:tpcd} (the $(\ref{rule:Bs1})$ rule of~\cite{poor2023completeness} restricted to the qubit setting), and we can derive the latter from the former by simply applying $(\ref{rule:K1})$, we have opted to replace the latter axiom with the former, which is simpler, in Figure~\ref{fig:zxw_rules}.
+
+\begin{lemma}
+    \begin{equation}\label{eq:flip}
+        \tikzfig{flip-statement}
+    \end{equation}
+\end{lemma}
+\begin{proof}
+    \begin{equation*}
+        \tikzfig{flip}
+    \end{equation*}
+\end{proof}
+
+\begin{lemma}
+    \begin{equation}\label{eq:wont}
+        \tikzfig{wont-statement}
+    \end{equation}
+\end{lemma}
+\begin{proof}
+        \begin{equation*}
+        \tikzfig{wont}
+    \end{equation*}
+\end{proof}
+
+
+\begin{lemma}
+\begin{equation}\label{eq:inner}
+	\tikzfig{inner_statement}
+\end{equation}
+\end{lemma}
+\begin{proof}
+\begin{equation*}
+\tikzfig{inner}
+\end{equation*}
+\end{proof}
+
+\begin{lemma}
+    \begin{equation}\label{eq:xcpy}
+        \tikzfig{xcpy_statement}
+    \end{equation}
+\end{lemma}
+\begin{proof}
+    \begin{equation*}
+        \tikzfig{xcpy}
+    \end{equation*}
+\end{proof}
+
+\begin{lemma}
+    \begin{equation}\label{eq:halfloopid}
+        \tikzfig{halfloopid-statement}
+    \end{equation}
+\end{lemma}
+\begin{proof}
+    \begin{equation*}
+        \tikzfig{halfloopid}
+    \end{equation*}
+\end{proof}
+
+\begin{lemma}
+    \begin{equation}\label{eq:break}
+        \tikzfig{break-statement}
+    \end{equation}
+\end{lemma}
+\begin{proof}
+    \begin{equation*}
+        \tikzfig{break}
+    \end{equation*}
+\end{proof}
+
+\begin{lemma}
+    \begin{equation}\label{eq:breaktwo}
+        \tikzfig{break2-statement}
+    \end{equation}
+\end{lemma}
+\begin{proof}
+    \begin{equation*}
+        \tikzfig{break2}
+    \end{equation*}
+\end{proof}
+
+Finally, we derive the axiom $(\ref{rule:HD})$.
+\begin{prop}
+    \begin{equation}\label{eq:hd}
+        \tikzfig{hd-statement}
+    \end{equation}
+    where the middle of the three diagrams is the result of restricting the $(HD)$ axiom from~\cite{poor2023completeness} for arbitrary finite dimension, to the qubit (two-dimensional) setting.
+\end{prop}
+\begin{proof}
+    \begin{equation*}
+        \tikzfig{hd}
+    \end{equation*}
+\end{proof}
+
+\begin{remark}
+    As a useful observation, compare the following diagram for the Hadamard gate derived above, to the diagram for the AND gate from Definition~\ref{def:and}.
+    \begin{equation*}
+        \tikzfig{hdand}
+    \end{equation*}
+    This precisely agrees with its action applying a $-1$ phase determined by the AND of the input and output bit.
+\end{remark}
+
+\section{Proofs for Section~\ref{sec:ring}}
+
+\subsection{Rules for controlled diagrams}\label{sec:csound}
+In this subsection, we verify the soundness of the axioms for controlled diagrams with respect to the interpretations.
+
+The soundness of axioms $\ref{rule:c_sq0}$, $\ref{rule:c_sq1}$, $\ref{rule:cstate0}$, and $\ref{rule:cstate1}$ with respect to the interpretations in Equations~\eqref{eq:ctrlsqinterp} and~\eqref{eq:ctrlstateinterp}, immediately follows from applying the control states $\left\llbracket \raisebox{-4pt}{\tikzfig{x0}} \right\rrbracket = \ket{0}$ and $\left\llbracket \raisebox{-4pt}{\tikzfig{x1}} \right\rrbracket = \ket{1}$ respectively.
+
+For the remaining axioms, we will also prove soundness through verifying the actions of controlled diagrams on the control states $\ket{0}$ and $\ket{1}$.
+This is a common technique which uniquely fixes the interpretation because $\ket{0}$ and $\ket{1}$ form a basis for the control qubit, and thus any single-qubit state can be uniquely written as a linear combination of these two states.
+
+\subsubsection*{Confirmation of (\ref{rule:CMcpy})}
+
+First of all, using (\ref{rule:BZW}) we can rewrite the LHS to
+\begin{equation*}
+    \tikzfig{csq_dcopy2}
+\end{equation*}
+
+Then clearly
+\begin{equation*}
+    \tikzfig{csq_dcopy3}
+\end{equation*}
+
+Meanwhile,
+\begin{equation*}
+    \tikzfig{csq_dcopy4}
+\end{equation*}
+
+Thus the two sides are equal over the Z basis and so are equal as diagrams.
+
+
+\subsubsection*{Confirmation of \ref{rule:CScpy}}
+As before, plugging $|0\rangle$ gives
+\begin{equation*}
+    \tikzfig{cs_copy1}
+\end{equation*}
+
+Meanwhile, plugging $|1\rangle$ gives
+    \begin{equation*}
+    \tikzfig{cs_copy2}
+\end{equation*}
+
+
+\subsubsection*{Confirmation of \ref{rule:CMcom}}
+
+Plugging $|0\rangle$ of course gives
+\begin{equation*}
+      \tikzfig{csq_add_comm0}
+  \end{equation*}
+
+Meanwhile, plugging $|1\rangle$ we have
+\begin{equation*}
+      \tikzfig{csq_add_comm}
+  \end{equation*}
+
+%%\textbf{Proof of Lemma \ref{lem:csqaddcomm}}
+%\begin{proof}
+%    We prove by plugging red and commutativity of matrix addition. By definition of controlled matrices, plugging $\lowerbox{\redzero}$ gives $\lowerbox{\redzero}$ and $I_n$ on both sides. Meanwhile, plugging $\lowerbox{\redpi}$ gives:
+%    \begin{equation}
+ %      \tikzfig{csq_add_comm}
+ %  \end{equation}
+%\end{proof}
+
+\subsection{Proofs for Ring Properties}\label{sec:ringproofs}
+
+Now we prove the remaining ring properties using purely diagrammatic rewrites.
+
+
+
+\textbf{Proof of Lemma \ref{lem:csq_inv}}
+\begin{proof}
+    \begin{equation*}
+        \tikzfig{csq_add_inv}
+    \end{equation*}
+\end{proof}
+
+\textbf{Proof of Lemma \ref{lem:csq_dist}}
+\begin{proof}
+    \begin{equation*}
+        \tikzfig{csq_dist}
+    \end{equation*}
+\end{proof}
+
+\textbf{Proof of Lemma \ref{lem:csaddcomm}}
+\begin{proof}
+    \begin{equation*}
+    \tikzfig{cs_add_comm}
+    \end{equation*}
+\end{proof}
+
+\textbf{Proof of Lemma \ref{lem:csaddassoc}}
+\begin{proof}
+    \begin{equation*}
+    \tikzfig{cs_add_ass}
+    \end{equation*}
+\end{proof}
+
+\textbf{Proof of Lemma \ref{lem:csaddid}}
+\begin{proof}
+    It is clear that $\lowerbox[10]{\zeroproj}$ is the controlled state $\tilde{\mathbf{0}}$.
+
+    Then we have:
+    \begin{equation*}
+        \tikzfig{cs_add_id}
+    \end{equation*}
+
+\end{proof}
+
+\textbf{Proof of Lemma \ref{lem:cstimesassoc}}
+\begin{proof}
+    Proof is very similar to lemma \ref{lem:csaddassoc}, just using with (\ref{rule:S1}) instead of (\ref{rule:Aso})
+    \begin{equation*}
+    \tikzfig{cs_times_ass}
+    \end{equation*}
+\end{proof}
+
+\textbf{Proof of Lemma \ref{lem:cstimescomm}}
+\begin{proof}
+    \begin{equation*}
+    \tikzfig{cs_times_comm}
+    \end{equation*}
+\end{proof}
+
+\textbf{Proof of Lemma \ref{lem:csaddinv}}
+\begin{proof}
+    $\tilde{\psi}^{-1}$ is still a controlled state since $\raisebox{-5pt}{\numbergate[-1]}$ does nothing to $\raisebox{-5pt}{\redzero}$. Then $\tilde{\psi}^{-1}$ inverts $\tilde{\psi}$ since:
+    \begin{equation*}
+        \tikzfig{cs_add_inv}
+    \end{equation*}
+\end{proof}
+
+\textbf{Proof of Lemma \ref{lem:csdist}}
+\begin{proof}
+    \begin{gather*} %\label{eq:cs_dist}
+        \tilde{\psi_1} \boxtimes (\tilde{\psi_2} \boxplus \tilde{\psi_3}) ~=~ \tikzfig{d1} ~
+        \eqq{\ref{rule:BZW}} ~ \tikzfig{d2} \neweqline ~=~ \tikzfig{d3} ~
+        \eqq{\ref{rule:CScpy}} ~ \tikzfig{d4} \neweqline ~=~ \tikzfig{d5}
+        ~=~ \tikzfig{d6} \neweqline ~=~ (\tilde{\psi_1} \boxtimes \tilde{\psi_2}) \boxplus (\tilde{\psi_1} \boxtimes \tilde{\psi_3})
+    \end{gather*}
+
+\end{proof}
+
+\section{Proofs for Section~\ref{sec:iso}}\label{sec:isoproofs}
+\textbf{Proof of Proposition \ref{prop:vec_pnf}}
+\begin{proof}
+    We prove by induction on $n$.
+
+    For the base case, $n=0$. The only PNF with no outputs is a number so we have: $$\numberstate[a_0] = \begin{bmatrix}
+        1 & a_0
+    \end{bmatrix}$$ as desired.
+
+    For inductive hypothesis, we assume that Proposition~\ref{prop:vec_pnf} holds for every PNF on $n$ outputs. We use this hypothesis to extend it to PNFs with $n+1$ outputs.
+
+    Let $D$ be an arbitrary PNF with $n+1$ outputs. Firstly, observe that $x_{n+1}$ is connected to only the odd coefficients $\{a_{2k+1}\}$ since these are exactly the indices with $1$ in the least significant bit. Thus we can rewrite:
+    \begin{gather}
+        \raisebox{-20pt}{\ddiag} ~=~ \tikzfig{uni10} \neweqline ~=~ \tikzfig{uni11} \neweqline ~\eqq{\ref{rule:BZW}}~ \tikzfig{uni12} \neweqline
+        ~=~ \tikzfig{uni13}
+    \end{gather}
+    Where $D_{even}, D_{odd}$ are PNF diagrams. Since they are over $n$ variables, we can apply the inductive hypothesis and obtain:
+    \begin{equation}\tag{*}
+        D_{even} = \begin{bmatrix}
+            1 & a_0 \\ 0 & a_2 \\ \vdots & \vdots \\ 0 & a_{2^{n+1}-2}
+        \end{bmatrix}, \qquad \qquad
+        D_{odd} = \begin{bmatrix}
+            1 & a_1 \\ 0 & a_3 \\ \vdots & \vdots \\ 0 & a_{2^{n+1}-1}
+        \end{bmatrix}
+    \end{equation}
+
+
+    Next, plugging red we observe:
+    \begin{equation}
+        \tikzfig{uni2}
+    \end{equation}
+    Meanwhile,
+    \begin{equation}
+        \tikzfig{uni3}
+    \end{equation}
+
+    Summing these together,
+    \begin{gather}
+        \tikzfig{uni4}
+        \neweqline ~=~ (D_{even} \otimes \ketz) + (D_{odd}\keto \brao \otimes  \keto) \neweqline \eqq{*}~ \begin{bmatrix}
+            1 & a_0 \\ 0 & a_2 \\ \vdots & \vdots \\ 0 & a_{2^{n+1}-2}
+        \end{bmatrix} \otimes \ketz + \begin{bmatrix}
+            0 & a_1 \\ 0 & a_3 \\ \vdots & \vdots \\ 0 & a_{2^{n+1}-1}
+        \end{bmatrix} \otimes \keto  \neweqline
+        ~=~ \begin{bmatrix}
+            1 & a_0 \\ 0 & 0 \\ 0 & a_2 \\ 0 & 0 \\ \vdots & \vdots \\ 0 & a_{2^{n+1}-2} \\ 0 & 0
+        \end{bmatrix} + \begin{bmatrix}
+            0 & 0 \\ 0 & a_1 \\ 0 & 0 \\ 0 & a_3 \\ \vdots & \vdots \\ 0 & 0 \\ 0 & a_{2^{n+1}-1}
+        \end{bmatrix}
+        ~=~ \begin{bmatrix}
+            1 & a_0 \\ 0 & a_1 \\ 0 & a_2 \\ 0 & a_3 \\ \vdots & \vdots \\ 0 & a_{2^{n+1}-2} \\ 0 & a_{2^{n+1} -1}
+        \end{bmatrix}
+    \end{gather}
+
+    Completing the inductive step. Note that it is necessary to use a ``proof-by-plugging'' approach for this result, since we are proving a statement about the interpretation of a ZXW diagram as a matrix, whilst the completeness of our rule set applies only to equality of ZXW diagrams. 
+\end{proof}
+
+\textbf{Proof of Theorem \ref{thm:uni_pnf}}
+
+\begin{proof}
+    Let $A$ be an arithmetic diagram. If $A = \numberstate$, we are done.
+
+    Otherwise, $A$ has at least one output. First, we shall rewrite $A$ into three layers, consisting of: (1) a single W at the top, (2) a layer of $\raisebox{-5pt}{\zspids}$ and (3) a layer of $\numberstate$'s and $\raisebox{-5pt}{\coWs}$'s. Then we shall collect terms and order the boxes to produce a PNF.
+
+    If the top of $A$ is not already $\raisebox{-5pt}{\wspids}$, it must be $\raisebox{-5pt}{\zspids}$. It cannot be $\numberstate$ since the remaining arithmetic diagram would then have no inputs which is impossible. It cannot be $\raisebox{-5pt}{\coWs}$ since there is only one input and arithmetic diagrams cannot contain $\ccap$. Thus we can rewrite:
+    \begin{enumerate}[label={(\arabic*)}]
+    \item $\tikzfig{algtop1}$
+    \end{enumerate}
+
+    (1) guarantees there is a W at the top. We shall now repeatedly apply rewrites underneath the W until there are exactly three layers. Assume that fusion is applied as much as possible between each stage and (\ref{eq:kill_quad}) is applied and simplified with (\ref{rule:K0}) to remove $\raisebox{-8pt}{\xsq}$ whenever possible. Then for as long as there are at least 4 layers, we can apply one of the following rewrites:
+        \begin{enumerate}[resume, label={(\arabic*)}]
+            \item $\tikzfig{algcases1}$
+            \item $\tikzfig{algcases2}$
+            \item $\tikzfig{algcases3}$
+            \item $\tikzfig{algcases4}$
+            \item $\tikzfig{algcases5}$
+        \end{enumerate}
+
+    \medskip
+
+    Clearly, we can only stop applying these rules once $A$ is a sum of products of copies. Steps (2) and (3) ensure the top of $A$ has such a structure and steps (4) - (6) ensure that there is nothing beneath the $\lowerbox{\coWs}$'s . To see that this will always terminate, observe that (2) preserves the depth of $A$ while (4), (5), (6) all decrease it. (3) also preserves the depth; for the following sub-case which first increases the depth, the application of (5) reduces the depth to preserve the starting depth again\footnote{We thank an anonymous reviewer for pointing this case out.}.
+    \begin{equation*}
+    \tikzfig{algcases35}
+    \end{equation*}
+
+    (2) and (3) can only be applied a finite number of times before another simplification must be used, since (2) cannot create new ways to apply (3). So repeatedly applying these rewrites must eventually shrink the depth down to $3$, as desired. Finally, to put $A$ in PNF we must:
+    \begin{enumerate}[resume, label={(\arabic*)}]
+        \item Collect terms: whenever there are two boxes connected to exactly the same set of $\raisebox{-5pt}{\coWs}$'s, use (\ref{eq:cpk_add}) to fuse them together.
+        \item Pad: use (\ref{eq:zerobox}) to insert $\raisebox{-5pt}{\numbergate[0]}$ for any connectivities that do not exist in $A$.
+        \item Reorder: use (\ref{rule:Sym}) to reorder coefficients into the canonical order.
+    \end{enumerate}
+
+    Step (7) ensures that every $\raisebox{-5pt}{\zspids}$ has unique connectivity. Step (8) ensures there are exactly $2^n$ coefficients so that step (9) can order them in the appropriate way.
+
+    Thus $A$ has been written in PNF, completing the proof.
+
+\end{proof}
+
+\textbf{Proof of Theorem \ref{thm:iso}}
+\begin{proof}
+
+    First, we show $\phi_n$ is a homomorphism, i.e. \begin{equation}
+        \forall p, q \in \polyring, \phi_n(p + q) = \phi_n(p) \boxplus \phi_n(q) ,\quad \phi_n(p \times q) = \phi_n(p) \boxtimes \phi_n(q)
+    \end{equation}
+    The strategy for the proof will be an induction on $n$. Here, the yellow shaded regions serve no purpose other than to make the subdiagram that was rewritten in the preceding or following step easier to visually identify.
+
+    \medskip
+
+    \textbf{Base case:}
+    We have not defined controlled states for $n=0$, so the base case begins with $n=1$.
+    Let $p, q \in \polyring[1]$. Write as $p(x_1) = a_0 + a_1x_1, q(x_1) = b_0 + b_1x_1$, where $a_0, a_1, b_0, b_1 \in \mathbb{C}$. Then since $p + q = a_0 + b_0 + (a_1 + b_1)x_1$,
+    \begin{equation}
+        \tikzfig{hombaseadd}
+    \end{equation}
+
+    Meanwhile, since $p \times q = a_0b_0 + (a_0b_1 + a_1b_0)x_1$,
+    \begin{equation}
+        \tikzfig{hombasetimes}
+    \end{equation}
+    % \begin{gather}
+    %     \phi_1(p) \boxtimes \phi_1(q) ~=~ \tikzfig{bt1} ~\eqq{\ref{eq:dbl_dist}}~ \tikzfig{bt2} \neweqline
+    %     ~\eqq{\ref{eq:dist_circ}}~ \tikzfig{bt3} ~\eqq{\ref{rule:Pcpy}}~ \tikzfig{bt4} \neweqline
+    %     ~\eqq{\ref{eq:kill_quad}}~ \tikzfig{bt5} ~\eqq{\ref{eq:0times}}~ \tikzfig{bt6} ~\eqq{\ref{eq:cp_add}}~ \tikzfig{bt7} \neweqline ~= \phi_1(p \times q)
+    % \end{gather}
+
+
+    Completing the base case.
+
+    \medskip
+
+
+    \textbf{Inductive step:}
+
+    Let $Hom(n)$ assert than $\phi_n$ is a homomorphism.  Then for the inductive step we wish to prove that $\forall n, Hom(n) \implies Hom(n+1)$.
+
+    The proof relies on the recursive definition of $R[x_1, x_2] = R[x_1][x_2]$, for any ring $R$, to rewrite an arbitrary polynomial $p(x_1, ..., x_{n+1}) = a_0 + a_1x_{n+1} + ... + a_{2^{n+1}-1}x_1x_2...x_{n+1} \in \polyring[n+1]$ as $p(x_{n+1}) = p_0 + p_1x_{n+1}$, where $p_0, p_1 \in \polyring$. This allows the $p_i$ to be treated similarly to the scalars in the base case. 
+    %To emphasise this, they will be drawn in green boxes. To help distinguish when an operation is covered by the inductive hypothesis, the wires for variables $x_1, ..., x_n$ will be drawn in blue, while the $x_{n+1}$ wires will be drawn in black. 
+    Thus the inductive hypothesis states that for all $p_i, q_i \in \polyring[n]$,
+    \begin{equation}
+        \tikzfig{ih1}
+        \tag{IH1}\label{eq:ih1}
+    \end{equation}
+    \begin{equation}
+        \tikzfig{ih2}
+        \tag{IH2}\label{eq:ih2}
+    \end{equation}
+
+    Let $p(x_{n+1}) = p_0 + p_1x_{n+1}$ and $q(x_{n+1}) = q_0 + q_1x_{n+1}$, where $p_0, p_1, q_0, q_1 \in \polyring$.
+    % According to our hypothesis,
+    % \begin{equation}
+    %     \phi_{n\plu 1}(p) = \phi_{n\plu 1}(p_0) \boxplus \left(\phi_{n\plu 1}(p_1) \boxtimes \phi_{n\plu 1}(x_{n\plu 1}) \right)
+    % \end{equation}
+    % and likewise for $\phi_{n\plu 1}(q)$. 
+    We first verify correctness of the constructed controlled diagram
+    \begin{equation}\label{eq:ctrlp}
+        \tikzfig{ctrlp}
+    \end{equation}
+    because it results in $\ket{0...0}$ when the control is $\ket{0}$, and in the state corresponding to $p$ when the control is $\ket{1}$. 
+    \begin{equation}\label{eq:ctrlp0}
+        \tikzfig{ctrlp0}
+    \end{equation}
+    \begin{equation}\label{eq:ctrlp1}
+        \tikzfig{ctrlp1}
+    \end{equation}
+
+    Applying this in the inductive step for constructing a controlled diagram of $p + q$ from those of $p$ and $q$:
+    \begin{equation*}
+        \tikzfig{sa}
+    \end{equation*}
+    % \begin{gather}
+    %     \phi_{n+1}(p) \boxplus \phi_{n+1}(q) ~=~ \tikzfig{sa1} ~\eqq{\ref{rule:Aso}}~ \tikzfig{sa2} \neweqline
+    %     ~ \eqq{IH1} ~ \tikzfig{sa3} ~\eqq{\ref{rule:BZW}}~ \tikzfig{sa4} ~\eqq{IH1}~ \tikzfig{sa5} \neweqline
+    %     ~=~ \phi_{n+1}(p_0 + q_0 + (p_1 + q_1)x_{n+1}) ~=~ \phi_{n+1}(p + q)
+    % \end{gather}
+
+
+    Similarly, for multiplication:
+    \begin{equation*}
+        \tikzfig{st}
+    \end{equation*}
+    % \begin{gather}
+    % \phi_{n+1}(p) \boxtimes \phi_{n+1}(q) ~=~ \tikzfig{st1} \eqq{\ref{eq:dbl_dist}}  ~ \tikzfig{st2} \neweqline
+    % \eqq{\ref{eq:cs_copy}} ~ \tikzfig{st3} \eqq{\ref{eq:ih2}} ~ \tikzfig{st4} \neweqline
+    % \eqq{\ref{rule:BZW}} ~ \tikzfig{st5} ~ = ~ \tikzfig{st6} \neweqline
+    %  \eqq{\ref{eq:cs_copy}} ~ \tikzfig{st7} ~ \eqq{\ref{eq:ih2}} ~ \tikzfig{st8} \neweqline
+    % \eqq{\ref{rule:BZW}} ~ \tikzfig{st9} ~ = ~ \tikzfig{st10} \neweqline
+    % \eqq{\ref{eq:kill_quad}} ~ \tikzfig{st11} ~ \eqq{\ref{eq:arith_cs}, \ref{eq:wid}} ~ \tikzfig{st12} \neweqline ~ \eqq{\ref{eq:ih2}} ~ \tikzfig{st13}
+    %   ~ \eqq{\ref{rule:BZW}} ~ \tikzfig{st14} ~ \eqq{\ref{eq:ih1}} ~ \tikzfig{st15} \neweqline
+    %  ~=~ \phi_{n+1}(p_0q_0 + (p_0q_1 + p_1q_0)x_{n+1} )
+    %  ~=~ \phi_{n+1}(p \times q)
+    % \end{gather}
+
+    \medskip
+
+    This completes the inductive step, proving that $\forall n > 1$, $\phi_n$ is a homomorphism.
+
+    \bigskip
+
+    Finally, to see $\phi_n$ is an isomorphism, we use Theorem \ref{thm:uni_pnf} to write an arbitrary controlled state in PNF:
+    \begin{gather*}
+        \begin{bmatrix}
+            1 & a_0 \\ 0 & a_1 \\ \vdots & \vdots \\ 0 & a_{2^{n}-1}
+        \end{bmatrix}
+        \quad = \quad \tikzfig{pnf}
+    \end{gather*}
+
+    Then all we have to do is interpret it as the image of a polynomial:
+    \begin{gather*}
+        \tikzfig{pnf} \quad ~=~ \quad \tikzfig{iso4} \neweqline ~=~ \phi_{n}(a_0) + \phi_{n}(a_1x_{n}) + ... + \phi_{n}(a_{2^{n}-1} x_1x_2...x_{n}) \neweqline ~=~ \phi_{n}(a_0 + a_1x_{n} + ... + a_{2^{n}-1}x_1x_2...x_{n})
+    \end{gather*}
+\end{proof}

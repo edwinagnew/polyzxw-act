@@ -1,0 +1,132 @@
+\begin{figure}[htbp]
+  \centering
+  \renewcommand{\arraystretch}{1.5}
+  \begin{tabular}{|p{0.45\textwidth}|p{0.45\textwidth}|}
+    % \hline
+    % \multicolumn{2}{|c|}{\textbf{ZX Rules}} \\
+    % \hline
+    % \multicolumn{2}{|c|}{
+    %   \begin{minipage}{\linewidth}
+    %     \centering
+    %     \begin{gather}
+    %       \scalebox{0.9}{\tikzfig{s1}}
+    %       \tag{S1}\label{rule:S1}
+    %     \end{gather}
+    %   \end{minipage}
+    % } \\
+    \hline
+    \multicolumn{2}{|c|}{\textbf{ZX Rules}} \\
+    \hline
+    \begin{minipage}{\linewidth}
+      \vspace{-1em}
+      \begin{gather}
+        \scalebox{0.9}{\tikzfig{s1}}
+        \tag{S1}\label{rule:S1}\\
+        \scalebox{0.9}{\tikzfig{s2}}
+        \tag{S2}\label{rule:S2} \\
+        \scalebox{0.9}{\tikzfig{k0copy}}
+        \tag{K0}\label{rule:K0} \\
+        \scalebox{0.9}{\tikzfig{zerotoreddit0}}
+        \tag{Zer}\label{rule:Zer} \\
+        \scalebox{0.9}{\tikzfig{rdotaemptydit0}}
+        \tag{Ept}\label{rule:Ept}
+      \end{gather}
+    \end{minipage} &
+    \noindent\colorbox{gray!20}{%
+    \begin{minipage}{\linewidth}
+      \vspace{-1em}
+      \begin{gather}
+        \scalebox{0.9}{\tikzfig{pimultiplecpdit}}
+        \tag{K1}\label{rule:K1} \\
+        \scalebox{0.9}{\tikzfig{k2adit}}
+        \tag{K2}\label{rule:K2} \\
+        \scalebox{0.9}{\tikzfig{h_id}}
+        \tag{H}\label{rule:H} \\
+        \scalebox{0.9}{\tikzfig{b2}}
+        \tag{B2}\label{rule:B2}
+      \end{gather}
+    \end{minipage}} \\
+    \hline
+    \multicolumn{2}{|c|}{\textbf{ZW Rules}} \\
+    \hline
+    \begin{minipage}{\linewidth}
+      \vspace{-1em}
+      \begin{gather}
+        \scalebox{0.9}{\tikzfig{phasecopydit}}
+        \tag{Pcpy}\label{rule:Pcpy} \\
+        \scalebox{0.9}{\tikzfig{additiondit}}
+        \tag{Add}\label{rule:Add} \\
+        \scalebox{0.9}{\tikzfig{w-bialgebra}}
+        \tag{BZW}\label{rule:BZW}
+      \end{gather}
+    \end{minipage} &
+    \begin{minipage}{\linewidth}
+      \vspace{-1em}
+      \begin{gather}
+        \scalebox{0.9}{\tikzfig{associatedit}}
+        \tag{Aso}\label{rule:Aso} \\
+        \scalebox{0.9}{\tikzfig{w-w-algebra}}
+        \tag{WW}\label{rule:WW}
+      \end{gather}
+    \end{minipage} \\
+    \hline
+    \multicolumn{2}{|c|}{\textbf{ZXW Rules}} \\
+    \hline
+    \begin{minipage}{\linewidth}
+      \vspace{-1em}
+      \begin{gather}
+        \scalebox{0.9}{\tikzfig{triangleocopydit}}
+        \tag{Bs0}\label{rule:Bs0} \\
+        \scalebox{0.9}{\tikzfig{trialgebra}}
+        \tag{TA}\label{rule:TA}
+      \end{gather}
+    \end{minipage} &
+    \noindent\colorbox{gray!20}{%
+    \begin{minipage}{\linewidth}
+      \vspace{-1em}
+      \begin{gather}
+        \scalebox{0.9}{\tikzfig{bs1}}
+        \tag{Bs1}\label{rule:Bs1}\\
+        \scalebox{0.9}{\tikzfig{hadamard-decomposition2}}
+        \tag{HD}\label{rule:HD}
+      \end{gather}
+    \end{minipage}} \\ 
+    \hline
+    \multicolumn{2}{|c|}{\textbf{Controlled Ring Rules}} \\
+    \hline
+    \begin{minipage}{\linewidth}
+      \vspace{-1em}
+      \begin{gather}
+        \tikzfig{c_state0}
+        \tag{CS0}\label{rule:cstate0} \\
+        \tikzfig{c_state1}
+        \tag{CS1}\label{rule:cstate1} \\
+        \scalebox{0.85}{\tikzfig{cs_copy}}
+        \tag{CScpy}\label{rule:CScpy}
+      \end{gather}
+    \end{minipage} &
+    \begin{minipage}{\linewidth}
+      \vspace{-1em}
+      \begin{gather}
+        \scalebox{0.75}{\tikzfig{c_sq0}}
+        \tag{CM0}\label{rule:c_sq0} \\
+        \scalebox{0.75}{\tikzfig{c_sq1}}
+        \tag{CM1}\label{rule:c_sq1} \\
+        \scalebox{0.75}{\tikzfig{csq_copy}}
+        \tag{CMcpy}\label{rule:CMcpy}\\
+        \scalebox{0.75}{\tikzfig{csq_add_comm_statement}}
+        \tag{CMcom}\label{rule:CMcom}
+      \end{gather}
+    \end{minipage} \\
+    \hline
+  \end{tabular}
+  \caption{These ZX, ZW, and ZXW Rules are altogether complete for qubit linear maps, where $k \in \{0, 1\}$ and $a \in \mathbb{C}$; we derive them by restricting the complete ZXW-calculus axioms for arbitrary finite dimension~\cite{poor2023completeness} to the qubit setting in Appendix~\ref{sec:deriveaxioms}.
+  Through Theorem~\ref{thm:uni_pnf} of this work, we show that these ZX, ZW, and ZXW Rules with white background form a complete set of axioms for \emph{arithmetic diagrams} (Definition~\ref{def:arithmetic}). By adding \eqref{rule:CScpy} and \eqref{rule:CMcpy}, \eqref{rule:CMcom}, we then show that controlled states and controlled operators form polynomial rings, culminating in Theorem~\ref{thm:ctrl_pnf} achieving completeness and minimality for all operations over these rings.}
+  \label{fig:zxw_rules}
+\end{figure}
+
+\begin{remark}
+  We work with the complete qubit ZXW-calculus in this work in order to connect usage of these results to the qubit ZX-calculus, such as the CX gate in Equation~\eqref{eq:CX} and Hamiltonian operators explored in~\cite{shaikh2022sum}.
+  However, the proofs of completeness for arithmetic diagrams of this work use a subset of the qubit ZXW-calculus rules which also follow from the minimal ZW-calculus of~\cite{deVisme2025minzw}, which were established after the main results of this work were found~\cite{Agnew2023Masters}.
+  In the proof of Theorem~\ref{thm:uni_pnf}, the only place we used \eqref{rule:TA} was in the proof of Lemma~\ref{lem:kill_quad}. We could have equivalently replaced Equation~\eqref{rule:TA} with the equation of Lemma~\ref{lem:kill_quad}; and substituted the one-input, zero-output X spider with the one-input, zero-output W node as done in~\cite{deVisme2025minzw}.
+\end{remark}

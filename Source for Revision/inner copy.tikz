@@ -1,0 +1,30 @@
+\begin{tikzpicture}
+	\begin{pgfonlayer}{nodelayer}
+		\node [style={rn_phase}] (0) at (-4, 1) {$k\pi$};
+		\node [style={rn_phase}] (1) at (-4, -1) {$k\pi$};
+		\node [style=none] (2) at (2.25, 0.5) {$\eqq{\ref{rule:Ept}}$};
+		\node [style=none] (3) at (5, -0.75) {$\cdot$};
+		\node [style=none] (4) at (4, 0.75) {$\cdot$};
+		\node [style=none] (5) at (5, 0.75) {$\cdot$};
+		\node [style=none] (6) at (3.5, 0.75) {$\cdot$};
+		\node [style=none] (7) at (5, 0.25) {$\cdot$};
+		\node [style=none] (8) at (4.5, 0.75) {$\cdot$};
+		\node [style=none] (9) at (3.5, 0.25) {$\cdot$};
+		\node [style=none] (10) at (4, -0.75) {$\cdot$};
+		\node [style=none] (11) at (5, -0.25) {$\cdot$};
+		\node [style=none] (12) at (3.5, -0.75) {$\cdot$};
+		\node [style=none] (13) at (3.5, -0.25) {$\cdot$};
+		\node [style=none] (14) at (4.5, -0.75) {$\cdot$};
+		\node [style=rn] (15) at (-1.5, 1) {};
+		\node [style=rn] (16) at (-1.5, -1) {};
+		\node [style=none] (17) at (-2.75, 0) {$=$};
+		\node [style=rn] (18) at (1, 1) {};
+		\node [style=gbox] (19) at (1, -1) {$0$};
+		\node [style=none] (20) at (-0.25, 0.5) {$\eqq{\ref{rule:Zer}}$};
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\draw (1) to (0);
+		\draw (16) to (15);
+		\draw (19) to (18);
+	\end{pgfonlayer}
+\end{tikzpicture}

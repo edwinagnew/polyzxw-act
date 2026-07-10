@@ -1,0 +1,35 @@
+\begin{tikzpicture}
+	\begin{pgfonlayer}{nodelayer}
+		\node [style=wn] (0) at (0, 0) {$\land$};
+		\node [style=none] (1) at (-1, 0.75) {};
+		\node [style=none] (2) at (-1, -0.75) {};
+		\node [style=none] (3) at (1.25, 0) {};
+		\node [style=none] (4) at (2.5, 0) {$:=$};
+		\node [style=none] (5) at (4, 0.75) {};
+		\node [style={rn_phase}] (6) at (4.5, 0.75) {$\pi$};
+		\node [style=none] (7) at (4, -0.75) {};
+		\node [style={rn_phase}] (8) at (4.5, -0.75) {$\pi$};
+		\node [style=lw] (9) at (5.5, 0.75) {};
+		\node [style=lw] (10) at (5.5, -0.75) {};
+		\node [style=rw] (11) at (7.75, 0) {};
+		\node [style={rn_phase}] (12) at (8.75, 0) {$\pi$};
+		\node [style=none] (13) at (9.25, 0) {};
+		\node [style=gn] (14) at (6.75, 0) {};
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\draw [bend left=15] (1.center) to (0);
+		\draw [bend right=15] (2.center) to (0);
+		\draw (0) to (3.center);
+		\draw (14) to (11);
+		\draw [bend right=15] (14) to (9);
+		\draw [bend left] (9) to (11);
+		\draw [bend right=15] (10) to (14);
+		\draw [bend right] (10) to (11);
+		\draw (11) to (12);
+		\draw (12) to (13.center);
+		\draw (5.center) to (6);
+		\draw (7.center) to (8);
+		\draw (6) to (9);
+		\draw (8) to (10);
+	\end{pgfonlayer}
+\end{tikzpicture}
