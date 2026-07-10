@@ -1,8 +1,0 @@
-\begin{tikzpicture}
-	\begin{pgfonlayer}{nodelayer}
-		\node [style={rn_phase}] (12) at (-1, 0.5) {$\pi$};
-		\node [style={rn_phase}] (13) at (-1, -0.5) {$\pi$};
-		\node [style={rn_phase}] (17) at (1, 0) {$\pi$};
-		\node [style=none] (40) at (0, 0) {$=$};
-	\end{pgfonlayer}
-\end{tikzpicture}
