@@ -1,14 +1,15 @@
 \section{Completeness for Factoring Controlled Operators}
-Our results so far show that controlled states and controlled square matrices each induce a ring structure, as they satisfy all ring axioms. Furthermore, the ring of controlled states is isomorphic to the ring of multilinear polynomials over complex numbers. The question then arises: What is the ring of controlled square matrices isomorphic to?
+Our results so far show that controlled states and controlled square matrices each induce a ring structure, as they satisfy all ring axioms. Furthermore, the ring of controlled states is isomorphic to the ring of multilinear polynomials over complex numbers. What is the ring of controlled square matrices isomorphic to?
 
 In this section, we will show that the ring of controlled square matrices is isomorphic to the ring of multivariate polynomials over same-size square matrices over the complex numbers, with complex number coefficients. Therefore, the former admits a completeness result over the latter.
 
-In the previous section, the indeterminates of the multilinear polynomials were complex numbers represented by $\lowerbox{\numberstate}$'s.
+In the previous section, the indeterminates of the multilinear polynomials were complex numbers represented by $\lowerbox{\numberstate}$.
 Consider them to instead be same-size matrices represented by controlled square matrix diagrams.
-We then have that:
+Then:
 \begin{thm}\label{thm:ctrl_pnf}
-    Consider a multivariate polynomial of the form $P = \sum_{i=1}^{m_i} c_i \Pi_{j=0}^{m_{ij}} M_{ij}$ over same-size square matrices $M_{ij} \in \mathbb{C}^{n \times n}$, where $n \in \mathbb{N}$, all $c_i \in \mathbb{C}$, and all $m_i, m_{ij} \geq 0$.
-    Then, the controlled operator $\widetilde{P} = \sum_{i=1}^{m_i} c_i \Pi_{j=0}^{m_{ij}} \tilde{M_{ij}}$ is uniquely represented by a ZXW diagram in normal form, consisting of ZXW diagrams for each $\tilde{M}_{ij}$ corresponding to $M_{ij}$ composed according to the ring axioms of controlled square matrices.
+    Consider multivariate polynomials of the form $P = \sum_{i=1}^{m_i} c_i \Pi_{j=0}^{m_{ij}} M_{ij}$ over same-size square matrices $M_{ij} \in \mathbb{C}^{n \times n}$, where $n \in \mathbb{N}$, all $c_i \in \mathbb{C}$, and all $m_i, m_{ij} \geq 0$.
+    Such polynomials are isomorphic to arithmetic diagrams whose outputs are each the control wire of same-size controlled square matrices $\widetilde{M_{ij}}$.
+    The white background ZX, ZW, and ZXW Rules of Figure~\ref{fig:zxw_rules}, along with \eqref{rule:CMcpy} and \eqref{rule:CMcom}, form a complete set of rules for all ring operations on these polynomials.
 \end{thm}
 \begin{proof}
     The proof is by deriving a unique normal form, having fixed an (arbitrary) order on the same-size square matrix variables.
@@ -16,18 +17,19 @@ We then have that:
     Next, remove all $\lowerbox{\coWs}$'s by using \eqref{rule:CMcpy} to make copies of the controlled square matrices.
     Finally, use \eqref{rule:CMcom} to commute controlled square matrices whose controls act on mutually exclusive sectors past each other.
     The algorithm terminates with the controlled square matrix terms ordered by their mutually exclusive sectors in lexicographical order with respect to the order of their variables.
+    The rules used here to derive this completeness result are the same subset of ZXW rules used for completeness for arithmetic diagrams in the ZXW-calculus in \Cref{thm:uni_pnf}, plus the \eqref{rule:CMcpy} and \eqref{rule:CMcom} rules.
+\end{proof}
+Note these procedures enable controlled operators in mutually exclusive sectors to commute past each other.
+This does not apply to controlled operators in the same sector, which would require additional information about the operators themselves beyond being controlled operators, namely whether they commute.
 
+\begin{prop}\label{prop:ctrl_pnf_min}
+    When using the minimal set of rules from~\cite{deVisme2025minzw} to prove the completeness result of Theorem~\ref{thm:ctrl_pnf}, adding the \ref{rule:CMcpy} and \ref{rule:CMcom} rules is also a minimal rule set, i.e. none of the rules are derivable from the others.
+\end{prop}
+\begin{proof}
     To show minimality, we can consider that the \ref{rule:CMcpy} and \ref{rule:CMcom} rules are the only rules here that involve the controlled square matrix generator, and so they cannot be derivable from the other rules here.
     The \ref{rule:CMcpy} rule can change the total number of controlled square matrices in the diagram, while the \ref{rule:CMcom} rule cannot.
-    On the other hand, the \ref{rule:CMcom} rule can apply to two different controlled square matrices, changing their order where the outputs of one are inputs to the other; the \ref{rule:CMcpy} rule applies to two controlled square matrices only if they are of the same matrix.
-
-    The rules used here to derive this completeness result are the same subset of ZXW rules used for completeness for arithmetic diagrams in the ZXW-calculus in \Cref{thm:uni_pnf}, plus the \ref{rule:CMcpy} and \ref{rule:CMcom} rules.
-    When using the minimal set of rules from~\cite{deVisme2025minzw} for completeness for arithmetic diagrams, adding the \ref{rule:CMcpy} and \ref{rule:CMcom} rules is also a minimal rule set, i.e. none of the rules are derivable from the others.
+    On the other hand, the \ref{rule:CMcom} rule can apply to two different controlled square matrices, changing their order where the outputs of one are inputs to the other; the \ref{rule:CMcpy} rule applies to two controlled square matrices only if they are labelled by the same matrix.
 \end{proof}
-\begin{remark}
-    These procedures guarantee that controlled operators in mutually exclusive sectors are commutable past each other.
-    This guarantee does not apply to controlled operators in the same sector, as this would require additional information about the operators themselves beyond being controlled operators.
-\end{remark}
 
 \subsection{Factorising Hamiltonians}
 An application of Theorem~\ref{thm:ctrl_pnf} is that we can leverage our complete rules for arithmetic ZW diagrams and controlled diagrams to perform the equivalent ring operations to those on the corresponding multivariate polynomials.
@@ -42,6 +44,7 @@ Ref.~\cite{mcdowallrose2025f2q} notably used one of the new rules for controlled
 
 In this work, we introduce graphical rewrite rules that can involve and even copy black-box diagrams so long as they are controlled square matrices. To present a small working example, consider same-size square matrices $I, A, B$, and $a, b, c \in \mathbb{C}$.
 The equivalent ring operations for the below factorisation of an example Hamiltonian are performed directly on the controlled diagram.
+
 \begin{gather}
     \tikzfig{tikz/poly/matspoly}
 \end{gather}

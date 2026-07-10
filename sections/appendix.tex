@@ -322,8 +322,9 @@ This lemma is the analogue of ~\cite[Lemma 37]{poor2023completeness} for the qub
 
 
 \section{Derivation of the qubit ZXW-calculus axioms}\label{sec:deriveaxioms}
-This section derives the axioms of Figure~\ref{fig:zxw_rules}, purely through syntactic equalities of axioms directly sourced from the arbitrary finite dimension setting derived in~\cite{poor2023completeness}, with the dimension then restricted to two to recover the qubit case.
-This made some rules trivial and thus disregarded in this work: $(D1)$, $(H1)$, $(ZV)$, $(VW)$ reduce to the same diagram on both sides of the equality, being identity. Likewise, the $-1$ multiplier which equals the identity in the qubit setting is omitted in the second equality of $(P1)$, here renamed to $\left(\ref{rule:H}\right)$ to match the original rule name.
+This section derives the axioms of Figure~\ref{fig:zxw_rules}, purely through syntactic equalities of axioms directly sourced from the arbitrary finite dimension setting derived in~\cite{poor2023completeness}, with the dimension then restricted to two to recover the qubit case. We then derived using these rules other simpler rules introduced by earlier works, notably~\cite{wang2022algebraiczx}, to choose simpler axioms complete for the qubit ZXW-calculus for Figure~\ref{fig:zxw_rules}.
+
+Some of the rules are trivial in the qubit setting and were thus disregarded in this work: $(D1)$, $(H1)$, $(ZV)$, $(VW)$ reduce to the same diagram on both sides of the equality, being identity. Likewise, the $-1$ multiplier which equals the identity in the qubit setting is omitted in the second equality of $(P1)$, here renamed to $\left(\ref{rule:H}\right)$ to match the original rule name.
 
 For $(VA)$, adopting the semantically correct interpretation that the one-output W node is the identity --- which moreover syntatically agrees with \cite{deVisme2025minzw} ---  makes the equation trivial in the qubit setting. Since this one-output W node appears in neither the original qudit ZXW completeness paper nor anywhere in this paper, the $(VA)$ rule can be safely disregarded in the qubit setting.
 
@@ -477,7 +478,7 @@ Finally, we derive the axiom $(\ref{rule:HD})$.
 \subsection{Rules for controlled diagrams}\label{sec:csound}
 In this subsection, we verify the soundness of the axioms for controlled diagrams with respect to the interpretations.
 
-The soundness of axioms $\ref{rule:c_sq0}$, $\ref{rule:c_sq1}$, $\ref{rule:cstate0}$, and $\ref{rule:cstate1}$ with respect to the interpretations in Equations~\eqref{eq:ctrlsqinterp} and~\eqref{eq:ctrlstateinterp}, immediately follows from applying the control states $\left\llbracket\tikzfig{tikz/lemmas/x0}\right\rrbracket = \ket{0}$ and $\left\llbracket\tikzfig{tikz/lemmas/x1}\right\rrbracket = \ket{1}$ respectively.
+The soundness of axioms $\ref{rule:c_sq0}$, $\ref{rule:c_sq1}$, $\ref{rule:cstate0}$, and $\ref{rule:cstate1}$ with respect to the interpretations in Equations~\eqref{eq:ctrlsqinterp} and~\eqref{eq:ctrlstateinterp}, immediately follows from applying the control states $\left\llbracket \raisebox{-4pt}{\tikzfig{tikz/lemmas/x0}} \right\rrbracket = \ket{0}$ and $\left\llbracket \raisebox{-4pt}{\tikzfig{tikz/lemmas/x1}} \right\rrbracket = \ket{1}$ respectively.
 
 For the remaining axioms, we will also prove soundness through verifying the actions of controlled diagrams on the control states $\ket{0}$ and $\ket{1}$.
 This is a common technique which uniquely fixes the interpretation because $\ket{0}$ and $\ket{1}$ form a basis for the control qubit, and thus any single-qubit state can be uniquely written as a linear combination of these two states.
@@ -667,7 +668,7 @@ Now we prove the remaining ring properties using purely diagrammatic rewrites.
         \end{bmatrix}
     \end{gather}
 
-    Completing the inductive step. Note that it is necessary to use a "proof-by-plugging" approach for this result, since we are proving a statement about the interpretation of a ZXW diagram as a matrix, whilst the completeness of our rule set applies only to equality of ZXW diagrams. 
+    Completing the inductive step. Note that it is necessary to use a ``proof-by-plugging'' approach for this result, since we are proving a statement about the interpretation of a ZXW diagram as a matrix, whilst the completeness of our rule set applies only to equality of ZXW diagrams. 
 \end{proof}
 
 \textbf{Proof of Theorem \ref{thm:uni_pnf}}
